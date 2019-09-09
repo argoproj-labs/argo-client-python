@@ -14,14 +14,15 @@
 
 from __future__ import print_function
 
+import argparse
 import json
 import operator
 import os.path
+import re
 import sys
-import argparse
-from collections import OrderedDict
-
 import urllib3
+
+from collections import OrderedDict
 
 _ops = ["get", "put", "post", "delete", "options", "head", "patch", "watch"]
 
@@ -46,7 +47,7 @@ def _has_property(prop_list, property_name):
             return True
 
 
-def process_swagger(spec_path, strip_prefixes):
+def process_swagger(spec_path):
     with open(spec_path, "r") as f:
         spec = json.loads(f.read())
 
@@ -58,7 +59,7 @@ def process_swagger(spec_path, strip_prefixes):
         spec, lambda op, _: operator.setitem(operation_ids, op["operationId"], op)
     )
 
-    remove_model_prefixes(spec, strip_prefixes)
+    inline_primitive_models(spec, [])
 
     return spec
 
@@ -95,6 +96,23 @@ def add_codegen_request_body(operation, _):
         if operation["parameters"][0].get("in") == "body":
             operation["x-codegen-request-body-name"] = "body"
 
+
+def inline_primitive_models(spec, excluded_primitives):
+    to_remove_models = []
+    for k, v in spec['definitions'].items():
+        if k in excluded_primitives:
+            continue
+        if "properties" not in v:
+            if k == "intstr.IntOrString":
+                v["type"] = "object"
+            if "type" not in v:
+                v["type"] = "object"
+            print("Making model `%s` inline as %s..." % (k, v["type"]))
+            find_replace_ref_recursive(spec, "#/definitions/" + k, v)
+            to_remove_models.append(k)
+
+    for k in to_remove_models:
+        del spec['definitions'][k]
 
 def find_rename_ref_recursive(root, old, new):
     if isinstance(root, list):
@@ -152,6 +170,8 @@ def remove_model_prefixes(spec, prefixes):
         if "new_name" not in v:
             raise PreprocessingException("Cannot rename model %s" % k)
         rename_model(spec, k, v["new_name"])
+    
+    return spec
 
 
 def rename_model(spec, old_name, new_name):
@@ -159,10 +179,13 @@ def rename_model(spec, old_name, new_name):
         raise PreprocessingException(
             "Cannot rename model %s. new name %s exists." % (old_name, new_name)
         )
+
     find_rename_ref_recursive(
         spec, "#/definitions/" + old_name, "#/definitions/" + new_name
     )
+
     spec["definitions"][new_name] = spec["definitions"][old_name]
+
     del spec["definitions"][old_name]
 
 
@@ -244,13 +267,14 @@ def main():
         "-d",
         "--strip",
         action="append",
-        dest="strip_prefixes",
+        dest="to_strip",
         nargs="?",
         help="Prefixes to be stripped from the models.",
     )
     args = argparser.parse_args()
 
-    spec = process_swagger(args.input_file, args.strip_prefixes)
+    spec = process_swagger(args.input_file)
+    spec = remove_model_prefixes(spec, args.to_strip)
 
     write_json(args.output_file, spec)
     sys.exit(0)

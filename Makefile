@@ -74,9 +74,11 @@ spec:
 preprocess:
 	@echo "Preprocessing API specs"
 	python scripts/preprocess.py -i ${OPENAPI_SPEC} \
-		-d 'io.k8s' \
 		-d 'io.argoproj.workflow' \
 		-o ${OPENAPI_SPEC} >/dev/null
+
+	# Replace empty references
+	sed -i -e '/"$$ref"/ s/io.argoproj.workflow.//' ${OPENAPI_SPEC}
 
 
 .PHONY: generate

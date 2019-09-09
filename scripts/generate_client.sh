@@ -10,6 +10,13 @@ set -o pipefail
 #   $1: output directory
 _cleanup() {
     local output_dir="$1"
+
+    echo "Cleanup."
+	# Replace io.k8s models with python kubernetes client library
+	find $output_dir -type f -exec \
+		sed -i 's/IoK8sApiCore\|IoK8sApimachineryPkgApisMeta/kubernetes.client./g' {} \;
+
+    mv $output_dir/{${PACKAGE_NAME}_README.md,README.md}
 }
 
 # Generates client.
