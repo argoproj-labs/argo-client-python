@@ -57,7 +57,7 @@ spec:
 		> openapi/definitions/definitions.json
 
 	@echo "Creating OpenAPI info"
-	echo '{"info": {"title": "Argo", "description": "${PACKAGE_DESCRIPTION}", "version": "${ARGO_VERSION}"}}' | jq \
+	echo '{"info": {"title": "Argo", "description": "${PACKAGE_DESCRIPTION}", "version": "${ARGO_VERSION}"}}' | jq -r '.' \
 		> openapi/custom/info.json
 
 	@echo "Creating OpenAPI spec"
