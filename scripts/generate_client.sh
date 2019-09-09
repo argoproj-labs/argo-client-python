@@ -37,8 +37,8 @@ argo::generate::generate_client() {
     local openapi_spec="$2"
     local openapi_config="$3"
 
-    mkdir -p $output_dir
-	docker run --rm -v ${PWD}:/local:Z openapitools/openapi-generator-cli generate \
+    mkdir -m 755 -p $output_dir
+	docker run --user ${UID} --rm -v ${PWD}:/local:z openapitools/openapi-generator-cli generate \
 		-g python \
 		-c /local/${openapi_config} \
 		-i /local/${openapi_spec} \
