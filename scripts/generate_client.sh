@@ -16,7 +16,7 @@ _cleanup() {
 	find $output_dir -type f -exec \
 		sed -i 's/IoK8sApiCore\|IoK8sApimachineryPkgApisMeta/kubernetes.client./g' {} \;
 
-    mv $output_dir/{${PACKAGE_NAME}_README.md,README.md}
+    mv $output_dir/${PACKAGE_NAME}_README.md $output_dir/README.md
 }
 
 # Generates client.
@@ -38,7 +38,7 @@ argo::generate::generate_client() {
     local openapi_config="$3"
 
     mkdir -p $output_dir
-	docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
+	docker run --rm -v ${PWD}:/local:Z openapitools/openapi-generator-cli generate \
 		-g python \
 		-c /local/${openapi_config} \
 		-i /local/${openapi_spec} \

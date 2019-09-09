@@ -51,8 +51,6 @@ spec:
 	@echo "Processing definitions"
 	jq -r '{ definitions: .definitions }' ${ARGO_OPENAPI_SPEC} \
 		> openapi/definitions/argo.json
-	# jq -r '{ definitions: .definitions }' ${KUBERNETES_OPENAPI_SPEC} \
-	# 	> openapi/definitions/kubernetes.json
 
 	@echo "Merging API definitions"
 	jq -sS '.[0] + .[1]' openapi/definitions/* \
