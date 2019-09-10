@@ -21,7 +21,7 @@ ARGO_OPENAPI_SPEC       = openapi/specs/argo-${ARGO_VERSION}.json
 KUBERNETES_BRANCH      ?= release-1.14
 KUBERNETES_OPENAPI_SPEC = openapi/specs/kubernetes-${KUBERNETES_BRANCH}.json
 
-OPENAPI_SPEC   = openapi/openapi.json
+OPENAPI_SPEC   = openapi/swagger.json
 OPENAPI_CONFIG = openapi/config.json
 
 CLIENT_VERSION = ${ARGO_VERSION}
@@ -62,7 +62,7 @@ spec:
 
 	@echo "Creating OpenAPI spec"
 	jq -s '.[0] + .[1] + .[2] + .[3]' \
-		openapi/custom/swagger.json \
+		openapi/custom/version.json \
 		openapi/custom/info.json \
 		openapi/custom/paths.json \
 		openapi/definitions/definitions.json \
