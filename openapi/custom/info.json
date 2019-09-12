@@ -1,7 +1,0 @@
-{
-  "info": {
-    "title": "Argo",
-    "description": "Python client for Argo Workflows",
-    "version": "master"
-  }
-}

@@ -1,3 +1,77 @@
 {
-	"paths": {}
+	"paths": {
+		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflows": {
+			"get": {
+				"description": "List workflow resources.",
+				"operationId": "list_namespaced_workflows",
+				"parameters": [
+					{
+						"$ref": "#/parameters/namespace"
+					}
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/io.argoproj.workflow.{{ argo_api_version }}.WorkflowList"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				},
+				"tags": [
+					"v1alpha1"
+				]
+			}
+		},
+		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflows/{id}": {
+			"get": {
+				"description": "Get workflow resource by ID.",
+				"operationId": "get_namespaced_workflow",
+				"parameters": [
+					{
+						"$ref": "#/parameters/namespace"
+					},
+					{
+						"description": "Unique Workflow ID",
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"type": "integer"
+					}
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/io.argoproj.workflow.{{ argo_api_version }}.Workflow"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				},
+				"tags": [
+					"v1alpha1"
+				]
+			}
+		}
+	},
+	"parameters": {
+		"namespace": {
+			"description": "object name and auth scope, such as for teams and projects",
+			"in": "path",
+			"name": "namespace",
+			"required": true,
+			"type": "string",
+			"uniqueItems": true
+		}
+	}
 }

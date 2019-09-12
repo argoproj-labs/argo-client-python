@@ -5,18 +5,32 @@ set -o nounset
 set -o pipefail
 
 
+# Patch generated code.
+# args:
+#   $1: output directory
+_patch() {
+    local output_dir="$1"
+
+    echo "--- Patching generated code..."
+
+	# Replace io.k8s models with python kubernetes.client.library
+	find $output_dir -type f -exec \
+		sed -i 's/kubernetes.client.\|kubernetes.client./kubernetes.client./g' {} \;
+
+    echo "--- Done."
+}
+
 # Cleanup generated code.
 # args:
 #   $1: output directory
 _cleanup() {
     local output_dir="$1"
 
-    echo "Cleanup."
-	# Replace io.k8s models with python kubernetes client library
-	find $output_dir -type f -exec \
-		sed -i 's/IoK8sApiCore\|IoK8sApimachineryPkgApisMeta/kubernetes.client./g' {} \;
+    echo "--- Cleanup."
 
-    mv $output_dir/${PACKAGE_NAME}_README.md $output_dir/README.md
+    mv $output_dir/argo/client_README.md $output_dir/argo/README.md
+
+    echo "--- Done."
 }
 
 # Generates client.
@@ -33,6 +47,8 @@ argo::generate::generate_client() {
     : "${KUBERNETES_BRANCH?Must set KUBERNETES_BRANCH env var}"
     : "${PACKAGE_NAME?Must set PACKAGE_NAME env var}"
 
+    echo "--- Generating client."
+
     local output_dir="$1"
     local openapi_spec="$2"
     local openapi_config="$3"
@@ -46,7 +62,10 @@ argo::generate::generate_client() {
 		-p packageName=${PACKAGE_NAME} \
 		-p packageVersion=${CLIENT_VERSION}
     
+    _patch   $output_dir
     _cleanup $output_dir
+
+    echo "--- Done."
 }
 
 args=("$@")
