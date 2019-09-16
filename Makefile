@@ -13,7 +13,7 @@ GIT_TAG = $(shell git rev-parse --abbrev-ref HEAD)
 endif
 
 ARGO_VERSION      ?= ${GIT_TAG}
-ARGO_API_GROUP    ?= io.argoproj
+ARGO_API_GROUP    ?= argoproj.io
 ARGO_API_VERSION  ?= v1alpha1
 ARGO_OPENAPI_SPEC  = openapi/specs/argo-${ARGO_VERSION}.json
 
@@ -31,8 +31,10 @@ all: generate
 
 .PHONY: clean
 clean:
-	-rm -rf openapi/*.json openapi/specs/ openapi/definitions/ ${OPENAPI_SPEC}
-	-rm -rf ${OUTPUT_DIR}/${PACKAGE_NAME}
+	-rm -r openapi/*.json openapi/specs/ openapi/definitions/ ${OPENAPI_SPEC}
+	-rm -r ${OUTPUT_DIR}/argo/client
+	-rm -r ${OUTPUT_DIR}/test/
+	-rm -r ${OUTPUT_DIR}/docs/
 
 
 spec: 
@@ -47,7 +49,7 @@ spec:
 	curl -sSL https://raw.githubusercontent.com/argoproj/argo/${ARGO_VERSION}/api/openapi-spec/swagger.json \
 		-o ${ARGO_OPENAPI_SPEC}
 
-	@echo "Processing definitions"
+	@echo "Extracting definitions"
 	jq -r '{ definitions: .definitions }' ${ARGO_OPENAPI_SPEC} \
 		> openapi/definitions/argo.json
 
@@ -66,11 +68,12 @@ spec:
 		> openapi/paths.json
 
 	@echo "Creating OpenAPI spec"
-	jq -s '.[0] + .[1] + .[2] + .[3]' \
+	jq -s '.[0] + .[1] + .[2] + .[3] * .[4]' \
 		openapi/custom/version.json \
 		openapi/info.json \
 		openapi/paths.json \
 		openapi/definitions.json \
+		openapi/patch/swagger.json \
 		> ${OPENAPI_SPEC}
 	
 
