@@ -1,16 +1,60 @@
 {
 	"paths": {
 		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflows": {
+			"parameters": [
+				{
+					"$ref": "#/parameters/namespace"
+				}
+			],
 			"get": {
 				"description": "List workflow resources.",
 				"operationId": "list_namespaced_workflows",
-				"parameters": [
-					{
-						"$ref": "#/parameters/namespace"
-					}
+				"consumes": [
+					"*/*"
 				],
 				"produces": [
-					"application/json"
+					"application/json",
+					"application/json;stream=watch"
+				],
+				"schemes": [
+					"https"
+				],
+				"parameters": [
+					{
+						"uniqueItems": true,
+						"type": "string",
+						"description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+						"name": "fieldSelector",
+						"in": "query"
+					},
+					{
+						"uniqueItems": true,
+						"type": "string",
+						"description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
+						"name": "labelSelector",
+						"in": "query"
+					},
+					{
+						"uniqueItems": true,
+						"type": "string",
+						"description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+						"name": "resourceVersion",
+						"in": "query"
+					},
+					{
+						"uniqueItems": true,
+						"type": "integer",
+						"description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
+						"name": "timeoutSeconds",
+						"in": "query"
+					},
+					{
+						"name": "watch",
+						"uniqueItems": true,
+						"type": "boolean",
+						"description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.",
+						"in": "query"
+					}
 				],
 				"responses": {
 					"200": {
@@ -26,22 +70,59 @@
 				"tags": [
 					"v1alpha1"
 				]
+			},
+			"post": {
+				"operationId": "create_namespaced_workflow",
+				"description": "Creates a namespace scoped Workflow",
+				"produces": [
+					"application/json"
+				],
+				"schemes": [
+					"https"
+				],
+				"tags": [
+					"v1alpha1"
+				],
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"required": true,
+						"description": "The JSON schema of the Resource to create.",
+						"schema": {
+							"type": "object"
+						}
+					}
+				],
+				"responses": {
+					"201": {
+						"description": "Created",
+						"schema": {
+							"type": "object"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
 			}
 		},
-		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflows/{id}": {
+		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflows/{name}": {
+			"parameters": [
+				{
+					"$ref": "#/parameters/namespace"
+				}
+			],
 			"get": {
-				"description": "Get workflow resource by ID.",
+				"description": "Get Workflow resource by the workflow name",
 				"operationId": "get_namespaced_workflow",
 				"parameters": [
 					{
-						"$ref": "#/parameters/namespace"
-					},
-					{
-						"description": "Unique Workflow ID",
+						"description": "Unique workflow name",
 						"in": "path",
-						"name": "id",
+						"name": "name",
 						"required": true,
-						"type": "integer"
+						"type": "string"
 					}
 				],
 				"produces": [

@@ -1,3 +1,4 @@
 {
-    "generateSourceCodeOnly": true
+    "projectName": "argo-client",
+    "packageUrl": "https://github.com/CermakM/argo-python-client"
 }
