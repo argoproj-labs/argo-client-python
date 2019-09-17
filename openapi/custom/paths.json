@@ -3,7 +3,11 @@
 		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflows": {
 			"parameters": [
 				{
-					"$ref": "#/parameters/namespace"
+					"name": "namespace",
+					"description": "The custom resource's namespace",
+					"required": true,
+					"type": "string",
+					"in": "path"
 				}
 			],
 			"get": {
@@ -21,38 +25,38 @@
 				],
 				"parameters": [
 					{
-						"uniqueItems": true,
-						"type": "string",
-						"description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
 						"name": "fieldSelector",
+						"description": "A selector to restrict the list of returned objects by their fields. Defaults to everything.",
+						"uniqueItems": true,
+						"type": "string",
 						"in": "query"
 					},
 					{
-						"uniqueItems": true,
-						"type": "string",
-						"description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
 						"name": "labelSelector",
-						"in": "query"
-					},
-					{
+						"description": "A selector to restrict the list of returned objects by their labels. Defaults to everything.",
 						"uniqueItems": true,
 						"type": "string",
-						"description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
-						"name": "resourceVersion",
 						"in": "query"
 					},
 					{
+						"name": "resourceVersion",
+						"description": "When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.",
+						"uniqueItems": true,
+						"type": "string",
+						"in": "query"
+					},
+					{
+						"name": "timeoutSeconds",
+						"description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
 						"uniqueItems": true,
 						"type": "integer",
-						"description": "Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.",
-						"name": "timeoutSeconds",
 						"in": "query"
 					},
 					{
 						"name": "watch",
+						"description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.",
 						"uniqueItems": true,
 						"type": "boolean",
-						"description": "Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.",
 						"in": "query"
 					}
 				],
@@ -60,7 +64,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/io.argoproj.workflow.{{ argo_api_version }}.WorkflowList"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowList"
 						}
 					},
 					"401": {
@@ -86,12 +90,12 @@
 				"parameters": [
 					{
 						"name": "body",
-						"in": "body",
+						"description": "The JSON schema of the Workflow to create.",
 						"required": true,
-						"description": "The JSON schema of the Resource to create.",
 						"schema": {
-							"type": "object"
-						}
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
+						},
+						"in": "body"
 					}
 				],
 				"responses": {
@@ -110,21 +114,23 @@
 		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflows/{name}": {
 			"parameters": [
 				{
-					"$ref": "#/parameters/namespace"
+					"name": "namespace",
+					"description": "The custom resource's namespace",
+					"required": true,
+					"type": "string",
+					"in": "path"
+				},
+				{
+					"name": "name",
+					"description": "Unique Workflow name",
+					"required": true,
+					"type": "string",
+					"in": "path"
 				}
 			],
 			"get": {
 				"description": "Get Workflow resource by the workflow name",
 				"operationId": "get_namespaced_workflow",
-				"parameters": [
-					{
-						"description": "Unique workflow name",
-						"in": "path",
-						"name": "name",
-						"required": true,
-						"type": "string"
-					}
-				],
 				"produces": [
 					"application/json"
 				],
@@ -132,7 +138,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/io.argoproj.workflow.{{ argo_api_version }}.Workflow"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
 						}
 					},
 					"401": {
@@ -142,17 +148,275 @@
 				"tags": [
 					"v1alpha1"
 				]
+			},
+			"delete": {
+				"operationId": "delete_namespaced_workflow",
+				"description": "Deletes the specified namespace scoped Workflow.",
+				"consumes": [
+					"*/*"
+				],
+				"produces": [
+					"application/json"
+				],
+				"schemes": [
+					"https"
+				],
+				"tags": [
+					"v1alpha1"
+				],
+				"parameters": [
+					{
+						"name": "body",
+						"description": "Delete options to be send along in the body of this request.",
+						"in": "body",
+						"schema": {
+							"$ref": "#/definitions/v1.DeleteOptions"
+						}
+					},
+					{
+						"name": "gracePeriodSeconds",
+						"description": "The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.",
+						"uniqueItems": true,
+						"type": "integer",
+						"in": "query"
+					},
+					{
+						"name": "orphanDependents",
+						"description": "Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.",
+						"uniqueItems": true,
+						"type": "boolean",
+						"in": "query"
+					},
+					{
+						"name": "propagationPolicy",
+						"description": "Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.",
+						"uniqueItems": true,
+						"type": "string",
+						"in": "query"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
+			},
+			"patch": {
+				"operationId": "patch_namespaced_workflow",
+				"description": "patch the specified namespace scoped Workflow.",
+				"consumes": [
+					"application/json-patch+json",
+					"application/merge-patch+json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"schemes": [
+					"https"
+				],
+				"tags": [
+					"v1alpha1"
+				],
+				"parameters": [
+					{
+						"name": "body",
+						"description": "The JSON schema of the Workflow to patch.",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
+						},
+						"in": "body"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
+			},
+			"put": {
+				"operationId": "replace_namespaced_workflow",
+				"description": "replace the specified namespace scoped Workflow.",
+				"consumes": [
+					"*/*"
+				],
+				"produces": [
+					"application/json"
+				],
+				"schemes": [
+					"https"
+				],
+				"tags": [
+					"v1alpha1"
+				],
+				"parameters": [
+					{
+						"name": "body",
+						"description": "The JSON schema of the Workflow to replace.",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
+						},
+						"in": "body"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
 			}
-		}
-	},
-	"parameters": {
-		"namespace": {
-			"description": "object name and auth scope, such as for teams and projects",
-			"in": "path",
-			"name": "namespace",
-			"required": true,
-			"type": "string",
-			"uniqueItems": true
+		},
+		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflows/{name}/status": {
+			"parameters": [
+				{
+					"name": "namespace",
+					"description": "The custom resource's namespace",
+					"required": true,
+					"type": "string",
+					"in": "path"
+				},
+				{
+					"name": "name",
+					"description": "Unique Workflow name",
+					"required": true,
+					"type": "string",
+					"in": "path"
+				}
+			],
+			"get": {
+				"description": "read status of the specified namespace scoped Workflow.",
+				"operationId": "get_namespaced_workflow_status",
+				"consumes": [
+					"*/*"
+				],
+				"produces": [
+					"application/json",
+					"application/yaml",
+					"application/vnd.kubernetes.protobuf"
+				],
+				"schemes": [
+					"https"
+				],
+				"tags": [
+					"v1alpha1"
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowStatus"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
+			},
+			"put": {
+				"description": "replace status of the specified namespace scoped Workflow.",
+				"operationId": "replace_namespaced_workflow_status",
+				"consumes": [
+					"*/*"
+				],
+				"produces": [
+					"application/json",
+					"application/yaml",
+					"application/vnd.kubernetes.protobuf"
+				],
+				"schemes": [
+					"https"
+				],
+				"tags": [
+					"v1alpha1"
+				],
+				"parameters": [
+					{
+						"name": "body",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowStatus"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					},
+					"201": {
+						"description": "Created",
+						"schema": {
+							"type": "object"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
+			},
+			"patch": {
+				"description": "partially update status of the specified namespace scoped Workflow.",
+				"operationId": "patch_namespaced_workflow_status",
+				"consumes": [
+					"application/json-patch+json",
+					"application/merge-patch+json"
+				],
+				"produces": [
+					"application/json",
+					"application/yaml",
+					"application/vnd.kubernetes.protobuf"
+				],
+				"schemes": [
+					"https"
+				],
+				"tags": [
+					"v1alpha1"
+				],
+				"parameters": [
+					{
+						"name": "body",
+						"required": true,
+						"schema": {
+							"description": "The JSON schema of the Workflow to patch.",
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
+						},
+						"in": "body"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "object"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					}
+				}
+			}
 		}
 	}
 }
