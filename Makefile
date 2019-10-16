@@ -31,7 +31,7 @@ all: generate
 
 .PHONY: clean
 clean:
-	-rm -r openapi/*.json openapi/specs/ openapi/definitions/ ${OPENAPI_SPEC}
+	-rm -r openapi/specs/ ${OPENAPI_SPEC}
 	-rm -r ${OUTPUT_DIR}/argo/client
 	-rm -r ${OUTPUT_DIR}/test/
 	-rm -r ${OUTPUT_DIR}/docs/
@@ -39,7 +39,7 @@ clean:
 
 spec: 
 	# Make sure the folders exist
-	mkdir -p openapi/specs/ openapi/definitions/
+	mkdir -p openapi/specs/
 
 	@echo "Collecting API spec for Argo ${ARGO_VERSION}"
 	curl -sSL https://raw.githubusercontent.com/kubernetes/kubernetes/${KUBERNETES_BRANCH}/api/openapi-spec/swagger.json \
@@ -54,7 +54,9 @@ spec:
 		> openapi/definitions/argo.json
 
 	@echo "Merging API definitions"
-	jq -sS '.[0] + .[1]' openapi/definitions/* \
+	jq -sS '.[0] * .[1]' \
+		openapi/definitions/argo.json \
+		openapi/definitions/V1Time.json \
 		> openapi/definitions.json
 
 	@echo "Creating OpenAPI info"
@@ -68,12 +70,11 @@ spec:
 		> openapi/paths.json
 
 	@echo "Creating OpenAPI spec"
-	jq -s '.[0] + .[1] + .[2] + .[3] * .[4]' \
+	jq -s '.[0] + .[1] + .[2] + .[3]' \
 		openapi/custom/version.json \
 		openapi/info.json \
 		openapi/paths.json \
 		openapi/definitions.json \
-		openapi/patch/swagger.json \
 		> ${OPENAPI_SPEC}
 	
 
