@@ -1,0 +1,11 @@
+graft docs/
+
+# manifest files
+include Pipfile
+include requirements.txt
+
+# additional metadata
+include LICENSE
+
+# readme
+include README.md
