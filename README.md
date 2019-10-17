@@ -57,10 +57,19 @@ These can be then installed directly from github:
 pip install -e "git+git://github.com/CermakM/argo-client-python@v2.4.0#egg=argo-workflows"
 ```
 
-> NOTE: The compatibility for such cases is not guaranteed
+> :warning: The compatibility for such cases is not guaranteed
 
 
 ## Code generation
 
 If you wish to generate code yourself, you can do so by running `make generate` with the `ARGO_VERSION` environment variable being set to the you want to generate the client for.
+
+#### Before 
+
+in the Makefile:
+
+- make sure to select a compatible `KUBERNETES_BRANCH` according to Argo's [Gopkg.toml](https://github.com/argoproj/argo/blob/master/Gopkg.toml)
+- make sure to select a compatible version of [kubernetes-client](https://github.com/kubernetes-client/python#compatibility)
+- update [requirements.txt](./requirements.txt) and [Pipfile](Pipfile)
+
 For additional configuration check out the [Makefile](./Makefile).
