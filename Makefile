@@ -31,10 +31,10 @@ all: generate
 
 .PHONY: clean
 clean:
-	-rm -r openapi/specs/ ${OPENAPI_SPEC}
 	-rm -r ${OUTPUT_DIR}/argo/workflows/client
 	-rm -r ${OUTPUT_DIR}/docs/
 
+	pushd openapi/ ; git clean -d --force ; popd
 
 spec: 
 	# Make sure the folders exist
@@ -53,8 +53,9 @@ spec:
 		> openapi/definitions/argo.json
 
 	@echo "Merging API definitions"
-	jq -sS '.[0] * .[1] * .[2]' \
+	jq -sS '.[0] * .[1] * .[2] * .[3]' \
 		openapi/definitions/argo.json \
+		openapi/definitions/NodeStatus.json \
 		openapi/definitions/V1Time.json \
 		openapi/definitions/WorkflowStatus.json \
 		> openapi/definitions.json

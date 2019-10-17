@@ -31,6 +31,7 @@ from argo.workflows.client.models.v1alpha1_hdfs_krb_config import V1alpha1HDFSKr
 from argo.workflows.client.models.v1alpha1_http_artifact import V1alpha1HTTPArtifact
 from argo.workflows.client.models.v1alpha1_inputs import V1alpha1Inputs
 from argo.workflows.client.models.v1alpha1_metadata import V1alpha1Metadata
+from argo.workflows.client.models.v1alpha1_node_status import V1alpha1NodeStatus
 from argo.workflows.client.models.v1alpha1_outputs import V1alpha1Outputs
 from argo.workflows.client.models.v1alpha1_parameter import V1alpha1Parameter
 from argo.workflows.client.models.v1alpha1_raw_artifact import V1alpha1RawArtifact
