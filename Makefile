@@ -12,7 +12,7 @@ ifeq (${GIT_TAG},)
 GIT_TAG = $(shell git rev-parse --abbrev-ref HEAD)
 endif
 
-ARGO_VERSION      ?= ${GIT_TAG}
+ARGO_VERSION      ?= $${GIT_TAG/argo\//}
 ARGO_API_GROUP    ?= argoproj.io
 ARGO_API_VERSION  ?= v1alpha1
 ARGO_OPENAPI_SPEC  = openapi/specs/argo-${ARGO_VERSION}.json

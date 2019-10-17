@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **dependencies** | **list[str]** | Dependencies are name of other targets which this depends on | [optional] 
 **name** | **str** | Name is the name of the target | 
 **template** | **str** | Name of template to execute | 
-**template_ref** | [**V1alpha1TemplateRef**](V1alpha1TemplateRef.md) | TemplateRef is the reference to the template resource to execute. | [optional] 
 **when** | **str** | When is an expression in which the task should conditionally execute | [optional] 
 **with_items** | **list[str]** | WithItems expands a task into multiple parallel tasks from the items in the list | [optional] 
 **with_param** | **str** | WithParam expands a task into multiple parallel tasks from the value in the parameter, which is expected to be a JSON list. | [optional] 
