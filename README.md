@@ -1,4 +1,4 @@
-# argo.workflows.client-python
+# Argo Workflows Client
 Python client for Argo Workflows
 
 
@@ -29,7 +29,35 @@ wfs = v1alpha1.list_namespaced_workflows(namespace="argo")
 
 ## Versioning
 
-The whole client is generated from the Argo and Kubernetes OpenAPI specification. We are consistent with Argo versions and hence for example branch [@v2.4.0](https://github.com/CermakM/argo.workflows.client-python/tree/v2.4.0) is identical with Argo release [v2.4.0](https://github.com/argo.workflows.roj/argo.workflows.releases/tag/v2.4.0).
+The client is generated from the Argo and Kubernetes OpenAPI specification.
+
+We follow semantic versioning, the client starts at version `1.0` which matches Argo release `2.3.0` and continues onwards.
+
+#### Compatibility matrix
+
+|                    | Argo 2.3       | Argo 2.4        |
+|--------------------|----------------|-----------------|
+| client-python 1.0  |✓               |-                |
+| client-python 2.0  |+               |✓                |
+
+Key:
+
+* `✓` Exactly the same features / API objects in both client-python and the Kubernetes
+  version.
+* `+` client-python has features or api objects that may not be present in the
+  Kubernetes cluster, but everything they have in common will work.
+* `-` The Kubernetes cluster has features the client-python library can't use
+  (additional API objects, etc).
+
+We try to be consistent with Argo as much as possible and hence we created special branches for user convenience --- for example [argo/v2.4.0](https://github.com/CermakM/argo-client-python/tree/v2.4.0) is identical with Argo release [v2.4.0](https://github.com/argoproj/argo/releases/tag/v2.4.0).
+
+These can be then installed directly from github:
+
+```
+pip install -e "git+git://github.com/CermakM/argo-client-python@v2.4.0#egg=argo-workflows"
+```
+
+> NOTE: The compatibility for such cases is not guaranteed
 
 
 ## Code generation
