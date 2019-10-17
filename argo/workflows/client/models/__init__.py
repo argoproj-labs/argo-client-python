@@ -42,6 +42,7 @@ from argo.workflows.client.models.v1alpha1_s3_bucket import V1alpha1S3Bucket
 from argo.workflows.client.models.v1alpha1_script_template import V1alpha1ScriptTemplate
 from argo.workflows.client.models.v1alpha1_sequence import V1alpha1Sequence
 from argo.workflows.client.models.v1alpha1_template import V1alpha1Template
+from argo.workflows.client.models.v1alpha1_template_ref import V1alpha1TemplateRef
 from argo.workflows.client.models.v1alpha1_user_container import V1alpha1UserContainer
 from argo.workflows.client.models.v1alpha1_value_from import V1alpha1ValueFrom
 from argo.workflows.client.models.v1alpha1_workflow import V1alpha1Workflow
