@@ -53,9 +53,10 @@ spec:
 		> openapi/definitions/argo.json
 
 	@echo "Merging API definitions"
-	jq -sS '.[0] * .[1]' \
+	jq -sS '.[0] * .[1] * .[2]' \
 		openapi/definitions/argo.json \
 		openapi/definitions/V1Time.json \
+		openapi/definitions/WorkflowStatus.json \
 		> openapi/definitions.json
 
 	@echo "Creating OpenAPI info"

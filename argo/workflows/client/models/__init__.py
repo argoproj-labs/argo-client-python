@@ -46,6 +46,7 @@ from argo.workflows.client.models.v1alpha1_value_from import V1alpha1ValueFrom
 from argo.workflows.client.models.v1alpha1_workflow import V1alpha1Workflow
 from argo.workflows.client.models.v1alpha1_workflow_list import V1alpha1WorkflowList
 from argo.workflows.client.models.v1alpha1_workflow_spec import V1alpha1WorkflowSpec
+from argo.workflows.client.models.v1alpha1_workflow_status import V1alpha1WorkflowStatus
 from argo.workflows.client.models.v1alpha1_workflow_step import V1alpha1WorkflowStep
 
 from kubernetes.client.models import V1ConfigMapKeySelector
@@ -75,6 +76,7 @@ from kubernetes.client.models import V1ResourceRequirements
 from kubernetes.client.models import V1SecurityContext
 from kubernetes.client.models import V1VolumeDevice
 from kubernetes.client.models import V1VolumeMount
+from kubernetes.client.models import V1Volume
 from kubernetes.client.models import V1SecretKeySelector
 from kubernetes.client.models import V1SecretKeySelector
 from kubernetes.client.models import V1SecretKeySelector
