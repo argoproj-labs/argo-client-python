@@ -1,6 +1,6 @@
 """Python client for Argo Workflows."""
 
-from . import client
-from . import config
+from argo.workflows import client
+from argo.workflows import config
 
-from .__about__ import __version__
+from argo.workflows.__about__ import __version__

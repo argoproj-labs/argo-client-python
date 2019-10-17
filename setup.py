@@ -42,9 +42,7 @@ setup_args = dict(
         "Topic :: Utilities",
     ],
     packages=[
-        "argo.workflows",
-        "argo.workflows.client",
-        "argo.workflows.config"
+        "argo.%s" % p for p in find_packages(where="argo/")
     ],
     zip_safe=False,
     install_requires=REQUIREMENTS,
