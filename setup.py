@@ -14,7 +14,7 @@ HERE = Path(__file__).parent
 ABOUT = dict()
 exec(Path(HERE, "argo/workflows", "__about__.py").read_text(), ABOUT)
 
-DEVELOPMENT_STATUS = "2 - Pre-Alpha"
+DEVELOPMENT_STATUS = "3 - Alpha"
 
 README: str = Path(HERE, "README.md").read_text(encoding="utf-8")
 REQUIREMENTS: list = Path(HERE, "requirements.txt").read_text().splitlines()
