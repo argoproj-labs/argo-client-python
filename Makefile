@@ -1,4 +1,4 @@
-PACKAGE_NAME        = argo.client
+PACKAGE_NAME        = workflows.client
 PACKAGE_DESCRIPTION = Python client for Argo Workflows
 
 CURRENT_DIR ?= $(shell pwd)
@@ -32,8 +32,7 @@ all: generate
 .PHONY: clean
 clean:
 	-rm -r openapi/specs/ ${OPENAPI_SPEC}
-	-rm -r ${OUTPUT_DIR}/argo/client
-	-rm -r ${OUTPUT_DIR}/test/
+	-rm -r ${OUTPUT_DIR}/argo/workflows/client
 	-rm -r ${OUTPUT_DIR}/docs/
 
 

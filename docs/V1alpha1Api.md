@@ -1,4 +1,4 @@
-# argo.client.V1alpha1Api
+# workflows.client.V1alpha1Api
 
 All URIs are relative to *https://localhost*
 
@@ -26,14 +26,14 @@ Creates a namespace scoped Workflow
 ```python
 from __future__ import print_function
 import time
-import argo.client
-from argo.client.rest import ApiException
+import workflows.client
+from workflows.client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = argo.client.V1alpha1Api()
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
-body = argo.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to create.
+body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to create.
 
 try:
     api_response = api_instance.create_namespaced_workflow(namespace, body)
@@ -75,15 +75,15 @@ Deletes the specified namespace scoped Workflow.
 ```python
 from __future__ import print_function
 import time
-import argo.client
-from argo.client.rest import ApiException
+import workflows.client
+from workflows.client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = argo.client.V1alpha1Api()
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
-body = argo.client.V1DeleteOptions() # V1DeleteOptions | Delete options to be send along in the body of this request. (optional)
+body = workflows.client.V1DeleteOptions() # V1DeleteOptions | Delete options to be send along in the body of this request. (optional)
 grace_period_seconds = 56 # int | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. (optional)
 orphan_dependents = true # bool | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both. (optional)
 propagation_policy = 'propagation_policy_example' # str | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. (optional)
@@ -132,12 +132,12 @@ Get Workflow resource by the workflow name
 ```python
 from __future__ import print_function
 import time
-import argo.client
-from argo.client.rest import ApiException
+import workflows.client
+from workflows.client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = argo.client.V1alpha1Api()
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 
@@ -181,12 +181,12 @@ read status of the specified namespace scoped Workflow.
 ```python
 from __future__ import print_function
 import time
-import argo.client
-from argo.client.rest import ApiException
+import workflows.client
+from workflows.client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = argo.client.V1alpha1Api()
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 
@@ -230,12 +230,12 @@ List workflow resources.
 ```python
 from __future__ import print_function
 import time
-import argo.client
-from argo.client.rest import ApiException
+import workflows.client
+from workflows.client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = argo.client.V1alpha1Api()
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 field_selector = 'field_selector_example' # str | A selector to restrict the list of returned objects by their fields. Defaults to everything. (optional)
 label_selector = 'label_selector_example' # str | A selector to restrict the list of returned objects by their labels. Defaults to everything. (optional)
@@ -287,15 +287,15 @@ patch the specified namespace scoped Workflow.
 ```python
 from __future__ import print_function
 import time
-import argo.client
-from argo.client.rest import ApiException
+import workflows.client
+from workflows.client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = argo.client.V1alpha1Api()
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
-body = argo.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to patch.
+body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to patch.
 
 try:
     api_response = api_instance.patch_namespaced_workflow(namespace, name, body)
@@ -338,15 +338,15 @@ partially update status of the specified namespace scoped Workflow.
 ```python
 from __future__ import print_function
 import time
-import argo.client
-from argo.client.rest import ApiException
+import workflows.client
+from workflows.client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = argo.client.V1alpha1Api()
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
-body = argo.client.V1alpha1Workflow() # V1alpha1Workflow | 
+body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | 
 
 try:
     api_response = api_instance.patch_namespaced_workflow_status(namespace, name, body)
@@ -389,15 +389,15 @@ replace the specified namespace scoped Workflow.
 ```python
 from __future__ import print_function
 import time
-import argo.client
-from argo.client.rest import ApiException
+import workflows.client
+from workflows.client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = argo.client.V1alpha1Api()
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
-body = argo.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to replace.
+body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to replace.
 
 try:
     api_response = api_instance.replace_namespaced_workflow(namespace, name, body)
@@ -440,15 +440,15 @@ replace status of the specified namespace scoped Workflow.
 ```python
 from __future__ import print_function
 import time
-import argo.client
-from argo.client.rest import ApiException
+import workflows.client
+from workflows.client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = argo.client.V1alpha1Api()
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
-body = argo.client.V1alpha1WorkflowStatus() # V1alpha1WorkflowStatus | 
+body = workflows.client.V1alpha1WorkflowStatus() # V1alpha1WorkflowStatus | 
 
 try:
     api_response = api_instance.replace_namespaced_workflow_status(namespace, name, body)

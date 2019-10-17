@@ -16,9 +16,9 @@ import re  # noqa: F401
 
 import six
 
-from argo.client.models.v1alpha1_node_status import V1alpha1NodeStatus  # noqa: F401,E501
-from argo.client.models.v1alpha1_outputs import V1alpha1Outputs  # noqa: F401,E501
-from argo.client.models.v1alpha1_template import V1alpha1Template  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_node_status import V1alpha1NodeStatus  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_outputs import V1alpha1Outputs  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_template import V1alpha1Template  # noqa: F401,E501
 
 from kubernetes.client.models import V1Volume
 

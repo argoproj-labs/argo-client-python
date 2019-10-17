@@ -16,9 +16,9 @@ import re  # noqa: F401
 
 import six
 
-from argo.client.models.v1alpha1_inputs import V1alpha1Inputs  # noqa: F401,E501
-from argo.client.models.v1alpha1_outputs import V1alpha1Outputs  # noqa: F401,E501
-from argo.client.models.v1alpha1_template_ref import V1alpha1TemplateRef  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_inputs import V1alpha1Inputs  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_outputs import V1alpha1Outputs  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_template_ref import V1alpha1TemplateRef  # noqa: F401,E501
 
 
 class V1alpha1NodeStatus(object):

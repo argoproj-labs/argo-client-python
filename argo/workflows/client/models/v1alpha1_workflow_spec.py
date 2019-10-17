@@ -16,11 +16,11 @@ import re  # noqa: F401
 
 import six
 
-from argo.client.models.v1alpha1_arguments import V1alpha1Arguments  # noqa: F401,E501
-from argo.client.models.v1alpha1_artifact_repository_ref import V1alpha1ArtifactRepositoryRef  # noqa: F401,E501
-from argo.client.models.v1alpha1_executor_config import V1alpha1ExecutorConfig  # noqa: F401,E501
-from argo.client.models.v1alpha1_pod_gc import V1alpha1PodGC  # noqa: F401,E501
-from argo.client.models.v1alpha1_template import V1alpha1Template  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_arguments import V1alpha1Arguments  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_artifact_repository_ref import V1alpha1ArtifactRepositoryRef  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_executor_config import V1alpha1ExecutorConfig  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_pod_gc import V1alpha1PodGC  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_template import V1alpha1Template  # noqa: F401,E501
 
 from kubernetes.client.models import V1Affinity
 from kubernetes.client.models import V1HostAlias

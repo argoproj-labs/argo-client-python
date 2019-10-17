@@ -18,7 +18,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from argo.client.api_client import ApiClient
+from argo.workflows.client.api_client import ApiClient
 
 from kubernetes.client.models import V1DeleteOptions
 

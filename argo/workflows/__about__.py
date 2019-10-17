@@ -11,7 +11,7 @@ __all__ = [
     "__copyright__",
 ]
 
-__title__ = "argo"
+__title__ = "argo-workflows"
 __summary__ = "Client for Argo Workflows"
 __uri__ = "https://github.com/CermakM/argo-client-python"
 

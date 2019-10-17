@@ -23,9 +23,9 @@ import tempfile
 import six
 from six.moves.urllib.parse import quote
 
-from argo.client.configuration import Configuration
-import argo.client.models
-from argo.client import rest
+from argo.workflows.client.configuration import Configuration
+import argo.workflows.client.models
+from argo.workflows.client import rest
 
 
 class ApiClient(object):
@@ -258,7 +258,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(argo.client.models, klass)
+                klass = getattr(argo.workflows.client.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

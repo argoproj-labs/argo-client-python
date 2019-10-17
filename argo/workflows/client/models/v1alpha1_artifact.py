@@ -16,13 +16,13 @@ import re  # noqa: F401
 
 import six
 
-from argo.client.models.v1alpha1_archive_strategy import V1alpha1ArchiveStrategy  # noqa: F401,E501
-from argo.client.models.v1alpha1_artifactory_artifact import V1alpha1ArtifactoryArtifact  # noqa: F401,E501
-from argo.client.models.v1alpha1_git_artifact import V1alpha1GitArtifact  # noqa: F401,E501
-from argo.client.models.v1alpha1_hdfs_artifact import V1alpha1HDFSArtifact  # noqa: F401,E501
-from argo.client.models.v1alpha1_http_artifact import V1alpha1HTTPArtifact  # noqa: F401,E501
-from argo.client.models.v1alpha1_raw_artifact import V1alpha1RawArtifact  # noqa: F401,E501
-from argo.client.models.v1alpha1_s3_artifact import V1alpha1S3Artifact  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_archive_strategy import V1alpha1ArchiveStrategy  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_artifactory_artifact import V1alpha1ArtifactoryArtifact  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_git_artifact import V1alpha1GitArtifact  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_hdfs_artifact import V1alpha1HDFSArtifact  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_http_artifact import V1alpha1HTTPArtifact  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_raw_artifact import V1alpha1RawArtifact  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_s3_artifact import V1alpha1S3Artifact  # noqa: F401,E501
 
 
 class V1alpha1Artifact(object):

@@ -10,10 +10,11 @@ from setuptools import find_packages
 
 
 HERE = Path(__file__).parent
-NAME = "argo"
 
 ABOUT = dict()
-exec(Path(HERE, NAME, "__about__.py").read_text(), ABOUT)
+exec(Path(HERE, "argo/workflows", "__about__.py").read_text(), ABOUT)
+
+DEVELOPMENT_STATUS = "2 - Pre-Alpha"
 
 README: str = Path(HERE, "README.md").read_text(encoding="utf-8")
 REQUIREMENTS: list = Path(HERE, "requirements.txt").read_text().splitlines()
@@ -30,16 +31,21 @@ setup_args = dict(
     long_description=README,
     long_description_content_type="text/markdown",
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
+        "Development Status :: %s" % DEVELOPMENT_STATUS,
+        "Intended Audience :: Developers",
+        "Intended Audience :: Information Technology",
         "License :: OSI Approved :: MIT License",
-        "Natural Language :: English",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Topic :: Software Development",
         "Topic :: Utilities",
     ],
-    packages=find_packages(),
+    packages=[
+        "argo.workflows",
+        "argo.workflows.client",
+        "argo.workflows.config"
+    ],
     zip_safe=False,
     install_requires=REQUIREMENTS,
 )

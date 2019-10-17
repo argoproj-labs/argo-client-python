@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from argo.client.models.v1alpha1_arguments import V1alpha1Arguments  # noqa: F401,E501
-from argo.client.models.v1alpha1_template import V1alpha1Template  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_arguments import V1alpha1Arguments  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_template import V1alpha1Template  # noqa: F401,E501
 
 
 class V1alpha1WorkflowTemplateSpec(object):

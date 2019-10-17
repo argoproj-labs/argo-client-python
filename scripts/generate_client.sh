@@ -47,6 +47,13 @@ _patch() {
     }
     done
 
+    # Prepend imports from workflow.client with argo
+    find "$output_dir/${PACKAGE_NAME//[.]/\/}/" -name '*.py' -type f | while read fname; do
+    {
+        sed -i "s/workflows\.client/argo.workflows.client/g" $fname
+    }
+    done
+
     echo "--- Done."
 }
 
@@ -61,6 +68,9 @@ _cleanup() {
         set +o nounset;
         [ ! -z ${CLEANUP_DIRS} ] && rm -r ${CLEANUP_DIRS}
     }
+
+    # nest the generated code under argo/ directory
+    mv $output_dir/${PACKAGE_NAME%%.*}/* $output_dir/argo/${PACKAGE_NAME%%.*}
 
     echo "--- Done."
 }
@@ -95,7 +105,7 @@ argo::generate::generate_client() {
 		-DpackageName=${PACKAGE_NAME} \
 		-DpackageVersion=${CLIENT_VERSION}
     
-    CLEANUP_DIRS=( "${output_dir}/test" )
+    CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/workflows" )
     
     _patch   $output_dir
     _cleanup $output_dir

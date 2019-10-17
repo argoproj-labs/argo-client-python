@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from argo.client.models.v1alpha1_dag_task import V1alpha1DAGTask  # noqa: F401,E501
+from argo.workflows.client.models.v1alpha1_dag_task import V1alpha1DAGTask  # noqa: F401,E501
 
 
 class V1alpha1DAGTemplate(object):
