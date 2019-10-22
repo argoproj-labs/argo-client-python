@@ -5,6 +5,7 @@ include Pipfile
 include requirements.txt
 
 # additional metadata
+include CHANGELOG.md
 include LICENSE
 
 # readme
