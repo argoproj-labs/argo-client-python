@@ -5,23 +5,27 @@ CURRENT_DIR ?= $(shell pwd)
 OUTPUT_DIR  ?= ./
 
 define get_branch
-	git branch | sed -n '/\* /s///p'
+$(shell git branch | sed -n '/\* /s///p')
 endef
 
 define get_tag
-	if [ -z "`git status --porcelain`" ]; then
+$(shell \
+	if [ -z "`git status --porcelain`" ]; then \
 		git describe \
 			--exact-match \
-			--tags HEAD 2>/dev/null || (>&2 echo "Tag has not been created.")
-	fi
+			--tags HEAD 2>/dev/null || (>&2 echo "Tag has not been created.") \
+	fi \
+)
 endef
 
 define get_tree_state
-	if [ -z "`git status --porcelain`" ]; then
-		echo "clean"
-	else
-		echo "dirty"
+$(shell \
+	if [ -z "`git status --porcelain`" ]; then \
+		echo "clean" \
+	else \
+		echo "dirty" \
 	fi
+)
 endef
 
 GIT_COMMIT     = $(shell git rev-parse HEAD)
@@ -34,7 +38,7 @@ ifeq (${GIT_TAG},)
 GIT_TAG = $(shell git rev-parse --abbrev-ref HEAD)
 endif
 
-CLIENT_VERSION    ?= $${GIT_BRANCH/release-/}
+CLIENT_VERSION    ?= $(shell echo $${GIT_BRANCH/release-/})
 
 ARGO_VERSION      ?= 2.3.0
 ARGO_API_GROUP    ?= argoproj.io
@@ -77,9 +81,11 @@ release: all changelog
 	python setup.py sdist bdist_wheel
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
 
-	git tag -a "v${CLIENT_VERSION}" -m "Release ${CLIENT_VERSION}"
 	git commit -a -m "Release ${CLIENT_VERSION}" --signoff
-	git push origin ${BRANCH}
+	git tag -a "v${CLIENT_VERSION}" -m "Release ${CLIENT_VERSION}"
+
+	git push origin ${GIT_BRANCH}
+	git push origin ${GIT_BRANCH} --tags
 
 	# twine upload --repository-url "${PYPI_REPOSITORY}" dist/* -u "${PYPI_USERNAME}" -p "${PYPI_PASSWORD}"
 
