@@ -54,7 +54,7 @@ We try to be consistent with Argo as much as possible and hence we created speci
 These can be then installed directly from github:
 
 ```
-pip install -e "git+git://github.com/CermakM/argo-client-python@v2.4.0#egg=argo-workflows"
+pip install -e "git+git://github.com/CermakM/argo-client-python@argo/v2.4.0#egg=argo-workflows"
 ```
 
 > :warning: The compatibility for such cases is not guaranteed
