@@ -54,7 +54,7 @@ OPENAPI_CONFIG = openapi/custom/config.json
 PYPI_REPOSITORY ?= https://upload.pypi.org/legacy/
 
 .PHONY: all
-all: clean spec preprocess client
+all: clean validate spec preprocess client
 
 
 .PHONY: clean
@@ -69,13 +69,6 @@ release: SHELL:=/bin/bash
 release: all changelog
 	- rm -rf build/ dist/
 
-	if [ "$(shell python -c \
-		"from semantic_version import validate; print( validate('${CLIENT_VERSION}') )" \
-	)" != "True" ]; then \
-		echo "Invalid version. Aborting."; \
-		exit 1; \
-	fi
-
 	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/__about__.py
 
 	python setup.py sdist bdist_wheel
@@ -88,6 +81,16 @@ release: all changelog
 	git push origin ${GIT_BRANCH} --tags
 
 	# twine upload --repository-url "${PYPI_REPOSITORY}" dist/* -u "${PYPI_USERNAME}" -p "${PYPI_PASSWORD}"
+
+validate:
+	@echo "Validating version '${CLIENT_VERSION}' on branch '{GIT_BRANCH}'"
+
+	if [ "$(shell python -c \
+		"from semantic_version import validate; print( validate('${CLIENT_VERSION}') )" \
+	)" != "True" ]; then \
+		echo "Invalid version. Aborting."; \
+		exit 1; \
+	fi
 
 spec: 
 	# Make sure the folders exist
