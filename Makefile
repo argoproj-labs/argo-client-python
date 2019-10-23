@@ -66,8 +66,11 @@ clean:
 
 .PHONY: release
 release: SHELL:=/bin/bash
-release: all changelog
+release: all
 	- rm -rf build/ dist/
+	- git tag --delete "v${CLIENT_VERSION}"
+
+	$(MAKE) changelog
 
 	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/__about__.py
 
@@ -75,8 +78,6 @@ release: all changelog
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
 
 	git commit -a -m ":tada: Release $${CLIENT_VERSION:0:3}" --signoff
-
-	git tag --delete "v${CLIENT_VERSION}"
 	git tag -a "v${CLIENT_VERSION}" -m "Release $${CLIENT_VERSION:0:3}"
 
 validate:
