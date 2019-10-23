@@ -4,15 +4,39 @@ PACKAGE_DESCRIPTION = Python client for Argo Workflows
 CURRENT_DIR ?= $(shell pwd)
 OUTPUT_DIR  ?= ./
 
+define get_branch
+	git branch | sed -n '/\* /s///p'
+endef
+
+define get_tag
+	if [ -z "`git status --porcelain`" ]; then
+		git describe \
+			--exact-match \
+			--tags HEAD 2>/dev/null || (>&2 echo "Tag has not been created.")
+	fi
+endef
+
+define get_tree_state
+	if [ -z "`git status --porcelain`" ]; then
+		echo "clean"
+	else
+		echo "dirty"
+	fi
+endef
+
 GIT_COMMIT     = $(shell git rev-parse HEAD)
-GIT_TAG        = $(shell if [ -z "`git status --porcelain`" ]; then git describe --exact-match --tags HEAD 2>/dev/null; fi)
-GIT_TREE_STATE = $(shell if [ -z "`git status --porcelain`" ]; then echo "clean" ; else echo "dirty"; fi)
+
+GIT_BRANCH     = $(call get_branch)
+GIT_TAG        = $(call get_tag)
+GIT_TREE_STATE = $(call get_tree_state)
 
 ifeq (${GIT_TAG},)
 GIT_TAG = $(shell git rev-parse --abbrev-ref HEAD)
 endif
 
-ARGO_VERSION      ?= $${GIT_TAG/argo\//}
+CLIENT_VERSION    ?= $${GIT_BRANCH/release-/}
+
+ARGO_VERSION      ?= 2.3.0
 ARGO_API_GROUP    ?= argoproj.io
 ARGO_API_VERSION  ?= v1alpha1
 ARGO_OPENAPI_SPEC  = openapi/specs/argo-${ARGO_VERSION}.json
@@ -23,11 +47,11 @@ KUBERNETES_OPENAPI_SPEC = openapi/specs/kubernetes-${KUBERNETES_BRANCH}.json
 OPENAPI_SPEC   = openapi/swagger.json
 OPENAPI_CONFIG = openapi/custom/config.json
 
-CLIENT_VERSION = ${ARGO_VERSION}
-
+PYPI_REPOSITORY ?= https://upload.pypi.org/legacy/
 
 .PHONY: all
-all: generate
+all: clean spec preprocess client
+
 
 .PHONY: clean
 clean:
@@ -35,6 +59,29 @@ clean:
 	-rm -r ${OUTPUT_DIR}/docs/
 
 	pushd openapi/ ; git clean -d --force ; popd
+
+.PHONY: release
+release: SHELL:=/bin/bash
+release: all changelog
+	- rm -rf build/ dist/
+
+	if [ "$(shell python -c \
+		"from semantic_version import validate; print( validate('${CLIENT_VERSION}') )" \
+	)" != "True" ]; then \
+		echo "Invalid version. Aborting."; \
+		exit 1; \
+	fi
+
+	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/__about__.py
+
+	python setup.py sdist bdist_wheel
+	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
+
+	git tag -a "v${CLIENT_VERSION}" -m "Release ${CLIENT_VERSION}"
+	git commit -a -m "Release ${CLIENT_VERSION}" --signoff
+	git push origin ${BRANCH}
+
+	# twine upload --repository-url "${PYPI_REPOSITORY}" dist/* -u "${PYPI_USERNAME}" -p "${PYPI_PASSWORD}"
 
 spec: 
 	# Make sure the folders exist
@@ -45,7 +92,7 @@ spec:
 		-o ${KUBERNETES_OPENAPI_SPEC}
 	
 	@echo "Collecting API spec for Kubernetes ${KUBERNETES_BRANCH}"
-	curl -sSL https://raw.githubusercontent.com/argoproj/argo/${ARGO_VERSION}/api/openapi-spec/swagger.json \
+	curl -sSL https://raw.githubusercontent.com/argoproj/argo/v${ARGO_VERSION}/api/openapi-spec/swagger.json \
 		-o ${ARGO_OPENAPI_SPEC}
 
 	@echo "Extracting definitions"
@@ -98,6 +145,5 @@ client:
 	PACKAGE_NAME=${PACKAGE_NAME} \
 		./scripts/generate_client.sh ${OUTPUT_DIR} ${OPENAPI_SPEC} ${OPENAPI_CONFIG}
 
-
-.PHONY: generate
-generate: clean spec preprocess client
+changelog:
+	RELEASE_VERSION=${CLIENT_VERSION} ./scripts/generate_changelog.sh
