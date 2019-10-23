@@ -74,8 +74,8 @@ release: all changelog
 	python setup.py sdist bdist_wheel
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
 
-	git commit -a -m "Release ${CLIENT_VERSION}" --signoff
-	git tag -a "v${CLIENT_VERSION}" -m "Release ${CLIENT_VERSION}"
+	git commit -a -m "Release $${CLIENT_VERSION:0:3}" --signoff
+	git tag -a "v${CLIENT_VERSION}" -m "Release $${CLIENT_VERSION:0:3}"
 
 	git push origin ${GIT_BRANCH}
 	git push origin ${GIT_BRANCH} --tags
