@@ -75,12 +75,9 @@ release: all changelog
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
 
 	git commit -a -m ":tada: Release $${CLIENT_VERSION:0:3}" --signoff
+
+	git tag --delete "v${CLIENT_VERSION}"
 	git tag -a "v${CLIENT_VERSION}" -m "Release $${CLIENT_VERSION:0:3}"
-
-	git push origin ${GIT_BRANCH}
-	git push origin ${GIT_BRANCH} --tags
-
-	# twine upload --repository-url "${PYPI_REPOSITORY}" dist/* -u "${PYPI_USERNAME}" -p "${PYPI_PASSWORD}"
 
 validate:
 	@echo "Validating version '${CLIENT_VERSION}' on branch '{GIT_BRANCH}'"
