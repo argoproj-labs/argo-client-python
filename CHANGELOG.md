@@ -2,6 +2,49 @@ Changelog
 =========
 
 
+1.0.0
+-----
+
+New
+~~~
+- Validate Makefile target. [Marek Cermak]
+- Makefile release target. [Marek Cermak]
+
+  Added release target to Makefile for easier versioning.
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Makefile
+  modified:   Pipfile
+- Script to generate CHANGELOG. [Marek Cermak]
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  new file:   .gitchangelog.rc
+  new file:   CHANGELOG.md
+  new file:   scripts/generate_changelog.sh
+  modified:   MANIFEST.in
+
+Changes
+~~~~~~~
+- Delete existing tag before creating changelog. [Marek Cermak]
+- Remove WorkflowStatus related paths. [Marek Cermak]
+
+  The WorkflowStatus is not defined for Argo v2.3.0 CRD
+- Do not issue git push on make release. [Marek Cermak]
+- Allow to import models from argo.workflows. [Marek Cermak]
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   README.md
+  modified:   argo/workflows/__init__.py
+- Release name contains only MAJOR.MINOR. [Marek Cermak]
+
+Fix
+~~~
+- Fix missing shells in Makefile. [Marek Cermak]
+
+
 v1.0.0a1 (2019-10-22)
 ---------------------
 - :tada: Release 1.0.0a1. [Marek Cermak]
