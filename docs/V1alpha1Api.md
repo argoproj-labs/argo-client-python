@@ -7,12 +7,9 @@ Method | HTTP request | Description
 [**create_namespaced_workflow**](V1alpha1Api.md#create_namespaced_workflow) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows | 
 [**delete_namespaced_workflow**](V1alpha1Api.md#delete_namespaced_workflow) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
 [**get_namespaced_workflow**](V1alpha1Api.md#get_namespaced_workflow) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
-[**get_namespaced_workflow_status**](V1alpha1Api.md#get_namespaced_workflow_status) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name}/status | 
 [**list_namespaced_workflows**](V1alpha1Api.md#list_namespaced_workflows) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows | 
 [**patch_namespaced_workflow**](V1alpha1Api.md#patch_namespaced_workflow) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
-[**patch_namespaced_workflow_status**](V1alpha1Api.md#patch_namespaced_workflow_status) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name}/status | 
 [**replace_namespaced_workflow**](V1alpha1Api.md#replace_namespaced_workflow) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
-[**replace_namespaced_workflow_status**](V1alpha1Api.md#replace_namespaced_workflow_status) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name}/status | 
 
 
 # **create_namespaced_workflow**
@@ -170,55 +167,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_namespaced_workflow_status**
-> V1alpha1WorkflowStatus get_namespaced_workflow_status(namespace, name)
-
-
-
-read status of the specified namespace scoped Workflow.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import workflows.client
-from workflows.client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = workflows.client.V1alpha1Api()
-namespace = 'namespace_example' # str | The custom resource's namespace
-name = 'name_example' # str | Unique Workflow name
-
-try:
-    api_response = api_instance.get_namespaced_workflow_status(namespace, name)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling V1alpha1Api->get_namespaced_workflow_status: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**| The custom resource&#39;s namespace | 
- **name** | **str**| Unique Workflow name | 
-
-### Return type
-
-[**V1alpha1WorkflowStatus**](V1alpha1WorkflowStatus.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/json, application/yaml, application/vnd.kubernetes.protobuf
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **list_namespaced_workflows**
 > V1alpha1WorkflowList list_namespaced_workflows(namespace, field_selector=field_selector, label_selector=label_selector, resource_version=resource_version, timeout_seconds=timeout_seconds, watch=watch)
 
@@ -327,57 +275,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **patch_namespaced_workflow_status**
-> object patch_namespaced_workflow_status(namespace, name, body)
-
-
-
-partially update status of the specified namespace scoped Workflow.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import workflows.client
-from workflows.client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = workflows.client.V1alpha1Api()
-namespace = 'namespace_example' # str | The custom resource's namespace
-name = 'name_example' # str | Unique Workflow name
-body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | 
-
-try:
-    api_response = api_instance.patch_namespaced_workflow_status(namespace, name, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling V1alpha1Api->patch_namespaced_workflow_status: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**| The custom resource&#39;s namespace | 
- **name** | **str**| Unique Workflow name | 
- **body** | [**V1alpha1Workflow**](V1alpha1Workflow.md)|  | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/merge-patch+json
- - **Accept**: application/json, application/yaml, application/vnd.kubernetes.protobuf
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **replace_namespaced_workflow**
 > object replace_namespaced_workflow(namespace, name, body)
 
@@ -426,57 +323,6 @@ No authorization required
 
  - **Content-Type**: */*
  - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **replace_namespaced_workflow_status**
-> object replace_namespaced_workflow_status(namespace, name, body)
-
-
-
-replace status of the specified namespace scoped Workflow.
-
-### Example
-```python
-from __future__ import print_function
-import time
-import workflows.client
-from workflows.client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = workflows.client.V1alpha1Api()
-namespace = 'namespace_example' # str | The custom resource's namespace
-name = 'name_example' # str | Unique Workflow name
-body = workflows.client.V1alpha1WorkflowStatus() # V1alpha1WorkflowStatus | 
-
-try:
-    api_response = api_instance.replace_namespaced_workflow_status(namespace, name, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling V1alpha1Api->replace_namespaced_workflow_status: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **namespace** | **str**| The custom resource&#39;s namespace | 
- **name** | **str**| Unique Workflow name | 
- **body** | [**V1alpha1WorkflowStatus**](V1alpha1WorkflowStatus.md)|  | 
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/json, application/yaml, application/vnd.kubernetes.protobuf
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
