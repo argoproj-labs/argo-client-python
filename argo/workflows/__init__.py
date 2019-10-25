@@ -2,6 +2,7 @@
 
 from argo.workflows import client
 from argo.workflows import config
+from argo.workflows import watch
 
 from argo.workflows.client import models
 
