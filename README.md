@@ -5,7 +5,7 @@ Python client for Argo Workflows
 ## Installation
 
 ```bash
-pip install argo
+pip install argo-workflows
 ```
 
 ## Usage
@@ -64,7 +64,7 @@ pip install -e "git+git://github.com/CermakM/argo-client-python@argo/v2.4.0#egg=
 
 If you wish to generate code yourself, you can do so by running `make generate` with the `ARGO_VERSION` environment variable being set to the you want to generate the client for.
 
-#### Before 
+#### Before
 
 in the Makefile:
 
