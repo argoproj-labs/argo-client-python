@@ -90,14 +90,14 @@ validate:
 		exit 1; \
 	fi
 
-spec: 
+spec:
 	# Make sure the folders exist
 	mkdir -p openapi/specs/
 
 	@echo "Collecting API spec for Argo ${ARGO_VERSION}"
 	curl -sSL https://raw.githubusercontent.com/kubernetes/kubernetes/${KUBERNETES_BRANCH}/api/openapi-spec/swagger.json \
 		-o ${KUBERNETES_OPENAPI_SPEC}
-	
+
 	@echo "Collecting API spec for Kubernetes ${KUBERNETES_BRANCH}"
 	curl -sSL https://raw.githubusercontent.com/argoproj/argo/v${ARGO_VERSION}/api/openapi-spec/swagger.json \
 		-o ${ARGO_OPENAPI_SPEC}
@@ -132,7 +132,7 @@ spec:
 		openapi/paths.json \
 		openapi/definitions.json \
 		> ${OPENAPI_SPEC}
-	
+
 
 preprocess:
 	@echo "Preprocessing API specs"
