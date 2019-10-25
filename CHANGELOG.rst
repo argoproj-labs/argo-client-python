@@ -2,20 +2,27 @@ Changelog
 =========
 
 
-1.0.0
+1.1.0
 -----
 
 New
 ~~~
-- Validate Makefile target. [Marek Cermak]
-- Makefile release target. [Marek Cermak]
+- Support for event streaming. [Marek Cermak]
 
-  Added release target to Makefile for easier versioning.
+  Argo now implements kubernetes Watch.
 
   Signed-off-by: Marek Cermak <macermak@redhat.com>
 
-  modified:   Makefile
-  modified:   Pipfile
+  modified:   argo/workflows/__init__.py
+  new file:   argo/workflows/watch/__init__.py
+
+
+v1.0.0 (2019-10-23)
+-------------------
+
+New
+~~~
+- Validate Makefile target. [Marek Cermak]
 - Script to generate CHANGELOG. [Marek Cermak]
 
   Signed-off-by: Marek Cermak <macermak@redhat.com>
@@ -31,14 +38,12 @@ Changes
 - Remove WorkflowStatus related paths. [Marek Cermak]
 
   The WorkflowStatus is not defined for Argo v2.3.0 CRD
-- Do not issue git push on make release. [Marek Cermak]
 - Allow to import models from argo.workflows. [Marek Cermak]
 
   Signed-off-by: Marek Cermak <macermak@redhat.com>
 
   modified:   README.md
   modified:   argo/workflows/__init__.py
-- Release name contains only MAJOR.MINOR. [Marek Cermak]
 
 Fix
 ~~~
@@ -47,7 +52,6 @@ Fix
 
 v1.0.0a1 (2019-10-22)
 ---------------------
-- :tada: Release 1.0.0a1. [Marek Cermak]
 - Added TemplateRef definition. [Marek Cermak]
 
   - Argo 2.3.0 misses TemplateRef schema definition
@@ -235,7 +239,6 @@ v1.0.0a1 (2019-10-22)
   renamed:    argo/client/rest.py -> argo/workflows/client/rest.py
   renamed:    argo/config/__init__.py -> argo/workflows/config/__init__.py
 - Update README.md. [Marek Cermak]
-- Merge branch 'v2.4.0' [Marek Cermak]
 - Generate client for Argo v2.4.0. [Marek Cermak]
 - Setup. [Marek Cermak]
 
