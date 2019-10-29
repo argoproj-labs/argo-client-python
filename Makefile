@@ -40,12 +40,12 @@ endif
 
 CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${v:0:5}")
 
-ARGO_VERSION      ?= 2.3.0
+ARGO_VERSION      ?= 2.4.0
 ARGO_API_GROUP    ?= argoproj.io
 ARGO_API_VERSION  ?= v1alpha1
 ARGO_OPENAPI_SPEC  = openapi/specs/argo-${ARGO_VERSION}.json
 
-KUBERNETES_BRANCH      ?= release-1.12
+KUBERNETES_BRANCH      ?= release-1.14
 KUBERNETES_OPENAPI_SPEC = openapi/specs/kubernetes-${KUBERNETES_BRANCH}.json
 
 OPENAPI_SPEC   = openapi/swagger.json
