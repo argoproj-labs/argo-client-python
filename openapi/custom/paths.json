@@ -100,9 +100,9 @@
 				],
 				"responses": {
 					"201": {
-						"description": "Created",
+						"description": "OK",
 						"schema": {
-							"type": "object"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
 						}
 					},
 					"401": {
@@ -276,7 +276,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"type": "object"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
 						}
 					},
 					"401": {
@@ -385,9 +385,9 @@
 				],
 				"responses": {
 					"201": {
-						"description": "Created",
+						"description": "OK",
 						"schema": {
-							"type": "object"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowTemplate"
 						}
 					},
 					"401": {
@@ -523,7 +523,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"type": "object"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowTemplate"
 						}
 					},
 					"401": {
@@ -561,7 +561,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"type": "object"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowTemplate"
 						}
 					},
 					"401": {
