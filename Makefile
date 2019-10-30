@@ -124,9 +124,9 @@ spec:
 
 	@echo "Creating OpenAPI spec"
 	jq -s '.[0] + .[1] + .[2] + .[3] + .[4]' \
-		openapi/custom/security.json \
 		openapi/custom/version.json \
 		openapi/info.json \
+		openapi/custom/security.json \
 		openapi/paths.json \
 		openapi/definitions.json \
 		> ${OPENAPI_SPEC}
