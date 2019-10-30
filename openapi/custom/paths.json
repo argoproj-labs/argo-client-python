@@ -4,7 +4,7 @@
 			"parameters": [
 				{
 					"name": "namespace",
-					"description": "The custom resource's namespace",
+					"description": "The Workflow's namespace",
 					"required": true,
 					"type": "string",
 					"in": "path"
@@ -286,11 +286,144 @@
 			}
 		}
 	},
+	"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflows/{name}/status": {
+		"parameters": [
+			{
+				"name": "namespace",
+				"in": "path",
+				"required": true,
+				"description": "The Workflow's namespace",
+				"type": "string"
+			},
+			{
+				"name": "name",
+				"in": "path",
+				"required": true,
+				"description": "the Workflow's name",
+				"type": "string"
+			}
+		],
+		"get": {
+			"description": "read status of the specified namespace scoped Workflow",
+			"consumes": [
+				"*/*"
+			],
+			"produces": [
+				"application/json",
+				"application/yaml",
+				"application/vnd.kubernetes.protobuf"
+			],
+			"schemes": [
+				"https"
+			],
+			"tags": [
+				"custom_objects"
+			],
+			"operationId": "get_namespaced_workflow_status",
+			"responses": {
+				"200": {
+					"description": "OK",
+					"schema": {
+						"type": "object"
+					}
+				},
+				"401": {
+					"description": "Unauthorized"
+				}
+			}
+		},
+		"put": {
+			"description": "replace status of the specified namespace scoped Workflow",
+			"consumes": [
+				"*/*"
+			],
+			"produces": [
+				"application/json",
+				"application/yaml",
+				"application/vnd.kubernetes.protobuf"
+			],
+			"schemes": [
+				"https"
+			],
+			"tags": [
+				"custom_objects"
+			],
+			"operationId": "replace_namespaced_workflow_status",
+			"parameters": [
+				{
+					"name": "body",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"type": "object"
+					}
+				}
+			],
+			"responses": {
+				"200": {
+					"description": "OK",
+					"schema": {
+						"type": "object"
+					}
+				},
+				"201": {
+					"description": "Created",
+					"schema": {
+						"type": "object"
+					}
+				},
+				"401": {
+					"description": "Unauthorized"
+				}
+			}
+		},
+		"patch": {
+			"description": "partially update status of the specified namespace scoped Workflow",
+			"consumes": [
+				"application/json-patch+json",
+				"application/merge-patch+json"
+			],
+			"produces": [
+				"application/json",
+				"application/yaml",
+				"application/vnd.kubernetes.protobuf"
+			],
+			"schemes": [
+				"https"
+			],
+			"tags": [
+				"custom_objects"
+			],
+			"operationId": "patch_namespaced_workflow_status",
+			"parameters": [
+				{
+					"name": "body",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"description": "The JSON schema of the Resource to patch.",
+						"type": "object"
+					}
+				}
+			],
+			"responses": {
+				"200": {
+					"description": "OK",
+					"schema": {
+						"type": "object"
+					}
+				},
+				"401": {
+					"description": "Unauthorized"
+				}
+			}
+		}
+	},
 	"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/workflowtemplates": {
 		"parameters": [
 			{
 				"name": "namespace",
-				"description": "The custom resource's namespace",
+				"description": "The WorkflowTemplate's namespace",
 				"required": true,
 				"type": "string",
 				"in": "path"
