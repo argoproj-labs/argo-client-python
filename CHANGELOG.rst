@@ -2,8 +2,86 @@ Changelog
 =========
 
 
-1.2.0
+2.0.0
 -----
+
+New
+~~~
+- Argo v2.4.0. [Marek Cermak]
+
+  Added new models and generated client for Argo 2.4.0
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  new file:   docs/V1alpha1WorkflowTemplateSpec.md
+  new file:   docs/V1alpha1WorkflowTemplateList.md
+  new file:   docs/V1alpha1WorkflowTemplate.md
+  new file:   docs/V1alpha1PodGC.md
+  new file:   docs/V1alpha1ExecutorConfig.md
+  new file:   docs/V1alpha1ArtifactRepositoryRef.md
+  new file:   argo/workflows/client/models/v1alpha1_workflow_template_spec.py
+  new file:   argo/workflows/client/models/v1alpha1_workflow_template_list.py
+  new file:   argo/workflows/client/models/v1alpha1_workflow_template.py
+  new file:   argo/workflows/client/models/v1alpha1_pod_gc.py
+  new file:   argo/workflows/client/models/v1alpha1_executor_config.py
+  new file:   argo/workflows/client/models/v1alpha1_artifact_repository_ref.py
+  modified:   docs/V1alpha1WorkflowStep.md
+  modified:   docs/V1alpha1WorkflowSpec.md
+  modified:   docs/V1alpha1UserContainer.md
+  modified:   docs/V1alpha1Template.md
+  modified:   docs/V1alpha1ScriptTemplate.md
+  modified:   docs/V1alpha1S3Bucket.md
+  modified:   docs/V1alpha1S3Artifact.md
+  modified:   docs/V1alpha1ResourceTemplate.md
+  modified:   docs/V1alpha1GitArtifact.md
+  modified:   docs/V1alpha1DAGTemplate.md
+  modified:   docs/V1alpha1DAGTask.md
+  modified:   docs/V1alpha1Api.md
+  modified:   argo/workflows/client/rest.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_step.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_status.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_spec.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_list.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow.py
+  modified:   argo/workflows/client/models/v1alpha1_value_from.py
+  modified:   argo/workflows/client/models/v1alpha1_user_container.py
+  modified:   argo/workflows/client/models/v1alpha1_template_ref.py
+  modified:   argo/workflows/client/models/v1alpha1_template.py
+  modified:   argo/workflows/client/models/v1alpha1_sequence.py
+  modified:   argo/workflows/client/models/v1alpha1_script_template.py
+  modified:   argo/workflows/client/models/v1alpha1_s3_bucket.py
+  modified:   argo/workflows/client/models/v1alpha1_s3_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_retry_strategy.py
+  modified:   argo/workflows/client/models/v1alpha1_resource_template.py
+  modified:   argo/workflows/client/models/v1alpha1_raw_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_parameter.py
+  modified:   argo/workflows/client/models/v1alpha1_outputs.py
+  modified:   argo/workflows/client/models/v1alpha1_node_status.py
+  modified:   argo/workflows/client/models/v1alpha1_metadata.py
+  modified:   argo/workflows/client/models/v1alpha1_inputs.py
+  modified:   argo/workflows/client/models/v1alpha1_http_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_hdfs_krb_config.py
+  modified:   argo/workflows/client/models/v1alpha1_hdfs_config.py
+  modified:   argo/workflows/client/models/v1alpha1_hdfs_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_git_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_dag_template.py
+  modified:   argo/workflows/client/models/v1alpha1_dag_task.py
+  modified:   argo/workflows/client/models/v1alpha1_continue_on.py
+  modified:   argo/workflows/client/models/v1alpha1_artifactory_auth.py
+  modified:   argo/workflows/client/models/v1alpha1_artifactory_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_artifact_location.py
+  modified:   argo/workflows/client/models/v1alpha1_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_arguments.py
+  modified:   argo/workflows/client/models/v1alpha1_archive_strategy.py
+  modified:   argo/workflows/client/models/__init__.py
+  modified:   argo/workflows/client/configuration.py
+  modified:   argo/workflows/client/api_client.py
+  modified:   argo/workflows/client/api/v1alpha1_api.py
+  modified:   argo/workflows/client/__init__.py
+
+
+v1.2.0 (2019-10-30)
+-------------------
 
 Fix
 ~~~
