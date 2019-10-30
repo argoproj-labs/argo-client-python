@@ -77,8 +77,8 @@ release: all
 	python setup.py sdist bdist_wheel
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
 
-	git commit -a -m ":tada: Release $${CLIENT_VERSION:0:3}" --signoff
-	git tag -a "v${CLIENT_VERSION}" -m "Release $${CLIENT_VERSION:0:3}"
+	v=${CLIENT_VERSION}; git commit -a -m ":tada: Release $${v:0:3}" --signoff
+	v=${CLIENT_VERSION}; git tag -a "v${CLIENT_VERSION}" -m "Release $${v:0:3}"
 
 validate:
 	@echo "Validating version '${CLIENT_VERSION}' on branch '{GIT_BRANCH}'"

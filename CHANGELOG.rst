@@ -2,8 +2,23 @@ Changelog
 =========
 
 
-1.1.0
+1.2.0
 -----
+
+Fix
+~~~
+- Added security definitions. [Marek Cermak]
+
+  Fixes missing Auth settings and authentication via bearer token.
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Makefile
+  new file:   openapi/custom/security.json
+
+
+v1.1.0 (2019-10-25)
+-------------------
 
 New
 ~~~
