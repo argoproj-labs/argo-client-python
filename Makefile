@@ -40,12 +40,12 @@ endif
 
 CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${v:0:5}")
 
-ARGO_VERSION      ?= 2.3.0
+ARGO_VERSION      ?= 2.4.0
 ARGO_API_GROUP    ?= argoproj.io
 ARGO_API_VERSION  ?= v1alpha1
 ARGO_OPENAPI_SPEC  = openapi/specs/argo-${ARGO_VERSION}.json
 
-KUBERNETES_BRANCH      ?= release-1.12
+KUBERNETES_BRANCH      ?= release-1.14
 KUBERNETES_OPENAPI_SPEC = openapi/specs/kubernetes-${KUBERNETES_BRANCH}.json
 
 OPENAPI_SPEC   = openapi/swagger.json
@@ -107,12 +107,9 @@ spec:
 		> openapi/definitions/argo.json
 
 	@echo "Merging API definitions"
-	jq -sS '.[0] * .[1] * .[2] * .[3] * .[4]' \
+	jq -sS '.[0] * .[1]' \
 		openapi/definitions/argo.json \
-		openapi/definitions/NodeStatus.json \
-		openapi/definitions/TemplateRef.json \
 		openapi/definitions/V1Time.json \
-		openapi/definitions/WorkflowStatus.json \
 		> openapi/definitions.json
 
 	@echo "Creating OpenAPI info"
@@ -127,9 +124,9 @@ spec:
 
 	@echo "Creating OpenAPI spec"
 	jq -s '.[0] + .[1] + .[2] + .[3] + .[4]' \
-		openapi/custom/security.json \
 		openapi/custom/version.json \
 		openapi/info.json \
+		openapi/custom/security.json \
 		openapi/paths.json \
 		openapi/definitions.json \
 		> ${OPENAPI_SPEC}

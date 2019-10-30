@@ -1,2 +1,2 @@
-kubernetes~=8.0
+kubernetes>=10.0
 mock
