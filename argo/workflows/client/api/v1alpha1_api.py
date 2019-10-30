@@ -119,7 +119,7 @@ class V1alpha1Api(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
             '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows', 'POST',
@@ -242,7 +242,7 @@ class V1alpha1Api(object):
             ['*/*'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
             '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name}', 'DELETE',
@@ -345,7 +345,7 @@ class V1alpha1Api(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
             '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name}', 'GET',
@@ -464,7 +464,7 @@ class V1alpha1Api(object):
             ['*/*'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
             '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows', 'GET',
@@ -579,7 +579,7 @@ class V1alpha1Api(object):
             ['application/json-patch+json', 'application/merge-patch+json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
             '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name}', 'PATCH',
@@ -694,7 +694,7 @@ class V1alpha1Api(object):
             ['*/*'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
             '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name}', 'PUT',

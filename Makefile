@@ -38,7 +38,7 @@ ifeq (${GIT_TAG},)
 GIT_TAG = $(shell git rev-parse --abbrev-ref HEAD)
 endif
 
-CLIENT_VERSION    ?= $(shell echo $${GIT_BRANCH/release-/})
+CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${v:0:5}")
 
 ARGO_VERSION      ?= 2.3.0
 ARGO_API_GROUP    ?= argoproj.io
@@ -77,8 +77,8 @@ release: all
 	python setup.py sdist bdist_wheel
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
 
-	git commit -a -m ":tada: Release $${CLIENT_VERSION:0:3}" --signoff
-	git tag -a "v${CLIENT_VERSION}" -m "Release $${CLIENT_VERSION:0:3}"
+	v=${CLIENT_VERSION}; git commit -a -m ":tada: Release $${v:0:3}" --signoff
+	v=${CLIENT_VERSION}; git tag -a "v${CLIENT_VERSION}" -m "Release $${v:0:3}"
 
 validate:
 	@echo "Validating version '${CLIENT_VERSION}' on branch '{GIT_BRANCH}'"
@@ -126,7 +126,8 @@ spec:
 		> openapi/paths.json
 
 	@echo "Creating OpenAPI spec"
-	jq -s '.[0] + .[1] + .[2] + .[3]' \
+	jq -s '.[0] + .[1] + .[2] + .[3] + .[4]' \
+		openapi/custom/security.json \
 		openapi/custom/version.json \
 		openapi/info.json \
 		openapi/paths.json \
