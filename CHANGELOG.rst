@@ -2,8 +2,16 @@ Changelog
 =========
 
 
-2.0.0
+2.1.0
 -----
+
+Fix
+~~~
+- Fix new_client_from_config() [Marek Cermak]
+
+
+v2.0.0 (2019-10-30)
+-------------------
 
 New
 ~~~
