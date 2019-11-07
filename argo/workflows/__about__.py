@@ -15,7 +15,7 @@ __title__ = "argo-workflows"
 __summary__ = "Client for Argo Workflows"
 __uri__ = "https://github.com/CermakM/argo-client-python"
 
-__version__ = "1.2.0"
+__version__ = "1.3.0"
 
 __author__ = "Marek Cermak"
 __email__ = "macermak@redhat.com"
