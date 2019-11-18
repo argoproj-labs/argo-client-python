@@ -64,6 +64,22 @@ clean:
 
 	pushd openapi/ ; git clean -d --force ; popd
 
+.PHONY: patch
+patch: SHELL:=/bin/bash
+patch: all
+	- rm -rf build/ dist/
+	- git tag --delete "v${CLIENT_VERSION}"
+
+	$(MAKE) changelog
+
+	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/__about__.py
+
+	python setup.py sdist bdist_wheel
+	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
+
+	git commit -a -m ":wrench: Patch ${CLIENT_VERSION}" --signoff
+	git tag -a "v${CLIENT_VERSION}" -m "Patch ${CLIENT_VERSION}"
+
 .PHONY: release
 release: SHELL:=/bin/bash
 release: all
