@@ -157,6 +157,11 @@ preprocess:
 	# Replace empty references
 	sed -i -e '/"$$ref"/ s/io.argoproj.workflow.//' ${OPENAPI_SPEC}
 
+	# Patch DAGTask template requirement
+	# This is an unpleasant workaround, since OpenAPI 2.0 does not allow `oneOf`
+	jq -r '.definitions."v1alpha1.DAGTask".required = ["name"]' ${OPENAPI_SPEC} |\
+	sponge ${OPENAPI_SPEC}
+
 
 client:
 	@echo "Generating Argo ${ARGO_VERSION} client"
