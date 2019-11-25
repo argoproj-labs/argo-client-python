@@ -91,6 +91,9 @@ class V1alpha1RetryStrategy(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(V1alpha1RetryStrategy, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

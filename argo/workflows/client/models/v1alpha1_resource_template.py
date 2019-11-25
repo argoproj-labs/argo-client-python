@@ -233,6 +233,9 @@ class V1alpha1ResourceTemplate(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(V1alpha1ResourceTemplate, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

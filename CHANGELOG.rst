@@ -2,12 +2,24 @@ Changelog
 =========
 
 
-2.1.1
+2.1.2
 -----
 
 Fix
 ~~~
+- Patch DagTask template requirement. [Marek Cermak]
+
+
+v2.1.1 (2019-11-18)
+-------------------
+
+Fix
+~~~
 - Import all models from Kubernetes. [Marek Cermak]
+
+Other
+~~~~~
+- :wrench: Patch 2.1.1. [Marek Cermak]
 
 
 v1.3.0 (2019-11-07)

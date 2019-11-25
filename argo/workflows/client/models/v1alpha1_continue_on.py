@@ -115,6 +115,9 @@ class V1alpha1ContinueOn(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(V1alpha1ContinueOn, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -92,6 +92,9 @@ class V1alpha1HTTPArtifact(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(V1alpha1HTTPArtifact, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
