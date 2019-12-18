@@ -2,12 +2,16 @@ Changelog
 =========
 
 
-2.1.2
------
+v2.1.2 (2019-11-25)
+-------------------
 
 Fix
 ~~~
 - Patch DagTask template requirement. [Marek Cermak]
+
+Other
+~~~~~
+- :wrench: Patch 2.1.2. [Marek Cermak]
 
 
 v2.1.1 (2019-11-18)
