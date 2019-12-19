@@ -60,8 +60,16 @@ _patch() {
 _cleanup() {
     local output_dir="$1"
 
+    echo "--- Sync source files with the argo/ directory."
+
+    local source="$(realpath $output_dir/${PACKAGE_NAME%%.*})"
     # nest the generated code under argo/ directory
-    mv $output_dir/${PACKAGE_NAME%%.*}/* $output_dir/argo/${PACKAGE_NAME%%.*}
+    rsync \
+        --link-dest="$source" \
+        --recursive \
+        --remove-source-files \
+        --verbose \
+        "$source" "$output_dir/argo/"
 
     echo "--- Cleanup."
     {
@@ -102,7 +110,7 @@ argo::generate::generate_client() {
 		-DpackageName=${PACKAGE_NAME} \
 		-DpackageVersion=${CLIENT_VERSION}
 
-    CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/workflows" )
+    CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/workflows/" )
 
     _patch   $output_dir
     _cleanup $output_dir

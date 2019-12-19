@@ -59,8 +59,10 @@ all: clean validate spec preprocess client
 
 .PHONY: clean
 clean:
-	-rm -r ${OUTPUT_DIR}/argo/workflows/client
+	-find  ${OUTPUT_DIR}/argo/workflows/client/* -maxdepth 1 -not -name "__*__.py" -exec rm -r {} \;
 	-rm -r ${OUTPUT_DIR}/docs/
+	-rm -r ${OUTPUT_DIR}/workflows/
+	-rm -r ${OUTPUT_DIR}/${PACKAGE_NAME}/
 
 	pushd openapi/ ; git clean -d --force ; popd
 
@@ -72,7 +74,7 @@ patch: all
 
 	$(MAKE) changelog
 
-	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/__about__.py
+	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/client/__about__.py
 
 	python setup.py sdist bdist_wheel
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
@@ -88,7 +90,7 @@ release: all
 
 	$(MAKE) changelog
 
-	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/__about__.py
+	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/client/__about__.py
 
 	python setup.py sdist bdist_wheel
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)

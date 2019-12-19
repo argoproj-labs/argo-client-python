@@ -6,4 +6,4 @@ from argo.workflows import watch
 
 from argo.workflows.client import models
 
-from argo.workflows.__about__ import __version__
+from argo.workflows.client.__about__ import __version__ as __client_version__
