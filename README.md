@@ -27,6 +27,26 @@ v1alpha1 = V1alpha1Api()
 wfs = v1alpha1.list_namespaced_workflows(namespace="argo")
 ```
 
+To submit a `Workflow`, one would simply load it from a YAML<sup>*</sup> and submit it as such:
+
+```python
+import requests
+import yaml
+
+namespace = "argo"
+
+# hello-world example
+resp = requests.get("https://raw.githubusercontent.com/argoproj/argo/master/examples/hello-world.yaml")
+resp.raise_for_status()
+
+manifest: dict = yaml.safe_load(resp.text)
+
+# Submit the Workflow to the `argo` namespace
+v1alpha1.create_namespaced_workflow(namespace, manifest)
+```
+
+<sup>*</sup> When working on a higher level of abstraction, check out the [Argo Python DSL](https://github.com/CermakM/argo-python-dsl)
+
 ## Versioning
 
 The client is generated from the Argo and Kubernetes OpenAPI specification.
