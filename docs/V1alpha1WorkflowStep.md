@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **arguments** | [**V1alpha1Arguments**](V1alpha1Arguments.md) | Arguments hold arguments to the template | [optional] 
 **continue_on** | [**V1alpha1ContinueOn**](V1alpha1ContinueOn.md) | ContinueOn makes argo to proceed with the following step even if this step fails. Errors and Failed states can be specified | [optional] 
 **name** | **str** | Name of the step | [optional] 
+**on_exit** | **str** | OnExit is a template reference which is invoked at the end of the template, irrespective of the success, failure, or error of the primary template. | [optional] 
 **template** | **str** | Template is the name of the template to execute as the step | [optional] 
 **template_ref** | [**V1alpha1TemplateRef**](V1alpha1TemplateRef.md) | TemplateRef is the reference to the template resource to execute as the step. | [optional] 
 **when** | **str** | When is an expression in which the step should conditionally execute | [optional] 
