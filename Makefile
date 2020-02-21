@@ -43,7 +43,9 @@ CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${
 ARGO_VERSION      ?= 2.5.0
 ARGO_API_GROUP    ?= argoproj.io
 ARGO_API_VERSION  ?= v1alpha1
+
 ARGO_OPENAPI_SPEC  = openapi/specs/argo-${ARGO_VERSION}.json
+ARGO_SERVER_SPEC   = openapi/specs/argo-server-${ARGO_VERSION}.json
 
 KUBERNETES_BRANCH      ?= release-1.14
 KUBERNETES_OPENAPI_SPEC = openapi/specs/kubernetes-${KUBERNETES_BRANCH}.json
@@ -110,43 +112,58 @@ validate:
 
 spec:
 	# Make sure the folders exist
-	mkdir -p openapi/specs/
+	mkdir -p openapi/specs/ openapi/prep/
 
-	@echo "Collecting API spec for Argo ${ARGO_VERSION}"
+	@echo "Collecting API spec for Kubernetes ${KUBERNETES_BRANCH}"
 	curl -sSL https://raw.githubusercontent.com/kubernetes/kubernetes/${KUBERNETES_BRANCH}/api/openapi-spec/swagger.json \
 		-o ${KUBERNETES_OPENAPI_SPEC}
 
-	@echo "Collecting API spec for Kubernetes ${KUBERNETES_BRANCH}"
+	@echo "Collecting API spec for Argo ${ARGO_VERSION}"
 	curl -sSL https://raw.githubusercontent.com/argoproj/argo/v${ARGO_VERSION}/api/openapi-spec/swagger.json \
 		-o ${ARGO_OPENAPI_SPEC}
+
+	@echo "Collecting API spec for Argo Server ${ARGO_VERSION}"
+	# FIXME: Replace with the following when it is part of stable or RC
+	# curl -sSL https://raw.githubusercontent.com/argoproj/argo/v${ARGO_VERSION}/api/argo-server/swagger.json
+	curl -sSL https://raw.githubusercontent.com/argoproj/argo/master/api/argo-server/swagger.json \
+		-o ${ARGO_SERVER_SPEC}
 
 	@echo "Extracting definitions"
 	jq -r '{ definitions: .definitions }' ${ARGO_OPENAPI_SPEC} \
 		> openapi/definitions/argo.json
 
+	@echo "Extracting Argo Server paths"
+	jq -r '{ paths: .paths }' ${ARGO_SERVER_SPEC} \
+		> openapi/paths/argo.json
+
 	@echo "Merging API definitions"
 	jq -sS '.[0] * .[1]' \
 		openapi/definitions/argo.json \
 		openapi/definitions/V1Time.json \
-		> openapi/definitions.json
+		> openapi/prep/definitions.json
 
 	@echo "Creating OpenAPI info"
 	echo '{"info": {"title": "Argo", "description": "${PACKAGE_DESCRIPTION}", "version": "${ARGO_VERSION}"}}' | jq -r '.' \
-		> openapi/info.json
+		> openapi/prep/info.json
 
-	@echo "Process OpenAPI paths"
-	jinja2 openapi/custom/paths.json --format=json --strict \
+	@echo "Prepare Kubernetes OpenAPI paths"
+	jinja2 openapi/paths/kubernetes.json --format=json --strict \
 		-Dargo_api_group=${ARGO_API_GROUP} \
 		-Dargo_api_version=${ARGO_API_VERSION} \
-		> openapi/paths.json
+		> openapi/prep/paths.json
+
+	@echo "Merge Kubernetes and Argo OpenAPI paths"
+	jq -s '.[0] * .[1]' \
+		openapi/prep/paths.json \
+		openapi/paths/argo.json | sponge openapi/prep/paths.json
 
 	@echo "Creating OpenAPI spec"
 	jq -s '.[0] + .[1] + .[2] + .[3] + .[4]' \
 		openapi/custom/version.json \
-		openapi/info.json \
+		openapi/prep/info.json \
 		openapi/custom/security.json \
-		openapi/paths.json \
-		openapi/definitions.json \
+		openapi/prep/paths.json \
+		openapi/prep/definitions.json \
 		> ${OPENAPI_SPEC}
 
 
