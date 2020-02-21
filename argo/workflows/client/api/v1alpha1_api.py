@@ -45,8 +45,8 @@ class V1alpha1Api(object):
 
         :param async_req bool
         :param str namespace: The Workflow's namespace (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
-        :return: IoArgoprojCronworkflowV1alpha1Workflow
+        :param V1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
+        :return: V1alpha1Workflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -68,8 +68,8 @@ class V1alpha1Api(object):
 
         :param async_req bool
         :param str namespace: The Workflow's namespace (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
-        :return: IoArgoprojCronworkflowV1alpha1Workflow
+        :param V1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
+        :return: V1alpha1Workflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -129,7 +129,7 @@ class V1alpha1Api(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='IoArgoprojCronworkflowV1alpha1Workflow',  # noqa: E501
+            response_type='V1alpha1Workflow',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -724,7 +724,7 @@ class V1alpha1Api(object):
         :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
-        :return: IoArgoprojCronworkflowV1alpha1Workflow
+        :return: V1alpha1Workflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -747,7 +747,7 @@ class V1alpha1Api(object):
         :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
-        :return: IoArgoprojCronworkflowV1alpha1Workflow
+        :return: V1alpha1Workflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -807,7 +807,7 @@ class V1alpha1Api(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='IoArgoprojCronworkflowV1alpha1Workflow',  # noqa: E501
+            response_type='V1alpha1Workflow',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1037,7 +1037,7 @@ class V1alpha1Api(object):
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
         :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
-        :return: IoArgoprojCronworkflowV1alpha1WorkflowList
+        :return: V1alpha1WorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1064,7 +1064,7 @@ class V1alpha1Api(object):
         :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
         :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
         :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
-        :return: IoArgoprojCronworkflowV1alpha1WorkflowList
+        :return: V1alpha1WorkflowList
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1132,7 +1132,7 @@ class V1alpha1Api(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='IoArgoprojCronworkflowV1alpha1WorkflowList',  # noqa: E501
+            response_type='V1alpha1WorkflowList',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1390,7 +1390,7 @@ class V1alpha1Api(object):
         :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
+        :param V1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1414,7 +1414,7 @@ class V1alpha1Api(object):
         :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
+        :param V1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1735,8 +1735,8 @@ class V1alpha1Api(object):
         :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
-        :return: IoArgoprojCronworkflowV1alpha1Workflow
+        :param V1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
+        :return: V1alpha1Workflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1759,8 +1759,8 @@ class V1alpha1Api(object):
         :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
-        :return: IoArgoprojCronworkflowV1alpha1Workflow
+        :param V1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
+        :return: V1alpha1Workflow
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1830,7 +1830,7 @@ class V1alpha1Api(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='IoArgoprojCronworkflowV1alpha1Workflow',  # noqa: E501
+            response_type='V1alpha1Workflow',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

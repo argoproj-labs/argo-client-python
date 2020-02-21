@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **create_namespaced_cronworkflow**
-> IoArgoprojCronworkflowV1alpha1Workflow create_namespaced_cronworkflow(namespace, body)
+> V1alpha1Workflow create_namespaced_cronworkflow(namespace, body)
 
 
 
@@ -48,7 +48,7 @@ configuration.api_key['authorization'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
 namespace = 'namespace_example' # str | The Workflow's namespace
-body = workflows.client.IoArgoprojCronworkflowV1alpha1Workflow() # IoArgoprojCronworkflowV1alpha1Workflow | The JSON schema of the Workflow to create.
+body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to create.
 
 try:
     api_response = api_instance.create_namespaced_cronworkflow(namespace, body)
@@ -62,11 +62,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**| The Workflow&#39;s namespace | 
- **body** | [**IoArgoprojCronworkflowV1alpha1Workflow**](IoArgoprojCronworkflowV1alpha1Workflow.md)| The JSON schema of the Workflow to create. | 
+ **body** | [**V1alpha1Workflow**](V1alpha1Workflow.md)| The JSON schema of the Workflow to create. | 
 
 ### Return type
 
-[**IoArgoprojCronworkflowV1alpha1Workflow**](IoArgoprojCronworkflowV1alpha1Workflow.md)
+[**V1alpha1Workflow**](V1alpha1Workflow.md)
 
 ### Authorization
 
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_namespaced_cronworkflow**
-> IoArgoprojCronworkflowV1alpha1Workflow get_namespaced_cronworkflow(namespace, name)
+> V1alpha1Workflow get_namespaced_cronworkflow(namespace, name)
 
 
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IoArgoprojCronworkflowV1alpha1Workflow**](IoArgoprojCronworkflowV1alpha1Workflow.md)
+[**V1alpha1Workflow**](V1alpha1Workflow.md)
 
 ### Authorization
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_namespaced_cronworkflows**
-> IoArgoprojCronworkflowV1alpha1WorkflowList list_namespaced_cronworkflows(namespace, field_selector=field_selector, label_selector=label_selector, resource_version=resource_version, timeout_seconds=timeout_seconds, watch=watch)
+> V1alpha1WorkflowList list_namespaced_cronworkflows(namespace, field_selector=field_selector, label_selector=label_selector, resource_version=resource_version, timeout_seconds=timeout_seconds, watch=watch)
 
 
 
@@ -593,7 +593,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IoArgoprojCronworkflowV1alpha1WorkflowList**](IoArgoprojCronworkflowV1alpha1WorkflowList.md)
+[**V1alpha1WorkflowList**](V1alpha1WorkflowList.md)
 
 ### Authorization
 
@@ -757,7 +757,7 @@ configuration.api_key['authorization'] = 'YOUR_API_KEY'
 api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
-body = workflows.client.IoArgoprojCronworkflowV1alpha1Workflow() # IoArgoprojCronworkflowV1alpha1Workflow | The JSON schema of the Workflow to patch.
+body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to patch.
 
 try:
     api_response = api_instance.patch_namespaced_cronworkflow(namespace, name, body)
@@ -772,7 +772,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**| The custom resource&#39;s namespace | 
  **name** | **str**| Unique Workflow name | 
- **body** | [**IoArgoprojCronworkflowV1alpha1Workflow**](IoArgoprojCronworkflowV1alpha1Workflow.md)| The JSON schema of the Workflow to patch. | 
+ **body** | [**V1alpha1Workflow**](V1alpha1Workflow.md)| The JSON schema of the Workflow to patch. | 
 
 ### Return type
 
@@ -904,7 +904,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replace_namespaced_cronworkflow**
-> IoArgoprojCronworkflowV1alpha1Workflow replace_namespaced_cronworkflow(namespace, name, body)
+> V1alpha1Workflow replace_namespaced_cronworkflow(namespace, name, body)
 
 
 
@@ -928,7 +928,7 @@ configuration.api_key['authorization'] = 'YOUR_API_KEY'
 api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
-body = workflows.client.IoArgoprojCronworkflowV1alpha1Workflow() # IoArgoprojCronworkflowV1alpha1Workflow | The JSON schema of the Workflow to replace.
+body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to replace.
 
 try:
     api_response = api_instance.replace_namespaced_cronworkflow(namespace, name, body)
@@ -943,11 +943,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**| The custom resource&#39;s namespace | 
  **name** | **str**| Unique Workflow name | 
- **body** | [**IoArgoprojCronworkflowV1alpha1Workflow**](IoArgoprojCronworkflowV1alpha1Workflow.md)| The JSON schema of the Workflow to replace. | 
+ **body** | [**V1alpha1Workflow**](V1alpha1Workflow.md)| The JSON schema of the Workflow to replace. | 
 
 ### Return type
 
-[**IoArgoprojCronworkflowV1alpha1Workflow**](IoArgoprojCronworkflowV1alpha1Workflow.md)
+[**V1alpha1Workflow**](V1alpha1Workflow.md)
 
 ### Authorization
 

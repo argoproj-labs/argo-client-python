@@ -64,7 +64,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.WorkflowList"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowList"
 						}
 					},
 					"401": {
@@ -93,7 +93,7 @@
 						"description": "The JSON schema of the Workflow to create.",
 						"required": true,
 						"schema": {
-							"$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
 						},
 						"in": "body"
 					}
@@ -102,7 +102,7 @@
 					"201": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
 						}
 					},
 					"401": {
@@ -138,7 +138,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
 						}
 					},
 					"401": {
@@ -229,7 +229,7 @@
 						"description": "The JSON schema of the Workflow to patch.",
 						"required": true,
 						"schema": {
-							"$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
 						},
 						"in": "body"
 					}
@@ -267,7 +267,7 @@
 						"description": "The JSON schema of the Workflow to replace.",
 						"required": true,
 						"schema": {
-							"$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
 						},
 						"in": "body"
 					}
@@ -276,7 +276,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+							"$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Workflow"
 						}
 					},
 					"401": {
