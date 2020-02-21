@@ -122,7 +122,7 @@ class V1alpha1Api(object):
         auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows', 'POST',
+            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows', 'POST',
             path_params,
             query_params,
             header_params,
@@ -451,7 +451,7 @@ class V1alpha1Api(object):
         auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name}', 'DELETE',
+            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -800,7 +800,7 @@ class V1alpha1Api(object):
         auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name}', 'GET',
+            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1125,7 +1125,7 @@ class V1alpha1Api(object):
         auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows', 'GET',
+            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1478,7 +1478,7 @@ class V1alpha1Api(object):
         auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name}', 'PATCH',
+            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name}', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -1823,7 +1823,7 @@ class V1alpha1Api(object):
         auth_settings = ['BearerToken']  # noqa: E501
 
         return self.api_client.call_api(
-            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name}', 'PUT',
+            '/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name}', 'PUT',
             path_params,
             query_params,
             header_params,

@@ -4,22 +4,22 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_namespaced_cronworkflow**](V1alpha1Api.md#create_namespaced_cronworkflow) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows | 
+[**create_namespaced_cronworkflow**](V1alpha1Api.md#create_namespaced_cronworkflow) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows | 
 [**create_namespaced_workflow**](V1alpha1Api.md#create_namespaced_workflow) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows | 
 [**create_namespaced_workflowtemplate**](V1alpha1Api.md#create_namespaced_workflowtemplate) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates | 
-[**delete_namespaced_cronworkflow**](V1alpha1Api.md#delete_namespaced_cronworkflow) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name} | 
+[**delete_namespaced_cronworkflow**](V1alpha1Api.md#delete_namespaced_cronworkflow) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name} | 
 [**delete_namespaced_workflow**](V1alpha1Api.md#delete_namespaced_workflow) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
 [**delete_namespaced_workflowtemplate**](V1alpha1Api.md#delete_namespaced_workflowtemplate) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates/{name} | 
-[**get_namespaced_cronworkflow**](V1alpha1Api.md#get_namespaced_cronworkflow) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name} | 
+[**get_namespaced_cronworkflow**](V1alpha1Api.md#get_namespaced_cronworkflow) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name} | 
 [**get_namespaced_workflow**](V1alpha1Api.md#get_namespaced_workflow) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
 [**get_namespaced_workflowtemplate**](V1alpha1Api.md#get_namespaced_workflowtemplate) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates/{name} | 
-[**list_namespaced_cronworkflows**](V1alpha1Api.md#list_namespaced_cronworkflows) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows | 
+[**list_namespaced_cronworkflows**](V1alpha1Api.md#list_namespaced_cronworkflows) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows | 
 [**list_namespaced_workflows**](V1alpha1Api.md#list_namespaced_workflows) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows | 
 [**list_namespaced_workflowtemplates**](V1alpha1Api.md#list_namespaced_workflowtemplates) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates | 
-[**patch_namespaced_cronworkflow**](V1alpha1Api.md#patch_namespaced_cronworkflow) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name} | 
+[**patch_namespaced_cronworkflow**](V1alpha1Api.md#patch_namespaced_cronworkflow) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name} | 
 [**patch_namespaced_workflow**](V1alpha1Api.md#patch_namespaced_workflow) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
 [**patch_namespaced_workflowtemplate**](V1alpha1Api.md#patch_namespaced_workflowtemplate) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates/{name} | 
-[**replace_namespaced_cronworkflow**](V1alpha1Api.md#replace_namespaced_cronworkflow) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name} | 
+[**replace_namespaced_cronworkflow**](V1alpha1Api.md#replace_namespaced_cronworkflow) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name} | 
 [**replace_namespaced_workflow**](V1alpha1Api.md#replace_namespaced_workflow) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
 [**replace_namespaced_workflowtemplate**](V1alpha1Api.md#replace_namespaced_workflowtemplate) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates/{name} | 
 

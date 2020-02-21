@@ -1,6 +1,6 @@
 {
 	"paths": {
-		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/croncronworkflows": {
+		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/cronworkflows": {
 			"parameters": [
 				{
 					"name": "namespace",
@@ -111,7 +111,7 @@
 				}
 			}
 		},
-		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/croncronworkflows/{name}": {
+		"/apis/{{ argo_api_group }}/{{ argo_api_version }}/namespaces/{namespace}/cronworkflows/{name}": {
 			"parameters": [
 				{
 					"name": "namespace",
