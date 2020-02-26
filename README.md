@@ -55,10 +55,11 @@ We follow semantic versioning, the client starts at version `1.0` which matches 
 
 #### Compatibility matrix
 
-|                    | Argo 2.3       | Argo 2.4        |
-|--------------------|----------------|-----------------|
-| client-python 1.0  |✓               |-                |
-| client-python 2.0  |+               |✓                |
+|                    | Argo 2.3       | Argo 2.4        | Argo 2.5        |
+|--------------------|----------------|-----------------|-----------------|
+| client-python 1.0  |✓               |-                |-                |
+| client-python 2.0  |+               |✓                |-                |
+| client-python 3.0  |+               |+                |✓                |
 
 Key:
 
