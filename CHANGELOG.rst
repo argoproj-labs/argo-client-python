@@ -2,6 +2,164 @@ Changelog
 =========
 
 
+v3.0.0-rc (2020-02-26)
+----------------------
+
+New
+~~~
+- Generated models for Argo 2.5.0-rc10. [Marek Cermak]
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Makefile
+  modified:   argo/workflows/client/__init__.py
+  modified:   argo/workflows/client/api/v1alpha1_api.py
+  modified:   argo/workflows/client/api_client.py
+  modified:   argo/workflows/client/configuration.py
+  modified:   argo/workflows/client/models/__init__.py
+  modified:   argo/workflows/client/models/v1alpha1_archive_strategy.py
+  modified:   argo/workflows/client/models/v1alpha1_arguments.py
+  modified:   argo/workflows/client/models/v1alpha1_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_artifact_location.py
+  modified:   argo/workflows/client/models/v1alpha1_artifact_repository_ref.py
+  modified:   argo/workflows/client/models/v1alpha1_artifactory_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_artifactory_auth.py
+  modified:   argo/workflows/client/models/v1alpha1_continue_on.py
+  modified:   argo/workflows/client/models/v1alpha1_dag_task.py
+  modified:   argo/workflows/client/models/v1alpha1_dag_template.py
+  modified:   argo/workflows/client/models/v1alpha1_executor_config.py
+  modified:   argo/workflows/client/models/v1alpha1_git_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_hdfs_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_hdfs_config.py
+  modified:   argo/workflows/client/models/v1alpha1_hdfs_krb_config.py
+  modified:   argo/workflows/client/models/v1alpha1_http_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_inputs.py
+  modified:   argo/workflows/client/models/v1alpha1_metadata.py
+  modified:   argo/workflows/client/models/v1alpha1_node_status.py
+  modified:   argo/workflows/client/models/v1alpha1_outputs.py
+  modified:   argo/workflows/client/models/v1alpha1_parameter.py
+  modified:   argo/workflows/client/models/v1alpha1_pod_gc.py
+  modified:   argo/workflows/client/models/v1alpha1_raw_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_resource_template.py
+  modified:   argo/workflows/client/models/v1alpha1_retry_strategy.py
+  modified:   argo/workflows/client/models/v1alpha1_s3_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_s3_bucket.py
+  modified:   argo/workflows/client/models/v1alpha1_script_template.py
+  modified:   argo/workflows/client/models/v1alpha1_sequence.py
+  modified:   argo/workflows/client/models/v1alpha1_template.py
+  modified:   argo/workflows/client/models/v1alpha1_template_ref.py
+  modified:   argo/workflows/client/models/v1alpha1_user_container.py
+  modified:   argo/workflows/client/models/v1alpha1_value_from.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_list.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_spec.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_status.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_step.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_template.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_template_list.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_template_spec.py
+  modified:   argo/workflows/client/rest.py
+  modified:   openapi/swagger.json
+  new file:   argo/workflows/client/models/v1alpha1_backoff.py
+  new file:   argo/workflows/client/models/v1alpha1_cron_workflow.py
+  new file:   argo/workflows/client/models/v1alpha1_cron_workflow_list.py
+  new file:   argo/workflows/client/models/v1alpha1_cron_workflow_spec.py
+  new file:   argo/workflows/client/models/v1alpha1_cron_workflow_status.py
+  new file:   argo/workflows/client/models/v1alpha1_item_value.py
+  new file:   argo/workflows/client/models/v1alpha1_parallel_steps.py
+  new file:   argo/workflows/client/models/v1alpha1_suspend_template.py
+  new file:   argo/workflows/client/models/v1alpha1_ttl_strategy.py
+  new file:   docs/V1alpha1Backoff.md
+  new file:   docs/V1alpha1CronWorkflow.md
+  new file:   docs/V1alpha1CronWorkflowList.md
+  new file:   docs/V1alpha1CronWorkflowSpec.md
+  new file:   docs/V1alpha1CronWorkflowStatus.md
+  new file:   docs/V1alpha1ItemValue.md
+  new file:   docs/V1alpha1ParallelSteps.md
+  new file:   docs/V1alpha1SuspendTemplate.md
+  new file:   docs/V1alpha1TTLStrategy.md
+- Added generated openapi/swagger.json to the git. [Marek Cermak]
+- Added paths for the Argo v2.5.0 models. [Marek Cermak]
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   argo/workflows/client/api/v1alpha1_api.py
+  modified:   docs/V1alpha1Api.md
+  modified:   openapi/custom/paths.json
+- Generate models for Argo 2.5.0-rc5. [Marek Cermak]
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Makefile
+  modified:   argo/workflows/client/__about__.py
+  modified:   argo/workflows/client/__init__.py
+  modified:   argo/workflows/client/api/v1alpha1_api.py
+  modified:   argo/workflows/client/api_client.py
+  modified:   argo/workflows/client/configuration.py
+  modified:   argo/workflows/client/models/__init__.py
+  modified:   argo/workflows/client/models/v1alpha1_archive_strategy.py
+  modified:   argo/workflows/client/models/v1alpha1_arguments.py
+  modified:   argo/workflows/client/models/v1alpha1_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_artifact_location.py
+  modified:   argo/workflows/client/models/v1alpha1_artifact_repository_ref.py
+  modified:   argo/workflows/client/models/v1alpha1_artifactory_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_artifactory_auth.py
+  modified:   argo/workflows/client/models/v1alpha1_continue_on.py
+  modified:   argo/workflows/client/models/v1alpha1_dag_task.py
+  modified:   argo/workflows/client/models/v1alpha1_dag_template.py
+  modified:   argo/workflows/client/models/v1alpha1_executor_config.py
+  modified:   argo/workflows/client/models/v1alpha1_git_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_hdfs_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_hdfs_config.py
+  modified:   argo/workflows/client/models/v1alpha1_hdfs_krb_config.py
+  modified:   argo/workflows/client/models/v1alpha1_http_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_inputs.py
+  modified:   argo/workflows/client/models/v1alpha1_metadata.py
+  modified:   argo/workflows/client/models/v1alpha1_node_status.py
+  modified:   argo/workflows/client/models/v1alpha1_outputs.py
+  modified:   argo/workflows/client/models/v1alpha1_parameter.py
+  modified:   argo/workflows/client/models/v1alpha1_pod_gc.py
+  modified:   argo/workflows/client/models/v1alpha1_raw_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_resource_template.py
+  modified:   argo/workflows/client/models/v1alpha1_retry_strategy.py
+  modified:   argo/workflows/client/models/v1alpha1_s3_artifact.py
+  modified:   argo/workflows/client/models/v1alpha1_s3_bucket.py
+  modified:   argo/workflows/client/models/v1alpha1_script_template.py
+  modified:   argo/workflows/client/models/v1alpha1_sequence.py
+  modified:   argo/workflows/client/models/v1alpha1_template.py
+  modified:   argo/workflows/client/models/v1alpha1_template_ref.py
+  modified:   argo/workflows/client/models/v1alpha1_user_container.py
+  modified:   argo/workflows/client/models/v1alpha1_value_from.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_list.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_spec.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_status.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_step.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_template.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_template_list.py
+  modified:   argo/workflows/client/models/v1alpha1_workflow_template_spec.py
+  modified:   argo/workflows/client/rest.py
+  modified:   docs/V1alpha1DAGTask.md
+  modified:   docs/V1alpha1NodeStatus.md
+  modified:   docs/V1alpha1RetryStrategy.md
+  modified:   docs/V1alpha1ScriptTemplate.md
+  modified:   docs/V1alpha1Template.md
+  modified:   docs/V1alpha1UserContainer.md
+  modified:   docs/V1alpha1Workflow.md
+  modified:   docs/V1alpha1WorkflowList.md
+  modified:   docs/V1alpha1WorkflowSpec.md
+  modified:   docs/V1alpha1WorkflowStatus.md
+  modified:   docs/V1alpha1WorkflowStep.md
+  modified:   docs/V1alpha1WorkflowTemplate.md
+  modified:   docs/V1alpha1WorkflowTemplateList.md
+- Update README with workflow submission example. [Marek Cermak]
+
+
+v2.1.4 (2019-12-19)
+-------------------
+- :wrench: Patch 2.1.4. [Marek Cermak]
+
+
 v2.1.3 (2019-12-18)
 -------------------
 - :wrench: Patch 2.1.3. [Marek Cermak]
