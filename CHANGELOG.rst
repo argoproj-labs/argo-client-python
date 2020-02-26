@@ -2,12 +2,29 @@ Changelog
 =========
 
 
-3.0.1
------
+v3.0.1 (2020-02-26)
+-------------------
 
 New
 ~~~
 - Updated README compatibility matrix. [Marek Cermak]
+
+Other
+~~~~~
+- :wrench: Patch 3.0.1. [Marek Cermak]
+
+
+v3.0.0 (2020-02-26)
+-------------------
+- :tada: Release 3.0. [Marek Cermak]
+
+
+v3.0.0-rc2 (2020-02-26)
+-----------------------
+
+New
+~~~
+- Generated models for Argo v2.5.0 release. [Marek Cermak]
 
 
 v3.0.0-rc (2020-02-26)
@@ -204,6 +221,10 @@ Fix
 ~~~
 - Fix new_client_from_config() [Marek Cermak]
 
+Other
+~~~~~
+- :tada: Release 1.3. [Marek Cermak]
+
 
 v2.1.0 (2019-11-07)
 -------------------
@@ -211,6 +232,10 @@ v2.1.0 (2019-11-07)
 Fix
 ~~~
 - Fix new_client_from_config() [Marek Cermak]
+
+Other
+~~~~~
+- :tada: Release 2.1. [Marek Cermak]
 
 
 v2.0.0 (2019-10-30)
@@ -290,6 +315,10 @@ New
   modified:   argo/workflows/client/api/v1alpha1_api.py
   modified:   argo/workflows/client/__init__.py
 
+Other
+~~~~~
+- :tada: Release 2.0. [Marek Cermak]
+
 
 v1.2.0 (2019-10-30)
 -------------------
@@ -304,6 +333,10 @@ Fix
 
   modified:   Makefile
   new file:   openapi/custom/security.json
+
+Other
+~~~~~
+- :tada: Release 1.2. [Marek Cermak]
 
 
 v1.1.0 (2019-10-25)
@@ -320,6 +353,19 @@ New
   modified:   argo/workflows/__init__.py
   new file:   argo/workflows/watch/__init__.py
 
+Fix
+~~~
+- Ignore release and merge commits. [Marek Cermak]
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   .gitchangelog.rc
+  modified:   Makefile
+
+Other
+~~~~~
+- :tada: Release 1.1. [Marek Cermak]
+
 
 v1.0.0 (2019-10-23)
 -------------------
@@ -327,6 +373,14 @@ v1.0.0 (2019-10-23)
 New
 ~~~
 - Validate Makefile target. [Marek Cermak]
+- Makefile release target. [Marek Cermak]
+
+  Added release target to Makefile for easier versioning.
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Makefile
+  modified:   Pipfile
 - Script to generate CHANGELOG. [Marek Cermak]
 
   Signed-off-by: Marek Cermak <macermak@redhat.com>
@@ -342,20 +396,27 @@ Changes
 - Remove WorkflowStatus related paths. [Marek Cermak]
 
   The WorkflowStatus is not defined for Argo v2.3.0 CRD
+- Do not issue git push on make release. [Marek Cermak]
 - Allow to import models from argo.workflows. [Marek Cermak]
 
   Signed-off-by: Marek Cermak <macermak@redhat.com>
 
   modified:   README.md
   modified:   argo/workflows/__init__.py
+- Release name contains only MAJOR.MINOR. [Marek Cermak]
 
 Fix
 ~~~
 - Fix missing shells in Makefile. [Marek Cermak]
 
+Other
+~~~~~
+- :tada: Release 1.0. [Marek Cermak]
+
 
 v1.0.0a1 (2019-10-22)
 ---------------------
+- :tada: Release 1.0.0a1. [Marek Cermak]
 - Added TemplateRef definition. [Marek Cermak]
 
   - Argo 2.3.0 misses TemplateRef schema definition
