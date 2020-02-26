@@ -1,6 +1,6 @@
 # workflows.client.InfoServiceApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost:2746*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_info**
-> InfoInfoResponse get_info()
+> V1alpha1InfoResponse get_info()
 
 
 
@@ -20,14 +20,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.InfoServiceApi(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.InfoServiceApi()
 
 try:
     api_response = api_instance.get_info()
@@ -41,16 +35,16 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InfoInfoResponse**](InfoInfoResponse.md)
+[**V1alpha1InfoResponse**](V1alpha1InfoResponse.md)
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

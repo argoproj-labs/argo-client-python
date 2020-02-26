@@ -1,12 +1,13 @@
 # workflows.client.CronWorkflowServiceApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost:2746*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_cron_workflow**](CronWorkflowServiceApi.md#create_cron_workflow) | **POST** /api/v1/cron-workflows/{namespace} | 
 [**delete_cron_workflow**](CronWorkflowServiceApi.md#delete_cron_workflow) | **DELETE** /api/v1/cron-workflows/{namespace}/{name} | 
 [**get_cron_workflow**](CronWorkflowServiceApi.md#get_cron_workflow) | **GET** /api/v1/cron-workflows/{namespace}/{name} | 
+[**lint_cron_workflow**](CronWorkflowServiceApi.md#lint_cron_workflow) | **POST** /api/v1/cron-workflows/{namespace}/lint | 
 [**list_cron_workflows**](CronWorkflowServiceApi.md#list_cron_workflows) | **GET** /api/v1/cron-workflows/{namespace} | 
 [**update_cron_workflow**](CronWorkflowServiceApi.md#update_cron_workflow) | **PUT** /api/v1/cron-workflows/{namespace}/{name} | 
 
@@ -24,16 +25,10 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.CronWorkflowServiceApi(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.CronWorkflowServiceApi()
 namespace = 'namespace_example' # str | 
-body = workflows.client.CronworkflowCreateCronWorkflowRequest() # CronworkflowCreateCronWorkflowRequest | 
+body = workflows.client.V1alpha1CreateCronWorkflowRequest() # V1alpha1CreateCronWorkflowRequest | 
 
 try:
     api_response = api_instance.create_cron_workflow(namespace, body)
@@ -47,7 +42,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
- **body** | [**CronworkflowCreateCronWorkflowRequest**](CronworkflowCreateCronWorkflowRequest.md)|  | 
+ **body** | [**V1alpha1CreateCronWorkflowRequest**](V1alpha1CreateCronWorkflowRequest.md)|  | 
 
 ### Return type
 
@@ -55,17 +50,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_cron_workflow**
-> CronworkflowCronWorkflowDeletedResponse delete_cron_workflow(namespace, name, delete_options_grace_period_seconds=delete_options_grace_period_seconds, delete_options_preconditions_uid=delete_options_preconditions_uid, delete_options_preconditions_resource_version=delete_options_preconditions_resource_version, delete_options_orphan_dependents=delete_options_orphan_dependents, delete_options_propagation_policy=delete_options_propagation_policy, delete_options_dry_run=delete_options_dry_run)
+> object delete_cron_workflow(namespace, name, delete_options_grace_period_seconds=delete_options_grace_period_seconds, delete_options_preconditions_uid=delete_options_preconditions_uid, delete_options_preconditions_resource_version=delete_options_preconditions_resource_version, delete_options_orphan_dependents=delete_options_orphan_dependents, delete_options_propagation_policy=delete_options_propagation_policy, delete_options_dry_run=delete_options_dry_run)
 
 
 
@@ -77,14 +72,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.CronWorkflowServiceApi(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.CronWorkflowServiceApi()
 namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 delete_options_grace_period_seconds = 'delete_options_grace_period_seconds_example' # str | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. +optional. (optional)
@@ -116,16 +105,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CronworkflowCronWorkflowDeletedResponse**](CronworkflowCronWorkflowDeletedResponse.md)
+**object**
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -142,14 +131,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.CronWorkflowServiceApi(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.CronWorkflowServiceApi()
 namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
 get_options_resource_version = 'get_options_resource_version_example' # str | When specified: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv. (optional)
@@ -175,12 +158,59 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **lint_cron_workflow**
+> V1alpha1CronWorkflow lint_cron_workflow(namespace, body)
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import workflows.client
+from workflows.client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = workflows.client.CronWorkflowServiceApi()
+namespace = 'namespace_example' # str | 
+body = workflows.client.V1alpha1LintCronWorkflowRequest() # V1alpha1LintCronWorkflowRequest | 
+
+try:
+    api_response = api_instance.lint_cron_workflow(namespace, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CronWorkflowServiceApi->lint_cron_workflow: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**|  | 
+ **body** | [**V1alpha1LintCronWorkflowRequest**](V1alpha1LintCronWorkflowRequest.md)|  | 
+
+### Return type
+
+[**V1alpha1CronWorkflow**](V1alpha1CronWorkflow.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -197,14 +227,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.CronWorkflowServiceApi(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.CronWorkflowServiceApi()
 namespace = 'namespace_example' # str | 
 list_options_label_selector = 'list_options_label_selector_example' # str | A selector to restrict the list of returned objects by their labels. Defaults to everything. +optional. (optional)
 list_options_field_selector = 'list_options_field_selector_example' # str | A selector to restrict the list of returned objects by their fields. Defaults to everything. +optional. (optional)
@@ -242,12 +266,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -264,17 +288,11 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.CronWorkflowServiceApi(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.CronWorkflowServiceApi()
 namespace = 'namespace_example' # str | 
 name = 'name_example' # str | 
-body = workflows.client.CronworkflowUpdateCronWorkflowRequest() # CronworkflowUpdateCronWorkflowRequest | 
+body = workflows.client.V1alpha1UpdateCronWorkflowRequest() # V1alpha1UpdateCronWorkflowRequest | 
 
 try:
     api_response = api_instance.update_cron_workflow(namespace, name, body)
@@ -289,7 +307,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**|  | 
  **name** | **str**|  | 
- **body** | [**CronworkflowUpdateCronWorkflowRequest**](CronworkflowUpdateCronWorkflowRequest.md)|  | 
+ **body** | [**V1alpha1UpdateCronWorkflowRequest**](V1alpha1UpdateCronWorkflowRequest.md)|  | 
 
 ### Return type
 
@@ -297,12 +315,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

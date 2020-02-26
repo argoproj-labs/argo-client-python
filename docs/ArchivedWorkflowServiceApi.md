@@ -1,6 +1,6 @@
 # workflows.client.ArchivedWorkflowServiceApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost:2746*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **delete_archived_workflow**
-> WorkflowarchiveArchivedWorkflowDeletedResponse delete_archived_workflow(uid)
+> object delete_archived_workflow(uid)
 
 
 
@@ -22,14 +22,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.ArchivedWorkflowServiceApi(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.ArchivedWorkflowServiceApi()
 uid = 'uid_example' # str | 
 
 try:
@@ -47,16 +41,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorkflowarchiveArchivedWorkflowDeletedResponse**](WorkflowarchiveArchivedWorkflowDeletedResponse.md)
+**object**
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -73,14 +67,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.ArchivedWorkflowServiceApi(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.ArchivedWorkflowServiceApi()
 uid = 'uid_example' # str | 
 
 try:
@@ -102,12 +90,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -124,14 +112,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.ArchivedWorkflowServiceApi(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.ArchivedWorkflowServiceApi()
 list_options_label_selector = 'list_options_label_selector_example' # str | A selector to restrict the list of returned objects by their labels. Defaults to everything. +optional. (optional)
 list_options_field_selector = 'list_options_field_selector_example' # str | A selector to restrict the list of returned objects by their fields. Defaults to everything. +optional. (optional)
 list_options_watch = true # bool | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. +optional. (optional)
@@ -167,12 +149,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

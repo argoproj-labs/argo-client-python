@@ -1,6 +1,6 @@
 # workflows.client.V1alpha1Api
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://localhost:2746*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -39,14 +39,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The Workflow's namespace
 body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to create.
 
@@ -70,11 +64,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -94,14 +88,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The Workflow's namespace
 body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to create.
 
@@ -125,11 +113,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -149,14 +137,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The WorkflowTemplate's namespace
 body = workflows.client.V1alpha1WorkflowTemplate() # V1alpha1WorkflowTemplate | The JSON schema of the WorkflowTemplate to create.
 
@@ -180,11 +162,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -204,14 +186,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 body = workflows.client.V1DeleteOptions() # V1DeleteOptions | Delete options to be send along in the body of this request. (optional)
@@ -243,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -267,14 +243,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 body = workflows.client.V1DeleteOptions() # V1DeleteOptions | Delete options to be send along in the body of this request. (optional)
@@ -306,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -330,14 +300,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique WorkflowTemplate name
 body = workflows.client.V1DeleteOptions() # V1DeleteOptions | Delete options to be send along in the body of this request. (optional)
@@ -369,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -393,14 +357,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 
@@ -424,11 +382,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -448,14 +406,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 
@@ -479,11 +431,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -503,14 +455,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique WorkflowTemplate name
 
@@ -534,11 +480,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -558,14 +504,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The Workflow's namespace
 field_selector = 'field_selector_example' # str | A selector to restrict the list of returned objects by their fields. Defaults to everything. (optional)
 label_selector = 'label_selector_example' # str | A selector to restrict the list of returned objects by their labels. Defaults to everything. (optional)
@@ -597,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -621,14 +561,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The Workflow's namespace
 field_selector = 'field_selector_example' # str | A selector to restrict the list of returned objects by their fields. Defaults to everything. (optional)
 label_selector = 'label_selector_example' # str | A selector to restrict the list of returned objects by their labels. Defaults to everything. (optional)
@@ -660,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -684,14 +618,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The WorkflowTemplate's namespace
 field_selector = 'field_selector_example' # str | A selector to restrict the list of returned objects by their fields. Defaults to everything. (optional)
 label_selector = 'label_selector_example' # str | A selector to restrict the list of returned objects by their labels. Defaults to everything. (optional)
@@ -723,7 +651,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -747,14 +675,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to patch.
@@ -780,7 +702,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -804,14 +726,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to patch.
@@ -837,7 +753,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -861,14 +777,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique WorkflowTemplate name
 body = workflows.client.V1alpha1WorkflowTemplate() # V1alpha1WorkflowTemplate | The JSON schema of the WorkflowTemplate to patch.
@@ -894,7 +804,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -918,14 +828,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to replace.
@@ -951,7 +855,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -975,14 +879,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
 body = workflows.client.V1alpha1Workflow() # V1alpha1Workflow | The JSON schema of the Workflow to replace.
@@ -1008,7 +906,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 
@@ -1032,14 +930,8 @@ import workflows.client
 from workflows.client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: BearerToken
-configuration = workflows.client.Configuration()
-configuration.api_key['authorization'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
-
 # create an instance of the API class
-api_instance = workflows.client.V1alpha1Api(workflows.client.ApiClient(configuration))
+api_instance = workflows.client.V1alpha1Api()
 namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique WorkflowTemplate name
 body = workflows.client.V1alpha1WorkflowTemplate() # V1alpha1WorkflowTemplate | The JSON schema of the WorkflowTemplate to replace.
@@ -1065,7 +957,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[BearerToken](../README.md#BearerToken)
+No authorization required
 
 ### HTTP request headers
 

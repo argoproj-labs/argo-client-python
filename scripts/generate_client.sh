@@ -16,34 +16,6 @@ _patch() {
     # Fix issue with Swagger not respecting Python subpackages
     cp -rl ${output_dir}/${PACKAGE_NAME}/* "${output_dir}/${PACKAGE_NAME//[.]/\/}/" ; rm -r ${output_dir}/${PACKAGE_NAME}
 
-	# Replace io.k8s models with python kubernetes.client.library
-    find "$output_dir/${PACKAGE_NAME//[.]/\/}/" -type f \
-        -exec sed -i "/import IoK8s/d" {} \; \
-        -exec sed -i "s/IoK8sApiCore\|IoK8sApimachineryPkgApisMeta//g" {} \;
-
-    # Import kubernetes to the relevant files
-    find "$output_dir/${PACKAGE_NAME//[.]/\/}/" ! -path '*/__pycache__/*' -type f | while read fname; do
-    {
-        set +o pipefail
-
-        ln=$(grep -P "V1(?!alpha)" ${fname} >/dev/null && grep -n "import" ${fname} | tail -n1 | awk '{print $1}' FS=":" || true)
-        if [ ! -z "${ln}" ]; then
-            let ln++
-
-            grep -P 'V1(?!alpha)[a-zA-Z]+' -oh ${fname} | sort -u | while read model; do
-                let ln++
-                sed -i "${ln}i from kubernetes.client.models import ${model}" ${fname}
-            done
-        fi
-    }
-    done
-
-    # Import all kubernetes models
-    {
-        models="$output_dir/${PACKAGE_NAME//[.]/\/}/models/__init__.py"
-        echo -e '\nfrom kubernetes.client.models import *' >> ${models}
-    }
-
     # Prepend imports from workflow.client with argo
     find "$output_dir/${PACKAGE_NAME//[.]/\/}/" -name '*.py' -type f | while read fname; do
     {

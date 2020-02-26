@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**artifacts** | [**list[V1alpha1Artifact]**](V1alpha1Artifact.md) | Artifact are a list of artifacts passed as inputs | [optional] 
-**parameters** | [**list[V1alpha1Parameter]**](V1alpha1Parameter.md) | Parameters are a list of parameters passed as inputs | [optional] 
+**artifacts** | [**list[V1alpha1Artifact]**](V1alpha1Artifact.md) |  | [optional] 
+**parameters** | [**list[V1alpha1Parameter]**](V1alpha1Parameter.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
