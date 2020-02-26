@@ -23,6 +23,10 @@ _patch() {
     }
     done
 
+    # Add __version__ to the client package
+    echo -e "\nfrom .__about__ import __version__" \
+        >> "$output_dir/${PACKAGE_NAME//[.]/\/}/__init__.py"
+
     echo "--- Done."
 }
 

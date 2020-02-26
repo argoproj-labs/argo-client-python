@@ -90,8 +90,6 @@ release: all
 
 	$(MAKE) changelog
 
-	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/client/__about__.py
-
 	python setup.py sdist bdist_wheel
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
 
@@ -158,6 +156,8 @@ client:
 	KUBERNETES_BRANCH=${KUBERNETES_BRANCH} \
 	PACKAGE_NAME=${PACKAGE_NAME} \
 		./scripts/generate_client.sh ${OUTPUT_DIR} ${OPENAPI_SPEC} ${OPENAPI_CONFIG}
+
+	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/client/__about__.py
 
 changelog:
 	RELEASE_VERSION=${CLIENT_VERSION} ./scripts/generate_changelog.sh
