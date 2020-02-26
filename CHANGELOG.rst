@@ -2,6 +2,14 @@ Changelog
 =========
 
 
+3.0.1
+-----
+
+New
+~~~
+- Updated README compatibility matrix. [Marek Cermak]
+
+
 v3.0.0-rc (2020-02-26)
 ----------------------
 
