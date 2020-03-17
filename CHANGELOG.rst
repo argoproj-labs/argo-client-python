@@ -2,6 +2,26 @@ Changelog
 =========
 
 
+3.0.3
+-----
+
+Changes
+~~~~~~~
+- Add __version__ to the client package. [Marek Cermak]
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   .swagger-codegen/VERSION
+  modified:   argo/workflows/client/__init__.py
+  modified:   argo/workflows/client/configuration.py
+  modified:   scripts/generate_client.sh
+
+
+v3.0.2 (2020-02-26)
+-------------------
+- :wrench: Patch 3.0.2. [Marek Cermak]
+
+
 v3.0.1 (2020-02-26)
 -------------------
 
