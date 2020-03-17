@@ -72,3 +72,5 @@ from argo.workflows.client.models.v1alpha1_workflow_step import V1alpha1Workflow
 from argo.workflows.client.models.v1alpha1_workflow_template import V1alpha1WorkflowTemplate
 from argo.workflows.client.models.v1alpha1_workflow_template_list import V1alpha1WorkflowTemplateList
 from argo.workflows.client.models.v1alpha1_workflow_template_spec import V1alpha1WorkflowTemplateSpec
+
+from .__about__ import __version__
