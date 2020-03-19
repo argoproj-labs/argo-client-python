@@ -2,12 +2,40 @@ Changelog
 =========
 
 
-3.1.1
+3.2.0
 -----
+
+New
+~~~
+- Re-generate client with openapi. [Marek Cermak]
+
+Changes
+~~~~~~~
+- Use openapi generator. [Marek Cermak]
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Makefile
+  modified:   scripts/generate_client.sh
+  modified:   .gitignore
+  new file:   .openapi-generator-ignore
+  new file:   .openapi-generator/VERSION
+
+Fix
+~~~
+- Added exceptions module. [Marek Cermak]
+
+
+v3.1.1 (2020-03-19)
+-------------------
 
 Fix
 ~~~
 - Fixed Kubernetes version in requirements.txt. [Marek Cermak]
+
+Other
+~~~~~
+- :wrench: Patch 3.1.1. [Marek Cermak]
 
 
 v3.1.0 (2020-03-19)
