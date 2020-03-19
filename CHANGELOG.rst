@@ -2,12 +2,24 @@ Changelog
 =========
 
 
-3.1.0
+3.1.1
 -----
+
+Fix
+~~~
+- Fixed Kubernetes version in requirements.txt. [Marek Cermak]
+
+
+v3.1.0 (2020-03-19)
+-------------------
 
 Changes
 ~~~~~~~
 - Use Kubernetes>=10.0 for pyyaml security. [Marek Cermak]
+
+Other
+~~~~~
+- :wrench: Patch 3.1.0. [Marek Cermak]
 
 
 v3.0.3 (2020-03-17)
