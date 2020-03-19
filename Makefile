@@ -166,6 +166,11 @@ preprocess:
 
 
 client:
+	-find  ${OUTPUT_DIR}/argo/workflows/client/* -maxdepth 1 -not -name "__*__.py" -exec rm -r {} \;
+	-rm -r ${OUTPUT_DIR}/docs/
+	-rm -r ${OUTPUT_DIR}/workflows/
+	-rm -r ${OUTPUT_DIR}/${PACKAGE_NAME}/
+
 	@echo "Generating Argo ${ARGO_VERSION} client"
 
 	CLIENT_VERSION=${CLIENT_VERSION} \

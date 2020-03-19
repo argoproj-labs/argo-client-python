@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set +x
+
 set -o errexit
 set -o nounset
 set -o pipefail
@@ -13,16 +15,18 @@ _patch() {
 
     echo "--- Patching generated code..."
 
-    # Fix issue with Swagger not respecting Python subpackages
-    cp -rl ${output_dir}/${PACKAGE_NAME}/* "${output_dir}/${PACKAGE_NAME//[.]/\/}/" ; rm -r ${output_dir}/${PACKAGE_NAME}
+    # Fix imports
+    find "${output_dir}/openapi_client/" -type f -name \*.py -exec sed -i 's/import openapi_client\./import argo.workflows.client./g' {} +
+    find "${output_dir}/openapi_client/" -type f -name \*.py -exec sed -i 's/from openapi_client/from argo.workflows.client/g' {} +
+    find "${output_dir}/openapi_client/" -type f -name \*.py -exec sed -i 's/getattr(openapi_client\.models/getattr(argo.workflows.client.models/g' {} +
 
 	# Replace io.k8s models with python kubernetes.client.library
-    find "$output_dir/${PACKAGE_NAME//[.]/\/}/" -type f \
+    find "$output_dir/openapi_client/" -type f \
         -exec sed -i "/import IoK8s/d" {} \; \
         -exec sed -i "s/IoK8sApiCore\|IoK8sApimachineryPkgApisMeta//g" {} \;
 
     # Import kubernetes to the relevant files
-    find "$output_dir/${PACKAGE_NAME//[.]/\/}/" ! -path '*/__pycache__/*' -type f | while read fname; do
+    find "$output_dir/openapi_client/" ! -path '*/__pycache__/*' -type f | while read fname; do
     {
         set +o pipefail
 
@@ -40,20 +44,17 @@ _patch() {
 
     # Import all kubernetes models
     {
-        models="$output_dir/${PACKAGE_NAME//[.]/\/}/models/__init__.py"
+        models="$output_dir/openapi_client/models/__init__.py"
         echo -e '\nfrom kubernetes.client.models import *' >> ${models}
     }
 
-    # Prepend imports from workflow.client with argo
-    find "$output_dir/${PACKAGE_NAME//[.]/\/}/" -name '*.py' -type f | while read fname; do
-    {
-        sed -i "s/workflows\.client/argo.workflows.client/g" $fname
-    }
-    done
-
     # Add __version__ to the client package
      echo -e "\nfrom .__about__ import __version__" \
-         >> "$output_dir/${PACKAGE_NAME//[.]/\/}/__init__.py"
+         >> "$output_dir/openapi_client/__init__.py"
+
+    # Create a Python subpackage
+    mkdir -p "${output_dir}/${PACKAGE_NAME//[.]/\/}/"
+    cp -rl ${output_dir}/openapi_client/* "${output_dir}/${PACKAGE_NAME//[.]/\/}/"
 
     echo "--- Done."
 }
@@ -105,8 +106,8 @@ argo::generate::generate_client() {
     local openapi_config="$3"
 
     mkdir -m 755 -p $output_dir
-	docker run --user ${UID} --rm -v ${PWD}:/local:z swaggerapi/swagger-codegen-cli generate \
-		-l python \
+	docker run --user ${UID} --rm -v ${PWD}:/local:z openapitools/openapi-generator-cli generate \
+		-g python \
 		-c /local/${openapi_config} \
 		-i /local/${openapi_spec} \
 		-o /local/${output_dir} \
@@ -114,7 +115,7 @@ argo::generate::generate_client() {
 		-DpackageName=${PACKAGE_NAME} \
 		-DpackageVersion=${CLIENT_VERSION}
 
-    CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/workflows/" )
+    CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/openapi_client" )
 
     _patch   $output_dir
     _cleanup $output_dir
