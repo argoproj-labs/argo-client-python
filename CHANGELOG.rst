@@ -2,8 +2,16 @@ Changelog
 =========
 
 
-3.0.3
+3.1.0
 -----
+
+Changes
+~~~~~~~
+- Use Kubernetes>=10.0 for pyyaml security. [Marek Cermak]
+
+
+v3.0.3 (2020-03-17)
+-------------------
 
 Changes
 ~~~~~~~
@@ -15,6 +23,10 @@ Changes
   modified:   argo/workflows/client/__init__.py
   modified:   argo/workflows/client/configuration.py
   modified:   scripts/generate_client.sh
+
+Other
+~~~~~
+- :wrench: Patch 3.0.3. [Marek Cermak]
 
 
 v3.0.2 (2020-02-26)
