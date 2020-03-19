@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **successful_jobs_history_limit** | **int** | SuccessfulJobsHistoryLimit is the number of successful jobs to be kept at a time | [optional] 
 **suspend** | **bool** | Suspend is a flag that will stop new CronWorkflows from running if set to true | [optional] 
 **timezone** | **str** | Timezone is the timezone against which the cron schedule will be calculated, e.g. \&quot;Asia/Tokyo\&quot;. Default is machine&#39;s local time. | [optional] 
-**workflow_spec** | [**V1alpha1WorkflowSpec**](V1alpha1WorkflowSpec.md) | WorkflowSpec is the spec of the workflow to be run | 
+**workflow_spec** | [**V1alpha1WorkflowSpec**](V1alpha1WorkflowSpec.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

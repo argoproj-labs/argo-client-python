@@ -1,5 +1,6 @@
 # V1alpha1WorkflowList
 
+WorkflowList is list of Workflow resources
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

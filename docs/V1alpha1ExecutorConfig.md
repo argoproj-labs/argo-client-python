@@ -1,5 +1,6 @@
 # V1alpha1ExecutorConfig
 
+ExecutorConfig holds configurations of an executor container.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

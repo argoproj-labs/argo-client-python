@@ -1,5 +1,6 @@
 # V1alpha1TemplateRef
 
+TemplateRef is a reference of template resource.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

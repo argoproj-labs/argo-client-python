@@ -1,5 +1,6 @@
 # V1alpha1Workflow
 
+Workflow is the definition of a workflow resource
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

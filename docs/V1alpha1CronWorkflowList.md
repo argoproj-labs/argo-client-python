@@ -1,5 +1,6 @@
 # V1alpha1CronWorkflowList
 
+CronWorkflowList is list of CronWorkflow resources
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

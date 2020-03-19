@@ -1,9 +1,10 @@
 # V1alpha1RetryStrategy
 
+RetryStrategy provides controls on how to retry a workflow step
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**backoff** | [**V1alpha1Backoff**](V1alpha1Backoff.md) | Backoff is a backoff strategy | [optional] 
+**backoff** | [**V1alpha1Backoff**](V1alpha1Backoff.md) |  | [optional] 
 **limit** | **int** | Limit is the maximum number of attempts when retrying a container | [optional] 
 **retry_policy** | **str** | RetryPolicy is a policy of NodePhase statuses that will be retried | [optional] 
 

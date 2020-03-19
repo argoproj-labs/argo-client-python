@@ -1,5 +1,6 @@
 # V1alpha1TTLStrategy
 
+TTLStrategy is the strategy for the time to live depending on if the workflow succeded or failed
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

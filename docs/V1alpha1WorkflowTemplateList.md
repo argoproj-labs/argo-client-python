@@ -1,5 +1,6 @@
 # V1alpha1WorkflowTemplateList
 
+WorkflowTemplateList is list of WorkflowTemplate resources
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

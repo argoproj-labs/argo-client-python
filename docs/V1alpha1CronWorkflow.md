@@ -1,5 +1,6 @@
 # V1alpha1CronWorkflow
 
+CronWorkflow is the definition of a scheduled workflow resource
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

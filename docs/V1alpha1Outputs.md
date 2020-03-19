@@ -1,5 +1,6 @@
 # V1alpha1Outputs
 
+Outputs hold parameters, artifacts, and results from a step
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

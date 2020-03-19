@@ -1,5 +1,6 @@
 # V1alpha1WorkflowTemplate
 
+WorkflowTemplate is the definition of a workflow template resource
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

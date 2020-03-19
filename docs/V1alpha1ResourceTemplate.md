@@ -1,5 +1,6 @@
 # V1alpha1ResourceTemplate
 
+ResourceTemplate is a template subtype to manipulate kubernetes resources
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

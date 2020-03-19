@@ -1,5 +1,6 @@
 # V1alpha1Sequence
 
+Sequence expands a workflow step into numeric range
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

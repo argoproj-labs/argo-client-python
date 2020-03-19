@@ -30,14 +30,16 @@ _patch() {
     {
         set +o pipefail
 
-        ln=$(grep -P "V1(?!alpha)" ${fname} >/dev/null && grep -n "import" ${fname} | tail -n1 | awk '{print $1}' FS=":" || true)
+        ln=$(grep -P "V1(?!alpha)" ${fname} >/dev/null && grep -n "class" ${fname} | head -n1 | awk '{print $1}' FS=":" || true)
         if [ ! -z "${ln}" ]; then
-            let ln++
+            let ln--
 
             grep -P 'V1(?!alpha)[a-zA-Z]+' -oh ${fname} | sort -u | while read model; do
-                let ln++
                 sed -i "${ln}i from kubernetes.client.models import ${model}" ${fname}
+                let ln++
             done
+
+            sed -i 's/^class/\n&/1' ${fname}
         fi
     }
     done
