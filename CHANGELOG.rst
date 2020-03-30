@@ -2,8 +2,45 @@ Changelog
 =========
 
 
-2.1.0
------
+v2.1.3 (2019-12-18)
+-------------------
+- :wrench: Patch 2.1.3. [Marek Cermak]
+
+
+v2.1.2 (2019-11-25)
+-------------------
+
+Fix
+~~~
+- Patch DagTask template requirement. [Marek Cermak]
+
+Other
+~~~~~
+- :wrench: Patch 2.1.2. [Marek Cermak]
+
+
+v2.1.1 (2019-11-18)
+-------------------
+
+Fix
+~~~
+- Import all models from Kubernetes. [Marek Cermak]
+
+Other
+~~~~~
+- :wrench: Patch 2.1.1. [Marek Cermak]
+
+
+v1.3.0 (2019-11-07)
+-------------------
+
+Fix
+~~~
+- Fix new_client_from_config() [Marek Cermak]
+
+
+v2.1.0 (2019-11-07)
+-------------------
 
 Fix
 ~~~

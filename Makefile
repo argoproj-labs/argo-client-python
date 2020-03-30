@@ -59,10 +59,28 @@ all: clean validate spec preprocess client
 
 .PHONY: clean
 clean:
-	-rm -r ${OUTPUT_DIR}/argo/workflows/client
+	-find  ${OUTPUT_DIR}/argo/workflows/client/* -maxdepth 1 -not -name "__*__.py" -exec rm -r {} \;
 	-rm -r ${OUTPUT_DIR}/docs/
+	-rm -r ${OUTPUT_DIR}/workflows/
+	-rm -r ${OUTPUT_DIR}/${PACKAGE_NAME}/
 
 	pushd openapi/ ; git clean -d --force ; popd
+
+.PHONY: patch
+patch: SHELL:=/bin/bash
+patch: all
+	- rm -rf build/ dist/
+	- git tag --delete "v${CLIENT_VERSION}"
+
+	$(MAKE) changelog
+
+	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/client/__about__.py
+
+	python setup.py sdist bdist_wheel
+	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
+
+	git commit -a -m ":wrench: Patch ${CLIENT_VERSION}" --signoff
+	git tag -a "v${CLIENT_VERSION}" -m "Patch ${CLIENT_VERSION}"
 
 .PHONY: release
 release: SHELL:=/bin/bash
@@ -72,7 +90,7 @@ release: all
 
 	$(MAKE) changelog
 
-	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/__about__.py
+	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/client/__about__.py
 
 	python setup.py sdist bdist_wheel
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
@@ -140,6 +158,11 @@ preprocess:
 
 	# Replace empty references
 	sed -i -e '/"$$ref"/ s/io.argoproj.workflow.//' ${OPENAPI_SPEC}
+
+	# Patch DAGTask template requirement
+	# This is an unpleasant workaround, since OpenAPI 2.0 does not allow `oneOf`
+	jq -r '.definitions."v1alpha1.DAGTask".required = ["name"]' ${OPENAPI_SPEC} |\
+	sponge ${OPENAPI_SPEC}
 
 
 client:

@@ -20,11 +20,8 @@ _patch() {
     find "$output_dir/${PACKAGE_NAME//[.]/\/}/" -type f \
         -exec sed -i "/import IoK8s/d" {} \; \
         -exec sed -i "s/IoK8sApiCore\|IoK8sApimachineryPkgApisMeta//g" {} \;
-    
-    py_models="$output_dir/${PACKAGE_NAME//[.]/\/}/models/__init__.py" ; echo >> $py_models
-    
+
     # Import kubernetes to the relevant files
-    declare -A models
     find "$output_dir/${PACKAGE_NAME//[.]/\/}/" ! -path '*/__pycache__/*' -type f | while read fname; do
     {
         set +o pipefail
@@ -36,16 +33,16 @@ _patch() {
             grep -P 'V1(?!alpha)[a-zA-Z]+' -oh ${fname} | sort -u | while read model; do
                 let ln++
                 sed -i "${ln}i from kubernetes.client.models import ${model}" ${fname}
-                {
-                    set +o nounset; if [ -z "${models[$model]}" ]; then
-                        sed -i "\$a from kubernetes.client.models import ${model}" ${py_models}
-                    fi
-                }
-                models[${model}]=1
             done
         fi
     }
     done
+
+    # Import all kubernetes models
+    {
+        models="$output_dir/${PACKAGE_NAME//[.]/\/}/models/__init__.py"
+        echo -e '\nfrom kubernetes.client.models import *' >> ${models}
+    }
 
     # Prepend imports from workflow.client with argo
     find "$output_dir/${PACKAGE_NAME//[.]/\/}/" -name '*.py' -type f | while read fname; do
@@ -63,14 +60,22 @@ _patch() {
 _cleanup() {
     local output_dir="$1"
 
+    echo "--- Sync source files with the argo/ directory."
+
+    local source="$(realpath $output_dir/${PACKAGE_NAME%%.*})"
+    # nest the generated code under argo/ directory
+    rsync \
+        --link-dest="$source" \
+        --recursive \
+        --remove-source-files \
+        --verbose \
+        "$source" "$output_dir/argo/"
+
     echo "--- Cleanup."
     {
         set +o nounset;
-        [ ! -z ${CLEANUP_DIRS} ] && rm -r ${CLEANUP_DIRS}
+        [ ! -z ${CLEANUP_DIRS} ] && rm -r ${CLEANUP_DIRS[@]}
     }
-
-    # nest the generated code under argo/ directory
-    mv $output_dir/${PACKAGE_NAME%%.*}/* $output_dir/argo/${PACKAGE_NAME%%.*}
 
     echo "--- Done."
 }
@@ -104,9 +109,9 @@ argo::generate::generate_client() {
         -DmodelTests=false \
 		-DpackageName=${PACKAGE_NAME} \
 		-DpackageVersion=${CLIENT_VERSION}
-    
-    CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/workflows" )
-    
+
+    CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/workflows/" )
+
     _patch   $output_dir
     _cleanup $output_dir
 

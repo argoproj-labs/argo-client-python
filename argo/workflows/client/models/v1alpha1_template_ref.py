@@ -147,6 +147,9 @@ class V1alpha1TemplateRef(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(V1alpha1TemplateRef, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -89,6 +89,9 @@ class V1alpha1PodGC(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(V1alpha1PodGC, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

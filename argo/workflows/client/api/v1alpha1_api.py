@@ -39,11 +39,11 @@ class V1alpha1Api(object):
 
         Creates a namespace scoped Workflow  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_namespaced_workflow(namespace, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_namespaced_workflow(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The Workflow's namespace (required)
         :param V1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
         :return: V1alpha1Workflow
@@ -51,7 +51,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_namespaced_workflow_with_http_info(namespace, body, **kwargs)  # noqa: E501
         else:
             (data) = self.create_namespaced_workflow_with_http_info(namespace, body, **kwargs)  # noqa: E501
@@ -62,11 +62,11 @@ class V1alpha1Api(object):
 
         Creates a namespace scoped Workflow  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_namespaced_workflow_with_http_info(namespace, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_namespaced_workflow_with_http_info(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The Workflow's namespace (required)
         :param V1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
         :return: V1alpha1Workflow
@@ -75,7 +75,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -131,7 +131,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='V1alpha1Workflow',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -142,11 +142,11 @@ class V1alpha1Api(object):
 
         Creates a namespace scoped WorkflowTemplate  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_namespaced_workflowtemplate(namespace, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_namespaced_workflowtemplate(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The WorkflowTemplate's namespace (required)
         :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to create. (required)
         :return: V1alpha1WorkflowTemplate
@@ -154,7 +154,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_namespaced_workflowtemplate_with_http_info(namespace, body, **kwargs)  # noqa: E501
         else:
             (data) = self.create_namespaced_workflowtemplate_with_http_info(namespace, body, **kwargs)  # noqa: E501
@@ -165,11 +165,11 @@ class V1alpha1Api(object):
 
         Creates a namespace scoped WorkflowTemplate  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_namespaced_workflowtemplate_with_http_info(namespace, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_namespaced_workflowtemplate_with_http_info(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The WorkflowTemplate's namespace (required)
         :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to create. (required)
         :return: V1alpha1WorkflowTemplate
@@ -178,7 +178,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -234,7 +234,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='V1alpha1WorkflowTemplate',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -245,11 +245,11 @@ class V1alpha1Api(object):
 
         Deletes the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_namespaced_workflow(namespace, name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_namespaced_workflow(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
         :param V1DeleteOptions body: Delete options to be send along in the body of this request.
@@ -261,7 +261,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_namespaced_workflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_namespaced_workflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -272,11 +272,11 @@ class V1alpha1Api(object):
 
         Deletes the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_namespaced_workflow_with_http_info(namespace, name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_namespaced_workflow_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
         :param V1DeleteOptions body: Delete options to be send along in the body of this request.
@@ -289,7 +289,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'name', 'body', 'grace_period_seconds', 'orphan_dependents', 'propagation_policy']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -357,7 +357,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='object',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -368,11 +368,11 @@ class V1alpha1Api(object):
 
         Deletes the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_namespaced_workflowtemplate(namespace, name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_namespaced_workflowtemplate(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique WorkflowTemplate name (required)
         :param V1DeleteOptions body: Delete options to be send along in the body of this request.
@@ -384,7 +384,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_namespaced_workflowtemplate_with_http_info(namespace, name, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_namespaced_workflowtemplate_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -395,11 +395,11 @@ class V1alpha1Api(object):
 
         Deletes the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_namespaced_workflowtemplate_with_http_info(namespace, name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_namespaced_workflowtemplate_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique WorkflowTemplate name (required)
         :param V1DeleteOptions body: Delete options to be send along in the body of this request.
@@ -412,7 +412,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'name', 'body', 'grace_period_seconds', 'orphan_dependents', 'propagation_policy']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -480,7 +480,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='object',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -491,11 +491,11 @@ class V1alpha1Api(object):
 
         Get Workflow resource by the workflow name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_namespaced_workflow(namespace, name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_namespaced_workflow(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
         :return: V1alpha1Workflow
@@ -503,7 +503,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_namespaced_workflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
         else:
             (data) = self.get_namespaced_workflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -514,11 +514,11 @@ class V1alpha1Api(object):
 
         Get Workflow resource by the workflow name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_namespaced_workflow_with_http_info(namespace, name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_namespaced_workflow_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
         :return: V1alpha1Workflow
@@ -527,7 +527,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -583,7 +583,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='V1alpha1Workflow',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -594,11 +594,11 @@ class V1alpha1Api(object):
 
         Get WorkflowTemplate resource by its name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_namespaced_workflowtemplate(namespace, name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_namespaced_workflowtemplate(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique WorkflowTemplate name (required)
         :return: V1alpha1WorkflowTemplate
@@ -606,7 +606,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_namespaced_workflowtemplate_with_http_info(namespace, name, **kwargs)  # noqa: E501
         else:
             (data) = self.get_namespaced_workflowtemplate_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -617,11 +617,11 @@ class V1alpha1Api(object):
 
         Get WorkflowTemplate resource by its name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_namespaced_workflowtemplate_with_http_info(namespace, name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_namespaced_workflowtemplate_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique WorkflowTemplate name (required)
         :return: V1alpha1WorkflowTemplate
@@ -630,7 +630,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'name']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -686,7 +686,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='V1alpha1WorkflowTemplate',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -697,11 +697,11 @@ class V1alpha1Api(object):
 
         List workflow resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_namespaced_workflows(namespace, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_namespaced_workflows(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The Workflow's namespace (required)
         :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
         :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
@@ -713,7 +713,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_namespaced_workflows_with_http_info(namespace, **kwargs)  # noqa: E501
         else:
             (data) = self.list_namespaced_workflows_with_http_info(namespace, **kwargs)  # noqa: E501
@@ -724,11 +724,11 @@ class V1alpha1Api(object):
 
         List workflow resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_namespaced_workflows_with_http_info(namespace, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_namespaced_workflows_with_http_info(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The Workflow's namespace (required)
         :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
         :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
@@ -741,7 +741,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'field_selector', 'label_selector', 'resource_version', 'timeout_seconds', 'watch']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -805,7 +805,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='V1alpha1WorkflowList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -816,11 +816,11 @@ class V1alpha1Api(object):
 
         List WorkflowTemplate resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_namespaced_workflowtemplates(namespace, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_namespaced_workflowtemplates(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The WorkflowTemplate's namespace (required)
         :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
         :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
@@ -832,7 +832,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_namespaced_workflowtemplates_with_http_info(namespace, **kwargs)  # noqa: E501
         else:
             (data) = self.list_namespaced_workflowtemplates_with_http_info(namespace, **kwargs)  # noqa: E501
@@ -843,11 +843,11 @@ class V1alpha1Api(object):
 
         List WorkflowTemplate resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_namespaced_workflowtemplates_with_http_info(namespace, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_namespaced_workflowtemplates_with_http_info(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The WorkflowTemplate's namespace (required)
         :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
         :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
@@ -860,7 +860,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'field_selector', 'label_selector', 'resource_version', 'timeout_seconds', 'watch']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -924,7 +924,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='V1alpha1WorkflowTemplateList',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -935,11 +935,11 @@ class V1alpha1Api(object):
 
         patch the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.patch_namespaced_workflow(namespace, name, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.patch_namespaced_workflow(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
         :param V1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
@@ -948,7 +948,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.patch_namespaced_workflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
         else:
             (data) = self.patch_namespaced_workflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -959,11 +959,11 @@ class V1alpha1Api(object):
 
         patch the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.patch_namespaced_workflow_with_http_info(namespace, name, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.patch_namespaced_workflow_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
         :param V1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
@@ -973,7 +973,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'name', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1039,7 +1039,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='object',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1050,11 +1050,11 @@ class V1alpha1Api(object):
 
         patch the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.patch_namespaced_workflowtemplate(namespace, name, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.patch_namespaced_workflowtemplate(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique WorkflowTemplate name (required)
         :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to patch. (required)
@@ -1063,7 +1063,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.patch_namespaced_workflowtemplate_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
         else:
             (data) = self.patch_namespaced_workflowtemplate_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -1074,11 +1074,11 @@ class V1alpha1Api(object):
 
         patch the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.patch_namespaced_workflowtemplate_with_http_info(namespace, name, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.patch_namespaced_workflowtemplate_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique WorkflowTemplate name (required)
         :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to patch. (required)
@@ -1088,7 +1088,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'name', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1154,7 +1154,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='V1alpha1WorkflowTemplate',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1165,11 +1165,11 @@ class V1alpha1Api(object):
 
         replace the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.replace_namespaced_workflow(namespace, name, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_namespaced_workflow(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
         :param V1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
@@ -1178,7 +1178,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.replace_namespaced_workflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
         else:
             (data) = self.replace_namespaced_workflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -1189,11 +1189,11 @@ class V1alpha1Api(object):
 
         replace the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.replace_namespaced_workflow_with_http_info(namespace, name, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_namespaced_workflow_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique Workflow name (required)
         :param V1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
@@ -1203,7 +1203,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'name', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1269,7 +1269,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='V1alpha1Workflow',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1280,11 +1280,11 @@ class V1alpha1Api(object):
 
         replace the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.replace_namespaced_workflowtemplate(namespace, name, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_namespaced_workflowtemplate(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique WorkflowTemplate name (required)
         :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to replace. (required)
@@ -1293,7 +1293,7 @@ class V1alpha1Api(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.replace_namespaced_workflowtemplate_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
         else:
             (data) = self.replace_namespaced_workflowtemplate_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -1304,11 +1304,11 @@ class V1alpha1Api(object):
 
         replace the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.replace_namespaced_workflowtemplate_with_http_info(namespace, name, body, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.replace_namespaced_workflowtemplate_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str namespace: The custom resource's namespace (required)
         :param str name: Unique WorkflowTemplate name (required)
         :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to replace. (required)
@@ -1318,7 +1318,7 @@ class V1alpha1Api(object):
         """
 
         all_params = ['namespace', 'name', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1384,7 +1384,7 @@ class V1alpha1Api(object):
             files=local_var_files,
             response_type='V1alpha1WorkflowTemplate',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

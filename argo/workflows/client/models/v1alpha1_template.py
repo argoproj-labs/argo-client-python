@@ -16,20 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from argo.workflows.client.models.v1alpha1_arguments import V1alpha1Arguments  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_artifact_location import V1alpha1ArtifactLocation  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_dag_template import V1alpha1DAGTemplate  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_executor_config import V1alpha1ExecutorConfig  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_inputs import V1alpha1Inputs  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_metadata import V1alpha1Metadata  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_outputs import V1alpha1Outputs  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_resource_template import V1alpha1ResourceTemplate  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_retry_strategy import V1alpha1RetryStrategy  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_script_template import V1alpha1ScriptTemplate  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_template_ref import V1alpha1TemplateRef  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_user_container import V1alpha1UserContainer  # noqa: F401,E501
-from argo.workflows.client.models.v1alpha1_workflow_step import V1alpha1WorkflowStep  # noqa: F401,E501
-
 from kubernetes.client.models import V1Affinity
 from kubernetes.client.models import V1Container
 from kubernetes.client.models import V1HostAlias
@@ -980,6 +966,9 @@ class V1alpha1Template(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(V1alpha1Template, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

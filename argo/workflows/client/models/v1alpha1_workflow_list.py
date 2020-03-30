@@ -16,8 +16,6 @@ import re  # noqa: F401
 
 import six
 
-from argo.workflows.client.models.v1alpha1_workflow import V1alpha1Workflow  # noqa: F401,E501
-
 from kubernetes.client.models import V1ListMeta
 
 class V1alpha1WorkflowList(object):
@@ -176,6 +174,9 @@ class V1alpha1WorkflowList(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(V1alpha1WorkflowList, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
