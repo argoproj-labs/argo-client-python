@@ -308,7 +308,7 @@
         "x-codegen-request-body-name": "body"
       }
     },
-    "/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows": {
+    "/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows": {
       "parameters": [
         {
           "name": "namespace",
@@ -420,7 +420,7 @@
         "x-codegen-request-body-name": "body"
       }
     },
-    "/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name}": {
+    "/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name}": {
       "parameters": [
         {
           "name": "namespace",
