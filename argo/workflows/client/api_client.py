@@ -499,20 +499,29 @@ class ApiClient(object):
         """
         if not auth_settings:
             return
-
-        for auth in auth_settings:
-            auth_setting = self.configuration.auth_settings().get(auth)
-            if auth_setting:
-                if not auth_setting['value']:
-                    continue
-                elif auth_setting['in'] == 'header':
-                    headers[auth_setting['key']] = auth_setting['value']
-                elif auth_setting['in'] == 'query':
-                    querys.append((auth_setting['key'], auth_setting['value']))
-                else:
-                    raise ValueError(
-                        'Authentication token must be in `query` or `header`'
-                    )
+        # rewritten to manage this dict structure
+        # {'BearerToken': {'in': 'header',
+        #                  'key': 'authorization',
+        #                  'type': 'api_key',
+        #                  'value': 'bearer eyJ.....ag'},
+        #  'HTTPBasic': {'in': 'header',
+        #                'key': 'Authorization',
+        #                'type': 'basic',
+        #                'value': 'Basic Og=='}}
+        #
+        for auth_type in auth_settings:
+            for auth_setting in api.api_client.configuration.auth_settings().values():
+                if auth_type == auth_setting.get('type'):
+                    if not auth_setting['value']:
+                        continue
+                    elif auth_setting['in'] == 'header':
+                        headers[auth_setting['key']] = auth_setting['value']
+                    elif auth_setting['in'] == 'query':
+                        querys.append((auth_setting['key'], auth_setting['value']))
+                    else:
+                        raise ValueError(
+                            'Authentication token must be in `query` or `header`'
+                        )
 
     def __deserialize_file(self, response):
         """Deserializes body to file
