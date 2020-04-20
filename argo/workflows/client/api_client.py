@@ -510,7 +510,7 @@ class ApiClient(object):
         #                'value': 'Basic Og=='}}
         #
         for auth_type in auth_settings:
-            for auth_setting in api.api_client.configuration.auth_settings().values():
+            for auth_setting in self.configuration.auth_settings().values():
                 if auth_type == auth_setting.get('type'):
                     if not auth_setting['value']:
                         continue
