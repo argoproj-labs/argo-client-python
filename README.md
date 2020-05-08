@@ -45,7 +45,7 @@ manifest: dict = yaml.safe_load(resp.text)
 v1alpha1.create_namespaced_workflow(namespace, manifest)
 ```
 
-<sup>*</sup> When working on a higher level of abstraction, check out the [Argo Python DSL](https://github.com/CermakM/argo-python-dsl)
+<sup>*</sup> When working on a higher level of abstraction, check out the [Argo Python DSL](https://github.com/argoproj-labs/argo-python-dsl)
 
 ## Versioning
 
@@ -69,12 +69,12 @@ Key:
 * `-` The Kubernetes cluster has features the client-python library can't use
   (additional API objects, etc).
 
-We try to be consistent with Argo as much as possible and hence we created special branches for user convenience --- for example [argo/v2.4.0](https://github.com/CermakM/argo-client-python/tree/v2.4.0) is identical with Argo release [v2.4.0](https://github.com/argoproj/argo/releases/tag/v2.4.0).
+We try to be consistent with Argo as much as possible and hence we created special branches for user convenience --- for example [argo/v2.4.0](https://github.com/argoproj-labs/argo-client-python/tree/v2.4.0) is identical with Argo release [v2.4.0](https://github.com/argoproj/argo/releases/tag/v2.4.0).
 
 These can be then installed directly from github:
 
 ```
-pip install -e "git+git://github.com/CermakM/argo-client-python@argo/v2.4.0#egg=argo-workflows"
+pip install -e "git+git://github.com/argoproj-labs/argo-client-python@argo/v2.4.0#egg=argo-workflows"
 ```
 
 > :warning: The compatibility for such cases is not guaranteed
