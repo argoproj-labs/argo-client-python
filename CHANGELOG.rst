@@ -2,8 +2,13 @@ Changelog
 =========
 
 
-3.2.0
+3.4.0
 -----
+- Changes for latest argo version (2.8.1) [Floris Van den Abeele]
+
+
+v3.2.0 (2020-06-02)
+-------------------
 
 New
 ~~~
@@ -24,6 +29,15 @@ Changes
 Fix
 ~~~
 - Added exceptions module. [Marek Cermak]
+
+Other
+~~~~~
+- :tada: Release 3.2. [Floris Van den Abeele]
+- :tada: Release 3.2. [Floris Van den Abeele]
+- :tada: Release 3.2. [Floris Van den Abeele]
+- :tada: Release 3.2. [Floris Van den Abeele]
+- :tada: Release 3.2. [Floris Van den Abeele]
+- :wrench: Patch 3.2.0. [Marek Cermak]
 
 
 v3.1.1 (2020-03-19)

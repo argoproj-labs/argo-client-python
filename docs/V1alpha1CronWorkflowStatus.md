@@ -1,5 +1,6 @@
 # V1alpha1CronWorkflowStatus
 
+CronWorkflowStatus is the status of a CronWorkflow
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
