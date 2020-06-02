@@ -26,23 +26,23 @@ _patch() {
         -exec sed -i "s/IoK8sApiCore\|IoK8sApimachineryPkgApisMeta//g" {} \;
 
     # Import kubernetes to the relevant files
-    find "$output_dir/openapi_client/" ! -path '*/__pycache__/*' -type f | while read fname; do
-    {
-        set +o pipefail
+    # find "$output_dir/openapi_client/" ! -path '*/__pycache__/*' -type f | while read fname; do
+    # {
+    #     set +o pipefail
 
-        ln=$(grep -P "V1(?!alpha)" ${fname} >/dev/null && grep -n "class" ${fname} | head -n1 | awk '{print $1}' FS=":" || true)
-        if [ ! -z "${ln}" ]; then
-            let ln--
+    #     ln=$(grep -P "V1(?!alpha)" ${fname} >/dev/null && grep -n "class" ${fname} | head -n1 | awk '{print $1}' FS=":" || true)
+    #     if [ ! -z "${ln}" ]; then
+    #         let ln--
 
-            grep -P 'V1(?!alpha)[a-zA-Z]+' -oh ${fname} | sort -u | while read model; do
-                sed -i "${ln}i from kubernetes.client.models import ${model}" ${fname}
-                let ln++
-            done
+    #         grep -P 'V1(?!alpha)[a-zA-Z]+' -oh ${fname} | sort -u | while read model; do
+    #             sed -i "${ln}i from kubernetes.client.models import ${model}" ${fname}
+    #             let ln++
+    #         done
 
-            sed -i 's/^class/\n&/1' ${fname}
-        fi
-    }
-    done
+    #         sed -i 's/^class/\n&/1' ${fname}
+    #     fi
+    # }
+    # done
 
     # Import all kubernetes models
     {
@@ -113,9 +113,9 @@ argo::generate::generate_client() {
 		-c /local/${openapi_config} \
 		-i /local/${openapi_spec} \
 		-o /local/${output_dir} \
-        -DmodelTests=false \
-		-DpackageName=${PACKAGE_NAME} \
-		-DpackageVersion=${CLIENT_VERSION}
+ 		--global-property modelTests=false \
+ 		--global-property packageName=${PACKAGE_NAME} \
+ 		--global-property packageVersion=${CLIENT_VERSION}
 
     CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/openapi_client" )
 
