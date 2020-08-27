@@ -2,8 +2,11 @@ Changelog
 =========
 
 
-3.4.0
+argo/
 -----
+- Add output of `make client` [Floris Van den Abeele]
+- Bump argo version to v2.10.0. [Floris Van den Abeele]
+- :tada: Release 3.4. [Floris Van den Abeele]
 - Changes for latest argo version (2.8.1) [Floris Van den Abeele]
 
 
