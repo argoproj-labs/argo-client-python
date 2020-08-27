@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **create_options** | [**IoK8sApimachineryPkgApisMetaV1CreateOptions**](IoK8sApimachineryPkgApisMetaV1CreateOptions.md) |  | [optional] 
-**instance_id** | **str** |  | [optional] 
+**instance_id** | **str** | This field is no longer used. | [optional] 
 **namespace** | **str** |  | [optional] 
 **server_dry_run** | **bool** |  | [optional] 
 **workflow** | [**V1alpha1Workflow**](V1alpha1Workflow.md) |  | [optional] 

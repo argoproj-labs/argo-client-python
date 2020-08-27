@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **dry_run** | **bool** | DryRun validates the workflow on the client-side without creating it. This option is not supported in API | [optional] 
 **entry_point** | **str** | Entrypoint overrides spec.entrypoint | [optional] 
 **generate_name** | **str** | GenerateName overrides metadata.generateName | [optional] 
-**instance_id** | **str** | InstanceID binds the Resource to the specified instance ID | [optional] 
 **labels** | **str** | Labels adds to metadata.labels | [optional] 
 **name** | **str** | Name overrides metadata.name | [optional] 
 **owner_reference** | [**IoK8sApimachineryPkgApisMetaV1OwnerReference**](IoK8sApimachineryPkgApisMetaV1OwnerReference.md) |  | [optional] 

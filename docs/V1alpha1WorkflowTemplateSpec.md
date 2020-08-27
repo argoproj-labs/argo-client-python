@@ -31,12 +31,15 @@ Name | Type | Description | Notes
 **service_account_name** | **str** | ServiceAccountName is the name of the ServiceAccount to run all pods of the workflow as. | [optional] 
 **shutdown** | **str** | Shutdown will shutdown the workflow according to its ShutdownStrategy | [optional] 
 **suspend** | **bool** | Suspend will suspend the workflow and prevent execution of any future steps in the workflow | [optional] 
-**templates** | [**list[V1alpha1Template]**](V1alpha1Template.md) | Templates is a list of workflow templates used in a workflow | 
+**synchronization** | [**V1alpha1Synchronization**](V1alpha1Synchronization.md) |  | [optional] 
+**templates** | [**list[V1alpha1Template]**](V1alpha1Template.md) | Templates is a list of workflow templates used in a workflow | [optional] 
 **tolerations** | [**list[IoK8sApiCoreV1Toleration]**](IoK8sApiCoreV1Toleration.md) | Tolerations to apply to workflow pods. | [optional] 
 **ttl_seconds_after_finished** | **int** | TTLSecondsAfterFinished limits the lifetime of a Workflow that has finished execution (Succeeded, Failed, Error). If this field is set, once the Workflow finishes, it will be deleted after ttlSecondsAfterFinished expires. If this field is unset, ttlSecondsAfterFinished will not expire. If this field is set to zero, ttlSecondsAfterFinished expires immediately after the Workflow finishes. DEPRECATED: Use TTLStrategy.SecondsAfterCompletion instead. | [optional] 
 **ttl_strategy** | [**V1alpha1TTLStrategy**](V1alpha1TTLStrategy.md) |  | [optional] 
 **volume_claim_templates** | [**list[IoK8sApiCoreV1PersistentVolumeClaim]**](IoK8sApiCoreV1PersistentVolumeClaim.md) | VolumeClaimTemplates is a list of claims that containers are allowed to reference. The Workflow controller will create the claims at the beginning of the workflow and delete the claims upon completion of the workflow | [optional] 
 **volumes** | [**list[IoK8sApiCoreV1Volume]**](IoK8sApiCoreV1Volume.md) | Volumes is a list of volumes that can be mounted by containers in a io.argoproj.workflow.v1alpha1. | [optional] 
+**workflow_metadata** | [**IoK8sApimachineryPkgApisMetaV1ObjectMeta**](IoK8sApimachineryPkgApisMetaV1ObjectMeta.md) |  | [optional] 
+**workflow_template_ref** | [**V1alpha1WorkflowTemplateRef**](V1alpha1WorkflowTemplateRef.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

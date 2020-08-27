@@ -3,7 +3,7 @@
   "info": {
     "title": "Argo",
     "description": "Python client for Argo Workflows",
-    "version": "2.8.1"
+    "version": "2.10.0"
   },
   "security": [
     {
@@ -1632,7 +1632,7 @@
         }
       },
       "required": [
-        "name"
+        "image"
       ],
       "type": "object"
     },
@@ -4085,6 +4085,7 @@
         }
       },
       "required": [
+        "metadata",
         "spec"
       ],
       "type": "object"
@@ -4141,10 +4142,28 @@
     "v1alpha1.ClusterWorkflowTemplateUpdateRequest": {
       "properties": {
         "name": {
+          "description": "DEPRECATED: This field is ignored.",
           "type": "string"
         },
         "template": {
           "$ref": "#/definitions/v1alpha1.ClusterWorkflowTemplate"
+        }
+      },
+      "type": "object"
+    },
+    "v1alpha1.Condition": {
+      "properties": {
+        "message": {
+          "description": "Message is the condition message",
+          "type": "string"
+        },
+        "status": {
+          "description": "Status is the status of the condition",
+          "type": "string"
+        },
+        "type": {
+          "description": "Type is the type of condition",
+          "type": "string"
         }
       },
       "type": "object"
@@ -4210,8 +4229,8 @@
         }
       },
       "required": [
-        "spec",
-        "status"
+        "metadata",
+        "spec"
       ],
       "type": "object"
     },
@@ -4301,6 +4320,13 @@
           },
           "type": "array"
         },
+        "conditions": {
+          "description": "Conditions is a list of conditions the CronWorkflow may have",
+          "items": {
+            "$ref": "#/definitions/v1alpha1.Condition"
+          },
+          "type": "array"
+        },
         "lastScheduledTime": {
           "description": "LastScheduleTime is the last time the CronWorkflow was scheduled",
           "format": "date-time",
@@ -4327,6 +4353,10 @@
           },
           "type": "array"
         },
+        "depends": {
+          "description": "Depends are name of other targets which this depends on",
+          "type": "string"
+        },
         "name": {
           "description": "Name is the name of the target",
           "type": "string"
@@ -4351,8 +4381,7 @@
           "description": "WithItems expands a task into multiple parallel tasks from the items in the list",
           "items": {
             "description": "Item expands a single workflow step into multiple parallel steps The value of Item can be a map, string, bool, or number",
-            "format": "item",
-            "type": "string"
+            "type": "object"
           },
           "type": "array"
         },
@@ -4444,6 +4473,17 @@
         "value",
         "realtime"
       ],
+      "type": "object"
+    },
+    "v1alpha1.GetUserInfoResponse": {
+      "properties": {
+        "issuer": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "v1alpha1.GitArtifact": {
@@ -4563,7 +4603,7 @@
         "buckets": {
           "description": "Buckets is a list of bucket divisors for the histogram",
           "items": {
-            "format": "double",
+            "description": "Amount represent a numeric amount.",
             "type": "number"
           },
           "type": "array"
@@ -4577,6 +4617,19 @@
         "value",
         "buckets"
       ],
+      "type": "object"
+    },
+    "v1alpha1.HolderNames": {
+      "properties": {
+        "name": {
+          "description": "Name stores the name of the resource holding lock",
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "x-kubernetes-list-type": "atomic"
+        }
+      },
       "type": "object"
     },
     "v1alpha1.InfoResponse": {
@@ -4821,13 +4874,12 @@
       "required": [
         "id",
         "name",
-        "displayName",
         "type"
       ],
       "type": "object"
     },
     "v1alpha1.OSSArtifact": {
-      "description": "OSSArtifact is the location of an OSS artifact",
+      "description": "OSSArtifact is the location of an Alibaba Cloud OSS artifact",
       "properties": {
         "accessKeySecret": {
           "$ref": "#/definitions/io.k8s.api.core.v1.SecretKeySelector",
@@ -4895,7 +4947,8 @@
       "description": "Parameter indicate a passed string parameter to a service template with an optional default value",
       "properties": {
         "default": {
-          "description": "Default is the default value to use for an input parameter if a value was not supplied DEPRECATED: This field is not used",
+          "description": "Default is the default value to use for an input parameter if a value was not supplied",
+          "format": "int-or-string",
           "type": "string"
         },
         "globalName": {
@@ -4908,6 +4961,7 @@
         },
         "value": {
           "description": "Value is the literal value to use for the parameter. If specified in the context of an input parameter, the value takes precedence over any passed values",
+          "format": "int-or-string",
           "type": "string"
         },
         "valueFrom": {
@@ -4967,12 +5021,7 @@
       },
       "required": [
         "name",
-        "labels",
-        "help",
-        "when",
-        "gauge",
-        "histogram",
-        "counter"
+        "help"
       ],
       "type": "object"
     },
@@ -5025,8 +5074,7 @@
         }
       },
       "required": [
-        "action",
-        "manifest"
+        "action"
       ],
       "type": "object"
     },
@@ -5229,9 +5277,55 @@
         }
       },
       "required": [
-        "name",
+        "image",
         "source"
       ],
+      "type": "object"
+    },
+    "v1alpha1.SemaphoreHolding": {
+      "properties": {
+        "holders": {
+          "description": "Holders stores the list of current holder names in the io.argoproj.workflow.v1alpha1.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "x-kubernetes-list-type": "atomic"
+        },
+        "semaphore": {
+          "description": "Semaphore stores the semaphore name.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "v1alpha1.SemaphoreRef": {
+      "description": "SemaphoreRef is a reference of Semaphore",
+      "properties": {
+        "configMapKeyRef": {
+          "$ref": "#/definitions/io.k8s.api.core.v1.ConfigMapKeySelector",
+          "description": "ConfigMapKeyRef is configmap selector for Semaphore configuration"
+        }
+      },
+      "type": "object"
+    },
+    "v1alpha1.SemaphoreStatus": {
+      "properties": {
+        "holding": {
+          "description": "Holding stores the list of resource acquired synchronization lock for workflows.",
+          "items": {
+            "$ref": "#/definitions/v1alpha1.SemaphoreHolding"
+          },
+          "type": "array"
+        },
+        "waiting": {
+          "description": "Waiting indicates the list of current synchronization lock holders",
+          "items": {
+            "$ref": "#/definitions/v1alpha1.SemaphoreHolding"
+          },
+          "type": "array"
+        }
+      },
       "type": "object"
     },
     "v1alpha1.Sequence": {
@@ -5239,10 +5333,12 @@
       "properties": {
         "count": {
           "description": "Count is number of elements in the sequence (default: 0). Not to be used with end",
+          "format": "int-or-string",
           "type": "string"
         },
         "end": {
           "description": "Number at which to end the sequence (default: 0). Not to be used with Count",
+          "format": "int-or-string",
           "type": "string"
         },
         "format": {
@@ -5251,6 +5347,7 @@
         },
         "start": {
           "description": "Number at which to start the sequence (default: 0)",
+          "format": "int-or-string",
           "type": "string"
         }
       },
@@ -5269,10 +5366,6 @@
         },
         "generateName": {
           "description": "GenerateName overrides metadata.generateName",
-          "type": "string"
-        },
-        "instanceID": {
-          "description": "InstanceID binds the Resource to the specified instance ID",
           "type": "string"
         },
         "labels": {
@@ -5315,6 +5408,25 @@
         "duration": {
           "description": "Duration is the seconds to wait before automatically resuming a template",
           "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "v1alpha1.Synchronization": {
+      "description": "Synchronization holds synchronization lock configuration",
+      "properties": {
+        "semaphore": {
+          "$ref": "#/definitions/v1alpha1.SemaphoreRef",
+          "description": "Semaphore holds the Semaphore configuration"
+        }
+      },
+      "type": "object"
+    },
+    "v1alpha1.SynchronizationStatus": {
+      "properties": {
+        "semaphore": {
+          "$ref": "#/definitions/v1alpha1.SemaphoreStatus",
+          "description": "SemaphoreHolders stores this workflow's Semaphore holder details"
         }
       },
       "type": "object"
@@ -5505,6 +5617,10 @@
           "$ref": "#/definitions/v1alpha1.SuspendTemplate",
           "description": "Suspend template subtype which can suspend a workflow when reaching the step"
         },
+        "synchronization": {
+          "$ref": "#/definitions/v1alpha1.Synchronization",
+          "description": "Synchronization holds synchronization lock configuration for this template"
+        },
         "template": {
           "description": "Template is the name of the template which is used as the base of this template. DEPRECATED: This field is not used.",
           "type": "string"
@@ -5541,7 +5657,7 @@
       "description": "TemplateRef is a reference of template resource.",
       "properties": {
         "clusterScope": {
-          "description": "ClusterScope indicates the referred template is cluster scoped (i.e., a ClusterWorkflowTemplate).",
+          "description": "ClusterScope indicates the referred template is cluster scoped (i.e. a ClusterWorkflowTemplate).",
           "type": "boolean"
         },
         "name": {
@@ -5565,6 +5681,7 @@
           "$ref": "#/definitions/v1alpha1.CronWorkflow"
         },
         "name": {
+          "description": "DEPRECATED: This field is ignored.",
           "type": "string"
         },
         "namespace": {
@@ -5713,6 +5830,7 @@
       "properties": {
         "default": {
           "description": "Default specifies a value to be used if retrieving the value from the specified source fails",
+          "format": "int-or-string",
           "type": "string"
         },
         "jqFilter": {
@@ -5796,26 +5914,8 @@
       },
       "required": [
         "metadata",
-        "spec",
-        "status"
+        "spec"
       ],
-      "type": "object"
-    },
-    "v1alpha1.WorkflowCondition": {
-      "properties": {
-        "message": {
-          "description": "Message is the condition message",
-          "type": "string"
-        },
-        "status": {
-          "description": "Status is the status of the condition",
-          "type": "string"
-        },
-        "type": {
-          "description": "Type is the type of condition",
-          "type": "string"
-        }
-      },
       "type": "object"
     },
     "v1alpha1.WorkflowCreateRequest": {
@@ -5824,6 +5924,7 @@
           "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.CreateOptions"
         },
         "instanceID": {
+          "description": "This field is no longer used.",
           "type": "string"
         },
         "namespace": {
@@ -6051,6 +6152,10 @@
           "description": "Suspend will suspend the workflow and prevent execution of any future steps in the workflow",
           "type": "boolean"
         },
+        "synchronization": {
+          "$ref": "#/definitions/v1alpha1.Synchronization",
+          "description": "Synchronization holds synchronization lock configuration for this Workflow"
+        },
         "templates": {
           "description": "Templates is a list of workflow templates used in a workflow",
           "items": {
@@ -6095,11 +6200,12 @@
           "type": "array",
           "x-kubernetes-patch-merge-key": "name",
           "x-kubernetes-patch-strategy": "merge"
+        },
+        "workflowTemplateRef": {
+          "$ref": "#/definitions/v1alpha1.WorkflowTemplateRef",
+          "description": "WorkflowTemplateRef holds a reference to a WorkflowTemplate for execution"
         }
       },
-      "required": [
-        "templates"
-      ],
       "type": "object"
     },
     "v1alpha1.WorkflowStatus": {
@@ -6112,7 +6218,7 @@
         "conditions": {
           "description": "Conditions is a list of conditions the Workflow may have",
           "items": {
-            "$ref": "#/definitions/v1alpha1.WorkflowCondition"
+            "$ref": "#/definitions/v1alpha1.Condition"
           },
           "type": "array"
         },
@@ -6170,6 +6276,14 @@
           },
           "description": "StoredTemplates is a mapping between a template ref and the node's status.",
           "type": "object"
+        },
+        "storedWorkflowTemplateSpec": {
+          "$ref": "#/definitions/v1alpha1.WorkflowSpec",
+          "description": "StoredWorkflowSpec stores the WorkflowTemplate spec for future execution."
+        },
+        "synchronization": {
+          "$ref": "#/definitions/v1alpha1.SynchronizationStatus",
+          "description": "Synchronization stores the status of synchronization locks"
         }
       },
       "type": "object"
@@ -6209,8 +6323,7 @@
           "description": "WithItems expands a step into multiple parallel steps from the items in the list",
           "items": {
             "description": "Item expands a single workflow step into multiple parallel steps The value of Item can be a map, string, bool, or number",
-            "format": "item",
-            "type": "string"
+            "type": "object"
           },
           "type": "array"
         },
@@ -6244,9 +6357,6 @@
     },
     "v1alpha1.WorkflowSubmitRequest": {
       "properties": {
-        "createOptions": {
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.CreateOptions"
-        },
         "namespace": {
           "type": "string"
         },
@@ -6292,6 +6402,7 @@
         }
       },
       "required": [
+        "metadata",
         "spec"
       ],
       "type": "object"
@@ -6349,6 +6460,20 @@
         "metadata",
         "items"
       ],
+      "type": "object"
+    },
+    "v1alpha1.WorkflowTemplateRef": {
+      "description": "WorkflowTemplateRef is a reference to a WorkflowTemplate resource.",
+      "properties": {
+        "clusterScope": {
+          "description": "ClusterScope indicates the referred template is cluster scoped (i.e. a ClusterWorkflowTemplate).",
+          "type": "boolean"
+        },
+        "name": {
+          "description": "Name is the resource name of the workflow template.",
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "v1alpha1.WorkflowTemplateSpec": {
@@ -6478,6 +6603,10 @@
           "description": "Suspend will suspend the workflow and prevent execution of any future steps in the workflow",
           "type": "boolean"
         },
+        "synchronization": {
+          "$ref": "#/definitions/v1alpha1.Synchronization",
+          "description": "Synchronization holds synchronization lock configuration for this Workflow"
+        },
         "templates": {
           "description": "Templates is a list of workflow templates used in a workflow",
           "items": {
@@ -6522,16 +6651,22 @@
           "type": "array",
           "x-kubernetes-patch-merge-key": "name",
           "x-kubernetes-patch-strategy": "merge"
+        },
+        "workflowMetadata": {
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta",
+          "description": "WorkflowMetadata contains some metadata of the workflow to be refer"
+        },
+        "workflowTemplateRef": {
+          "$ref": "#/definitions/v1alpha1.WorkflowTemplateRef",
+          "description": "WorkflowTemplateRef holds a reference to a WorkflowTemplate for execution"
         }
       },
-      "required": [
-        "templates"
-      ],
       "type": "object"
     },
     "v1alpha1.WorkflowTemplateUpdateRequest": {
       "properties": {
         "name": {
+          "description": "DEPRECATED: This field is ignored.",
           "type": "string"
         },
         "namespace": {

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **boundary_id** | **str** | BoundaryID indicates the node ID of the associated template root node in which this node belongs to | [optional] 
 **children** | **list[str]** | Children is a list of child node IDs | [optional] 
 **daemoned** | **bool** | Daemoned tracks whether or not this node was daemoned and need to be terminated | [optional] 
-**display_name** | **str** | DisplayName is a human readable representation of the node. Unique within a template boundary | 
+**display_name** | **str** | DisplayName is a human readable representation of the node. Unique within a template boundary | [optional] 
 **finished_at** | **datetime** | Time at which this node completed | [optional] 
 **host_node_name** | **str** | HostNodeName name of the Kubernetes node on which the Pod is running, if applicable | [optional] 
 **id** | **str** | ID is a unique identifier of a node within the worklow It is implemented as a hash of the node name, which makes the ID deterministic | 

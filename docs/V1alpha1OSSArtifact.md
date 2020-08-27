@@ -1,6 +1,6 @@
 # V1alpha1OSSArtifact
 
-OSSArtifact is the location of an OSS artifact
+OSSArtifact is the location of an Alibaba Cloud OSS artifact
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

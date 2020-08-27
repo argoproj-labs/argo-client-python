@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**create_options** | [**IoK8sApimachineryPkgApisMetaV1CreateOptions**](IoK8sApimachineryPkgApisMetaV1CreateOptions.md) |  | [optional] 
 **namespace** | **str** |  | [optional] 
 **resource_kind** | **str** |  | [optional] 
 **resource_name** | **str** |  | [optional] 

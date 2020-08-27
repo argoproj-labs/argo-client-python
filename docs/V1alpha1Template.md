@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **sidecars** | [**list[V1alpha1UserContainer]**](V1alpha1UserContainer.md) | Sidecars is a list of containers which run alongside the main container Sidecars are automatically killed when the main container completes | [optional] 
 **steps** | **list[list[V1alpha1WorkflowStep]]** | Steps define a series of sequential/parallel workflow steps | [optional] 
 **suspend** | [**V1alpha1SuspendTemplate**](V1alpha1SuspendTemplate.md) |  | [optional] 
+**synchronization** | [**V1alpha1Synchronization**](V1alpha1Synchronization.md) |  | [optional] 
 **template** | **str** | Template is the name of the template which is used as the base of this template. DEPRECATED: This field is not used. | [optional] 
 **template_ref** | [**V1alpha1TemplateRef**](V1alpha1TemplateRef.md) |  | [optional] 
 **tolerations** | [**list[IoK8sApiCoreV1Toleration]**](IoK8sApiCoreV1Toleration.md) | Tolerations to apply to workflow pods. | [optional] 
