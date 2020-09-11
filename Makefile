@@ -1,3 +1,6 @@
+SHELL := /bin/bash
+
+BUILDER_IMAGE				= argo-builder
 PACKAGE_NAME        = workflows.client
 PACKAGE_DESCRIPTION = Python client for Argo Workflows
 
@@ -54,8 +57,8 @@ OPENAPI_CONFIG = openapi/custom/config.json
 PYPI_REPOSITORY ?= https://upload.pypi.org/legacy/
 
 .PHONY: all
-all: clean validate spec preprocess client
-
+all: clean spec preprocess client
+# all: clean validate spec preprocess client
 
 .PHONY: clean
 clean:
@@ -152,7 +155,7 @@ spec:
 
 preprocess:
 	@echo "Preprocessing API specs"
-	python scripts/preprocess.py -i ${OPENAPI_SPEC} \
+	python3 scripts/preprocess.py -i ${OPENAPI_SPEC} \
 		-d 'io.argoproj.workflow' \
 		-o ${OPENAPI_SPEC} >/dev/null
 
@@ -180,3 +183,10 @@ client:
 
 changelog:
 	RELEASE_VERSION=${CLIENT_VERSION} ./scripts/generate_changelog.sh
+
+.PHONY:builder_image
+builder_image:
+	docker build -f builder_image/Dockerfile -t ${BUILDER_IMAGE} .
+
+builder_make:
+	docker run -w `pwd` -it --entrypoint make --rm -v `pwd`:`pwd` -v /var/run/docker.sock:/var/run/docker.sock ${BUILDER_IMAGE}
