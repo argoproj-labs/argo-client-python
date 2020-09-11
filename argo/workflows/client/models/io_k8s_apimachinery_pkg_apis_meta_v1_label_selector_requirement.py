@@ -78,7 +78,7 @@ class V1LabelSelectorRequirement(object):
         key is the label key that the selector applies to.  # noqa: E501
 
         :param key: The key of this V1LabelSelectorRequirement.  # noqa: E501
-        :type: str
+        :type key: str
         """
         if self.local_vars_configuration.client_side_validation and key is None:  # noqa: E501
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
@@ -103,7 +103,7 @@ class V1LabelSelectorRequirement(object):
         operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.  # noqa: E501
 
         :param operator: The operator of this V1LabelSelectorRequirement.  # noqa: E501
-        :type: str
+        :type operator: str
         """
         if self.local_vars_configuration.client_side_validation and operator is None:  # noqa: E501
             raise ValueError("Invalid value for `operator`, must not be `None`")  # noqa: E501
@@ -128,7 +128,7 @@ class V1LabelSelectorRequirement(object):
         values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.  # noqa: E501
 
         :param values: The values of this V1LabelSelectorRequirement.  # noqa: E501
-        :type: list[str]
+        :type values: list[str]
         """
 
         self._values = values

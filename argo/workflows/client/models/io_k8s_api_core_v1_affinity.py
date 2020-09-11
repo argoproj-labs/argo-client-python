@@ -78,7 +78,7 @@ class V1Affinity(object):
 
 
         :param node_affinity: The node_affinity of this V1Affinity.  # noqa: E501
-        :type: V1NodeAffinity
+        :type node_affinity: V1NodeAffinity
         """
 
         self._node_affinity = node_affinity
@@ -99,7 +99,7 @@ class V1Affinity(object):
 
 
         :param pod_affinity: The pod_affinity of this V1Affinity.  # noqa: E501
-        :type: V1PodAffinity
+        :type pod_affinity: V1PodAffinity
         """
 
         self._pod_affinity = pod_affinity
@@ -120,7 +120,7 @@ class V1Affinity(object):
 
 
         :param pod_anti_affinity: The pod_anti_affinity of this V1Affinity.  # noqa: E501
-        :type: V1PodAntiAffinity
+        :type pod_anti_affinity: V1PodAntiAffinity
         """
 
         self._pod_anti_affinity = pod_anti_affinity

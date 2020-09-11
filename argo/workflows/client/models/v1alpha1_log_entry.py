@@ -73,7 +73,7 @@ class V1alpha1LogEntry(object):
 
 
         :param content: The content of this V1alpha1LogEntry.  # noqa: E501
-        :type: str
+        :type content: str
         """
 
         self._content = content
@@ -94,7 +94,7 @@ class V1alpha1LogEntry(object):
 
 
         :param pod_name: The pod_name of this V1alpha1LogEntry.  # noqa: E501
-        :type: str
+        :type pod_name: str
         """
 
         self._pod_name = pod_name

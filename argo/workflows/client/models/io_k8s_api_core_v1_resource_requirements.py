@@ -75,7 +75,7 @@ class V1ResourceRequirements(object):
         Limits describes the maximum amount of compute resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/  # noqa: E501
 
         :param limits: The limits of this V1ResourceRequirements.  # noqa: E501
-        :type: dict(str, str)
+        :type limits: dict(str, str)
         """
 
         self._limits = limits
@@ -98,7 +98,7 @@ class V1ResourceRequirements(object):
         Requests describes the minimum amount of compute resources required. If Requests is omitted for a container, it defaults to Limits if that is explicitly specified, otherwise to an implementation-defined value. More info: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/  # noqa: E501
 
         :param requests: The requests of this V1ResourceRequirements.  # noqa: E501
-        :type: dict(str, str)
+        :type requests: dict(str, str)
         """
 
         self._requests = requests

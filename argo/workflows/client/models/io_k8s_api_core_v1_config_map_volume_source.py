@@ -85,7 +85,7 @@ class V1ConfigMapVolumeSource(object):
         Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.  # noqa: E501
 
         :param default_mode: The default_mode of this V1ConfigMapVolumeSource.  # noqa: E501
-        :type: int
+        :type default_mode: int
         """
 
         self._default_mode = default_mode
@@ -108,7 +108,7 @@ class V1ConfigMapVolumeSource(object):
         If unspecified, each key-value pair in the Data field of the referenced ConfigMap will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified which is not present in the ConfigMap, the volume setup will error unless it is marked optional. Paths must be relative and may not contain the '..' path or start with '..'.  # noqa: E501
 
         :param items: The items of this V1ConfigMapVolumeSource.  # noqa: E501
-        :type: list[V1KeyToPath]
+        :type items: list[V1KeyToPath]
         """
 
         self._items = items
@@ -131,7 +131,7 @@ class V1ConfigMapVolumeSource(object):
         Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names  # noqa: E501
 
         :param name: The name of this V1ConfigMapVolumeSource.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -154,7 +154,7 @@ class V1ConfigMapVolumeSource(object):
         Specify whether the ConfigMap or its keys must be defined  # noqa: E501
 
         :param optional: The optional of this V1ConfigMapVolumeSource.  # noqa: E501
-        :type: bool
+        :type optional: bool
         """
 
         self._optional = optional

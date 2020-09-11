@@ -83,7 +83,7 @@ class V1alpha1OSSArtifact(object):
 
 
         :param access_key_secret: The access_key_secret of this V1alpha1OSSArtifact.  # noqa: E501
-        :type: V1SecretKeySelector
+        :type access_key_secret: V1SecretKeySelector
         """
         if self.local_vars_configuration.client_side_validation and access_key_secret is None:  # noqa: E501
             raise ValueError("Invalid value for `access_key_secret`, must not be `None`")  # noqa: E501
@@ -108,7 +108,7 @@ class V1alpha1OSSArtifact(object):
         Bucket is the name of the bucket  # noqa: E501
 
         :param bucket: The bucket of this V1alpha1OSSArtifact.  # noqa: E501
-        :type: str
+        :type bucket: str
         """
         if self.local_vars_configuration.client_side_validation and bucket is None:  # noqa: E501
             raise ValueError("Invalid value for `bucket`, must not be `None`")  # noqa: E501
@@ -133,7 +133,7 @@ class V1alpha1OSSArtifact(object):
         Endpoint is the hostname of the bucket endpoint  # noqa: E501
 
         :param endpoint: The endpoint of this V1alpha1OSSArtifact.  # noqa: E501
-        :type: str
+        :type endpoint: str
         """
         if self.local_vars_configuration.client_side_validation and endpoint is None:  # noqa: E501
             raise ValueError("Invalid value for `endpoint`, must not be `None`")  # noqa: E501
@@ -158,7 +158,7 @@ class V1alpha1OSSArtifact(object):
         Key is the path in the bucket where the artifact resides  # noqa: E501
 
         :param key: The key of this V1alpha1OSSArtifact.  # noqa: E501
-        :type: str
+        :type key: str
         """
         if self.local_vars_configuration.client_side_validation and key is None:  # noqa: E501
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
@@ -181,7 +181,7 @@ class V1alpha1OSSArtifact(object):
 
 
         :param secret_key_secret: The secret_key_secret of this V1alpha1OSSArtifact.  # noqa: E501
-        :type: V1SecretKeySelector
+        :type secret_key_secret: V1SecretKeySelector
         """
         if self.local_vars_configuration.client_side_validation and secret_key_secret is None:  # noqa: E501
             raise ValueError("Invalid value for `secret_key_secret`, must not be `None`")  # noqa: E501

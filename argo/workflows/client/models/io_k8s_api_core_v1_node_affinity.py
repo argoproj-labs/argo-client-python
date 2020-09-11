@@ -75,7 +75,7 @@ class V1NodeAffinity(object):
         The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding \"weight\" to the sum if the node matches the corresponding matchExpressions; the node(s) with the highest sum are the most preferred.  # noqa: E501
 
         :param preferred_during_scheduling_ignored_during_execution: The preferred_during_scheduling_ignored_during_execution of this V1NodeAffinity.  # noqa: E501
-        :type: list[V1PreferredSchedulingTerm]
+        :type preferred_during_scheduling_ignored_during_execution: list[V1PreferredSchedulingTerm]
         """
 
         self._preferred_during_scheduling_ignored_during_execution = preferred_during_scheduling_ignored_during_execution
@@ -96,7 +96,7 @@ class V1NodeAffinity(object):
 
 
         :param required_during_scheduling_ignored_during_execution: The required_during_scheduling_ignored_during_execution of this V1NodeAffinity.  # noqa: E501
-        :type: V1NodeSelector
+        :type required_during_scheduling_ignored_during_execution: V1NodeSelector
         """
 
         self._required_during_scheduling_ignored_during_execution = required_during_scheduling_ignored_during_execution

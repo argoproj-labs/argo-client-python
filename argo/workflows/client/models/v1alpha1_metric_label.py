@@ -71,7 +71,7 @@ class V1alpha1MetricLabel(object):
 
 
         :param key: The key of this V1alpha1MetricLabel.  # noqa: E501
-        :type: str
+        :type key: str
         """
         if self.local_vars_configuration.client_side_validation and key is None:  # noqa: E501
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
@@ -94,7 +94,7 @@ class V1alpha1MetricLabel(object):
 
 
         :param value: The value of this V1alpha1MetricLabel.  # noqa: E501
-        :type: str
+        :type value: str
         """
         if self.local_vars_configuration.client_side_validation and value is None:  # noqa: E501
             raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501

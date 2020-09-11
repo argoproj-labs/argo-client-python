@@ -89,7 +89,7 @@ class V1HTTPGetAction(object):
         Host name to connect to, defaults to the pod IP. You probably want to set \"Host\" in httpHeaders instead.  # noqa: E501
 
         :param host: The host of this V1HTTPGetAction.  # noqa: E501
-        :type: str
+        :type host: str
         """
 
         self._host = host
@@ -112,7 +112,7 @@ class V1HTTPGetAction(object):
         Custom headers to set in the request. HTTP allows repeated headers.  # noqa: E501
 
         :param http_headers: The http_headers of this V1HTTPGetAction.  # noqa: E501
-        :type: list[V1HTTPHeader]
+        :type http_headers: list[V1HTTPHeader]
         """
 
         self._http_headers = http_headers
@@ -135,7 +135,7 @@ class V1HTTPGetAction(object):
         Path to access on the HTTP server.  # noqa: E501
 
         :param path: The path of this V1HTTPGetAction.  # noqa: E501
-        :type: str
+        :type path: str
         """
 
         self._path = path
@@ -158,7 +158,7 @@ class V1HTTPGetAction(object):
         Name or number of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.  # noqa: E501
 
         :param port: The port of this V1HTTPGetAction.  # noqa: E501
-        :type: str
+        :type port: str
         """
         if self.local_vars_configuration.client_side_validation and port is None:  # noqa: E501
             raise ValueError("Invalid value for `port`, must not be `None`")  # noqa: E501
@@ -183,7 +183,7 @@ class V1HTTPGetAction(object):
         Scheme to use for connecting to the host. Defaults to HTTP.  # noqa: E501
 
         :param scheme: The scheme of this V1HTTPGetAction.  # noqa: E501
-        :type: str
+        :type scheme: str
         """
 
         self._scheme = scheme

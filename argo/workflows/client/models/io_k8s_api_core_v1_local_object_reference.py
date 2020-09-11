@@ -70,7 +70,7 @@ class V1LocalObjectReference(object):
         Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names  # noqa: E501
 
         :param name: The name of this V1LocalObjectReference.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name

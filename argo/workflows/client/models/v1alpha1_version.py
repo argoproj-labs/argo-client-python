@@ -95,7 +95,7 @@ class V1alpha1Version(object):
 
 
         :param build_date: The build_date of this V1alpha1Version.  # noqa: E501
-        :type: str
+        :type build_date: str
         """
         if self.local_vars_configuration.client_side_validation and build_date is None:  # noqa: E501
             raise ValueError("Invalid value for `build_date`, must not be `None`")  # noqa: E501
@@ -118,7 +118,7 @@ class V1alpha1Version(object):
 
 
         :param compiler: The compiler of this V1alpha1Version.  # noqa: E501
-        :type: str
+        :type compiler: str
         """
         if self.local_vars_configuration.client_side_validation and compiler is None:  # noqa: E501
             raise ValueError("Invalid value for `compiler`, must not be `None`")  # noqa: E501
@@ -141,7 +141,7 @@ class V1alpha1Version(object):
 
 
         :param git_commit: The git_commit of this V1alpha1Version.  # noqa: E501
-        :type: str
+        :type git_commit: str
         """
         if self.local_vars_configuration.client_side_validation and git_commit is None:  # noqa: E501
             raise ValueError("Invalid value for `git_commit`, must not be `None`")  # noqa: E501
@@ -164,7 +164,7 @@ class V1alpha1Version(object):
 
 
         :param git_tag: The git_tag of this V1alpha1Version.  # noqa: E501
-        :type: str
+        :type git_tag: str
         """
         if self.local_vars_configuration.client_side_validation and git_tag is None:  # noqa: E501
             raise ValueError("Invalid value for `git_tag`, must not be `None`")  # noqa: E501
@@ -187,7 +187,7 @@ class V1alpha1Version(object):
 
 
         :param git_tree_state: The git_tree_state of this V1alpha1Version.  # noqa: E501
-        :type: str
+        :type git_tree_state: str
         """
         if self.local_vars_configuration.client_side_validation and git_tree_state is None:  # noqa: E501
             raise ValueError("Invalid value for `git_tree_state`, must not be `None`")  # noqa: E501
@@ -210,7 +210,7 @@ class V1alpha1Version(object):
 
 
         :param go_version: The go_version of this V1alpha1Version.  # noqa: E501
-        :type: str
+        :type go_version: str
         """
         if self.local_vars_configuration.client_side_validation and go_version is None:  # noqa: E501
             raise ValueError("Invalid value for `go_version`, must not be `None`")  # noqa: E501
@@ -233,7 +233,7 @@ class V1alpha1Version(object):
 
 
         :param platform: The platform of this V1alpha1Version.  # noqa: E501
-        :type: str
+        :type platform: str
         """
         if self.local_vars_configuration.client_side_validation and platform is None:  # noqa: E501
             raise ValueError("Invalid value for `platform`, must not be `None`")  # noqa: E501
@@ -256,7 +256,7 @@ class V1alpha1Version(object):
 
 
         :param version: The version of this V1alpha1Version.  # noqa: E501
-        :type: str
+        :type version: str
         """
         if self.local_vars_configuration.client_side_validation and version is None:  # noqa: E501
             raise ValueError("Invalid value for `version`, must not be `None`")  # noqa: E501

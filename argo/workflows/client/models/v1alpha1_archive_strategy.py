@@ -75,7 +75,7 @@ class V1alpha1ArchiveStrategy(object):
         NoneStrategy indicates to skip tar process and upload the files or directory tree as independent files. Note that if the artifact is a directory, the artifact driver must support the ability to save/load the directory appropriately.  # noqa: E501
 
         :param _none: The _none of this V1alpha1ArchiveStrategy.  # noqa: E501
-        :type: object
+        :type _none: object
         """
 
         self.__none = _none
@@ -96,7 +96,7 @@ class V1alpha1ArchiveStrategy(object):
 
 
         :param tar: The tar of this V1alpha1ArchiveStrategy.  # noqa: E501
-        :type: V1alpha1TarStrategy
+        :type tar: V1alpha1TarStrategy
         """
 
         self._tar = tar

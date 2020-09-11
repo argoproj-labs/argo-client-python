@@ -61,11 +61,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -140,11 +140,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -219,11 +219,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -298,11 +298,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -377,11 +377,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -464,11 +464,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -551,11 +551,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -638,11 +638,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -725,11 +725,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -804,11 +804,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -883,11 +883,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -962,11 +962,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1041,11 +1041,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1128,11 +1128,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1215,11 +1215,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1302,11 +1302,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1389,11 +1389,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1470,11 +1470,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1551,11 +1551,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1632,11 +1632,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1713,11 +1713,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1794,11 +1794,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1875,11 +1875,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
@@ -1956,11 +1956,11 @@ configuration = openapi_client.Configuration(
 configuration = openapi_client.Configuration(
     host = "http://localhost",
     api_key = {
-        'authorization': 'YOUR_API_KEY'
+        'BearerToken': 'YOUR_API_KEY'
     }
 )
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['authorization'] = 'Bearer'
+# configuration.api_key_prefix['BearerToken'] = 'Bearer'
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:

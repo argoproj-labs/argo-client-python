@@ -84,7 +84,7 @@ class V1VsphereVirtualDiskVolumeSource(object):
         Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified.  # noqa: E501
 
         :param fs_type: The fs_type of this V1VsphereVirtualDiskVolumeSource.  # noqa: E501
-        :type: str
+        :type fs_type: str
         """
 
         self._fs_type = fs_type
@@ -107,7 +107,7 @@ class V1VsphereVirtualDiskVolumeSource(object):
         Storage Policy Based Management (SPBM) profile ID associated with the StoragePolicyName.  # noqa: E501
 
         :param storage_policy_id: The storage_policy_id of this V1VsphereVirtualDiskVolumeSource.  # noqa: E501
-        :type: str
+        :type storage_policy_id: str
         """
 
         self._storage_policy_id = storage_policy_id
@@ -130,7 +130,7 @@ class V1VsphereVirtualDiskVolumeSource(object):
         Storage Policy Based Management (SPBM) profile name.  # noqa: E501
 
         :param storage_policy_name: The storage_policy_name of this V1VsphereVirtualDiskVolumeSource.  # noqa: E501
-        :type: str
+        :type storage_policy_name: str
         """
 
         self._storage_policy_name = storage_policy_name
@@ -153,7 +153,7 @@ class V1VsphereVirtualDiskVolumeSource(object):
         Path that identifies vSphere volume vmdk  # noqa: E501
 
         :param volume_path: The volume_path of this V1VsphereVirtualDiskVolumeSource.  # noqa: E501
-        :type: str
+        :type volume_path: str
         """
         if self.local_vars_configuration.client_side_validation and volume_path is None:  # noqa: E501
             raise ValueError("Invalid value for `volume_path`, must not be `None`")  # noqa: E501

@@ -78,7 +78,7 @@ class V1alpha1UpdateCronWorkflowRequest(object):
 
 
         :param cron_workflow: The cron_workflow of this V1alpha1UpdateCronWorkflowRequest.  # noqa: E501
-        :type: V1alpha1CronWorkflow
+        :type cron_workflow: V1alpha1CronWorkflow
         """
 
         self._cron_workflow = cron_workflow
@@ -101,7 +101,7 @@ class V1alpha1UpdateCronWorkflowRequest(object):
         DEPRECATED: This field is ignored.  # noqa: E501
 
         :param name: The name of this V1alpha1UpdateCronWorkflowRequest.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -122,7 +122,7 @@ class V1alpha1UpdateCronWorkflowRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1UpdateCronWorkflowRequest.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace

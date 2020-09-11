@@ -84,7 +84,7 @@ class V1GCEPersistentDiskVolumeSource(object):
         Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk  # noqa: E501
 
         :param fs_type: The fs_type of this V1GCEPersistentDiskVolumeSource.  # noqa: E501
-        :type: str
+        :type fs_type: str
         """
 
         self._fs_type = fs_type
@@ -107,7 +107,7 @@ class V1GCEPersistentDiskVolumeSource(object):
         The partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as \"1\". Similarly, the volume partition for /dev/sda is \"0\" (or you can leave the property empty). More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk  # noqa: E501
 
         :param partition: The partition of this V1GCEPersistentDiskVolumeSource.  # noqa: E501
-        :type: int
+        :type partition: int
         """
 
         self._partition = partition
@@ -130,7 +130,7 @@ class V1GCEPersistentDiskVolumeSource(object):
         Unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk  # noqa: E501
 
         :param pd_name: The pd_name of this V1GCEPersistentDiskVolumeSource.  # noqa: E501
-        :type: str
+        :type pd_name: str
         """
         if self.local_vars_configuration.client_side_validation and pd_name is None:  # noqa: E501
             raise ValueError("Invalid value for `pd_name`, must not be `None`")  # noqa: E501
@@ -155,7 +155,7 @@ class V1GCEPersistentDiskVolumeSource(object):
         ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk  # noqa: E501
 
         :param read_only: The read_only of this V1GCEPersistentDiskVolumeSource.  # noqa: E501
-        :type: bool
+        :type read_only: bool
         """
 
         self._read_only = read_only

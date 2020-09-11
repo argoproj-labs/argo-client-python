@@ -115,7 +115,7 @@ class V1SecurityContext(object):
         AllowPrivilegeEscalation controls whether a process can gain more privileges than its parent process. This bool directly controls if the no_new_privs flag will be set on the container process. AllowPrivilegeEscalation is true always when the container is: 1) run as Privileged 2) has CAP_SYS_ADMIN  # noqa: E501
 
         :param allow_privilege_escalation: The allow_privilege_escalation of this V1SecurityContext.  # noqa: E501
-        :type: bool
+        :type allow_privilege_escalation: bool
         """
 
         self._allow_privilege_escalation = allow_privilege_escalation
@@ -136,7 +136,7 @@ class V1SecurityContext(object):
 
 
         :param capabilities: The capabilities of this V1SecurityContext.  # noqa: E501
-        :type: V1Capabilities
+        :type capabilities: V1Capabilities
         """
 
         self._capabilities = capabilities
@@ -159,7 +159,7 @@ class V1SecurityContext(object):
         Run container in privileged mode. Processes in privileged containers are essentially equivalent to root on the host. Defaults to false.  # noqa: E501
 
         :param privileged: The privileged of this V1SecurityContext.  # noqa: E501
-        :type: bool
+        :type privileged: bool
         """
 
         self._privileged = privileged
@@ -182,7 +182,7 @@ class V1SecurityContext(object):
         procMount denotes the type of proc mount to use for the containers. The default is DefaultProcMount which uses the container runtime defaults for readonly paths and masked paths. This requires the ProcMountType feature flag to be enabled.  # noqa: E501
 
         :param proc_mount: The proc_mount of this V1SecurityContext.  # noqa: E501
-        :type: str
+        :type proc_mount: str
         """
 
         self._proc_mount = proc_mount
@@ -205,7 +205,7 @@ class V1SecurityContext(object):
         Whether this container has a read-only root filesystem. Default is false.  # noqa: E501
 
         :param read_only_root_filesystem: The read_only_root_filesystem of this V1SecurityContext.  # noqa: E501
-        :type: bool
+        :type read_only_root_filesystem: bool
         """
 
         self._read_only_root_filesystem = read_only_root_filesystem
@@ -228,7 +228,7 @@ class V1SecurityContext(object):
         The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.  # noqa: E501
 
         :param run_as_group: The run_as_group of this V1SecurityContext.  # noqa: E501
-        :type: int
+        :type run_as_group: int
         """
 
         self._run_as_group = run_as_group
@@ -251,7 +251,7 @@ class V1SecurityContext(object):
         Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.  # noqa: E501
 
         :param run_as_non_root: The run_as_non_root of this V1SecurityContext.  # noqa: E501
-        :type: bool
+        :type run_as_non_root: bool
         """
 
         self._run_as_non_root = run_as_non_root
@@ -274,7 +274,7 @@ class V1SecurityContext(object):
         The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.  # noqa: E501
 
         :param run_as_user: The run_as_user of this V1SecurityContext.  # noqa: E501
-        :type: int
+        :type run_as_user: int
         """
 
         self._run_as_user = run_as_user
@@ -295,7 +295,7 @@ class V1SecurityContext(object):
 
 
         :param se_linux_options: The se_linux_options of this V1SecurityContext.  # noqa: E501
-        :type: V1SELinuxOptions
+        :type se_linux_options: V1SELinuxOptions
         """
 
         self._se_linux_options = se_linux_options
@@ -316,7 +316,7 @@ class V1SecurityContext(object):
 
 
         :param windows_options: The windows_options of this V1SecurityContext.  # noqa: E501
-        :type: V1WindowsSecurityContextOptions
+        :type windows_options: V1WindowsSecurityContextOptions
         """
 
         self._windows_options = windows_options

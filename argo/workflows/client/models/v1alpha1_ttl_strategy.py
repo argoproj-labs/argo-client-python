@@ -80,7 +80,7 @@ class V1alpha1TTLStrategy(object):
         SecondsAfterCompletion is the number of seconds to live after completion  # noqa: E501
 
         :param seconds_after_completion: The seconds_after_completion of this V1alpha1TTLStrategy.  # noqa: E501
-        :type: int
+        :type seconds_after_completion: int
         """
 
         self._seconds_after_completion = seconds_after_completion
@@ -103,7 +103,7 @@ class V1alpha1TTLStrategy(object):
         SecondsAfterFailure is the number of seconds to live after failure  # noqa: E501
 
         :param seconds_after_failure: The seconds_after_failure of this V1alpha1TTLStrategy.  # noqa: E501
-        :type: int
+        :type seconds_after_failure: int
         """
 
         self._seconds_after_failure = seconds_after_failure
@@ -126,7 +126,7 @@ class V1alpha1TTLStrategy(object):
         SecondsAfterSuccess is the number of seconds to live after success  # noqa: E501
 
         :param seconds_after_success: The seconds_after_success of this V1alpha1TTLStrategy.  # noqa: E501
-        :type: int
+        :type seconds_after_success: int
         """
 
         self._seconds_after_success = seconds_after_success

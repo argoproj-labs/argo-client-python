@@ -83,7 +83,7 @@ class V1alpha1ClusterWorkflowTemplate(object):
         APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.io.k8s.community/contributors/devel/sig-architecture/api-conventions.md#resources  # noqa: E501
 
         :param api_version: The api_version of this V1alpha1ClusterWorkflowTemplate.  # noqa: E501
-        :type: str
+        :type api_version: str
         """
 
         self._api_version = api_version
@@ -106,7 +106,7 @@ class V1alpha1ClusterWorkflowTemplate(object):
         Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.io.k8s.community/contributors/devel/sig-architecture/api-conventions.md#types-kinds  # noqa: E501
 
         :param kind: The kind of this V1alpha1ClusterWorkflowTemplate.  # noqa: E501
-        :type: str
+        :type kind: str
         """
 
         self._kind = kind
@@ -127,7 +127,7 @@ class V1alpha1ClusterWorkflowTemplate(object):
 
 
         :param metadata: The metadata of this V1alpha1ClusterWorkflowTemplate.  # noqa: E501
-        :type: V1ObjectMeta
+        :type metadata: V1ObjectMeta
         """
         if self.local_vars_configuration.client_side_validation and metadata is None:  # noqa: E501
             raise ValueError("Invalid value for `metadata`, must not be `None`")  # noqa: E501
@@ -150,7 +150,7 @@ class V1alpha1ClusterWorkflowTemplate(object):
 
 
         :param spec: The spec of this V1alpha1ClusterWorkflowTemplate.  # noqa: E501
-        :type: V1alpha1WorkflowTemplateSpec
+        :type spec: V1alpha1WorkflowTemplateSpec
         """
         if self.local_vars_configuration.client_side_validation and spec is None:  # noqa: E501
             raise ValueError("Invalid value for `spec`, must not be `None`")  # noqa: E501

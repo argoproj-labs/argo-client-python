@@ -73,7 +73,7 @@ class GoogleProtobufAny(object):
 
 
         :param type_url: The type_url of this GoogleProtobufAny.  # noqa: E501
-        :type: str
+        :type type_url: str
         """
 
         self._type_url = type_url
@@ -94,7 +94,7 @@ class GoogleProtobufAny(object):
 
 
         :param value: The value of this GoogleProtobufAny.  # noqa: E501
-        :type: str
+        :type value: str
         """
         if (self.local_vars_configuration.client_side_validation and
                 value is not None and not re.search(r'^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$', value)):  # noqa: E501

@@ -85,7 +85,7 @@ class V1alpha1TemplateRef(object):
         ClusterScope indicates the referred template is cluster scoped (i.e. a ClusterWorkflowTemplate).  # noqa: E501
 
         :param cluster_scope: The cluster_scope of this V1alpha1TemplateRef.  # noqa: E501
-        :type: bool
+        :type cluster_scope: bool
         """
 
         self._cluster_scope = cluster_scope
@@ -108,7 +108,7 @@ class V1alpha1TemplateRef(object):
         Name is the resource name of the template.  # noqa: E501
 
         :param name: The name of this V1alpha1TemplateRef.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -131,7 +131,7 @@ class V1alpha1TemplateRef(object):
         RuntimeResolution skips validation at creation time. By enabling this option, you can create the referred workflow template before the actual runtime.  # noqa: E501
 
         :param runtime_resolution: The runtime_resolution of this V1alpha1TemplateRef.  # noqa: E501
-        :type: bool
+        :type runtime_resolution: bool
         """
 
         self._runtime_resolution = runtime_resolution
@@ -154,7 +154,7 @@ class V1alpha1TemplateRef(object):
         Template is the name of referred template in the resource.  # noqa: E501
 
         :param template: The template of this V1alpha1TemplateRef.  # noqa: E501
-        :type: str
+        :type template: str
         """
 
         self._template = template

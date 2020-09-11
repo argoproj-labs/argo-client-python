@@ -90,7 +90,7 @@ class V1Toleration(object):
         Effect indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.  # noqa: E501
 
         :param effect: The effect of this V1Toleration.  # noqa: E501
-        :type: str
+        :type effect: str
         """
 
         self._effect = effect
@@ -113,7 +113,7 @@ class V1Toleration(object):
         Key is the taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.  # noqa: E501
 
         :param key: The key of this V1Toleration.  # noqa: E501
-        :type: str
+        :type key: str
         """
 
         self._key = key
@@ -136,7 +136,7 @@ class V1Toleration(object):
         Operator represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.  # noqa: E501
 
         :param operator: The operator of this V1Toleration.  # noqa: E501
-        :type: str
+        :type operator: str
         """
 
         self._operator = operator
@@ -159,7 +159,7 @@ class V1Toleration(object):
         TolerationSeconds represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.  # noqa: E501
 
         :param toleration_seconds: The toleration_seconds of this V1Toleration.  # noqa: E501
-        :type: int
+        :type toleration_seconds: int
         """
 
         self._toleration_seconds = toleration_seconds
@@ -182,7 +182,7 @@ class V1Toleration(object):
         Value is the taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.  # noqa: E501
 
         :param value: The value of this V1Toleration.  # noqa: E501
-        :type: str
+        :type value: str
         """
 
         self._value = value

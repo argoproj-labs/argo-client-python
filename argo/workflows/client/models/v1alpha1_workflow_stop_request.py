@@ -83,7 +83,7 @@ class V1alpha1WorkflowStopRequest(object):
 
 
         :param message: The message of this V1alpha1WorkflowStopRequest.  # noqa: E501
-        :type: str
+        :type message: str
         """
 
         self._message = message
@@ -104,7 +104,7 @@ class V1alpha1WorkflowStopRequest(object):
 
 
         :param name: The name of this V1alpha1WorkflowStopRequest.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -125,7 +125,7 @@ class V1alpha1WorkflowStopRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowStopRequest.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace
@@ -146,7 +146,7 @@ class V1alpha1WorkflowStopRequest(object):
 
 
         :param node_field_selector: The node_field_selector of this V1alpha1WorkflowStopRequest.  # noqa: E501
-        :type: str
+        :type node_field_selector: str
         """
 
         self._node_field_selector = node_field_selector

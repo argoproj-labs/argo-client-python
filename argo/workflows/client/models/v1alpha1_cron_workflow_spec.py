@@ -108,7 +108,7 @@ class V1alpha1CronWorkflowSpec(object):
         ConcurrencyPolicy is the K8s-style concurrency policy that will be used  # noqa: E501
 
         :param concurrency_policy: The concurrency_policy of this V1alpha1CronWorkflowSpec.  # noqa: E501
-        :type: str
+        :type concurrency_policy: str
         """
 
         self._concurrency_policy = concurrency_policy
@@ -131,7 +131,7 @@ class V1alpha1CronWorkflowSpec(object):
         FailedJobsHistoryLimit is the number of successful jobs to be kept at a time  # noqa: E501
 
         :param failed_jobs_history_limit: The failed_jobs_history_limit of this V1alpha1CronWorkflowSpec.  # noqa: E501
-        :type: int
+        :type failed_jobs_history_limit: int
         """
 
         self._failed_jobs_history_limit = failed_jobs_history_limit
@@ -154,7 +154,7 @@ class V1alpha1CronWorkflowSpec(object):
         Schedule is a schedule to run the Workflow in Cron format  # noqa: E501
 
         :param schedule: The schedule of this V1alpha1CronWorkflowSpec.  # noqa: E501
-        :type: str
+        :type schedule: str
         """
         if self.local_vars_configuration.client_side_validation and schedule is None:  # noqa: E501
             raise ValueError("Invalid value for `schedule`, must not be `None`")  # noqa: E501
@@ -179,7 +179,7 @@ class V1alpha1CronWorkflowSpec(object):
         StartingDeadlineSeconds is the K8s-style deadline that will limit the time a CronWorkflow will be run after its original scheduled time if it is missed.  # noqa: E501
 
         :param starting_deadline_seconds: The starting_deadline_seconds of this V1alpha1CronWorkflowSpec.  # noqa: E501
-        :type: int
+        :type starting_deadline_seconds: int
         """
 
         self._starting_deadline_seconds = starting_deadline_seconds
@@ -202,7 +202,7 @@ class V1alpha1CronWorkflowSpec(object):
         SuccessfulJobsHistoryLimit is the number of successful jobs to be kept at a time  # noqa: E501
 
         :param successful_jobs_history_limit: The successful_jobs_history_limit of this V1alpha1CronWorkflowSpec.  # noqa: E501
-        :type: int
+        :type successful_jobs_history_limit: int
         """
 
         self._successful_jobs_history_limit = successful_jobs_history_limit
@@ -225,7 +225,7 @@ class V1alpha1CronWorkflowSpec(object):
         Suspend is a flag that will stop new CronWorkflows from running if set to true  # noqa: E501
 
         :param suspend: The suspend of this V1alpha1CronWorkflowSpec.  # noqa: E501
-        :type: bool
+        :type suspend: bool
         """
 
         self._suspend = suspend
@@ -248,7 +248,7 @@ class V1alpha1CronWorkflowSpec(object):
         Timezone is the timezone against which the cron schedule will be calculated, e.g. \"Asia/Tokyo\". Default is machine's local time.  # noqa: E501
 
         :param timezone: The timezone of this V1alpha1CronWorkflowSpec.  # noqa: E501
-        :type: str
+        :type timezone: str
         """
 
         self._timezone = timezone
@@ -269,7 +269,7 @@ class V1alpha1CronWorkflowSpec(object):
 
 
         :param workflow_metadata: The workflow_metadata of this V1alpha1CronWorkflowSpec.  # noqa: E501
-        :type: V1ObjectMeta
+        :type workflow_metadata: V1ObjectMeta
         """
 
         self._workflow_metadata = workflow_metadata
@@ -290,7 +290,7 @@ class V1alpha1CronWorkflowSpec(object):
 
 
         :param workflow_spec: The workflow_spec of this V1alpha1CronWorkflowSpec.  # noqa: E501
-        :type: V1alpha1WorkflowSpec
+        :type workflow_spec: V1alpha1WorkflowSpec
         """
         if self.local_vars_configuration.client_side_validation and workflow_spec is None:  # noqa: E501
             raise ValueError("Invalid value for `workflow_spec`, must not be `None`")  # noqa: E501

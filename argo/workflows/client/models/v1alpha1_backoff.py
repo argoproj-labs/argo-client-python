@@ -80,7 +80,7 @@ class V1alpha1Backoff(object):
         Duration is the amount to back off. Default unit is seconds, but could also be a duration (e.g. \"2m\", \"1h\")  # noqa: E501
 
         :param duration: The duration of this V1alpha1Backoff.  # noqa: E501
-        :type: str
+        :type duration: str
         """
 
         self._duration = duration
@@ -103,7 +103,7 @@ class V1alpha1Backoff(object):
         Factor is a factor to multiply the base duration after each failed retry  # noqa: E501
 
         :param factor: The factor of this V1alpha1Backoff.  # noqa: E501
-        :type: int
+        :type factor: int
         """
 
         self._factor = factor
@@ -126,7 +126,7 @@ class V1alpha1Backoff(object):
         MaxDuration is the maximum amount of time allowed for the backoff strategy  # noqa: E501
 
         :param max_duration: The max_duration of this V1alpha1Backoff.  # noqa: E501
-        :type: str
+        :type max_duration: str
         """
 
         self._max_duration = max_duration

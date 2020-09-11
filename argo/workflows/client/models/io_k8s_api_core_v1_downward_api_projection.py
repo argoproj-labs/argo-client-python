@@ -70,7 +70,7 @@ class V1DownwardAPIProjection(object):
         Items is a list of DownwardAPIVolume file  # noqa: E501
 
         :param items: The items of this V1DownwardAPIProjection.  # noqa: E501
-        :type: list[V1DownwardAPIVolumeFile]
+        :type items: list[V1DownwardAPIVolumeFile]
         """
 
         self._items = items

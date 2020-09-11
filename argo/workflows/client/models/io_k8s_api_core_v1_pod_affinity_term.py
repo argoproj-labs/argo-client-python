@@ -77,7 +77,7 @@ class V1PodAffinityTerm(object):
 
 
         :param label_selector: The label_selector of this V1PodAffinityTerm.  # noqa: E501
-        :type: V1LabelSelector
+        :type label_selector: V1LabelSelector
         """
 
         self._label_selector = label_selector
@@ -100,7 +100,7 @@ class V1PodAffinityTerm(object):
         namespaces specifies which namespaces the labelSelector applies to (matches against); null or empty list means \"this pod's namespace\"  # noqa: E501
 
         :param namespaces: The namespaces of this V1PodAffinityTerm.  # noqa: E501
-        :type: list[str]
+        :type namespaces: list[str]
         """
 
         self._namespaces = namespaces
@@ -123,7 +123,7 @@ class V1PodAffinityTerm(object):
         This pod should be co-located (affinity) or not co-located (anti-affinity) with the pods matching the labelSelector in the specified namespaces, where co-located is defined as running on a node whose value of the label with key topologyKey matches that of any node on which any of the selected pods is running. Empty topologyKey is not allowed.  # noqa: E501
 
         :param topology_key: The topology_key of this V1PodAffinityTerm.  # noqa: E501
-        :type: str
+        :type topology_key: str
         """
         if self.local_vars_configuration.client_side_validation and topology_key is None:  # noqa: E501
             raise ValueError("Invalid value for `topology_key`, must not be `None`")  # noqa: E501

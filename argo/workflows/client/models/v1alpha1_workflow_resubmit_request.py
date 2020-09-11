@@ -78,7 +78,7 @@ class V1alpha1WorkflowResubmitRequest(object):
 
 
         :param memoized: The memoized of this V1alpha1WorkflowResubmitRequest.  # noqa: E501
-        :type: bool
+        :type memoized: bool
         """
 
         self._memoized = memoized
@@ -99,7 +99,7 @@ class V1alpha1WorkflowResubmitRequest(object):
 
 
         :param name: The name of this V1alpha1WorkflowResubmitRequest.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -120,7 +120,7 @@ class V1alpha1WorkflowResubmitRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowResubmitRequest.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace

@@ -105,7 +105,7 @@ class V1PodSecurityContext(object):
         A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod:  1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw----  If unset, the Kubelet will not modify the ownership and permissions of any volume.  # noqa: E501
 
         :param fs_group: The fs_group of this V1PodSecurityContext.  # noqa: E501
-        :type: int
+        :type fs_group: int
         """
 
         self._fs_group = fs_group
@@ -128,7 +128,7 @@ class V1PodSecurityContext(object):
         The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.  # noqa: E501
 
         :param run_as_group: The run_as_group of this V1PodSecurityContext.  # noqa: E501
-        :type: int
+        :type run_as_group: int
         """
 
         self._run_as_group = run_as_group
@@ -151,7 +151,7 @@ class V1PodSecurityContext(object):
         Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.  # noqa: E501
 
         :param run_as_non_root: The run_as_non_root of this V1PodSecurityContext.  # noqa: E501
-        :type: bool
+        :type run_as_non_root: bool
         """
 
         self._run_as_non_root = run_as_non_root
@@ -174,7 +174,7 @@ class V1PodSecurityContext(object):
         The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext.  If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container.  # noqa: E501
 
         :param run_as_user: The run_as_user of this V1PodSecurityContext.  # noqa: E501
-        :type: int
+        :type run_as_user: int
         """
 
         self._run_as_user = run_as_user
@@ -195,7 +195,7 @@ class V1PodSecurityContext(object):
 
 
         :param se_linux_options: The se_linux_options of this V1PodSecurityContext.  # noqa: E501
-        :type: V1SELinuxOptions
+        :type se_linux_options: V1SELinuxOptions
         """
 
         self._se_linux_options = se_linux_options
@@ -218,7 +218,7 @@ class V1PodSecurityContext(object):
         A list of groups applied to the first process run in each container, in addition to the container's primary GID.  If unspecified, no groups will be added to any container.  # noqa: E501
 
         :param supplemental_groups: The supplemental_groups of this V1PodSecurityContext.  # noqa: E501
-        :type: list[int]
+        :type supplemental_groups: list[int]
         """
 
         self._supplemental_groups = supplemental_groups
@@ -241,7 +241,7 @@ class V1PodSecurityContext(object):
         Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch.  # noqa: E501
 
         :param sysctls: The sysctls of this V1PodSecurityContext.  # noqa: E501
-        :type: list[V1Sysctl]
+        :type sysctls: list[V1Sysctl]
         """
 
         self._sysctls = sysctls
@@ -262,7 +262,7 @@ class V1PodSecurityContext(object):
 
 
         :param windows_options: The windows_options of this V1PodSecurityContext.  # noqa: E501
-        :type: V1WindowsSecurityContextOptions
+        :type windows_options: V1WindowsSecurityContextOptions
         """
 
         self._windows_options = windows_options

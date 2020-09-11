@@ -75,7 +75,7 @@ class V1WindowsSecurityContextOptions(object):
         GMSACredentialSpec is where the GMSA admission webhook (https://github.com/kubernetes-sigs/windows-gmsa) inlines the contents of the GMSA credential spec named by the GMSACredentialSpecName field. This field is alpha-level and is only honored by servers that enable the WindowsGMSA feature flag.  # noqa: E501
 
         :param gmsa_credential_spec: The gmsa_credential_spec of this V1WindowsSecurityContextOptions.  # noqa: E501
-        :type: str
+        :type gmsa_credential_spec: str
         """
 
         self._gmsa_credential_spec = gmsa_credential_spec
@@ -98,7 +98,7 @@ class V1WindowsSecurityContextOptions(object):
         GMSACredentialSpecName is the name of the GMSA credential spec to use. This field is alpha-level and is only honored by servers that enable the WindowsGMSA feature flag.  # noqa: E501
 
         :param gmsa_credential_spec_name: The gmsa_credential_spec_name of this V1WindowsSecurityContextOptions.  # noqa: E501
-        :type: str
+        :type gmsa_credential_spec_name: str
         """
 
         self._gmsa_credential_spec_name = gmsa_credential_spec_name

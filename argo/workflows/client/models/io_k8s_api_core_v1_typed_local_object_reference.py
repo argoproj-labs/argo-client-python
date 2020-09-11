@@ -78,7 +78,7 @@ class V1TypedLocalObjectReference(object):
         APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.  # noqa: E501
 
         :param api_group: The api_group of this V1TypedLocalObjectReference.  # noqa: E501
-        :type: str
+        :type api_group: str
         """
 
         self._api_group = api_group
@@ -101,7 +101,7 @@ class V1TypedLocalObjectReference(object):
         Kind is the type of resource being referenced  # noqa: E501
 
         :param kind: The kind of this V1TypedLocalObjectReference.  # noqa: E501
-        :type: str
+        :type kind: str
         """
         if self.local_vars_configuration.client_side_validation and kind is None:  # noqa: E501
             raise ValueError("Invalid value for `kind`, must not be `None`")  # noqa: E501
@@ -126,7 +126,7 @@ class V1TypedLocalObjectReference(object):
         Name is the name of resource being referenced  # noqa: E501
 
         :param name: The name of this V1TypedLocalObjectReference.  # noqa: E501
-        :type: str
+        :type name: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501

@@ -90,7 +90,7 @@ class V1ManagedFieldsEntry(object):
         APIVersion defines the version of this resource that this field set applies to. The format is \"group/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted.  # noqa: E501
 
         :param api_version: The api_version of this V1ManagedFieldsEntry.  # noqa: E501
-        :type: str
+        :type api_version: str
         """
 
         self._api_version = api_version
@@ -113,7 +113,7 @@ class V1ManagedFieldsEntry(object):
         Fields identifies a set of fields.  # noqa: E501
 
         :param fields: The fields of this V1ManagedFieldsEntry.  # noqa: E501
-        :type: object
+        :type fields: object
         """
 
         self._fields = fields
@@ -136,7 +136,7 @@ class V1ManagedFieldsEntry(object):
         Manager is an identifier of the workflow managing these fields.  # noqa: E501
 
         :param manager: The manager of this V1ManagedFieldsEntry.  # noqa: E501
-        :type: str
+        :type manager: str
         """
 
         self._manager = manager
@@ -159,7 +159,7 @@ class V1ManagedFieldsEntry(object):
         Operation is the type of operation which lead to this ManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'.  # noqa: E501
 
         :param operation: The operation of this V1ManagedFieldsEntry.  # noqa: E501
-        :type: str
+        :type operation: str
         """
 
         self._operation = operation
@@ -182,7 +182,7 @@ class V1ManagedFieldsEntry(object):
         Time is timestamp of when these fields were set. It should always be empty if Operation is 'Apply'  # noqa: E501
 
         :param time: The time of this V1ManagedFieldsEntry.  # noqa: E501
-        :type: datetime
+        :type time: datetime
         """
 
         self._time = time

@@ -78,7 +78,7 @@ class V1AzureFileVolumeSource(object):
         Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  # noqa: E501
 
         :param read_only: The read_only of this V1AzureFileVolumeSource.  # noqa: E501
-        :type: bool
+        :type read_only: bool
         """
 
         self._read_only = read_only
@@ -101,7 +101,7 @@ class V1AzureFileVolumeSource(object):
         the name of secret that contains Azure Storage Account Name and Key  # noqa: E501
 
         :param secret_name: The secret_name of this V1AzureFileVolumeSource.  # noqa: E501
-        :type: str
+        :type secret_name: str
         """
         if self.local_vars_configuration.client_side_validation and secret_name is None:  # noqa: E501
             raise ValueError("Invalid value for `secret_name`, must not be `None`")  # noqa: E501
@@ -126,7 +126,7 @@ class V1AzureFileVolumeSource(object):
         Share Name  # noqa: E501
 
         :param share_name: The share_name of this V1AzureFileVolumeSource.  # noqa: E501
-        :type: str
+        :type share_name: str
         """
         if self.local_vars_configuration.client_side_validation and share_name is None:  # noqa: E501
             raise ValueError("Invalid value for `share_name`, must not be `None`")  # noqa: E501

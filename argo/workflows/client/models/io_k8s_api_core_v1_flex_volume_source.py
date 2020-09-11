@@ -89,7 +89,7 @@ class V1FlexVolumeSource(object):
         Driver is the name of the driver to use for this volume.  # noqa: E501
 
         :param driver: The driver of this V1FlexVolumeSource.  # noqa: E501
-        :type: str
+        :type driver: str
         """
         if self.local_vars_configuration.client_side_validation and driver is None:  # noqa: E501
             raise ValueError("Invalid value for `driver`, must not be `None`")  # noqa: E501
@@ -114,7 +114,7 @@ class V1FlexVolumeSource(object):
         Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". The default filesystem depends on FlexVolume script.  # noqa: E501
 
         :param fs_type: The fs_type of this V1FlexVolumeSource.  # noqa: E501
-        :type: str
+        :type fs_type: str
         """
 
         self._fs_type = fs_type
@@ -137,7 +137,7 @@ class V1FlexVolumeSource(object):
         Optional: Extra command options if any.  # noqa: E501
 
         :param options: The options of this V1FlexVolumeSource.  # noqa: E501
-        :type: dict(str, str)
+        :type options: dict(str, str)
         """
 
         self._options = options
@@ -160,7 +160,7 @@ class V1FlexVolumeSource(object):
         Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  # noqa: E501
 
         :param read_only: The read_only of this V1FlexVolumeSource.  # noqa: E501
-        :type: bool
+        :type read_only: bool
         """
 
         self._read_only = read_only
@@ -181,7 +181,7 @@ class V1FlexVolumeSource(object):
 
 
         :param secret_ref: The secret_ref of this V1FlexVolumeSource.  # noqa: E501
-        :type: V1LocalObjectReference
+        :type secret_ref: V1LocalObjectReference
         """
 
         self._secret_ref = secret_ref

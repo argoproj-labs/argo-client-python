@@ -99,7 +99,7 @@ class V1alpha1ResourceTemplate(object):
         Action is the action to perform to the resource. Must be one of: get, create, apply, delete, replace, patch  # noqa: E501
 
         :param action: The action of this V1alpha1ResourceTemplate.  # noqa: E501
-        :type: str
+        :type action: str
         """
         if self.local_vars_configuration.client_side_validation and action is None:  # noqa: E501
             raise ValueError("Invalid value for `action`, must not be `None`")  # noqa: E501
@@ -124,7 +124,7 @@ class V1alpha1ResourceTemplate(object):
         FailureCondition is a label selector expression which describes the conditions of the k8s resource in which the step was considered failed  # noqa: E501
 
         :param failure_condition: The failure_condition of this V1alpha1ResourceTemplate.  # noqa: E501
-        :type: str
+        :type failure_condition: str
         """
 
         self._failure_condition = failure_condition
@@ -147,7 +147,7 @@ class V1alpha1ResourceTemplate(object):
         Flags is a set of additional options passed to kubectl before submitting a resource I.e. to disable resource validation: flags: [  \"--validate=false\"  # disable resource validation ]  # noqa: E501
 
         :param flags: The flags of this V1alpha1ResourceTemplate.  # noqa: E501
-        :type: list[str]
+        :type flags: list[str]
         """
 
         self._flags = flags
@@ -170,7 +170,7 @@ class V1alpha1ResourceTemplate(object):
         Manifest contains the kubernetes manifest  # noqa: E501
 
         :param manifest: The manifest of this V1alpha1ResourceTemplate.  # noqa: E501
-        :type: str
+        :type manifest: str
         """
 
         self._manifest = manifest
@@ -193,7 +193,7 @@ class V1alpha1ResourceTemplate(object):
         MergeStrategy is the strategy used to merge a patch. It defaults to \"strategic\" Must be one of: strategic, merge, json  # noqa: E501
 
         :param merge_strategy: The merge_strategy of this V1alpha1ResourceTemplate.  # noqa: E501
-        :type: str
+        :type merge_strategy: str
         """
 
         self._merge_strategy = merge_strategy
@@ -216,7 +216,7 @@ class V1alpha1ResourceTemplate(object):
         SetOwnerReference sets the reference to the workflow on the OwnerReference of generated resource.  # noqa: E501
 
         :param set_owner_reference: The set_owner_reference of this V1alpha1ResourceTemplate.  # noqa: E501
-        :type: bool
+        :type set_owner_reference: bool
         """
 
         self._set_owner_reference = set_owner_reference
@@ -239,7 +239,7 @@ class V1alpha1ResourceTemplate(object):
         SuccessCondition is a label selector expression which describes the conditions of the k8s resource in which it is acceptable to proceed to the following step  # noqa: E501
 
         :param success_condition: The success_condition of this V1alpha1ResourceTemplate.  # noqa: E501
-        :type: str
+        :type success_condition: str
         """
 
         self._success_condition = success_condition

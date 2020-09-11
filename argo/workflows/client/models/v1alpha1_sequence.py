@@ -85,7 +85,7 @@ class V1alpha1Sequence(object):
         Count is number of elements in the sequence (default: 0). Not to be used with end  # noqa: E501
 
         :param count: The count of this V1alpha1Sequence.  # noqa: E501
-        :type: str
+        :type count: str
         """
 
         self._count = count
@@ -108,7 +108,7 @@ class V1alpha1Sequence(object):
         Number at which to end the sequence (default: 0). Not to be used with Count  # noqa: E501
 
         :param end: The end of this V1alpha1Sequence.  # noqa: E501
-        :type: str
+        :type end: str
         """
 
         self._end = end
@@ -131,7 +131,7 @@ class V1alpha1Sequence(object):
         Format is a printf format string to format the value in the sequence  # noqa: E501
 
         :param format: The format of this V1alpha1Sequence.  # noqa: E501
-        :type: str
+        :type format: str
         """
 
         self._format = format
@@ -154,7 +154,7 @@ class V1alpha1Sequence(object):
         Number at which to start the sequence (default: 0)  # noqa: E501
 
         :param start: The start of this V1alpha1Sequence.  # noqa: E501
-        :type: str
+        :type start: str
         """
 
         self._start = start

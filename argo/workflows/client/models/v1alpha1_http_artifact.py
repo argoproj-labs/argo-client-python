@@ -69,7 +69,7 @@ class V1alpha1HTTPArtifact(object):
         URL of the artifact  # noqa: E501
 
         :param url: The url of this V1alpha1HTTPArtifact.  # noqa: E501
-        :type: str
+        :type url: str
         """
         if self.local_vars_configuration.client_side_validation and url is None:  # noqa: E501
             raise ValueError("Invalid value for `url`, must not be `None`")  # noqa: E501

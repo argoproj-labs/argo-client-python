@@ -83,7 +83,7 @@ class V1alpha1WorkflowRetryRequest(object):
 
 
         :param name: The name of this V1alpha1WorkflowRetryRequest.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -104,7 +104,7 @@ class V1alpha1WorkflowRetryRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowRetryRequest.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace
@@ -125,7 +125,7 @@ class V1alpha1WorkflowRetryRequest(object):
 
 
         :param node_field_selector: The node_field_selector of this V1alpha1WorkflowRetryRequest.  # noqa: E501
-        :type: str
+        :type node_field_selector: str
         """
 
         self._node_field_selector = node_field_selector
@@ -146,7 +146,7 @@ class V1alpha1WorkflowRetryRequest(object):
 
 
         :param restart_successful: The restart_successful of this V1alpha1WorkflowRetryRequest.  # noqa: E501
-        :type: bool
+        :type restart_successful: bool
         """
 
         self._restart_successful = restart_successful

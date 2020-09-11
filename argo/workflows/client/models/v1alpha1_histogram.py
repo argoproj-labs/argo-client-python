@@ -73,7 +73,7 @@ class V1alpha1Histogram(object):
         Buckets is a list of bucket divisors for the histogram  # noqa: E501
 
         :param buckets: The buckets of this V1alpha1Histogram.  # noqa: E501
-        :type: list[float]
+        :type buckets: list[float]
         """
         if self.local_vars_configuration.client_side_validation and buckets is None:  # noqa: E501
             raise ValueError("Invalid value for `buckets`, must not be `None`")  # noqa: E501
@@ -98,7 +98,7 @@ class V1alpha1Histogram(object):
         Value is the value of the metric  # noqa: E501
 
         :param value: The value of this V1alpha1Histogram.  # noqa: E501
-        :type: str
+        :type value: str
         """
         if self.local_vars_configuration.client_side_validation and value is None:  # noqa: E501
             raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501

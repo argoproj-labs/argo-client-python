@@ -71,7 +71,7 @@ class V1PreferredSchedulingTerm(object):
 
 
         :param preference: The preference of this V1PreferredSchedulingTerm.  # noqa: E501
-        :type: V1NodeSelectorTerm
+        :type preference: V1NodeSelectorTerm
         """
         if self.local_vars_configuration.client_side_validation and preference is None:  # noqa: E501
             raise ValueError("Invalid value for `preference`, must not be `None`")  # noqa: E501
@@ -96,7 +96,7 @@ class V1PreferredSchedulingTerm(object):
         Weight associated with matching the corresponding nodeSelectorTerm, in the range 1-100.  # noqa: E501
 
         :param weight: The weight of this V1PreferredSchedulingTerm.  # noqa: E501
-        :type: int
+        :type weight: int
         """
         if self.local_vars_configuration.client_side_validation and weight is None:  # noqa: E501
             raise ValueError("Invalid value for `weight`, must not be `None`")  # noqa: E501

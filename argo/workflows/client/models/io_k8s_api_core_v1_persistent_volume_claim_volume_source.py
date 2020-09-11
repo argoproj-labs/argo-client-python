@@ -74,7 +74,7 @@ class V1PersistentVolumeClaimVolumeSource(object):
         ClaimName is the name of a PersistentVolumeClaim in the same namespace as the pod using this volume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims  # noqa: E501
 
         :param claim_name: The claim_name of this V1PersistentVolumeClaimVolumeSource.  # noqa: E501
-        :type: str
+        :type claim_name: str
         """
         if self.local_vars_configuration.client_side_validation and claim_name is None:  # noqa: E501
             raise ValueError("Invalid value for `claim_name`, must not be `None`")  # noqa: E501
@@ -99,7 +99,7 @@ class V1PersistentVolumeClaimVolumeSource(object):
         Will force the ReadOnly setting in VolumeMounts. Default false.  # noqa: E501
 
         :param read_only: The read_only of this V1PersistentVolumeClaimVolumeSource.  # noqa: E501
-        :type: bool
+        :type read_only: bool
         """
 
         self._read_only = read_only

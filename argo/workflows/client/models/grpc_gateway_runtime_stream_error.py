@@ -88,7 +88,7 @@ class GrpcGatewayRuntimeStreamError(object):
 
 
         :param details: The details of this GrpcGatewayRuntimeStreamError.  # noqa: E501
-        :type: list[GoogleProtobufAny]
+        :type details: list[GoogleProtobufAny]
         """
 
         self._details = details
@@ -109,7 +109,7 @@ class GrpcGatewayRuntimeStreamError(object):
 
 
         :param grpc_code: The grpc_code of this GrpcGatewayRuntimeStreamError.  # noqa: E501
-        :type: int
+        :type grpc_code: int
         """
 
         self._grpc_code = grpc_code
@@ -130,7 +130,7 @@ class GrpcGatewayRuntimeStreamError(object):
 
 
         :param http_code: The http_code of this GrpcGatewayRuntimeStreamError.  # noqa: E501
-        :type: int
+        :type http_code: int
         """
 
         self._http_code = http_code
@@ -151,7 +151,7 @@ class GrpcGatewayRuntimeStreamError(object):
 
 
         :param http_status: The http_status of this GrpcGatewayRuntimeStreamError.  # noqa: E501
-        :type: str
+        :type http_status: str
         """
 
         self._http_status = http_status
@@ -172,7 +172,7 @@ class GrpcGatewayRuntimeStreamError(object):
 
 
         :param message: The message of this GrpcGatewayRuntimeStreamError.  # noqa: E501
-        :type: str
+        :type message: str
         """
 
         self._message = message

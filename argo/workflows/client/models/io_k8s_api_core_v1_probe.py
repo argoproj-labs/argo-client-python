@@ -103,7 +103,7 @@ class V1Probe(object):
 
 
         :param _exec: The _exec of this V1Probe.  # noqa: E501
-        :type: V1ExecAction
+        :type _exec: V1ExecAction
         """
 
         self.__exec = _exec
@@ -126,7 +126,7 @@ class V1Probe(object):
         Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.  # noqa: E501
 
         :param failure_threshold: The failure_threshold of this V1Probe.  # noqa: E501
-        :type: int
+        :type failure_threshold: int
         """
 
         self._failure_threshold = failure_threshold
@@ -147,7 +147,7 @@ class V1Probe(object):
 
 
         :param http_get: The http_get of this V1Probe.  # noqa: E501
-        :type: V1HTTPGetAction
+        :type http_get: V1HTTPGetAction
         """
 
         self._http_get = http_get
@@ -170,7 +170,7 @@ class V1Probe(object):
         Number of seconds after the container has started before liveness probes are initiated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes  # noqa: E501
 
         :param initial_delay_seconds: The initial_delay_seconds of this V1Probe.  # noqa: E501
-        :type: int
+        :type initial_delay_seconds: int
         """
 
         self._initial_delay_seconds = initial_delay_seconds
@@ -193,7 +193,7 @@ class V1Probe(object):
         How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1.  # noqa: E501
 
         :param period_seconds: The period_seconds of this V1Probe.  # noqa: E501
-        :type: int
+        :type period_seconds: int
         """
 
         self._period_seconds = period_seconds
@@ -216,7 +216,7 @@ class V1Probe(object):
         Minimum consecutive successes for the probe to be considered successful after having failed. Defaults to 1. Must be 1 for liveness. Minimum value is 1.  # noqa: E501
 
         :param success_threshold: The success_threshold of this V1Probe.  # noqa: E501
-        :type: int
+        :type success_threshold: int
         """
 
         self._success_threshold = success_threshold
@@ -237,7 +237,7 @@ class V1Probe(object):
 
 
         :param tcp_socket: The tcp_socket of this V1Probe.  # noqa: E501
-        :type: V1TCPSocketAction
+        :type tcp_socket: V1TCPSocketAction
         """
 
         self._tcp_socket = tcp_socket
@@ -260,7 +260,7 @@ class V1Probe(object):
         Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes  # noqa: E501
 
         :param timeout_seconds: The timeout_seconds of this V1Probe.  # noqa: E501
-        :type: int
+        :type timeout_seconds: int
         """
 
         self._timeout_seconds = timeout_seconds

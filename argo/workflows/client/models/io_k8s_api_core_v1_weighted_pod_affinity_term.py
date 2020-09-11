@@ -71,7 +71,7 @@ class V1WeightedPodAffinityTerm(object):
 
 
         :param pod_affinity_term: The pod_affinity_term of this V1WeightedPodAffinityTerm.  # noqa: E501
-        :type: V1PodAffinityTerm
+        :type pod_affinity_term: V1PodAffinityTerm
         """
         if self.local_vars_configuration.client_side_validation and pod_affinity_term is None:  # noqa: E501
             raise ValueError("Invalid value for `pod_affinity_term`, must not be `None`")  # noqa: E501
@@ -96,7 +96,7 @@ class V1WeightedPodAffinityTerm(object):
         weight associated with matching the corresponding podAffinityTerm, in the range 1-100.  # noqa: E501
 
         :param weight: The weight of this V1WeightedPodAffinityTerm.  # noqa: E501
-        :type: int
+        :type weight: int
         """
         if self.local_vars_configuration.client_side_validation and weight is None:  # noqa: E501
             raise ValueError("Invalid value for `weight`, must not be `None`")  # noqa: E501

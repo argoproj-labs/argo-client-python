@@ -77,7 +77,7 @@ class V1alpha1Link(object):
         The name of the link, E.g. \"Workflow Logs\" or \"Pod Logs\"  # noqa: E501
 
         :param name: The name of this V1alpha1Link.  # noqa: E501
-        :type: str
+        :type name: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -102,7 +102,7 @@ class V1alpha1Link(object):
         Either \"workflow\" or \"pod\"  # noqa: E501
 
         :param scope: The scope of this V1alpha1Link.  # noqa: E501
-        :type: str
+        :type scope: str
         """
         if self.local_vars_configuration.client_side_validation and scope is None:  # noqa: E501
             raise ValueError("Invalid value for `scope`, must not be `None`")  # noqa: E501
@@ -127,7 +127,7 @@ class V1alpha1Link(object):
         The URL. May contain \"${metadata.namespace}\" and \"${metadata.name}\".  # noqa: E501
 
         :param url: The url of this V1alpha1Link.  # noqa: E501
-        :type: str
+        :type url: str
         """
         if self.local_vars_configuration.client_side_validation and url is None:  # noqa: E501
             raise ValueError("Invalid value for `url`, must not be `None`")  # noqa: E501

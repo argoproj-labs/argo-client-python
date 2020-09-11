@@ -85,7 +85,7 @@ class V1alpha1Outputs(object):
         Artifacts holds the list of output artifacts produced by a step  # noqa: E501
 
         :param artifacts: The artifacts of this V1alpha1Outputs.  # noqa: E501
-        :type: list[V1alpha1Artifact]
+        :type artifacts: list[V1alpha1Artifact]
         """
 
         self._artifacts = artifacts
@@ -108,7 +108,7 @@ class V1alpha1Outputs(object):
         ExitCode holds the exit code of a script template  # noqa: E501
 
         :param exit_code: The exit_code of this V1alpha1Outputs.  # noqa: E501
-        :type: str
+        :type exit_code: str
         """
 
         self._exit_code = exit_code
@@ -131,7 +131,7 @@ class V1alpha1Outputs(object):
         Parameters holds the list of output parameters produced by a step  # noqa: E501
 
         :param parameters: The parameters of this V1alpha1Outputs.  # noqa: E501
-        :type: list[V1alpha1Parameter]
+        :type parameters: list[V1alpha1Parameter]
         """
 
         self._parameters = parameters
@@ -154,7 +154,7 @@ class V1alpha1Outputs(object):
         Result holds the result (stdout) of a script template  # noqa: E501
 
         :param result: The result of this V1alpha1Outputs.  # noqa: E501
-        :type: str
+        :type result: str
         """
 
         self._result = result

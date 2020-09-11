@@ -73,7 +73,7 @@ class V1alpha1ContinueOn(object):
 
 
         :param error: The error of this V1alpha1ContinueOn.  # noqa: E501
-        :type: bool
+        :type error: bool
         """
 
         self._error = error
@@ -94,7 +94,7 @@ class V1alpha1ContinueOn(object):
 
 
         :param failed: The failed of this V1alpha1ContinueOn.  # noqa: E501
-        :type: bool
+        :type failed: bool
         """
 
         self._failed = failed

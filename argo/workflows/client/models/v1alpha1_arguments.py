@@ -75,7 +75,7 @@ class V1alpha1Arguments(object):
         Artifacts is the list of artifacts to pass to the template or workflow  # noqa: E501
 
         :param artifacts: The artifacts of this V1alpha1Arguments.  # noqa: E501
-        :type: list[V1alpha1Artifact]
+        :type artifacts: list[V1alpha1Artifact]
         """
 
         self._artifacts = artifacts
@@ -98,7 +98,7 @@ class V1alpha1Arguments(object):
         Parameters is the list of parameters to pass to the template or workflow  # noqa: E501
 
         :param parameters: The parameters of this V1alpha1Arguments.  # noqa: E501
-        :type: list[V1alpha1Parameter]
+        :type parameters: list[V1alpha1Parameter]
         """
 
         self._parameters = parameters

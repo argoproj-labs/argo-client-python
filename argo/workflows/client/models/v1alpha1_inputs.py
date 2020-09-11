@@ -75,7 +75,7 @@ class V1alpha1Inputs(object):
         Artifact are a list of artifacts passed as inputs  # noqa: E501
 
         :param artifacts: The artifacts of this V1alpha1Inputs.  # noqa: E501
-        :type: list[V1alpha1Artifact]
+        :type artifacts: list[V1alpha1Artifact]
         """
 
         self._artifacts = artifacts
@@ -98,7 +98,7 @@ class V1alpha1Inputs(object):
         Parameters are a list of parameters passed as inputs  # noqa: E501
 
         :param parameters: The parameters of this V1alpha1Inputs.  # noqa: E501
-        :type: list[V1alpha1Parameter]
+        :type parameters: list[V1alpha1Parameter]
         """
 
         self._parameters = parameters

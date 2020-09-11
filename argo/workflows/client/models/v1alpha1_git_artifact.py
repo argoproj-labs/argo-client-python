@@ -104,7 +104,7 @@ class V1alpha1GitArtifact(object):
         Depth specifies clones/fetches should be shallow and include the given number of commits from the branch tip  # noqa: E501
 
         :param depth: The depth of this V1alpha1GitArtifact.  # noqa: E501
-        :type: int
+        :type depth: int
         """
 
         self._depth = depth
@@ -127,7 +127,7 @@ class V1alpha1GitArtifact(object):
         Fetch specifies a number of refs that should be fetched before checkout  # noqa: E501
 
         :param fetch: The fetch of this V1alpha1GitArtifact.  # noqa: E501
-        :type: list[str]
+        :type fetch: list[str]
         """
 
         self._fetch = fetch
@@ -150,7 +150,7 @@ class V1alpha1GitArtifact(object):
         InsecureIgnoreHostKey disables SSH strict host key checking during git clone  # noqa: E501
 
         :param insecure_ignore_host_key: The insecure_ignore_host_key of this V1alpha1GitArtifact.  # noqa: E501
-        :type: bool
+        :type insecure_ignore_host_key: bool
         """
 
         self._insecure_ignore_host_key = insecure_ignore_host_key
@@ -171,7 +171,7 @@ class V1alpha1GitArtifact(object):
 
 
         :param password_secret: The password_secret of this V1alpha1GitArtifact.  # noqa: E501
-        :type: V1SecretKeySelector
+        :type password_secret: V1SecretKeySelector
         """
 
         self._password_secret = password_secret
@@ -194,7 +194,7 @@ class V1alpha1GitArtifact(object):
         Repo is the git repository  # noqa: E501
 
         :param repo: The repo of this V1alpha1GitArtifact.  # noqa: E501
-        :type: str
+        :type repo: str
         """
         if self.local_vars_configuration.client_side_validation and repo is None:  # noqa: E501
             raise ValueError("Invalid value for `repo`, must not be `None`")  # noqa: E501
@@ -219,7 +219,7 @@ class V1alpha1GitArtifact(object):
         Revision is the git commit, tag, branch to checkout  # noqa: E501
 
         :param revision: The revision of this V1alpha1GitArtifact.  # noqa: E501
-        :type: str
+        :type revision: str
         """
 
         self._revision = revision
@@ -240,7 +240,7 @@ class V1alpha1GitArtifact(object):
 
 
         :param ssh_private_key_secret: The ssh_private_key_secret of this V1alpha1GitArtifact.  # noqa: E501
-        :type: V1SecretKeySelector
+        :type ssh_private_key_secret: V1SecretKeySelector
         """
 
         self._ssh_private_key_secret = ssh_private_key_secret
@@ -261,7 +261,7 @@ class V1alpha1GitArtifact(object):
 
 
         :param username_secret: The username_secret of this V1alpha1GitArtifact.  # noqa: E501
-        :type: V1SecretKeySelector
+        :type username_secret: V1SecretKeySelector
         """
 
         self._username_secret = username_secret

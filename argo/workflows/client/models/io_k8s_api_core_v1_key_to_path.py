@@ -78,7 +78,7 @@ class V1KeyToPath(object):
         The key to project.  # noqa: E501
 
         :param key: The key of this V1KeyToPath.  # noqa: E501
-        :type: str
+        :type key: str
         """
         if self.local_vars_configuration.client_side_validation and key is None:  # noqa: E501
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
@@ -103,7 +103,7 @@ class V1KeyToPath(object):
         Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.  # noqa: E501
 
         :param mode: The mode of this V1KeyToPath.  # noqa: E501
-        :type: int
+        :type mode: int
         """
 
         self._mode = mode
@@ -126,7 +126,7 @@ class V1KeyToPath(object):
         The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'.  # noqa: E501
 
         :param path: The path of this V1KeyToPath.  # noqa: E501
-        :type: str
+        :type path: str
         """
         if self.local_vars_configuration.client_side_validation and path is None:  # noqa: E501
             raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501

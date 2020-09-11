@@ -78,7 +78,7 @@ class V1alpha1CreateCronWorkflowRequest(object):
 
 
         :param create_options: The create_options of this V1alpha1CreateCronWorkflowRequest.  # noqa: E501
-        :type: V1CreateOptions
+        :type create_options: V1CreateOptions
         """
 
         self._create_options = create_options
@@ -99,7 +99,7 @@ class V1alpha1CreateCronWorkflowRequest(object):
 
 
         :param cron_workflow: The cron_workflow of this V1alpha1CreateCronWorkflowRequest.  # noqa: E501
-        :type: V1alpha1CronWorkflow
+        :type cron_workflow: V1alpha1CronWorkflow
         """
 
         self._cron_workflow = cron_workflow
@@ -120,7 +120,7 @@ class V1alpha1CreateCronWorkflowRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1CreateCronWorkflowRequest.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace

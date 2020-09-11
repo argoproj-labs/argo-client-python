@@ -69,7 +69,7 @@ class V1alpha1RawArtifact(object):
         Data is the string contents of the artifact  # noqa: E501
 
         :param data: The data of this V1alpha1RawArtifact.  # noqa: E501
-        :type: str
+        :type data: str
         """
         if self.local_vars_configuration.client_side_validation and data is None:  # noqa: E501
             raise ValueError("Invalid value for `data`, must not be `None`")  # noqa: E501

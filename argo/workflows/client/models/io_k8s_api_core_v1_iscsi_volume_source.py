@@ -117,7 +117,7 @@ class V1ISCSIVolumeSource(object):
         whether support iSCSI Discovery CHAP authentication  # noqa: E501
 
         :param chap_auth_discovery: The chap_auth_discovery of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: bool
+        :type chap_auth_discovery: bool
         """
 
         self._chap_auth_discovery = chap_auth_discovery
@@ -140,7 +140,7 @@ class V1ISCSIVolumeSource(object):
         whether support iSCSI Session CHAP authentication  # noqa: E501
 
         :param chap_auth_session: The chap_auth_session of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: bool
+        :type chap_auth_session: bool
         """
 
         self._chap_auth_session = chap_auth_session
@@ -163,7 +163,7 @@ class V1ISCSIVolumeSource(object):
         Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#iscsi  # noqa: E501
 
         :param fs_type: The fs_type of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: str
+        :type fs_type: str
         """
 
         self._fs_type = fs_type
@@ -186,7 +186,7 @@ class V1ISCSIVolumeSource(object):
         Custom iSCSI Initiator Name. If initiatorName is specified with iscsiInterface simultaneously, new iSCSI interface <target portal>:<volume name> will be created for the connection.  # noqa: E501
 
         :param initiator_name: The initiator_name of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: str
+        :type initiator_name: str
         """
 
         self._initiator_name = initiator_name
@@ -209,7 +209,7 @@ class V1ISCSIVolumeSource(object):
         Target iSCSI Qualified Name.  # noqa: E501
 
         :param iqn: The iqn of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: str
+        :type iqn: str
         """
         if self.local_vars_configuration.client_side_validation and iqn is None:  # noqa: E501
             raise ValueError("Invalid value for `iqn`, must not be `None`")  # noqa: E501
@@ -234,7 +234,7 @@ class V1ISCSIVolumeSource(object):
         iSCSI Interface Name that uses an iSCSI transport. Defaults to 'default' (tcp).  # noqa: E501
 
         :param iscsi_interface: The iscsi_interface of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: str
+        :type iscsi_interface: str
         """
 
         self._iscsi_interface = iscsi_interface
@@ -257,7 +257,7 @@ class V1ISCSIVolumeSource(object):
         iSCSI Target Lun number.  # noqa: E501
 
         :param lun: The lun of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: int
+        :type lun: int
         """
         if self.local_vars_configuration.client_side_validation and lun is None:  # noqa: E501
             raise ValueError("Invalid value for `lun`, must not be `None`")  # noqa: E501
@@ -282,7 +282,7 @@ class V1ISCSIVolumeSource(object):
         iSCSI Target Portal List. The portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).  # noqa: E501
 
         :param portals: The portals of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: list[str]
+        :type portals: list[str]
         """
 
         self._portals = portals
@@ -305,7 +305,7 @@ class V1ISCSIVolumeSource(object):
         ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false.  # noqa: E501
 
         :param read_only: The read_only of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: bool
+        :type read_only: bool
         """
 
         self._read_only = read_only
@@ -326,7 +326,7 @@ class V1ISCSIVolumeSource(object):
 
 
         :param secret_ref: The secret_ref of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: V1LocalObjectReference
+        :type secret_ref: V1LocalObjectReference
         """
 
         self._secret_ref = secret_ref
@@ -349,7 +349,7 @@ class V1ISCSIVolumeSource(object):
         iSCSI Target Portal. The Portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).  # noqa: E501
 
         :param target_portal: The target_portal of this V1ISCSIVolumeSource.  # noqa: E501
-        :type: str
+        :type target_portal: str
         """
         if self.local_vars_configuration.client_side_validation and target_portal is None:  # noqa: E501
             raise ValueError("Invalid value for `target_portal`, must not be `None`")  # noqa: E501

@@ -73,7 +73,7 @@ class V1CreateOptions(object):
 
 
         :param dry_run: The dry_run of this V1CreateOptions.  # noqa: E501
-        :type: list[str]
+        :type dry_run: list[str]
         """
 
         self._dry_run = dry_run
@@ -94,7 +94,7 @@ class V1CreateOptions(object):
 
 
         :param field_manager: The field_manager of this V1CreateOptions.  # noqa: E501
-        :type: str
+        :type field_manager: str
         """
 
         self._field_manager = field_manager

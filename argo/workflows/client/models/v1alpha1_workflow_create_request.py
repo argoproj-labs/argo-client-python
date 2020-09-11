@@ -88,7 +88,7 @@ class V1alpha1WorkflowCreateRequest(object):
 
 
         :param create_options: The create_options of this V1alpha1WorkflowCreateRequest.  # noqa: E501
-        :type: V1CreateOptions
+        :type create_options: V1CreateOptions
         """
 
         self._create_options = create_options
@@ -111,7 +111,7 @@ class V1alpha1WorkflowCreateRequest(object):
         This field is no longer used.  # noqa: E501
 
         :param instance_id: The instance_id of this V1alpha1WorkflowCreateRequest.  # noqa: E501
-        :type: str
+        :type instance_id: str
         """
 
         self._instance_id = instance_id
@@ -132,7 +132,7 @@ class V1alpha1WorkflowCreateRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowCreateRequest.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace
@@ -153,7 +153,7 @@ class V1alpha1WorkflowCreateRequest(object):
 
 
         :param server_dry_run: The server_dry_run of this V1alpha1WorkflowCreateRequest.  # noqa: E501
-        :type: bool
+        :type server_dry_run: bool
         """
 
         self._server_dry_run = server_dry_run
@@ -174,7 +174,7 @@ class V1alpha1WorkflowCreateRequest(object):
 
 
         :param workflow: The workflow of this V1alpha1WorkflowCreateRequest.  # noqa: E501
-        :type: V1alpha1Workflow
+        :type workflow: V1alpha1Workflow
         """
 
         self._workflow = workflow

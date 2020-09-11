@@ -85,7 +85,7 @@ class V1SELinuxOptions(object):
         Level is SELinux level label that applies to the container.  # noqa: E501
 
         :param level: The level of this V1SELinuxOptions.  # noqa: E501
-        :type: str
+        :type level: str
         """
 
         self._level = level
@@ -108,7 +108,7 @@ class V1SELinuxOptions(object):
         Role is a SELinux role label that applies to the container.  # noqa: E501
 
         :param role: The role of this V1SELinuxOptions.  # noqa: E501
-        :type: str
+        :type role: str
         """
 
         self._role = role
@@ -131,7 +131,7 @@ class V1SELinuxOptions(object):
         Type is a SELinux type label that applies to the container.  # noqa: E501
 
         :param type: The type of this V1SELinuxOptions.  # noqa: E501
-        :type: str
+        :type type: str
         """
 
         self._type = type
@@ -154,7 +154,7 @@ class V1SELinuxOptions(object):
         User is a SELinux user label that applies to the container.  # noqa: E501
 
         :param user: The user of this V1SELinuxOptions.  # noqa: E501
-        :type: str
+        :type user: str
         """
 
         self._user = user

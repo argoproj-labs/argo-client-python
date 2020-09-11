@@ -78,7 +78,7 @@ class V1alpha1GCSArtifact(object):
         Bucket is the name of the bucket  # noqa: E501
 
         :param bucket: The bucket of this V1alpha1GCSArtifact.  # noqa: E501
-        :type: str
+        :type bucket: str
         """
         if self.local_vars_configuration.client_side_validation and bucket is None:  # noqa: E501
             raise ValueError("Invalid value for `bucket`, must not be `None`")  # noqa: E501
@@ -103,7 +103,7 @@ class V1alpha1GCSArtifact(object):
         Key is the path in the bucket where the artifact resides  # noqa: E501
 
         :param key: The key of this V1alpha1GCSArtifact.  # noqa: E501
-        :type: str
+        :type key: str
         """
         if self.local_vars_configuration.client_side_validation and key is None:  # noqa: E501
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
@@ -126,7 +126,7 @@ class V1alpha1GCSArtifact(object):
 
 
         :param service_account_key_secret: The service_account_key_secret of this V1alpha1GCSArtifact.  # noqa: E501
-        :type: V1SecretKeySelector
+        :type service_account_key_secret: V1SecretKeySelector
         """
 
         self._service_account_key_secret = service_account_key_secret

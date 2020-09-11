@@ -78,7 +78,7 @@ class V1NFSVolumeSource(object):
         Path that is exported by the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs  # noqa: E501
 
         :param path: The path of this V1NFSVolumeSource.  # noqa: E501
-        :type: str
+        :type path: str
         """
         if self.local_vars_configuration.client_side_validation and path is None:  # noqa: E501
             raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501
@@ -103,7 +103,7 @@ class V1NFSVolumeSource(object):
         ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs  # noqa: E501
 
         :param read_only: The read_only of this V1NFSVolumeSource.  # noqa: E501
-        :type: bool
+        :type read_only: bool
         """
 
         self._read_only = read_only
@@ -126,7 +126,7 @@ class V1NFSVolumeSource(object):
         Server is the hostname or IP address of the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs  # noqa: E501
 
         :param server: The server of this V1NFSVolumeSource.  # noqa: E501
-        :type: str
+        :type server: str
         """
         if self.local_vars_configuration.client_side_validation and server is None:  # noqa: E501
             raise ValueError("Invalid value for `server`, must not be `None`")  # noqa: E501

@@ -93,7 +93,7 @@ class V1PersistentVolumeClaimCondition(object):
         Last time we probed the condition.  # noqa: E501
 
         :param last_probe_time: The last_probe_time of this V1PersistentVolumeClaimCondition.  # noqa: E501
-        :type: datetime
+        :type last_probe_time: datetime
         """
 
         self._last_probe_time = last_probe_time
@@ -116,7 +116,7 @@ class V1PersistentVolumeClaimCondition(object):
         Last time the condition transitioned from one status to another.  # noqa: E501
 
         :param last_transition_time: The last_transition_time of this V1PersistentVolumeClaimCondition.  # noqa: E501
-        :type: datetime
+        :type last_transition_time: datetime
         """
 
         self._last_transition_time = last_transition_time
@@ -139,7 +139,7 @@ class V1PersistentVolumeClaimCondition(object):
         Human-readable message indicating details about last transition.  # noqa: E501
 
         :param message: The message of this V1PersistentVolumeClaimCondition.  # noqa: E501
-        :type: str
+        :type message: str
         """
 
         self._message = message
@@ -162,7 +162,7 @@ class V1PersistentVolumeClaimCondition(object):
         Unique, this should be a short, machine understandable string that gives the reason for condition's last transition. If it reports \"ResizeStarted\" that means the underlying persistent volume is being resized.  # noqa: E501
 
         :param reason: The reason of this V1PersistentVolumeClaimCondition.  # noqa: E501
-        :type: str
+        :type reason: str
         """
 
         self._reason = reason
@@ -183,7 +183,7 @@ class V1PersistentVolumeClaimCondition(object):
 
 
         :param status: The status of this V1PersistentVolumeClaimCondition.  # noqa: E501
-        :type: str
+        :type status: str
         """
         if self.local_vars_configuration.client_side_validation and status is None:  # noqa: E501
             raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
@@ -206,7 +206,7 @@ class V1PersistentVolumeClaimCondition(object):
 
 
         :param type: The type of this V1PersistentVolumeClaimCondition.  # noqa: E501
-        :type: str
+        :type type: str
         """
         if self.local_vars_configuration.client_side_validation and type is None:  # noqa: E501
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501

@@ -79,7 +79,7 @@ class V1alpha1DAGTemplate(object):
         This flag is for DAG logic. The DAG logic has a built-in \"fail fast\" feature to stop scheduling new steps, as soon as it detects that one of the DAG nodes is failed. Then it waits until all DAG nodes are completed before failing the DAG itself. The FailFast flag default is true,  if set to false, it will allow a DAG to run all branches of the DAG to completion (either success or failure), regardless of the failed outcomes of branches in the DAG. More info and example about this feature at https://github.com/argoproj/argo/issues/1442  # noqa: E501
 
         :param fail_fast: The fail_fast of this V1alpha1DAGTemplate.  # noqa: E501
-        :type: bool
+        :type fail_fast: bool
         """
 
         self._fail_fast = fail_fast
@@ -102,7 +102,7 @@ class V1alpha1DAGTemplate(object):
         Target are one or more names of targets to execute in a DAG  # noqa: E501
 
         :param target: The target of this V1alpha1DAGTemplate.  # noqa: E501
-        :type: str
+        :type target: str
         """
 
         self._target = target
@@ -125,7 +125,7 @@ class V1alpha1DAGTemplate(object):
         Tasks are a list of DAG tasks  # noqa: E501
 
         :param tasks: The tasks of this V1alpha1DAGTemplate.  # noqa: E501
-        :type: list[V1alpha1DAGTask]
+        :type tasks: list[V1alpha1DAGTask]
         """
         if self.local_vars_configuration.client_side_validation and tasks is None:  # noqa: E501
             raise ValueError("Invalid value for `tasks`, must not be `None`")  # noqa: E501

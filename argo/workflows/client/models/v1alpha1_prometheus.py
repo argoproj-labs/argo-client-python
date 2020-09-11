@@ -96,7 +96,7 @@ class V1alpha1Prometheus(object):
 
 
         :param counter: The counter of this V1alpha1Prometheus.  # noqa: E501
-        :type: V1alpha1Counter
+        :type counter: V1alpha1Counter
         """
 
         self._counter = counter
@@ -117,7 +117,7 @@ class V1alpha1Prometheus(object):
 
 
         :param gauge: The gauge of this V1alpha1Prometheus.  # noqa: E501
-        :type: V1alpha1Gauge
+        :type gauge: V1alpha1Gauge
         """
 
         self._gauge = gauge
@@ -140,7 +140,7 @@ class V1alpha1Prometheus(object):
         Help is a string that describes the metric  # noqa: E501
 
         :param help: The help of this V1alpha1Prometheus.  # noqa: E501
-        :type: str
+        :type help: str
         """
         if self.local_vars_configuration.client_side_validation and help is None:  # noqa: E501
             raise ValueError("Invalid value for `help`, must not be `None`")  # noqa: E501
@@ -163,7 +163,7 @@ class V1alpha1Prometheus(object):
 
 
         :param histogram: The histogram of this V1alpha1Prometheus.  # noqa: E501
-        :type: V1alpha1Histogram
+        :type histogram: V1alpha1Histogram
         """
 
         self._histogram = histogram
@@ -186,7 +186,7 @@ class V1alpha1Prometheus(object):
         Labels is a list of metric labels  # noqa: E501
 
         :param labels: The labels of this V1alpha1Prometheus.  # noqa: E501
-        :type: list[V1alpha1MetricLabel]
+        :type labels: list[V1alpha1MetricLabel]
         """
 
         self._labels = labels
@@ -209,7 +209,7 @@ class V1alpha1Prometheus(object):
         Name is the name of the metric  # noqa: E501
 
         :param name: The name of this V1alpha1Prometheus.  # noqa: E501
-        :type: str
+        :type name: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -234,7 +234,7 @@ class V1alpha1Prometheus(object):
         When is a conditional statement that decides when to emit the metric  # noqa: E501
 
         :param when: The when of this V1alpha1Prometheus.  # noqa: E501
-        :type: str
+        :type when: str
         """
 
         self._when = when

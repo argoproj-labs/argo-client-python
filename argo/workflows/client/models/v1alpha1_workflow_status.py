@@ -135,7 +135,7 @@ class V1alpha1WorkflowStatus(object):
         Compressed and base64 decoded Nodes map  # noqa: E501
 
         :param compressed_nodes: The compressed_nodes of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: str
+        :type compressed_nodes: str
         """
 
         self._compressed_nodes = compressed_nodes
@@ -158,7 +158,7 @@ class V1alpha1WorkflowStatus(object):
         Conditions is a list of conditions the Workflow may have  # noqa: E501
 
         :param conditions: The conditions of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: list[V1alpha1Condition]
+        :type conditions: list[V1alpha1Condition]
         """
 
         self._conditions = conditions
@@ -181,7 +181,7 @@ class V1alpha1WorkflowStatus(object):
         Time at which this workflow completed  # noqa: E501
 
         :param finished_at: The finished_at of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: datetime
+        :type finished_at: datetime
         """
 
         self._finished_at = finished_at
@@ -204,7 +204,7 @@ class V1alpha1WorkflowStatus(object):
         A human readable message indicating details about why the workflow is in this condition.  # noqa: E501
 
         :param message: The message of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: str
+        :type message: str
         """
 
         self._message = message
@@ -227,7 +227,7 @@ class V1alpha1WorkflowStatus(object):
         Nodes is a mapping between a node ID and the node's status.  # noqa: E501
 
         :param nodes: The nodes of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: dict(str, V1alpha1NodeStatus)
+        :type nodes: dict(str, V1alpha1NodeStatus)
         """
 
         self._nodes = nodes
@@ -250,7 +250,7 @@ class V1alpha1WorkflowStatus(object):
         Whether on not node status has been offloaded to a database. If exists, then Nodes and CompressedNodes will be empty. This will actually be populated with a hash of the offloaded data.  # noqa: E501
 
         :param offload_node_status_version: The offload_node_status_version of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: str
+        :type offload_node_status_version: str
         """
 
         self._offload_node_status_version = offload_node_status_version
@@ -271,7 +271,7 @@ class V1alpha1WorkflowStatus(object):
 
 
         :param outputs: The outputs of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: V1alpha1Outputs
+        :type outputs: V1alpha1Outputs
         """
 
         self._outputs = outputs
@@ -294,7 +294,7 @@ class V1alpha1WorkflowStatus(object):
         PersistentVolumeClaims tracks all PVCs that were created as part of the io.argoproj.workflow.v1alpha1. The contents of this list are drained at the end of the workflow.  # noqa: E501
 
         :param persistent_volume_claims: The persistent_volume_claims of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: list[V1Volume]
+        :type persistent_volume_claims: list[V1Volume]
         """
 
         self._persistent_volume_claims = persistent_volume_claims
@@ -317,7 +317,7 @@ class V1alpha1WorkflowStatus(object):
         Phase a simple, high-level summary of where the workflow is in its lifecycle.  # noqa: E501
 
         :param phase: The phase of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: str
+        :type phase: str
         """
 
         self._phase = phase
@@ -340,7 +340,7 @@ class V1alpha1WorkflowStatus(object):
         ResourcesDuration is the total for the workflow  # noqa: E501
 
         :param resources_duration: The resources_duration of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: dict(str, int)
+        :type resources_duration: dict(str, int)
         """
 
         self._resources_duration = resources_duration
@@ -363,7 +363,7 @@ class V1alpha1WorkflowStatus(object):
         Time at which this workflow started  # noqa: E501
 
         :param started_at: The started_at of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: datetime
+        :type started_at: datetime
         """
 
         self._started_at = started_at
@@ -386,7 +386,7 @@ class V1alpha1WorkflowStatus(object):
         StoredTemplates is a mapping between a template ref and the node's status.  # noqa: E501
 
         :param stored_templates: The stored_templates of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: dict(str, V1alpha1Template)
+        :type stored_templates: dict(str, V1alpha1Template)
         """
 
         self._stored_templates = stored_templates
@@ -407,7 +407,7 @@ class V1alpha1WorkflowStatus(object):
 
 
         :param stored_workflow_template_spec: The stored_workflow_template_spec of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: V1alpha1WorkflowSpec
+        :type stored_workflow_template_spec: V1alpha1WorkflowSpec
         """
 
         self._stored_workflow_template_spec = stored_workflow_template_spec
@@ -428,7 +428,7 @@ class V1alpha1WorkflowStatus(object):
 
 
         :param synchronization: The synchronization of this V1alpha1WorkflowStatus.  # noqa: E501
-        :type: V1alpha1SynchronizationStatus
+        :type synchronization: V1alpha1SynchronizationStatus
         """
 
         self._synchronization = synchronization

@@ -93,7 +93,7 @@ class V1QuobyteVolumeSource(object):
         Group to map volume access to Default is no group  # noqa: E501
 
         :param group: The group of this V1QuobyteVolumeSource.  # noqa: E501
-        :type: str
+        :type group: str
         """
 
         self._group = group
@@ -116,7 +116,7 @@ class V1QuobyteVolumeSource(object):
         ReadOnly here will force the Quobyte volume to be mounted with read-only permissions. Defaults to false.  # noqa: E501
 
         :param read_only: The read_only of this V1QuobyteVolumeSource.  # noqa: E501
-        :type: bool
+        :type read_only: bool
         """
 
         self._read_only = read_only
@@ -139,7 +139,7 @@ class V1QuobyteVolumeSource(object):
         Registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes  # noqa: E501
 
         :param registry: The registry of this V1QuobyteVolumeSource.  # noqa: E501
-        :type: str
+        :type registry: str
         """
         if self.local_vars_configuration.client_side_validation and registry is None:  # noqa: E501
             raise ValueError("Invalid value for `registry`, must not be `None`")  # noqa: E501
@@ -164,7 +164,7 @@ class V1QuobyteVolumeSource(object):
         Tenant owning the given Quobyte volume in the Backend Used with dynamically provisioned Quobyte volumes, value is set by the plugin  # noqa: E501
 
         :param tenant: The tenant of this V1QuobyteVolumeSource.  # noqa: E501
-        :type: str
+        :type tenant: str
         """
 
         self._tenant = tenant
@@ -187,7 +187,7 @@ class V1QuobyteVolumeSource(object):
         User to map volume access to Defaults to serivceaccount user  # noqa: E501
 
         :param user: The user of this V1QuobyteVolumeSource.  # noqa: E501
-        :type: str
+        :type user: str
         """
 
         self._user = user
@@ -210,7 +210,7 @@ class V1QuobyteVolumeSource(object):
         Volume is a string that references an already created Quobyte volume by name.  # noqa: E501
 
         :param volume: The volume of this V1QuobyteVolumeSource.  # noqa: E501
-        :type: str
+        :type volume: str
         """
         if self.local_vars_configuration.client_side_validation and volume is None:  # noqa: E501
             raise ValueError("Invalid value for `volume`, must not be `None`")  # noqa: E501

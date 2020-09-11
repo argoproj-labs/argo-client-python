@@ -75,7 +75,7 @@ class V1PodDNSConfigOption(object):
         Required.  # noqa: E501
 
         :param name: The name of this V1PodDNSConfigOption.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -96,7 +96,7 @@ class V1PodDNSConfigOption(object):
 
 
         :param value: The value of this V1PodDNSConfigOption.  # noqa: E501
-        :type: str
+        :type value: str
         """
 
         self._value = value

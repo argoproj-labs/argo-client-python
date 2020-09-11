@@ -90,7 +90,7 @@ class V1StorageOSVolumeSource(object):
         Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified.  # noqa: E501
 
         :param fs_type: The fs_type of this V1StorageOSVolumeSource.  # noqa: E501
-        :type: str
+        :type fs_type: str
         """
 
         self._fs_type = fs_type
@@ -113,7 +113,7 @@ class V1StorageOSVolumeSource(object):
         Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  # noqa: E501
 
         :param read_only: The read_only of this V1StorageOSVolumeSource.  # noqa: E501
-        :type: bool
+        :type read_only: bool
         """
 
         self._read_only = read_only
@@ -134,7 +134,7 @@ class V1StorageOSVolumeSource(object):
 
 
         :param secret_ref: The secret_ref of this V1StorageOSVolumeSource.  # noqa: E501
-        :type: V1LocalObjectReference
+        :type secret_ref: V1LocalObjectReference
         """
 
         self._secret_ref = secret_ref
@@ -157,7 +157,7 @@ class V1StorageOSVolumeSource(object):
         VolumeName is the human-readable name of the StorageOS volume.  Volume names are only unique within a namespace.  # noqa: E501
 
         :param volume_name: The volume_name of this V1StorageOSVolumeSource.  # noqa: E501
-        :type: str
+        :type volume_name: str
         """
 
         self._volume_name = volume_name
@@ -180,7 +180,7 @@ class V1StorageOSVolumeSource(object):
         VolumeNamespace specifies the scope of the volume within StorageOS.  If no namespace is specified then the Pod's namespace will be used.  This allows the Kubernetes name scoping to be mirrored within StorageOS for tighter integration. Set VolumeName to any name to override the default behaviour. Set to \"default\" if you are not using namespaces within StorageOS. Namespaces that do not pre-exist within StorageOS will be created.  # noqa: E501
 
         :param volume_namespace: The volume_namespace of this V1StorageOSVolumeSource.  # noqa: E501
-        :type: str
+        :type volume_namespace: str
         """
 
         self._volume_namespace = volume_namespace

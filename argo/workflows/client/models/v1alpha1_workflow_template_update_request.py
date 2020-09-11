@@ -80,7 +80,7 @@ class V1alpha1WorkflowTemplateUpdateRequest(object):
         DEPRECATED: This field is ignored.  # noqa: E501
 
         :param name: The name of this V1alpha1WorkflowTemplateUpdateRequest.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -101,7 +101,7 @@ class V1alpha1WorkflowTemplateUpdateRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowTemplateUpdateRequest.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace
@@ -122,7 +122,7 @@ class V1alpha1WorkflowTemplateUpdateRequest(object):
 
 
         :param template: The template of this V1alpha1WorkflowTemplateUpdateRequest.  # noqa: E501
-        :type: V1alpha1WorkflowTemplate
+        :type template: V1alpha1WorkflowTemplate
         """
 
         self._template = template

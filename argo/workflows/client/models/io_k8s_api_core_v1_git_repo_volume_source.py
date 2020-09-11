@@ -79,7 +79,7 @@ class V1GitRepoVolumeSource(object):
         Target directory name. Must not contain or start with '..'.  If '.' is supplied, the volume directory will be the git repository.  Otherwise, if specified, the volume will contain the git repository in the subdirectory with the given name.  # noqa: E501
 
         :param directory: The directory of this V1GitRepoVolumeSource.  # noqa: E501
-        :type: str
+        :type directory: str
         """
 
         self._directory = directory
@@ -102,7 +102,7 @@ class V1GitRepoVolumeSource(object):
         Repository URL  # noqa: E501
 
         :param repository: The repository of this V1GitRepoVolumeSource.  # noqa: E501
-        :type: str
+        :type repository: str
         """
         if self.local_vars_configuration.client_side_validation and repository is None:  # noqa: E501
             raise ValueError("Invalid value for `repository`, must not be `None`")  # noqa: E501
@@ -127,7 +127,7 @@ class V1GitRepoVolumeSource(object):
         Commit hash for the specified revision.  # noqa: E501
 
         :param revision: The revision of this V1GitRepoVolumeSource.  # noqa: E501
-        :type: str
+        :type revision: str
         """
 
         self._revision = revision

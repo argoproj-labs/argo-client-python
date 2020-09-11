@@ -70,7 +70,7 @@ class V1alpha1SuspendTemplate(object):
         Duration is the seconds to wait before automatically resuming a template  # noqa: E501
 
         :param duration: The duration of this V1alpha1SuspendTemplate.  # noqa: E501
-        :type: str
+        :type duration: str
         """
 
         self._duration = duration

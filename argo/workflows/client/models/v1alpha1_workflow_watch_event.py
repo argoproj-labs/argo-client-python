@@ -73,7 +73,7 @@ class V1alpha1WorkflowWatchEvent(object):
 
 
         :param object: The object of this V1alpha1WorkflowWatchEvent.  # noqa: E501
-        :type: V1alpha1Workflow
+        :type object: V1alpha1Workflow
         """
 
         self._object = object
@@ -94,7 +94,7 @@ class V1alpha1WorkflowWatchEvent(object):
 
 
         :param type: The type of this V1alpha1WorkflowWatchEvent.  # noqa: E501
-        :type: str
+        :type type: str
         """
 
         self._type = type

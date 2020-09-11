@@ -42,22 +42,28 @@ class V1alpha1Api(object):
         Creates a namespace scoped Workflow  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_namespaced_archivedworkflow(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param IoArgoprojArchivedworkflowV1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param body: The JSON schema of the Workflow to create. (required)
+        :type body: IoArgoprojArchivedworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: IoArgoprojArchivedworkflowV1alpha1Workflow
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: IoArgoprojArchivedworkflowV1alpha1Workflow
         """
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_archivedworkflow_with_http_info(namespace, body, **kwargs)  # noqa: E501
@@ -68,24 +74,35 @@ class V1alpha1Api(object):
         Creates a namespace scoped Workflow  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_namespaced_archivedworkflow_with_http_info(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param IoArgoprojArchivedworkflowV1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param body: The JSON schema of the Workflow to create. (required)
+        :type body: IoArgoprojArchivedworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(IoArgoprojArchivedworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(IoArgoprojArchivedworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -99,7 +116,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -157,7 +175,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def create_namespaced_cronworkflow(self, namespace, body, **kwargs):  # noqa: E501
         """create_namespaced_cronworkflow  # noqa: E501
@@ -165,22 +184,28 @@ class V1alpha1Api(object):
         Creates a namespace scoped Workflow  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_namespaced_cronworkflow(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param body: The JSON schema of the Workflow to create. (required)
+        :type body: IoArgoprojCronworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: IoArgoprojCronworkflowV1alpha1Workflow
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: IoArgoprojCronworkflowV1alpha1Workflow
         """
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_cronworkflow_with_http_info(namespace, body, **kwargs)  # noqa: E501
@@ -191,24 +216,35 @@ class V1alpha1Api(object):
         Creates a namespace scoped Workflow  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_namespaced_cronworkflow_with_http_info(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param body: The JSON schema of the Workflow to create. (required)
+        :type body: IoArgoprojCronworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(IoArgoprojCronworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(IoArgoprojCronworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -222,7 +258,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -280,7 +317,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def create_namespaced_workflow(self, namespace, body, **kwargs):  # noqa: E501
         """create_namespaced_workflow  # noqa: E501
@@ -288,22 +326,28 @@ class V1alpha1Api(object):
         Creates a namespace scoped Workflow  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_namespaced_workflow(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param V1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param body: The JSON schema of the Workflow to create. (required)
+        :type body: V1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: V1alpha1Workflow
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: V1alpha1Workflow
         """
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_workflow_with_http_info(namespace, body, **kwargs)  # noqa: E501
@@ -314,24 +358,35 @@ class V1alpha1Api(object):
         Creates a namespace scoped Workflow  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_namespaced_workflow_with_http_info(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param V1alpha1Workflow body: The JSON schema of the Workflow to create. (required)
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param body: The JSON schema of the Workflow to create. (required)
+        :type body: V1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(V1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(V1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -345,7 +400,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -403,7 +459,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def create_namespaced_workflowtemplate(self, namespace, body, **kwargs):  # noqa: E501
         """create_namespaced_workflowtemplate  # noqa: E501
@@ -411,22 +468,28 @@ class V1alpha1Api(object):
         Creates a namespace scoped WorkflowTemplate  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_namespaced_workflowtemplate(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The WorkflowTemplate's namespace (required)
-        :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to create. (required)
+        :param namespace: The WorkflowTemplate's namespace (required)
+        :type namespace: str
+        :param body: The JSON schema of the WorkflowTemplate to create. (required)
+        :type body: V1alpha1WorkflowTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: V1alpha1WorkflowTemplate
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: V1alpha1WorkflowTemplate
         """
         kwargs['_return_http_data_only'] = True
         return self.create_namespaced_workflowtemplate_with_http_info(namespace, body, **kwargs)  # noqa: E501
@@ -437,24 +500,35 @@ class V1alpha1Api(object):
         Creates a namespace scoped WorkflowTemplate  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.create_namespaced_workflowtemplate_with_http_info(namespace, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The WorkflowTemplate's namespace (required)
-        :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to create. (required)
+        :param namespace: The WorkflowTemplate's namespace (required)
+        :type namespace: str
+        :param body: The JSON schema of the WorkflowTemplate to create. (required)
+        :type body: V1alpha1WorkflowTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(V1alpha1WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(V1alpha1WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -468,7 +542,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -526,7 +601,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def delete_namespaced_archivedworkflow(self, namespace, name, **kwargs):  # noqa: E501
         """delete_namespaced_archivedworkflow  # noqa: E501
@@ -534,26 +610,36 @@ class V1alpha1Api(object):
         Deletes the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.delete_namespaced_archivedworkflow(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
-        :param V1DeleteOptions body: Delete options to be send along in the body of this request.
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :type grace_period_seconds: int
+        :param orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :type orphan_dependents: bool
+        :param propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :type propagation_policy: str
+        :param body: Delete options to be send along in the body of this request.
+        :type body: V1DeleteOptions
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: object
         """
         kwargs['_return_http_data_only'] = True
         return self.delete_namespaced_archivedworkflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -564,28 +650,43 @@ class V1alpha1Api(object):
         Deletes the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.delete_namespaced_archivedworkflow_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
-        :param V1DeleteOptions body: Delete options to be send along in the body of this request.
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :type grace_period_seconds: int
+        :param orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :type orphan_dependents: bool
+        :param propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :type propagation_policy: str
+        :param body: Delete options to be send along in the body of this request.
+        :type body: V1DeleteOptions
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -603,7 +704,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -669,7 +771,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def delete_namespaced_cronworkflow(self, namespace, name, **kwargs):  # noqa: E501
         """delete_namespaced_cronworkflow  # noqa: E501
@@ -677,26 +780,36 @@ class V1alpha1Api(object):
         Deletes the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.delete_namespaced_cronworkflow(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
-        :param V1DeleteOptions body: Delete options to be send along in the body of this request.
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :type grace_period_seconds: int
+        :param orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :type orphan_dependents: bool
+        :param propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :type propagation_policy: str
+        :param body: Delete options to be send along in the body of this request.
+        :type body: V1DeleteOptions
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: object
         """
         kwargs['_return_http_data_only'] = True
         return self.delete_namespaced_cronworkflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -707,28 +820,43 @@ class V1alpha1Api(object):
         Deletes the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.delete_namespaced_cronworkflow_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
-        :param V1DeleteOptions body: Delete options to be send along in the body of this request.
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :type grace_period_seconds: int
+        :param orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :type orphan_dependents: bool
+        :param propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :type propagation_policy: str
+        :param body: Delete options to be send along in the body of this request.
+        :type body: V1DeleteOptions
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -746,7 +874,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -812,7 +941,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def delete_namespaced_workflow(self, namespace, name, **kwargs):  # noqa: E501
         """delete_namespaced_workflow  # noqa: E501
@@ -820,26 +950,36 @@ class V1alpha1Api(object):
         Deletes the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.delete_namespaced_workflow(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
-        :param V1DeleteOptions body: Delete options to be send along in the body of this request.
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :type grace_period_seconds: int
+        :param orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :type orphan_dependents: bool
+        :param propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :type propagation_policy: str
+        :param body: Delete options to be send along in the body of this request.
+        :type body: V1DeleteOptions
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: object
         """
         kwargs['_return_http_data_only'] = True
         return self.delete_namespaced_workflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -850,28 +990,43 @@ class V1alpha1Api(object):
         Deletes the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.delete_namespaced_workflow_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
-        :param V1DeleteOptions body: Delete options to be send along in the body of this request.
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :type grace_period_seconds: int
+        :param orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :type orphan_dependents: bool
+        :param propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :type propagation_policy: str
+        :param body: Delete options to be send along in the body of this request.
+        :type body: V1DeleteOptions
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -889,7 +1044,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -955,7 +1111,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def delete_namespaced_workflowtemplate(self, namespace, name, **kwargs):  # noqa: E501
         """delete_namespaced_workflowtemplate  # noqa: E501
@@ -963,26 +1120,36 @@ class V1alpha1Api(object):
         Deletes the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.delete_namespaced_workflowtemplate(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique WorkflowTemplate name (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
-        :param V1DeleteOptions body: Delete options to be send along in the body of this request.
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique WorkflowTemplate name (required)
+        :type name: str
+        :param grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :type grace_period_seconds: int
+        :param orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :type orphan_dependents: bool
+        :param propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :type propagation_policy: str
+        :param body: Delete options to be send along in the body of this request.
+        :type body: V1DeleteOptions
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: object
         """
         kwargs['_return_http_data_only'] = True
         return self.delete_namespaced_workflowtemplate_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -993,28 +1160,43 @@ class V1alpha1Api(object):
         Deletes the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.delete_namespaced_workflowtemplate_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique WorkflowTemplate name (required)
-        :param int grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
-        :param bool orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
-        :param str propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
-        :param V1DeleteOptions body: Delete options to be send along in the body of this request.
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique WorkflowTemplate name (required)
+        :type name: str
+        :param grace_period_seconds: The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+        :type grace_period_seconds: int
+        :param orphan_dependents: Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
+        :type orphan_dependents: bool
+        :param propagation_policy: Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy.
+        :type propagation_policy: str
+        :param body: Delete options to be send along in the body of this request.
+        :type body: V1DeleteOptions
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -1032,7 +1214,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -1098,7 +1281,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def get_namespaced_archivedworkflow(self, namespace, name, **kwargs):  # noqa: E501
         """get_namespaced_archivedworkflow  # noqa: E501
@@ -1106,22 +1290,28 @@ class V1alpha1Api(object):
         Get Workflow resource by the archivedworkflow name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_namespaced_archivedworkflow(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: IoArgoprojArchivedworkflowV1alpha1Workflow
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: IoArgoprojArchivedworkflowV1alpha1Workflow
         """
         kwargs['_return_http_data_only'] = True
         return self.get_namespaced_archivedworkflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -1132,24 +1322,35 @@ class V1alpha1Api(object):
         Get Workflow resource by the archivedworkflow name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_namespaced_archivedworkflow_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(IoArgoprojArchivedworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(IoArgoprojArchivedworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -1163,7 +1364,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -1221,7 +1423,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def get_namespaced_cronworkflow(self, namespace, name, **kwargs):  # noqa: E501
         """get_namespaced_cronworkflow  # noqa: E501
@@ -1229,22 +1432,28 @@ class V1alpha1Api(object):
         Get Workflow resource by the cronworkflow name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_namespaced_cronworkflow(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: IoArgoprojCronworkflowV1alpha1Workflow
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: IoArgoprojCronworkflowV1alpha1Workflow
         """
         kwargs['_return_http_data_only'] = True
         return self.get_namespaced_cronworkflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -1255,24 +1464,35 @@ class V1alpha1Api(object):
         Get Workflow resource by the cronworkflow name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_namespaced_cronworkflow_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(IoArgoprojCronworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(IoArgoprojCronworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -1286,7 +1506,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -1344,7 +1565,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def get_namespaced_workflow(self, namespace, name, **kwargs):  # noqa: E501
         """get_namespaced_workflow  # noqa: E501
@@ -1352,22 +1574,28 @@ class V1alpha1Api(object):
         Get Workflow resource by the workflow name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_namespaced_workflow(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: V1alpha1Workflow
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: V1alpha1Workflow
         """
         kwargs['_return_http_data_only'] = True
         return self.get_namespaced_workflow_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -1378,24 +1606,35 @@ class V1alpha1Api(object):
         Get Workflow resource by the workflow name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_namespaced_workflow_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(V1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(V1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -1409,7 +1648,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -1467,7 +1707,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def get_namespaced_workflowtemplate(self, namespace, name, **kwargs):  # noqa: E501
         """get_namespaced_workflowtemplate  # noqa: E501
@@ -1475,22 +1716,28 @@ class V1alpha1Api(object):
         Get WorkflowTemplate resource by its name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_namespaced_workflowtemplate(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique WorkflowTemplate name (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique WorkflowTemplate name (required)
+        :type name: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: V1alpha1WorkflowTemplate
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: V1alpha1WorkflowTemplate
         """
         kwargs['_return_http_data_only'] = True
         return self.get_namespaced_workflowtemplate_with_http_info(namespace, name, **kwargs)  # noqa: E501
@@ -1501,24 +1748,35 @@ class V1alpha1Api(object):
         Get WorkflowTemplate resource by its name  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.get_namespaced_workflowtemplate_with_http_info(namespace, name, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique WorkflowTemplate name (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique WorkflowTemplate name (required)
+        :type name: str
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(V1alpha1WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(V1alpha1WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -1532,7 +1790,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -1590,7 +1849,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def list_namespaced_archivedworkflows(self, namespace, **kwargs):  # noqa: E501
         """list_namespaced_archivedworkflows  # noqa: E501
@@ -1598,26 +1858,36 @@ class V1alpha1Api(object):
         List archivedworkflow resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_namespaced_archivedworkflows(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :type field_selector: str
+        :param label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :type label_selector: str
+        :param resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :type resource_version: str
+        :param timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :type timeout_seconds: int
+        :param watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :type watch: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: IoArgoprojArchivedworkflowV1alpha1WorkflowList
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: IoArgoprojArchivedworkflowV1alpha1WorkflowList
         """
         kwargs['_return_http_data_only'] = True
         return self.list_namespaced_archivedworkflows_with_http_info(namespace, **kwargs)  # noqa: E501
@@ -1628,28 +1898,43 @@ class V1alpha1Api(object):
         List archivedworkflow resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_namespaced_archivedworkflows_with_http_info(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :type field_selector: str
+        :param label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :type label_selector: str
+        :param resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :type resource_version: str
+        :param timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :type timeout_seconds: int
+        :param watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :type watch: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(IoArgoprojArchivedworkflowV1alpha1WorkflowList, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(IoArgoprojArchivedworkflowV1alpha1WorkflowList, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -1667,7 +1952,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -1729,7 +2015,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def list_namespaced_cronworkflows(self, namespace, **kwargs):  # noqa: E501
         """list_namespaced_cronworkflows  # noqa: E501
@@ -1737,26 +2024,36 @@ class V1alpha1Api(object):
         List cronworkflow resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_namespaced_cronworkflows(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :type field_selector: str
+        :param label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :type label_selector: str
+        :param resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :type resource_version: str
+        :param timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :type timeout_seconds: int
+        :param watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :type watch: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: IoArgoprojCronworkflowV1alpha1WorkflowList
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: IoArgoprojCronworkflowV1alpha1WorkflowList
         """
         kwargs['_return_http_data_only'] = True
         return self.list_namespaced_cronworkflows_with_http_info(namespace, **kwargs)  # noqa: E501
@@ -1767,28 +2064,43 @@ class V1alpha1Api(object):
         List cronworkflow resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_namespaced_cronworkflows_with_http_info(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :type field_selector: str
+        :param label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :type label_selector: str
+        :param resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :type resource_version: str
+        :param timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :type timeout_seconds: int
+        :param watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :type watch: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(IoArgoprojCronworkflowV1alpha1WorkflowList, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(IoArgoprojCronworkflowV1alpha1WorkflowList, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -1806,7 +2118,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -1868,7 +2181,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def list_namespaced_workflows(self, namespace, **kwargs):  # noqa: E501
         """list_namespaced_workflows  # noqa: E501
@@ -1876,26 +2190,36 @@ class V1alpha1Api(object):
         List workflow resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_namespaced_workflows(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :type field_selector: str
+        :param label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :type label_selector: str
+        :param resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :type resource_version: str
+        :param timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :type timeout_seconds: int
+        :param watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :type watch: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: V1alpha1WorkflowList
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: V1alpha1WorkflowList
         """
         kwargs['_return_http_data_only'] = True
         return self.list_namespaced_workflows_with_http_info(namespace, **kwargs)  # noqa: E501
@@ -1906,28 +2230,43 @@ class V1alpha1Api(object):
         List workflow resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_namespaced_workflows_with_http_info(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The Workflow's namespace (required)
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param namespace: The Workflow's namespace (required)
+        :type namespace: str
+        :param field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :type field_selector: str
+        :param label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :type label_selector: str
+        :param resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :type resource_version: str
+        :param timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :type timeout_seconds: int
+        :param watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :type watch: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(V1alpha1WorkflowList, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(V1alpha1WorkflowList, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -1945,7 +2284,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -2007,7 +2347,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def list_namespaced_workflowtemplates(self, namespace, **kwargs):  # noqa: E501
         """list_namespaced_workflowtemplates  # noqa: E501
@@ -2015,26 +2356,36 @@ class V1alpha1Api(object):
         List WorkflowTemplate resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_namespaced_workflowtemplates(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The WorkflowTemplate's namespace (required)
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param namespace: The WorkflowTemplate's namespace (required)
+        :type namespace: str
+        :param field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :type field_selector: str
+        :param label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :type label_selector: str
+        :param resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :type resource_version: str
+        :param timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :type timeout_seconds: int
+        :param watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :type watch: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: V1alpha1WorkflowTemplateList
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: V1alpha1WorkflowTemplateList
         """
         kwargs['_return_http_data_only'] = True
         return self.list_namespaced_workflowtemplates_with_http_info(namespace, **kwargs)  # noqa: E501
@@ -2045,28 +2396,43 @@ class V1alpha1Api(object):
         List WorkflowTemplate resources.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.list_namespaced_workflowtemplates_with_http_info(namespace, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The WorkflowTemplate's namespace (required)
-        :param str field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
-        :param str label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
-        :param str resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
-        :param int timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
-        :param bool watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :param namespace: The WorkflowTemplate's namespace (required)
+        :type namespace: str
+        :param field_selector: A selector to restrict the list of returned objects by their fields. Defaults to everything.
+        :type field_selector: str
+        :param label_selector: A selector to restrict the list of returned objects by their labels. Defaults to everything.
+        :type label_selector: str
+        :param resource_version: When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.
+        :type resource_version: str
+        :param timeout_seconds: Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity.
+        :type timeout_seconds: int
+        :param watch: Watch for changes to the described resources and return them as a stream of add, update, and remove notifications.
+        :type watch: bool
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(V1alpha1WorkflowTemplateList, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(V1alpha1WorkflowTemplateList, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -2084,7 +2450,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -2146,7 +2513,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def patch_namespaced_archivedworkflow(self, namespace, name, body, **kwargs):  # noqa: E501
         """patch_namespaced_archivedworkflow  # noqa: E501
@@ -2154,23 +2522,30 @@ class V1alpha1Api(object):
         patch the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.patch_namespaced_archivedworkflow(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param IoArgoprojArchivedworkflowV1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to patch. (required)
+        :type body: IoArgoprojArchivedworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: object
         """
         kwargs['_return_http_data_only'] = True
         return self.patch_namespaced_archivedworkflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -2181,25 +2556,37 @@ class V1alpha1Api(object):
         patch the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.patch_namespaced_archivedworkflow_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param IoArgoprojArchivedworkflowV1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to patch. (required)
+        :type body: IoArgoprojArchivedworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -2214,7 +2601,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -2282,7 +2670,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def patch_namespaced_cronworkflow(self, namespace, name, body, **kwargs):  # noqa: E501
         """patch_namespaced_cronworkflow  # noqa: E501
@@ -2290,23 +2679,30 @@ class V1alpha1Api(object):
         patch the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.patch_namespaced_cronworkflow(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to patch. (required)
+        :type body: IoArgoprojCronworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: object
         """
         kwargs['_return_http_data_only'] = True
         return self.patch_namespaced_cronworkflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -2317,25 +2713,37 @@ class V1alpha1Api(object):
         patch the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.patch_namespaced_cronworkflow_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to patch. (required)
+        :type body: IoArgoprojCronworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -2350,7 +2758,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -2418,7 +2827,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def patch_namespaced_workflow(self, namespace, name, body, **kwargs):  # noqa: E501
         """patch_namespaced_workflow  # noqa: E501
@@ -2426,23 +2836,30 @@ class V1alpha1Api(object):
         patch the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.patch_namespaced_workflow(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param V1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to patch. (required)
+        :type body: V1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: object
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: object
         """
         kwargs['_return_http_data_only'] = True
         return self.patch_namespaced_workflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -2453,25 +2870,37 @@ class V1alpha1Api(object):
         patch the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.patch_namespaced_workflow_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param V1alpha1Workflow body: The JSON schema of the Workflow to patch. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to patch. (required)
+        :type body: V1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(object, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(object, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -2486,7 +2915,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -2554,7 +2984,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def patch_namespaced_workflowtemplate(self, namespace, name, body, **kwargs):  # noqa: E501
         """patch_namespaced_workflowtemplate  # noqa: E501
@@ -2562,23 +2993,30 @@ class V1alpha1Api(object):
         patch the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.patch_namespaced_workflowtemplate(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique WorkflowTemplate name (required)
-        :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to patch. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique WorkflowTemplate name (required)
+        :type name: str
+        :param body: The JSON schema of the WorkflowTemplate to patch. (required)
+        :type body: V1alpha1WorkflowTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: V1alpha1WorkflowTemplate
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: V1alpha1WorkflowTemplate
         """
         kwargs['_return_http_data_only'] = True
         return self.patch_namespaced_workflowtemplate_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -2589,25 +3027,37 @@ class V1alpha1Api(object):
         patch the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.patch_namespaced_workflowtemplate_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique WorkflowTemplate name (required)
-        :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to patch. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique WorkflowTemplate name (required)
+        :type name: str
+        :param body: The JSON schema of the WorkflowTemplate to patch. (required)
+        :type body: V1alpha1WorkflowTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(V1alpha1WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(V1alpha1WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -2622,7 +3072,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -2690,7 +3141,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def replace_namespaced_archivedworkflow(self, namespace, name, body, **kwargs):  # noqa: E501
         """replace_namespaced_archivedworkflow  # noqa: E501
@@ -2698,23 +3150,30 @@ class V1alpha1Api(object):
         replace the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.replace_namespaced_archivedworkflow(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param IoArgoprojArchivedworkflowV1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to replace. (required)
+        :type body: IoArgoprojArchivedworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: IoArgoprojArchivedworkflowV1alpha1Workflow
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: IoArgoprojArchivedworkflowV1alpha1Workflow
         """
         kwargs['_return_http_data_only'] = True
         return self.replace_namespaced_archivedworkflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -2725,25 +3184,37 @@ class V1alpha1Api(object):
         replace the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.replace_namespaced_archivedworkflow_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param IoArgoprojArchivedworkflowV1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to replace. (required)
+        :type body: IoArgoprojArchivedworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(IoArgoprojArchivedworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(IoArgoprojArchivedworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -2758,7 +3229,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -2822,7 +3294,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def replace_namespaced_cronworkflow(self, namespace, name, body, **kwargs):  # noqa: E501
         """replace_namespaced_cronworkflow  # noqa: E501
@@ -2830,23 +3303,30 @@ class V1alpha1Api(object):
         replace the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.replace_namespaced_cronworkflow(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to replace. (required)
+        :type body: IoArgoprojCronworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: IoArgoprojCronworkflowV1alpha1Workflow
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: IoArgoprojCronworkflowV1alpha1Workflow
         """
         kwargs['_return_http_data_only'] = True
         return self.replace_namespaced_cronworkflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -2857,25 +3337,37 @@ class V1alpha1Api(object):
         replace the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.replace_namespaced_cronworkflow_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param IoArgoprojCronworkflowV1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to replace. (required)
+        :type body: IoArgoprojCronworkflowV1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(IoArgoprojCronworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(IoArgoprojCronworkflowV1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -2890,7 +3382,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -2954,7 +3447,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def replace_namespaced_workflow(self, namespace, name, body, **kwargs):  # noqa: E501
         """replace_namespaced_workflow  # noqa: E501
@@ -2962,23 +3456,30 @@ class V1alpha1Api(object):
         replace the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.replace_namespaced_workflow(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param V1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to replace. (required)
+        :type body: V1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: V1alpha1Workflow
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: V1alpha1Workflow
         """
         kwargs['_return_http_data_only'] = True
         return self.replace_namespaced_workflow_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -2989,25 +3490,37 @@ class V1alpha1Api(object):
         replace the specified namespace scoped Workflow.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.replace_namespaced_workflow_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique Workflow name (required)
-        :param V1alpha1Workflow body: The JSON schema of the Workflow to replace. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique Workflow name (required)
+        :type name: str
+        :param body: The JSON schema of the Workflow to replace. (required)
+        :type body: V1alpha1Workflow
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(V1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(V1alpha1Workflow, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -3022,7 +3535,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -3086,7 +3600,8 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))
 
     def replace_namespaced_workflowtemplate(self, namespace, name, body, **kwargs):  # noqa: E501
         """replace_namespaced_workflowtemplate  # noqa: E501
@@ -3094,23 +3609,30 @@ class V1alpha1Api(object):
         replace the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.replace_namespaced_workflowtemplate(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique WorkflowTemplate name (required)
-        :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to replace. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique WorkflowTemplate name (required)
+        :type name: str
+        :param body: The JSON schema of the WorkflowTemplate to replace. (required)
+        :type body: V1alpha1WorkflowTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: V1alpha1WorkflowTemplate
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: V1alpha1WorkflowTemplate
         """
         kwargs['_return_http_data_only'] = True
         return self.replace_namespaced_workflowtemplate_with_http_info(namespace, name, body, **kwargs)  # noqa: E501
@@ -3121,25 +3643,37 @@ class V1alpha1Api(object):
         replace the specified namespace scoped WorkflowTemplate.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+
         >>> thread = api.replace_namespaced_workflowtemplate_with_http_info(namespace, name, body, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool: execute request asynchronously
-        :param str namespace: The custom resource's namespace (required)
-        :param str name: Unique WorkflowTemplate name (required)
-        :param V1alpha1WorkflowTemplate body: The JSON schema of the WorkflowTemplate to replace. (required)
+        :param namespace: The custom resource's namespace (required)
+        :type namespace: str
+        :param name: Unique WorkflowTemplate name (required)
+        :type name: str
+        :param body: The JSON schema of the WorkflowTemplate to replace. (required)
+        :type body: V1alpha1WorkflowTemplate
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
                                        and headers
+        :type _return_http_data_only: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
+        :type _preload_content: bool, optional
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
-        :return: tuple(V1alpha1WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the authentication
+                              in the spec for a single request.
+        :type _request_auth: dict, optional
+        :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
+        :rtype: tuple(V1alpha1WorkflowTemplate, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -3154,7 +3688,8 @@ class V1alpha1Api(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
-                '_request_timeout'
+                '_request_timeout',
+                '_request_auth'
             ]
         )
 
@@ -3218,4 +3753,5 @@ class V1alpha1Api(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            _request_auth=local_var_params.get('_request_auth'))

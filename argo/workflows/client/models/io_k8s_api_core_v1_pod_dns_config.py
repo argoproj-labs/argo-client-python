@@ -80,7 +80,7 @@ class V1PodDNSConfig(object):
         A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.  # noqa: E501
 
         :param nameservers: The nameservers of this V1PodDNSConfig.  # noqa: E501
-        :type: list[str]
+        :type nameservers: list[str]
         """
 
         self._nameservers = nameservers
@@ -103,7 +103,7 @@ class V1PodDNSConfig(object):
         A list of DNS resolver options. This will be merged with the base options generated from DNSPolicy. Duplicated entries will be removed. Resolution options given in Options will override those that appear in the base DNSPolicy.  # noqa: E501
 
         :param options: The options of this V1PodDNSConfig.  # noqa: E501
-        :type: list[V1PodDNSConfigOption]
+        :type options: list[V1PodDNSConfigOption]
         """
 
         self._options = options
@@ -126,7 +126,7 @@ class V1PodDNSConfig(object):
         A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.  # noqa: E501
 
         :param searches: The searches of this V1PodDNSConfig.  # noqa: E501
-        :type: list[str]
+        :type searches: list[str]
         """
 
         self._searches = searches

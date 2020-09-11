@@ -78,7 +78,7 @@ class V1Handler(object):
 
 
         :param _exec: The _exec of this V1Handler.  # noqa: E501
-        :type: V1ExecAction
+        :type _exec: V1ExecAction
         """
 
         self.__exec = _exec
@@ -99,7 +99,7 @@ class V1Handler(object):
 
 
         :param http_get: The http_get of this V1Handler.  # noqa: E501
-        :type: V1HTTPGetAction
+        :type http_get: V1HTTPGetAction
         """
 
         self._http_get = http_get
@@ -120,7 +120,7 @@ class V1Handler(object):
 
 
         :param tcp_socket: The tcp_socket of this V1Handler.  # noqa: E501
-        :type: V1TCPSocketAction
+        :type tcp_socket: V1TCPSocketAction
         """
 
         self._tcp_socket = tcp_socket

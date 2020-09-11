@@ -83,7 +83,7 @@ class V1alpha1WorkflowSubmitRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowSubmitRequest.  # noqa: E501
-        :type: str
+        :type namespace: str
         """
 
         self._namespace = namespace
@@ -104,7 +104,7 @@ class V1alpha1WorkflowSubmitRequest(object):
 
 
         :param resource_kind: The resource_kind of this V1alpha1WorkflowSubmitRequest.  # noqa: E501
-        :type: str
+        :type resource_kind: str
         """
 
         self._resource_kind = resource_kind
@@ -125,7 +125,7 @@ class V1alpha1WorkflowSubmitRequest(object):
 
 
         :param resource_name: The resource_name of this V1alpha1WorkflowSubmitRequest.  # noqa: E501
-        :type: str
+        :type resource_name: str
         """
 
         self._resource_name = resource_name
@@ -146,7 +146,7 @@ class V1alpha1WorkflowSubmitRequest(object):
 
 
         :param submit_options: The submit_options of this V1alpha1WorkflowSubmitRequest.  # noqa: E501
-        :type: V1alpha1SubmitOpts
+        :type submit_options: V1alpha1SubmitOpts
         """
 
         self._submit_options = submit_options

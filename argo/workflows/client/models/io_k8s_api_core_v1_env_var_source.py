@@ -83,7 +83,7 @@ class V1EnvVarSource(object):
 
 
         :param config_map_key_ref: The config_map_key_ref of this V1EnvVarSource.  # noqa: E501
-        :type: V1ConfigMapKeySelector
+        :type config_map_key_ref: V1ConfigMapKeySelector
         """
 
         self._config_map_key_ref = config_map_key_ref
@@ -104,7 +104,7 @@ class V1EnvVarSource(object):
 
 
         :param field_ref: The field_ref of this V1EnvVarSource.  # noqa: E501
-        :type: V1ObjectFieldSelector
+        :type field_ref: V1ObjectFieldSelector
         """
 
         self._field_ref = field_ref
@@ -125,7 +125,7 @@ class V1EnvVarSource(object):
 
 
         :param resource_field_ref: The resource_field_ref of this V1EnvVarSource.  # noqa: E501
-        :type: V1ResourceFieldSelector
+        :type resource_field_ref: V1ResourceFieldSelector
         """
 
         self._resource_field_ref = resource_field_ref
@@ -146,7 +146,7 @@ class V1EnvVarSource(object):
 
 
         :param secret_key_ref: The secret_key_ref of this V1EnvVarSource.  # noqa: E501
-        :type: V1SecretKeySelector
+        :type secret_key_ref: V1SecretKeySelector
         """
 
         self._secret_key_ref = secret_key_ref

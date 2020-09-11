@@ -74,7 +74,7 @@ class V1ProjectedVolumeSource(object):
         Mode bits to use on created files by default. Must be a value between 0 and 0777. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.  # noqa: E501
 
         :param default_mode: The default_mode of this V1ProjectedVolumeSource.  # noqa: E501
-        :type: int
+        :type default_mode: int
         """
 
         self._default_mode = default_mode
@@ -97,7 +97,7 @@ class V1ProjectedVolumeSource(object):
         list of volume projections  # noqa: E501
 
         :param sources: The sources of this V1ProjectedVolumeSource.  # noqa: E501
-        :type: list[V1VolumeProjection]
+        :type sources: list[V1VolumeProjection]
         """
         if self.local_vars_configuration.client_side_validation and sources is None:  # noqa: E501
             raise ValueError("Invalid value for `sources`, must not be `None`")  # noqa: E501

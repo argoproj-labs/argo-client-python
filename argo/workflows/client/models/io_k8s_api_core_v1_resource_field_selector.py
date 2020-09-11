@@ -79,7 +79,7 @@ class V1ResourceFieldSelector(object):
         Container name: required for volumes, optional for env vars  # noqa: E501
 
         :param container_name: The container_name of this V1ResourceFieldSelector.  # noqa: E501
-        :type: str
+        :type container_name: str
         """
 
         self._container_name = container_name
@@ -102,7 +102,7 @@ class V1ResourceFieldSelector(object):
         Specifies the output format of the exposed resources, defaults to \"1\"  # noqa: E501
 
         :param divisor: The divisor of this V1ResourceFieldSelector.  # noqa: E501
-        :type: str
+        :type divisor: str
         """
 
         self._divisor = divisor
@@ -125,7 +125,7 @@ class V1ResourceFieldSelector(object):
         Required: resource to select  # noqa: E501
 
         :param resource: The resource of this V1ResourceFieldSelector.  # noqa: E501
-        :type: str
+        :type resource: str
         """
         if self.local_vars_configuration.client_side_validation and resource is None:  # noqa: E501
             raise ValueError("Invalid value for `resource`, must not be `None`")  # noqa: E501

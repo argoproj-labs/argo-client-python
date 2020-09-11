@@ -113,7 +113,7 @@ class V1alpha1WorkflowStep(object):
 
 
         :param arguments: The arguments of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: V1alpha1Arguments
+        :type arguments: V1alpha1Arguments
         """
 
         self._arguments = arguments
@@ -134,7 +134,7 @@ class V1alpha1WorkflowStep(object):
 
 
         :param continue_on: The continue_on of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: V1alpha1ContinueOn
+        :type continue_on: V1alpha1ContinueOn
         """
 
         self._continue_on = continue_on
@@ -157,7 +157,7 @@ class V1alpha1WorkflowStep(object):
         Name of the step  # noqa: E501
 
         :param name: The name of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: str
+        :type name: str
         """
 
         self._name = name
@@ -180,7 +180,7 @@ class V1alpha1WorkflowStep(object):
         OnExit is a template reference which is invoked at the end of the template, irrespective of the success, failure, or error of the primary template.  # noqa: E501
 
         :param on_exit: The on_exit of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: str
+        :type on_exit: str
         """
 
         self._on_exit = on_exit
@@ -203,7 +203,7 @@ class V1alpha1WorkflowStep(object):
         Template is the name of the template to execute as the step  # noqa: E501
 
         :param template: The template of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: str
+        :type template: str
         """
 
         self._template = template
@@ -224,7 +224,7 @@ class V1alpha1WorkflowStep(object):
 
 
         :param template_ref: The template_ref of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: V1alpha1TemplateRef
+        :type template_ref: V1alpha1TemplateRef
         """
 
         self._template_ref = template_ref
@@ -247,7 +247,7 @@ class V1alpha1WorkflowStep(object):
         When is an expression in which the step should conditionally execute  # noqa: E501
 
         :param when: The when of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: str
+        :type when: str
         """
 
         self._when = when
@@ -270,7 +270,7 @@ class V1alpha1WorkflowStep(object):
         WithItems expands a step into multiple parallel steps from the items in the list  # noqa: E501
 
         :param with_items: The with_items of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: list[object]
+        :type with_items: list[object]
         """
 
         self._with_items = with_items
@@ -293,7 +293,7 @@ class V1alpha1WorkflowStep(object):
         WithParam expands a step into multiple parallel steps from the value in the parameter, which is expected to be a JSON list.  # noqa: E501
 
         :param with_param: The with_param of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: str
+        :type with_param: str
         """
 
         self._with_param = with_param
@@ -314,7 +314,7 @@ class V1alpha1WorkflowStep(object):
 
 
         :param with_sequence: The with_sequence of this V1alpha1WorkflowStep.  # noqa: E501
-        :type: V1alpha1Sequence
+        :type with_sequence: V1alpha1Sequence
         """
 
         self._with_sequence = with_sequence

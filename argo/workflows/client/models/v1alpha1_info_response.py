@@ -73,7 +73,7 @@ class V1alpha1InfoResponse(object):
 
 
         :param links: The links of this V1alpha1InfoResponse.  # noqa: E501
-        :type: list[V1alpha1Link]
+        :type links: list[V1alpha1Link]
         """
 
         self._links = links
@@ -94,7 +94,7 @@ class V1alpha1InfoResponse(object):
 
 
         :param managed_namespace: The managed_namespace of this V1alpha1InfoResponse.  # noqa: E501
-        :type: str
+        :type managed_namespace: str
         """
 
         self._managed_namespace = managed_namespace

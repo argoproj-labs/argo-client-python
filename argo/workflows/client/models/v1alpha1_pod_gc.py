@@ -70,7 +70,7 @@ class V1alpha1PodGC(object):
         Strategy is the strategy to use. One of \"OnPodCompletion\", \"OnPodSuccess\", \"OnWorkflowCompletion\", \"OnWorkflowSuccess\"  # noqa: E501
 
         :param strategy: The strategy of this V1alpha1PodGC.  # noqa: E501
-        :type: str
+        :type strategy: str
         """
 
         self._strategy = strategy
