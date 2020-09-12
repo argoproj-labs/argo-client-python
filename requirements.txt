@@ -1,2 +1,2 @@
-kubernetes>=11.0
+kubernetes==12.0.0b1
 mock
