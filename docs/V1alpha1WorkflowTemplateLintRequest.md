@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**create_options** | [**IoK8sApimachineryPkgApisMetaV1CreateOptions**](IoK8sApimachineryPkgApisMetaV1CreateOptions.md) |  | [optional] 
+**create_options** | [**V1CreateOptions**](V1CreateOptions.md) |  | [optional] 
 **namespace** | **str** |  | [optional] 
 **template** | [**V1alpha1WorkflowTemplate**](V1alpha1WorkflowTemplate.md) |  | [optional] 
 

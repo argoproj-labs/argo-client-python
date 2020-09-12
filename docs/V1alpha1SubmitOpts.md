@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **generate_name** | **str** | GenerateName overrides metadata.generateName | [optional] 
 **labels** | **str** | Labels adds to metadata.labels | [optional] 
 **name** | **str** | Name overrides metadata.name | [optional] 
-**owner_reference** | [**IoK8sApimachineryPkgApisMetaV1OwnerReference**](IoK8sApimachineryPkgApisMetaV1OwnerReference.md) |  | [optional] 
+**owner_reference** | [**V1OwnerReference**](V1OwnerReference.md) |  | [optional] 
 **parameter_file** | **str** | ParameterFile holds a reference to a parameter file. This option is not supported in API | [optional] 
 **parameters** | **list[str]** | Parameters passes input parameters to workflow | [optional] 
 **server_dry_run** | **bool** | ServerDryRun validates the workflow on the server-side without creating it | [optional] 

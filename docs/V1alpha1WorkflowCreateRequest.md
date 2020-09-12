@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**create_options** | [**IoK8sApimachineryPkgApisMetaV1CreateOptions**](IoK8sApimachineryPkgApisMetaV1CreateOptions.md) |  | [optional] 
+**create_options** | [**V1CreateOptions**](V1CreateOptions.md) |  | [optional] 
 **instance_id** | **str** | This field is no longer used. | [optional] 
 **namespace** | **str** |  | [optional] 
 **server_dry_run** | **bool** |  | [optional] 
