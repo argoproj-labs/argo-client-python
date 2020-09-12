@@ -158,6 +158,9 @@ preprocess:
 	@echo "Preprocessing API specs"
 	python3 scripts/preprocess.py -i ${OPENAPI_SPEC} \
 		-d 'io.argoproj.workflow' \
+		-d 'cronio.argoproj.workflow' \
+		-d 'io.k8s.api.core' \
+		-d 'io.k8s.apimachinery.pkg.apis.meta' \
 		-o ${OPENAPI_SPEC} >/dev/null
 
 	# Replace empty references
