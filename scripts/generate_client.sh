@@ -19,6 +19,7 @@ _patch() {
     find "${output_dir}/openapi_client/" -type f -name \*.py -exec sed -i 's/import openapi_client\./import argo.workflows.client./g' {} +
     find "${output_dir}/openapi_client/" -type f -name \*.py -exec sed -i 's/from openapi_client/from argo.workflows.client/g' {} +
     find "${output_dir}/openapi_client/" -type f -name \*.py -exec sed -i 's/getattr(openapi_client\.models/getattr(argo.workflows.client.models/g' {} +
+    find "${output_dir}/openapi_client/" -type f -name \*_v1_container.py -exec sed -i 's/name\=None/name\=\'\''/g' {} +
 
 	# Replace io.k8s models with python kubernetes.client.library
     find "$output_dir/openapi_client/" -type f \
@@ -44,11 +45,12 @@ _patch() {
     # }
     # done
 
+    # TODO: yxue: why?
     # Import all kubernetes models
-    {
-        models="$output_dir/openapi_client/models/__init__.py"
-        echo -e '\nfrom kubernetes.client.models import *' >> ${models}
-    }
+    # {
+    #     models="$output_dir/openapi_client/models/__init__.py"
+    #     echo -e '\nfrom kubernetes.client.models import *' >> ${models}
+    # }
 
     # Add __version__ to the client package
      echo -e "\nfrom .__about__ import __version__" \
