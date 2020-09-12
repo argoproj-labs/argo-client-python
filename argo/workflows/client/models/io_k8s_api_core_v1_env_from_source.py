@@ -78,7 +78,7 @@ class V1EnvFromSource(object):
 
 
         :param config_map_ref: The config_map_ref of this V1EnvFromSource.  # noqa: E501
-        :type config_map_ref: V1ConfigMapEnvSource
+        :type: V1ConfigMapEnvSource
         """
 
         self._config_map_ref = config_map_ref
@@ -101,7 +101,7 @@ class V1EnvFromSource(object):
         An optional identifier to prepend to each key in the ConfigMap. Must be a C_IDENTIFIER.  # noqa: E501
 
         :param prefix: The prefix of this V1EnvFromSource.  # noqa: E501
-        :type prefix: str
+        :type: str
         """
 
         self._prefix = prefix
@@ -122,7 +122,7 @@ class V1EnvFromSource(object):
 
 
         :param secret_ref: The secret_ref of this V1EnvFromSource.  # noqa: E501
-        :type secret_ref: V1SecretEnvSource
+        :type: V1SecretEnvSource
         """
 
         self._secret_ref = secret_ref

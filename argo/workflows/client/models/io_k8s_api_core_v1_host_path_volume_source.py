@@ -74,7 +74,7 @@ class V1HostPathVolumeSource(object):
         Path of the directory on the host. If the path is a symlink, it will follow the link to the real path. More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath  # noqa: E501
 
         :param path: The path of this V1HostPathVolumeSource.  # noqa: E501
-        :type path: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and path is None:  # noqa: E501
             raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501
@@ -99,7 +99,7 @@ class V1HostPathVolumeSource(object):
         Type for HostPath Volume Defaults to \"\" More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath  # noqa: E501
 
         :param type: The type of this V1HostPathVolumeSource.  # noqa: E501
-        :type type: str
+        :type: str
         """
 
         self._type = type

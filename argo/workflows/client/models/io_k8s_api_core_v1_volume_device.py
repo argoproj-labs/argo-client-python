@@ -73,7 +73,7 @@ class V1VolumeDevice(object):
         devicePath is the path inside of the container that the device will be mapped to.  # noqa: E501
 
         :param device_path: The device_path of this V1VolumeDevice.  # noqa: E501
-        :type device_path: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and device_path is None:  # noqa: E501
             raise ValueError("Invalid value for `device_path`, must not be `None`")  # noqa: E501
@@ -98,7 +98,7 @@ class V1VolumeDevice(object):
         name must match the name of a persistentVolumeClaim in the pod  # noqa: E501
 
         :param name: The name of this V1VolumeDevice.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501

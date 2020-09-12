@@ -73,7 +73,7 @@ class V1alpha1ClusterWorkflowTemplateCreateRequest(object):
 
 
         :param create_options: The create_options of this V1alpha1ClusterWorkflowTemplateCreateRequest.  # noqa: E501
-        :type create_options: V1CreateOptions
+        :type: V1CreateOptions
         """
 
         self._create_options = create_options
@@ -94,7 +94,7 @@ class V1alpha1ClusterWorkflowTemplateCreateRequest(object):
 
 
         :param template: The template of this V1alpha1ClusterWorkflowTemplateCreateRequest.  # noqa: E501
-        :type template: V1alpha1ClusterWorkflowTemplate
+        :type: V1alpha1ClusterWorkflowTemplate
         """
 
         self._template = template

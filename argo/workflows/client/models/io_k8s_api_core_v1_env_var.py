@@ -79,7 +79,7 @@ class V1EnvVar(object):
         Name of the environment variable. Must be a C_IDENTIFIER.  # noqa: E501
 
         :param name: The name of this V1EnvVar.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -104,7 +104,7 @@ class V1EnvVar(object):
         Variable references $(VAR_NAME) are expanded using the previous defined environment variables in the container and any service environment variables. If a variable cannot be resolved, the reference in the input string will be unchanged. The $(VAR_NAME) syntax can be escaped with a double $$, ie: $$(VAR_NAME). Escaped references will never be expanded, regardless of whether the variable exists or not. Defaults to \"\".  # noqa: E501
 
         :param value: The value of this V1EnvVar.  # noqa: E501
-        :type value: str
+        :type: str
         """
 
         self._value = value
@@ -125,7 +125,7 @@ class V1EnvVar(object):
 
 
         :param value_from: The value_from of this V1EnvVar.  # noqa: E501
-        :type value_from: V1EnvVarSource
+        :type: V1EnvVarSource
         """
 
         self._value_from = value_from

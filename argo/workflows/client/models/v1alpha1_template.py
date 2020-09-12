@@ -244,7 +244,7 @@ class V1alpha1Template(object):
         Optional duration in seconds relative to the StartTime that the pod may be active on a node before the system actively tries to terminate the pod; value must be positive integer This field is only applicable to container and script templates.  # noqa: E501
 
         :param active_deadline_seconds: The active_deadline_seconds of this V1alpha1Template.  # noqa: E501
-        :type active_deadline_seconds: int
+        :type: int
         """
 
         self._active_deadline_seconds = active_deadline_seconds
@@ -265,7 +265,7 @@ class V1alpha1Template(object):
 
 
         :param affinity: The affinity of this V1alpha1Template.  # noqa: E501
-        :type affinity: V1Affinity
+        :type: V1Affinity
         """
 
         self._affinity = affinity
@@ -286,7 +286,7 @@ class V1alpha1Template(object):
 
 
         :param archive_location: The archive_location of this V1alpha1Template.  # noqa: E501
-        :type archive_location: V1alpha1ArtifactLocation
+        :type: V1alpha1ArtifactLocation
         """
 
         self._archive_location = archive_location
@@ -307,7 +307,7 @@ class V1alpha1Template(object):
 
 
         :param arguments: The arguments of this V1alpha1Template.  # noqa: E501
-        :type arguments: V1alpha1Arguments
+        :type: V1alpha1Arguments
         """
 
         self._arguments = arguments
@@ -330,7 +330,7 @@ class V1alpha1Template(object):
         AutomountServiceAccountToken indicates whether a service account token should be automatically mounted in pods. ServiceAccountName of ExecutorConfig must be specified if this value is false.  # noqa: E501
 
         :param automount_service_account_token: The automount_service_account_token of this V1alpha1Template.  # noqa: E501
-        :type automount_service_account_token: bool
+        :type: bool
         """
 
         self._automount_service_account_token = automount_service_account_token
@@ -351,7 +351,7 @@ class V1alpha1Template(object):
 
 
         :param container: The container of this V1alpha1Template.  # noqa: E501
-        :type container: V1Container
+        :type: V1Container
         """
 
         self._container = container
@@ -374,7 +374,7 @@ class V1alpha1Template(object):
         Deamon will allow a workflow to proceed to the next step so long as the container reaches readiness  # noqa: E501
 
         :param daemon: The daemon of this V1alpha1Template.  # noqa: E501
-        :type daemon: bool
+        :type: bool
         """
 
         self._daemon = daemon
@@ -395,7 +395,7 @@ class V1alpha1Template(object):
 
 
         :param dag: The dag of this V1alpha1Template.  # noqa: E501
-        :type dag: V1alpha1DAGTemplate
+        :type: V1alpha1DAGTemplate
         """
 
         self._dag = dag
@@ -416,7 +416,7 @@ class V1alpha1Template(object):
 
 
         :param executor: The executor of this V1alpha1Template.  # noqa: E501
-        :type executor: V1alpha1ExecutorConfig
+        :type: V1alpha1ExecutorConfig
         """
 
         self._executor = executor
@@ -439,7 +439,7 @@ class V1alpha1Template(object):
         HostAliases is an optional list of hosts and IPs that will be injected into the pod spec  # noqa: E501
 
         :param host_aliases: The host_aliases of this V1alpha1Template.  # noqa: E501
-        :type host_aliases: list[V1HostAlias]
+        :type: list[V1HostAlias]
         """
 
         self._host_aliases = host_aliases
@@ -462,7 +462,7 @@ class V1alpha1Template(object):
         InitContainers is a list of containers which run before the main container.  # noqa: E501
 
         :param init_containers: The init_containers of this V1alpha1Template.  # noqa: E501
-        :type init_containers: list[V1alpha1UserContainer]
+        :type: list[V1alpha1UserContainer]
         """
 
         self._init_containers = init_containers
@@ -483,7 +483,7 @@ class V1alpha1Template(object):
 
 
         :param inputs: The inputs of this V1alpha1Template.  # noqa: E501
-        :type inputs: V1alpha1Inputs
+        :type: V1alpha1Inputs
         """
 
         self._inputs = inputs
@@ -504,7 +504,7 @@ class V1alpha1Template(object):
 
 
         :param metadata: The metadata of this V1alpha1Template.  # noqa: E501
-        :type metadata: V1alpha1Metadata
+        :type: V1alpha1Metadata
         """
 
         self._metadata = metadata
@@ -525,7 +525,7 @@ class V1alpha1Template(object):
 
 
         :param metrics: The metrics of this V1alpha1Template.  # noqa: E501
-        :type metrics: V1alpha1Metrics
+        :type: V1alpha1Metrics
         """
 
         self._metrics = metrics
@@ -548,7 +548,7 @@ class V1alpha1Template(object):
         Name is the name of the template  # noqa: E501
 
         :param name: The name of this V1alpha1Template.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -573,7 +573,7 @@ class V1alpha1Template(object):
         NodeSelector is a selector to schedule this step of the workflow to be run on the selected node(s). Overrides the selector set at the workflow level.  # noqa: E501
 
         :param node_selector: The node_selector of this V1alpha1Template.  # noqa: E501
-        :type node_selector: dict(str, str)
+        :type: dict(str, str)
         """
 
         self._node_selector = node_selector
@@ -594,7 +594,7 @@ class V1alpha1Template(object):
 
 
         :param outputs: The outputs of this V1alpha1Template.  # noqa: E501
-        :type outputs: V1alpha1Outputs
+        :type: V1alpha1Outputs
         """
 
         self._outputs = outputs
@@ -617,7 +617,7 @@ class V1alpha1Template(object):
         Parallelism limits the max total parallel pods that can execute at the same time within the boundaries of this template invocation. If additional steps/dag templates are invoked, the pods created by those templates will not be counted towards this total.  # noqa: E501
 
         :param parallelism: The parallelism of this V1alpha1Template.  # noqa: E501
-        :type parallelism: int
+        :type: int
         """
 
         self._parallelism = parallelism
@@ -640,7 +640,7 @@ class V1alpha1Template(object):
         PodSpecPatch holds strategic merge patch to apply against the pod spec. Allows parameterization of container fields which are not strings (e.g. resource limits).  # noqa: E501
 
         :param pod_spec_patch: The pod_spec_patch of this V1alpha1Template.  # noqa: E501
-        :type pod_spec_patch: str
+        :type: str
         """
 
         self._pod_spec_patch = pod_spec_patch
@@ -663,7 +663,7 @@ class V1alpha1Template(object):
         Priority to apply to workflow pods.  # noqa: E501
 
         :param priority: The priority of this V1alpha1Template.  # noqa: E501
-        :type priority: int
+        :type: int
         """
 
         self._priority = priority
@@ -686,7 +686,7 @@ class V1alpha1Template(object):
         PriorityClassName to apply to workflow pods.  # noqa: E501
 
         :param priority_class_name: The priority_class_name of this V1alpha1Template.  # noqa: E501
-        :type priority_class_name: str
+        :type: str
         """
 
         self._priority_class_name = priority_class_name
@@ -707,7 +707,7 @@ class V1alpha1Template(object):
 
 
         :param resource: The resource of this V1alpha1Template.  # noqa: E501
-        :type resource: V1alpha1ResourceTemplate
+        :type: V1alpha1ResourceTemplate
         """
 
         self._resource = resource
@@ -730,7 +730,7 @@ class V1alpha1Template(object):
         ResubmitPendingPods is a flag to enable resubmitting pods that remain Pending after initial submission  # noqa: E501
 
         :param resubmit_pending_pods: The resubmit_pending_pods of this V1alpha1Template.  # noqa: E501
-        :type resubmit_pending_pods: bool
+        :type: bool
         """
 
         self._resubmit_pending_pods = resubmit_pending_pods
@@ -751,7 +751,7 @@ class V1alpha1Template(object):
 
 
         :param retry_strategy: The retry_strategy of this V1alpha1Template.  # noqa: E501
-        :type retry_strategy: V1alpha1RetryStrategy
+        :type: V1alpha1RetryStrategy
         """
 
         self._retry_strategy = retry_strategy
@@ -774,7 +774,7 @@ class V1alpha1Template(object):
         If specified, the pod will be dispatched by specified scheduler. Or it will be dispatched by workflow scope scheduler if specified. If neither specified, the pod will be dispatched by default scheduler.  # noqa: E501
 
         :param scheduler_name: The scheduler_name of this V1alpha1Template.  # noqa: E501
-        :type scheduler_name: str
+        :type: str
         """
 
         self._scheduler_name = scheduler_name
@@ -795,7 +795,7 @@ class V1alpha1Template(object):
 
 
         :param script: The script of this V1alpha1Template.  # noqa: E501
-        :type script: V1alpha1ScriptTemplate
+        :type: V1alpha1ScriptTemplate
         """
 
         self._script = script
@@ -816,7 +816,7 @@ class V1alpha1Template(object):
 
 
         :param security_context: The security_context of this V1alpha1Template.  # noqa: E501
-        :type security_context: V1PodSecurityContext
+        :type: V1PodSecurityContext
         """
 
         self._security_context = security_context
@@ -839,7 +839,7 @@ class V1alpha1Template(object):
         ServiceAccountName to apply to workflow pods  # noqa: E501
 
         :param service_account_name: The service_account_name of this V1alpha1Template.  # noqa: E501
-        :type service_account_name: str
+        :type: str
         """
 
         self._service_account_name = service_account_name
@@ -862,7 +862,7 @@ class V1alpha1Template(object):
         Sidecars is a list of containers which run alongside the main container Sidecars are automatically killed when the main container completes  # noqa: E501
 
         :param sidecars: The sidecars of this V1alpha1Template.  # noqa: E501
-        :type sidecars: list[V1alpha1UserContainer]
+        :type: list[V1alpha1UserContainer]
         """
 
         self._sidecars = sidecars
@@ -885,7 +885,7 @@ class V1alpha1Template(object):
         Steps define a series of sequential/parallel workflow steps  # noqa: E501
 
         :param steps: The steps of this V1alpha1Template.  # noqa: E501
-        :type steps: list[list[V1alpha1WorkflowStep]]
+        :type: list[list[V1alpha1WorkflowStep]]
         """
 
         self._steps = steps
@@ -906,7 +906,7 @@ class V1alpha1Template(object):
 
 
         :param suspend: The suspend of this V1alpha1Template.  # noqa: E501
-        :type suspend: V1alpha1SuspendTemplate
+        :type: V1alpha1SuspendTemplate
         """
 
         self._suspend = suspend
@@ -927,7 +927,7 @@ class V1alpha1Template(object):
 
 
         :param synchronization: The synchronization of this V1alpha1Template.  # noqa: E501
-        :type synchronization: V1alpha1Synchronization
+        :type: V1alpha1Synchronization
         """
 
         self._synchronization = synchronization
@@ -950,7 +950,7 @@ class V1alpha1Template(object):
         Template is the name of the template which is used as the base of this template. DEPRECATED: This field is not used.  # noqa: E501
 
         :param template: The template of this V1alpha1Template.  # noqa: E501
-        :type template: str
+        :type: str
         """
 
         self._template = template
@@ -971,7 +971,7 @@ class V1alpha1Template(object):
 
 
         :param template_ref: The template_ref of this V1alpha1Template.  # noqa: E501
-        :type template_ref: V1alpha1TemplateRef
+        :type: V1alpha1TemplateRef
         """
 
         self._template_ref = template_ref
@@ -994,7 +994,7 @@ class V1alpha1Template(object):
         Tolerations to apply to workflow pods.  # noqa: E501
 
         :param tolerations: The tolerations of this V1alpha1Template.  # noqa: E501
-        :type tolerations: list[V1Toleration]
+        :type: list[V1Toleration]
         """
 
         self._tolerations = tolerations
@@ -1017,7 +1017,7 @@ class V1alpha1Template(object):
         Volumes is a list of volumes that can be mounted by containers in a template.  # noqa: E501
 
         :param volumes: The volumes of this V1alpha1Template.  # noqa: E501
-        :type volumes: list[V1Volume]
+        :type: list[V1Volume]
         """
 
         self._volumes = volumes

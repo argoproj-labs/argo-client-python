@@ -142,7 +142,7 @@ class V1alpha1Artifact(object):
 
 
         :param archive: The archive of this V1alpha1Artifact.  # noqa: E501
-        :type archive: V1alpha1ArchiveStrategy
+        :type: V1alpha1ArchiveStrategy
         """
 
         self._archive = archive
@@ -165,7 +165,7 @@ class V1alpha1Artifact(object):
         ArchiveLogs indicates if the container logs should be archived  # noqa: E501
 
         :param archive_logs: The archive_logs of this V1alpha1Artifact.  # noqa: E501
-        :type archive_logs: bool
+        :type: bool
         """
 
         self._archive_logs = archive_logs
@@ -186,7 +186,7 @@ class V1alpha1Artifact(object):
 
 
         :param artifactory: The artifactory of this V1alpha1Artifact.  # noqa: E501
-        :type artifactory: V1alpha1ArtifactoryArtifact
+        :type: V1alpha1ArtifactoryArtifact
         """
 
         self._artifactory = artifactory
@@ -209,7 +209,7 @@ class V1alpha1Artifact(object):
         From allows an artifact to reference an artifact from a previous step  # noqa: E501
 
         :param _from: The _from of this V1alpha1Artifact.  # noqa: E501
-        :type _from: str
+        :type: str
         """
 
         self.__from = _from
@@ -230,7 +230,7 @@ class V1alpha1Artifact(object):
 
 
         :param gcs: The gcs of this V1alpha1Artifact.  # noqa: E501
-        :type gcs: V1alpha1GCSArtifact
+        :type: V1alpha1GCSArtifact
         """
 
         self._gcs = gcs
@@ -251,7 +251,7 @@ class V1alpha1Artifact(object):
 
 
         :param git: The git of this V1alpha1Artifact.  # noqa: E501
-        :type git: V1alpha1GitArtifact
+        :type: V1alpha1GitArtifact
         """
 
         self._git = git
@@ -274,7 +274,7 @@ class V1alpha1Artifact(object):
         GlobalName exports an output artifact to the global scope, making it available as '{{io.argoproj.workflow.v1alpha1.outputs.artifacts.XXXX}} and in workflow.status.outputs.artifacts  # noqa: E501
 
         :param global_name: The global_name of this V1alpha1Artifact.  # noqa: E501
-        :type global_name: str
+        :type: str
         """
 
         self._global_name = global_name
@@ -295,7 +295,7 @@ class V1alpha1Artifact(object):
 
 
         :param hdfs: The hdfs of this V1alpha1Artifact.  # noqa: E501
-        :type hdfs: V1alpha1HDFSArtifact
+        :type: V1alpha1HDFSArtifact
         """
 
         self._hdfs = hdfs
@@ -316,7 +316,7 @@ class V1alpha1Artifact(object):
 
 
         :param http: The http of this V1alpha1Artifact.  # noqa: E501
-        :type http: V1alpha1HTTPArtifact
+        :type: V1alpha1HTTPArtifact
         """
 
         self._http = http
@@ -339,7 +339,7 @@ class V1alpha1Artifact(object):
         mode bits to use on this file, must be a value between 0 and 0777 set when loading input artifacts.  # noqa: E501
 
         :param mode: The mode of this V1alpha1Artifact.  # noqa: E501
-        :type mode: int
+        :type: int
         """
 
         self._mode = mode
@@ -362,7 +362,7 @@ class V1alpha1Artifact(object):
         name of the artifact. must be unique within a template's inputs/outputs.  # noqa: E501
 
         :param name: The name of this V1alpha1Artifact.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -387,7 +387,7 @@ class V1alpha1Artifact(object):
         Make Artifacts optional, if Artifacts doesn't generate or exist  # noqa: E501
 
         :param optional: The optional of this V1alpha1Artifact.  # noqa: E501
-        :type optional: bool
+        :type: bool
         """
 
         self._optional = optional
@@ -408,7 +408,7 @@ class V1alpha1Artifact(object):
 
 
         :param oss: The oss of this V1alpha1Artifact.  # noqa: E501
-        :type oss: V1alpha1OSSArtifact
+        :type: V1alpha1OSSArtifact
         """
 
         self._oss = oss
@@ -431,7 +431,7 @@ class V1alpha1Artifact(object):
         Path is the container path to the artifact  # noqa: E501
 
         :param path: The path of this V1alpha1Artifact.  # noqa: E501
-        :type path: str
+        :type: str
         """
 
         self._path = path
@@ -452,7 +452,7 @@ class V1alpha1Artifact(object):
 
 
         :param raw: The raw of this V1alpha1Artifact.  # noqa: E501
-        :type raw: V1alpha1RawArtifact
+        :type: V1alpha1RawArtifact
         """
 
         self._raw = raw
@@ -473,7 +473,7 @@ class V1alpha1Artifact(object):
 
 
         :param s3: The s3 of this V1alpha1Artifact.  # noqa: E501
-        :type s3: V1alpha1S3Artifact
+        :type: V1alpha1S3Artifact
         """
 
         self._s3 = s3

@@ -83,7 +83,7 @@ class V1VolumeProjection(object):
 
 
         :param config_map: The config_map of this V1VolumeProjection.  # noqa: E501
-        :type config_map: V1ConfigMapProjection
+        :type: V1ConfigMapProjection
         """
 
         self._config_map = config_map
@@ -104,7 +104,7 @@ class V1VolumeProjection(object):
 
 
         :param downward_api: The downward_api of this V1VolumeProjection.  # noqa: E501
-        :type downward_api: V1DownwardAPIProjection
+        :type: V1DownwardAPIProjection
         """
 
         self._downward_api = downward_api
@@ -125,7 +125,7 @@ class V1VolumeProjection(object):
 
 
         :param secret: The secret of this V1VolumeProjection.  # noqa: E501
-        :type secret: V1SecretProjection
+        :type: V1SecretProjection
         """
 
         self._secret = secret
@@ -146,7 +146,7 @@ class V1VolumeProjection(object):
 
 
         :param service_account_token: The service_account_token of this V1VolumeProjection.  # noqa: E501
-        :type service_account_token: V1ServiceAccountTokenProjection
+        :type: V1ServiceAccountTokenProjection
         """
 
         self._service_account_token = service_account_token

@@ -85,7 +85,7 @@ class V1PersistentVolumeClaimStatus(object):
         AccessModes contains the actual access modes the volume backing the PVC has. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1  # noqa: E501
 
         :param access_modes: The access_modes of this V1PersistentVolumeClaimStatus.  # noqa: E501
-        :type access_modes: list[str]
+        :type: list[str]
         """
 
         self._access_modes = access_modes
@@ -108,7 +108,7 @@ class V1PersistentVolumeClaimStatus(object):
         Represents the actual resources of the underlying volume.  # noqa: E501
 
         :param capacity: The capacity of this V1PersistentVolumeClaimStatus.  # noqa: E501
-        :type capacity: dict(str, str)
+        :type: dict(str, str)
         """
 
         self._capacity = capacity
@@ -131,7 +131,7 @@ class V1PersistentVolumeClaimStatus(object):
         Current Condition of persistent volume claim. If underlying persistent volume is being resized then the Condition will be set to 'ResizeStarted'.  # noqa: E501
 
         :param conditions: The conditions of this V1PersistentVolumeClaimStatus.  # noqa: E501
-        :type conditions: list[V1PersistentVolumeClaimCondition]
+        :type: list[V1PersistentVolumeClaimCondition]
         """
 
         self._conditions = conditions
@@ -154,7 +154,7 @@ class V1PersistentVolumeClaimStatus(object):
         Phase represents the current phase of PersistentVolumeClaim.  # noqa: E501
 
         :param phase: The phase of this V1PersistentVolumeClaimStatus.  # noqa: E501
-        :type phase: str
+        :type: str
         """
 
         self._phase = phase

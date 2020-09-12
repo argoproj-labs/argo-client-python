@@ -69,7 +69,7 @@ class V1NodeSelector(object):
         Required. A list of node selector terms. The terms are ORed.  # noqa: E501
 
         :param node_selector_terms: The node_selector_terms of this V1NodeSelector.  # noqa: E501
-        :type node_selector_terms: list[V1NodeSelectorTerm]
+        :type: list[V1NodeSelectorTerm]
         """
         if self.local_vars_configuration.client_side_validation and node_selector_terms is None:  # noqa: E501
             raise ValueError("Invalid value for `node_selector_terms`, must not be `None`")  # noqa: E501

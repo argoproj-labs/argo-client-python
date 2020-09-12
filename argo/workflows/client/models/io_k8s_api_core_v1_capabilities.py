@@ -75,7 +75,7 @@ class V1Capabilities(object):
         Added capabilities  # noqa: E501
 
         :param add: The add of this V1Capabilities.  # noqa: E501
-        :type add: list[str]
+        :type: list[str]
         """
 
         self._add = add
@@ -98,7 +98,7 @@ class V1Capabilities(object):
         Removed capabilities  # noqa: E501
 
         :param drop: The drop of this V1Capabilities.  # noqa: E501
-        :type drop: list[str]
+        :type: list[str]
         """
 
         self._drop = drop

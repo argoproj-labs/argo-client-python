@@ -79,7 +79,7 @@ class V1PortworxVolumeSource(object):
         FSType represents the filesystem type to mount Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\". Implicitly inferred to be \"ext4\" if unspecified.  # noqa: E501
 
         :param fs_type: The fs_type of this V1PortworxVolumeSource.  # noqa: E501
-        :type fs_type: str
+        :type: str
         """
 
         self._fs_type = fs_type
@@ -102,7 +102,7 @@ class V1PortworxVolumeSource(object):
         Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  # noqa: E501
 
         :param read_only: The read_only of this V1PortworxVolumeSource.  # noqa: E501
-        :type read_only: bool
+        :type: bool
         """
 
         self._read_only = read_only
@@ -125,7 +125,7 @@ class V1PortworxVolumeSource(object):
         VolumeID uniquely identifies a Portworx volume  # noqa: E501
 
         :param volume_id: The volume_id of this V1PortworxVolumeSource.  # noqa: E501
-        :type volume_id: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and volume_id is None:  # noqa: E501
             raise ValueError("Invalid value for `volume_id`, must not be `None`")  # noqa: E501

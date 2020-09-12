@@ -68,7 +68,7 @@ class V1alpha1SemaphoreRef(object):
 
 
         :param config_map_key_ref: The config_map_key_ref of this V1alpha1SemaphoreRef.  # noqa: E501
-        :type config_map_key_ref: V1ConfigMapKeySelector
+        :type: V1ConfigMapKeySelector
         """
 
         self._config_map_key_ref = config_map_key_ref

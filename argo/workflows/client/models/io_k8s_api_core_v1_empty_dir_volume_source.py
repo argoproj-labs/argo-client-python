@@ -75,7 +75,7 @@ class V1EmptyDirVolumeSource(object):
         What type of storage medium should back this directory. The default is \"\" which means to use the node's default medium. Must be an empty string (default) or Memory. More info: https://kubernetes.io/docs/concepts/storage/volumes#emptydir  # noqa: E501
 
         :param medium: The medium of this V1EmptyDirVolumeSource.  # noqa: E501
-        :type medium: str
+        :type: str
         """
 
         self._medium = medium
@@ -98,7 +98,7 @@ class V1EmptyDirVolumeSource(object):
         Total amount of local storage required for this EmptyDir volume. The size limit is also applicable for memory medium. The maximum usage on memory medium EmptyDir would be the minimum value between the SizeLimit specified here and the sum of memory limits of all containers in a pod. The default is nil which means that the limit is undefined. More info: http://kubernetes.io/docs/user-guide/volumes#emptydir  # noqa: E501
 
         :param size_limit: The size_limit of this V1EmptyDirVolumeSource.  # noqa: E501
-        :type size_limit: str
+        :type: str
         """
 
         self._size_limit = size_limit

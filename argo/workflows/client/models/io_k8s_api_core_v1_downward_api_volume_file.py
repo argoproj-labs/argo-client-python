@@ -82,7 +82,7 @@ class V1DownwardAPIVolumeFile(object):
 
 
         :param field_ref: The field_ref of this V1DownwardAPIVolumeFile.  # noqa: E501
-        :type field_ref: V1ObjectFieldSelector
+        :type: V1ObjectFieldSelector
         """
 
         self._field_ref = field_ref
@@ -105,7 +105,7 @@ class V1DownwardAPIVolumeFile(object):
         Optional: mode bits to use on this file, must be a value between 0 and 0777. If not specified, the volume defaultMode will be used. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.  # noqa: E501
 
         :param mode: The mode of this V1DownwardAPIVolumeFile.  # noqa: E501
-        :type mode: int
+        :type: int
         """
 
         self._mode = mode
@@ -128,7 +128,7 @@ class V1DownwardAPIVolumeFile(object):
         Required: Path is  the relative path name of the file to be created. Must not be absolute or contain the '..' path. Must be utf-8 encoded. The first item of the relative path must not start with '..'  # noqa: E501
 
         :param path: The path of this V1DownwardAPIVolumeFile.  # noqa: E501
-        :type path: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and path is None:  # noqa: E501
             raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501
@@ -151,7 +151,7 @@ class V1DownwardAPIVolumeFile(object):
 
 
         :param resource_field_ref: The resource_field_ref of this V1DownwardAPIVolumeFile.  # noqa: E501
-        :type resource_field_ref: V1ResourceFieldSelector
+        :type: V1ResourceFieldSelector
         """
 
         self._resource_field_ref = resource_field_ref

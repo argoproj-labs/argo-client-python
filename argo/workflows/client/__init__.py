@@ -26,7 +26,6 @@ from argo.workflows.client.exceptions import OpenApiException
 from argo.workflows.client.exceptions import ApiTypeError
 from argo.workflows.client.exceptions import ApiValueError
 from argo.workflows.client.exceptions import ApiKeyError
-from argo.workflows.client.exceptions import ApiAttributeError
 from argo.workflows.client.exceptions import ApiException
 # import models into sdk package
 from argo.workflows.client.models.google_protobuf_any import GoogleProtobufAny

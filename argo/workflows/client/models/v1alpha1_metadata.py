@@ -73,7 +73,7 @@ class V1alpha1Metadata(object):
 
 
         :param annotations: The annotations of this V1alpha1Metadata.  # noqa: E501
-        :type annotations: dict(str, str)
+        :type: dict(str, str)
         """
 
         self._annotations = annotations
@@ -94,7 +94,7 @@ class V1alpha1Metadata(object):
 
 
         :param labels: The labels of this V1alpha1Metadata.  # noqa: E501
-        :type labels: dict(str, str)
+        :type: dict(str, str)
         """
 
         self._labels = labels

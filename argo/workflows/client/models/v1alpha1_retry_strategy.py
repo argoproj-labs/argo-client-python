@@ -78,7 +78,7 @@ class V1alpha1RetryStrategy(object):
 
 
         :param backoff: The backoff of this V1alpha1RetryStrategy.  # noqa: E501
-        :type backoff: V1alpha1Backoff
+        :type: V1alpha1Backoff
         """
 
         self._backoff = backoff
@@ -101,7 +101,7 @@ class V1alpha1RetryStrategy(object):
         Limit is the maximum number of attempts when retrying a container  # noqa: E501
 
         :param limit: The limit of this V1alpha1RetryStrategy.  # noqa: E501
-        :type limit: int
+        :type: int
         """
 
         self._limit = limit
@@ -124,7 +124,7 @@ class V1alpha1RetryStrategy(object):
         RetryPolicy is a policy of NodePhase statuses that will be retried  # noqa: E501
 
         :param retry_policy: The retry_policy of this V1alpha1RetryStrategy.  # noqa: E501
-        :type retry_policy: str
+        :type: str
         """
 
         self._retry_policy = retry_policy

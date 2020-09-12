@@ -73,7 +73,7 @@ class V1alpha1WorkflowTerminateRequest(object):
 
 
         :param name: The name of this V1alpha1WorkflowTerminateRequest.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name
@@ -94,7 +94,7 @@ class V1alpha1WorkflowTerminateRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowTerminateRequest.  # noqa: E501
-        :type namespace: str
+        :type: str
         """
 
         self._namespace = namespace

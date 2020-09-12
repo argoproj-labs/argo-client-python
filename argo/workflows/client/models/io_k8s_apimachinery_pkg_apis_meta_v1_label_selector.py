@@ -75,7 +75,7 @@ class V1LabelSelector(object):
         matchExpressions is a list of label selector requirements. The requirements are ANDed.  # noqa: E501
 
         :param match_expressions: The match_expressions of this V1LabelSelector.  # noqa: E501
-        :type match_expressions: list[V1LabelSelectorRequirement]
+        :type: list[V1LabelSelectorRequirement]
         """
 
         self._match_expressions = match_expressions
@@ -98,7 +98,7 @@ class V1LabelSelector(object):
         matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.  # noqa: E501
 
         :param match_labels: The match_labels of this V1LabelSelector.  # noqa: E501
-        :type match_labels: dict(str, str)
+        :type: dict(str, str)
         """
 
         self._match_labels = match_labels

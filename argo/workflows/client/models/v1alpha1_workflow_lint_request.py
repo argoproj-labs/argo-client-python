@@ -73,7 +73,7 @@ class V1alpha1WorkflowLintRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowLintRequest.  # noqa: E501
-        :type namespace: str
+        :type: str
         """
 
         self._namespace = namespace
@@ -94,7 +94,7 @@ class V1alpha1WorkflowLintRequest(object):
 
 
         :param workflow: The workflow of this V1alpha1WorkflowLintRequest.  # noqa: E501
-        :type workflow: V1alpha1Workflow
+        :type: V1alpha1Workflow
         """
 
         self._workflow = workflow

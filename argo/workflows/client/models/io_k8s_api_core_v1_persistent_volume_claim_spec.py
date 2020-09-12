@@ -100,7 +100,7 @@ class V1PersistentVolumeClaimSpec(object):
         AccessModes contains the desired access modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1  # noqa: E501
 
         :param access_modes: The access_modes of this V1PersistentVolumeClaimSpec.  # noqa: E501
-        :type access_modes: list[str]
+        :type: list[str]
         """
 
         self._access_modes = access_modes
@@ -121,7 +121,7 @@ class V1PersistentVolumeClaimSpec(object):
 
 
         :param data_source: The data_source of this V1PersistentVolumeClaimSpec.  # noqa: E501
-        :type data_source: V1TypedLocalObjectReference
+        :type: V1TypedLocalObjectReference
         """
 
         self._data_source = data_source
@@ -142,7 +142,7 @@ class V1PersistentVolumeClaimSpec(object):
 
 
         :param resources: The resources of this V1PersistentVolumeClaimSpec.  # noqa: E501
-        :type resources: V1ResourceRequirements
+        :type: V1ResourceRequirements
         """
 
         self._resources = resources
@@ -163,7 +163,7 @@ class V1PersistentVolumeClaimSpec(object):
 
 
         :param selector: The selector of this V1PersistentVolumeClaimSpec.  # noqa: E501
-        :type selector: V1LabelSelector
+        :type: V1LabelSelector
         """
 
         self._selector = selector
@@ -186,7 +186,7 @@ class V1PersistentVolumeClaimSpec(object):
         Name of the StorageClass required by the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#class-1  # noqa: E501
 
         :param storage_class_name: The storage_class_name of this V1PersistentVolumeClaimSpec.  # noqa: E501
-        :type storage_class_name: str
+        :type: str
         """
 
         self._storage_class_name = storage_class_name
@@ -209,7 +209,7 @@ class V1PersistentVolumeClaimSpec(object):
         volumeMode defines what type of volume is required by the claim. Value of Filesystem is implied when not included in claim spec. This is a beta feature.  # noqa: E501
 
         :param volume_mode: The volume_mode of this V1PersistentVolumeClaimSpec.  # noqa: E501
-        :type volume_mode: str
+        :type: str
         """
 
         self._volume_mode = volume_mode
@@ -232,7 +232,7 @@ class V1PersistentVolumeClaimSpec(object):
         VolumeName is the binding reference to the PersistentVolume backing this claim.  # noqa: E501
 
         :param volume_name: The volume_name of this V1PersistentVolumeClaimSpec.  # noqa: E501
-        :type volume_name: str
+        :type: str
         """
 
         self._volume_name = volume_name

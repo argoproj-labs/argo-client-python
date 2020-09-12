@@ -73,7 +73,7 @@ class V1alpha1Gauge(object):
         Realtime emits this metric in real time if applicable  # noqa: E501
 
         :param realtime: The realtime of this V1alpha1Gauge.  # noqa: E501
-        :type realtime: bool
+        :type: bool
         """
         if self.local_vars_configuration.client_side_validation and realtime is None:  # noqa: E501
             raise ValueError("Invalid value for `realtime`, must not be `None`")  # noqa: E501
@@ -98,7 +98,7 @@ class V1alpha1Gauge(object):
         Value is the value of the metric  # noqa: E501
 
         :param value: The value of this V1alpha1Gauge.  # noqa: E501
-        :type value: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and value is None:  # noqa: E501
             raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501

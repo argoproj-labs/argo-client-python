@@ -240,7 +240,7 @@ class V1alpha1WorkflowSpec(object):
         Optional duration in seconds relative to the workflow start time which the workflow is allowed to run before the controller terminates the io.argoproj.workflow.v1alpha1. A value of zero is used to terminate a Running workflow  # noqa: E501
 
         :param active_deadline_seconds: The active_deadline_seconds of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type active_deadline_seconds: int
+        :type: int
         """
 
         self._active_deadline_seconds = active_deadline_seconds
@@ -261,7 +261,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param affinity: The affinity of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type affinity: V1Affinity
+        :type: V1Affinity
         """
 
         self._affinity = affinity
@@ -282,7 +282,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param arguments: The arguments of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type arguments: V1alpha1Arguments
+        :type: V1alpha1Arguments
         """
 
         self._arguments = arguments
@@ -303,7 +303,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param artifact_repository_ref: The artifact_repository_ref of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type artifact_repository_ref: V1alpha1ArtifactRepositoryRef
+        :type: V1alpha1ArtifactRepositoryRef
         """
 
         self._artifact_repository_ref = artifact_repository_ref
@@ -326,7 +326,7 @@ class V1alpha1WorkflowSpec(object):
         AutomountServiceAccountToken indicates whether a service account token should be automatically mounted in pods. ServiceAccountName of ExecutorConfig must be specified if this value is false.  # noqa: E501
 
         :param automount_service_account_token: The automount_service_account_token of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type automount_service_account_token: bool
+        :type: bool
         """
 
         self._automount_service_account_token = automount_service_account_token
@@ -347,7 +347,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param dns_config: The dns_config of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type dns_config: V1PodDNSConfig
+        :type: V1PodDNSConfig
         """
 
         self._dns_config = dns_config
@@ -370,7 +370,7 @@ class V1alpha1WorkflowSpec(object):
         Set DNS policy for the pod. Defaults to \"ClusterFirst\". Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'.  # noqa: E501
 
         :param dns_policy: The dns_policy of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type dns_policy: str
+        :type: str
         """
 
         self._dns_policy = dns_policy
@@ -393,7 +393,7 @@ class V1alpha1WorkflowSpec(object):
         Entrypoint is a template reference to the starting point of the io.argoproj.workflow.v1alpha1.  # noqa: E501
 
         :param entrypoint: The entrypoint of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type entrypoint: str
+        :type: str
         """
 
         self._entrypoint = entrypoint
@@ -414,7 +414,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param executor: The executor of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type executor: V1alpha1ExecutorConfig
+        :type: V1alpha1ExecutorConfig
         """
 
         self._executor = executor
@@ -435,7 +435,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param host_aliases: The host_aliases of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type host_aliases: list[V1HostAlias]
+        :type: list[V1HostAlias]
         """
 
         self._host_aliases = host_aliases
@@ -458,7 +458,7 @@ class V1alpha1WorkflowSpec(object):
         Host networking requested for this workflow pod. Default to false.  # noqa: E501
 
         :param host_network: The host_network of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type host_network: bool
+        :type: bool
         """
 
         self._host_network = host_network
@@ -481,7 +481,7 @@ class V1alpha1WorkflowSpec(object):
         ImagePullSecrets is a list of references to secrets in the same namespace to use for pulling any images in pods that reference this ServiceAccount. ImagePullSecrets are distinct from Secrets because Secrets can be mounted in the pod, but ImagePullSecrets are only accessed by the kubelet. More info: https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod  # noqa: E501
 
         :param image_pull_secrets: The image_pull_secrets of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type image_pull_secrets: list[V1LocalObjectReference]
+        :type: list[V1LocalObjectReference]
         """
 
         self._image_pull_secrets = image_pull_secrets
@@ -502,7 +502,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param metrics: The metrics of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type metrics: V1alpha1Metrics
+        :type: V1alpha1Metrics
         """
 
         self._metrics = metrics
@@ -525,7 +525,7 @@ class V1alpha1WorkflowSpec(object):
         NodeSelector is a selector which will result in all pods of the workflow to be scheduled on the selected node(s). This is able to be overridden by a nodeSelector specified in the template.  # noqa: E501
 
         :param node_selector: The node_selector of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type node_selector: dict(str, str)
+        :type: dict(str, str)
         """
 
         self._node_selector = node_selector
@@ -548,7 +548,7 @@ class V1alpha1WorkflowSpec(object):
         OnExit is a template reference which is invoked at the end of the workflow, irrespective of the success, failure, or error of the primary io.argoproj.workflow.v1alpha1.  # noqa: E501
 
         :param on_exit: The on_exit of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type on_exit: str
+        :type: str
         """
 
         self._on_exit = on_exit
@@ -571,7 +571,7 @@ class V1alpha1WorkflowSpec(object):
         Parallelism limits the max total parallel pods that can execute at the same time in a workflow  # noqa: E501
 
         :param parallelism: The parallelism of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type parallelism: int
+        :type: int
         """
 
         self._parallelism = parallelism
@@ -592,7 +592,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param pod_disruption_budget: The pod_disruption_budget of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type pod_disruption_budget: IoK8sApiPolicyV1beta1PodDisruptionBudgetSpec
+        :type: IoK8sApiPolicyV1beta1PodDisruptionBudgetSpec
         """
 
         self._pod_disruption_budget = pod_disruption_budget
@@ -613,7 +613,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param pod_gc: The pod_gc of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type pod_gc: V1alpha1PodGC
+        :type: V1alpha1PodGC
         """
 
         self._pod_gc = pod_gc
@@ -636,7 +636,7 @@ class V1alpha1WorkflowSpec(object):
         Priority to apply to workflow pods.  # noqa: E501
 
         :param pod_priority: The pod_priority of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type pod_priority: int
+        :type: int
         """
 
         self._pod_priority = pod_priority
@@ -659,7 +659,7 @@ class V1alpha1WorkflowSpec(object):
         PriorityClassName to apply to workflow pods.  # noqa: E501
 
         :param pod_priority_class_name: The pod_priority_class_name of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type pod_priority_class_name: str
+        :type: str
         """
 
         self._pod_priority_class_name = pod_priority_class_name
@@ -682,7 +682,7 @@ class V1alpha1WorkflowSpec(object):
         PodSpecPatch holds strategic merge patch to apply against the pod spec. Allows parameterization of container fields which are not strings (e.g. resource limits).  # noqa: E501
 
         :param pod_spec_patch: The pod_spec_patch of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type pod_spec_patch: str
+        :type: str
         """
 
         self._pod_spec_patch = pod_spec_patch
@@ -705,7 +705,7 @@ class V1alpha1WorkflowSpec(object):
         Priority is used if controller is configured to process limited number of workflows in parallel. Workflows with higher priority are processed first.  # noqa: E501
 
         :param priority: The priority of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type priority: int
+        :type: int
         """
 
         self._priority = priority
@@ -728,7 +728,7 @@ class V1alpha1WorkflowSpec(object):
         Set scheduler name for all pods. Will be overridden if container/script template's scheduler name is set. Default scheduler will be used if neither specified.  # noqa: E501
 
         :param scheduler_name: The scheduler_name of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type scheduler_name: str
+        :type: str
         """
 
         self._scheduler_name = scheduler_name
@@ -749,7 +749,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param security_context: The security_context of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type security_context: V1PodSecurityContext
+        :type: V1PodSecurityContext
         """
 
         self._security_context = security_context
@@ -772,7 +772,7 @@ class V1alpha1WorkflowSpec(object):
         ServiceAccountName is the name of the ServiceAccount to run all pods of the workflow as.  # noqa: E501
 
         :param service_account_name: The service_account_name of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type service_account_name: str
+        :type: str
         """
 
         self._service_account_name = service_account_name
@@ -795,7 +795,7 @@ class V1alpha1WorkflowSpec(object):
         Shutdown will shutdown the workflow according to its ShutdownStrategy  # noqa: E501
 
         :param shutdown: The shutdown of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type shutdown: str
+        :type: str
         """
 
         self._shutdown = shutdown
@@ -818,7 +818,7 @@ class V1alpha1WorkflowSpec(object):
         Suspend will suspend the workflow and prevent execution of any future steps in the workflow  # noqa: E501
 
         :param suspend: The suspend of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type suspend: bool
+        :type: bool
         """
 
         self._suspend = suspend
@@ -839,7 +839,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param synchronization: The synchronization of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type synchronization: V1alpha1Synchronization
+        :type: V1alpha1Synchronization
         """
 
         self._synchronization = synchronization
@@ -862,7 +862,7 @@ class V1alpha1WorkflowSpec(object):
         Templates is a list of workflow templates used in a workflow  # noqa: E501
 
         :param templates: The templates of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type templates: list[V1alpha1Template]
+        :type: list[V1alpha1Template]
         """
 
         self._templates = templates
@@ -885,7 +885,7 @@ class V1alpha1WorkflowSpec(object):
         Tolerations to apply to workflow pods.  # noqa: E501
 
         :param tolerations: The tolerations of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type tolerations: list[V1Toleration]
+        :type: list[V1Toleration]
         """
 
         self._tolerations = tolerations
@@ -908,7 +908,7 @@ class V1alpha1WorkflowSpec(object):
         TTLSecondsAfterFinished limits the lifetime of a Workflow that has finished execution (Succeeded, Failed, Error). If this field is set, once the Workflow finishes, it will be deleted after ttlSecondsAfterFinished expires. If this field is unset, ttlSecondsAfterFinished will not expire. If this field is set to zero, ttlSecondsAfterFinished expires immediately after the Workflow finishes. DEPRECATED: Use TTLStrategy.SecondsAfterCompletion instead.  # noqa: E501
 
         :param ttl_seconds_after_finished: The ttl_seconds_after_finished of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type ttl_seconds_after_finished: int
+        :type: int
         """
 
         self._ttl_seconds_after_finished = ttl_seconds_after_finished
@@ -929,7 +929,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param ttl_strategy: The ttl_strategy of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type ttl_strategy: V1alpha1TTLStrategy
+        :type: V1alpha1TTLStrategy
         """
 
         self._ttl_strategy = ttl_strategy
@@ -952,7 +952,7 @@ class V1alpha1WorkflowSpec(object):
         VolumeClaimTemplates is a list of claims that containers are allowed to reference. The Workflow controller will create the claims at the beginning of the workflow and delete the claims upon completion of the workflow  # noqa: E501
 
         :param volume_claim_templates: The volume_claim_templates of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type volume_claim_templates: list[V1PersistentVolumeClaim]
+        :type: list[V1PersistentVolumeClaim]
         """
 
         self._volume_claim_templates = volume_claim_templates
@@ -975,7 +975,7 @@ class V1alpha1WorkflowSpec(object):
         Volumes is a list of volumes that can be mounted by containers in a io.argoproj.workflow.v1alpha1.  # noqa: E501
 
         :param volumes: The volumes of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type volumes: list[V1Volume]
+        :type: list[V1Volume]
         """
 
         self._volumes = volumes
@@ -996,7 +996,7 @@ class V1alpha1WorkflowSpec(object):
 
 
         :param workflow_template_ref: The workflow_template_ref of this V1alpha1WorkflowSpec.  # noqa: E501
-        :type workflow_template_ref: V1alpha1WorkflowTemplateRef
+        :type: V1alpha1WorkflowTemplateRef
         """
 
         self._workflow_template_ref = workflow_template_ref

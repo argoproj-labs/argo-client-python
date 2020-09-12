@@ -90,7 +90,7 @@ class V1FCVolumeSource(object):
         Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified.  # noqa: E501
 
         :param fs_type: The fs_type of this V1FCVolumeSource.  # noqa: E501
-        :type fs_type: str
+        :type: str
         """
 
         self._fs_type = fs_type
@@ -113,7 +113,7 @@ class V1FCVolumeSource(object):
         Optional: FC target lun number  # noqa: E501
 
         :param lun: The lun of this V1FCVolumeSource.  # noqa: E501
-        :type lun: int
+        :type: int
         """
 
         self._lun = lun
@@ -136,7 +136,7 @@ class V1FCVolumeSource(object):
         Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  # noqa: E501
 
         :param read_only: The read_only of this V1FCVolumeSource.  # noqa: E501
-        :type read_only: bool
+        :type: bool
         """
 
         self._read_only = read_only
@@ -159,7 +159,7 @@ class V1FCVolumeSource(object):
         Optional: FC target worldwide names (WWNs)  # noqa: E501
 
         :param target_ww_ns: The target_ww_ns of this V1FCVolumeSource.  # noqa: E501
-        :type target_ww_ns: list[str]
+        :type: list[str]
         """
 
         self._target_ww_ns = target_ww_ns
@@ -182,7 +182,7 @@ class V1FCVolumeSource(object):
         Optional: FC volume world wide identifiers (wwids) Either wwids or combination of targetWWNs and lun must be set, but not both simultaneously.  # noqa: E501
 
         :param wwids: The wwids of this V1FCVolumeSource.  # noqa: E501
-        :type wwids: list[str]
+        :type: list[str]
         """
 
         self._wwids = wwids

@@ -75,7 +75,7 @@ class V1DownwardAPIVolumeSource(object):
         Optional: mode bits to use on created files by default. Must be a value between 0 and 0777. Defaults to 0644. Directories within the path are not affected by this setting. This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.  # noqa: E501
 
         :param default_mode: The default_mode of this V1DownwardAPIVolumeSource.  # noqa: E501
-        :type default_mode: int
+        :type: int
         """
 
         self._default_mode = default_mode
@@ -98,7 +98,7 @@ class V1DownwardAPIVolumeSource(object):
         Items is a list of downward API volume file  # noqa: E501
 
         :param items: The items of this V1DownwardAPIVolumeSource.  # noqa: E501
-        :type items: list[V1DownwardAPIVolumeFile]
+        :type: list[V1DownwardAPIVolumeFile]
         """
 
         self._items = items

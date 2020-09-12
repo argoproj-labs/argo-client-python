@@ -103,7 +103,7 @@ class V1RBDVolumeSource(object):
         Filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#rbd  # noqa: E501
 
         :param fs_type: The fs_type of this V1RBDVolumeSource.  # noqa: E501
-        :type fs_type: str
+        :type: str
         """
 
         self._fs_type = fs_type
@@ -126,7 +126,7 @@ class V1RBDVolumeSource(object):
         The rados image name. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it  # noqa: E501
 
         :param image: The image of this V1RBDVolumeSource.  # noqa: E501
-        :type image: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and image is None:  # noqa: E501
             raise ValueError("Invalid value for `image`, must not be `None`")  # noqa: E501
@@ -151,7 +151,7 @@ class V1RBDVolumeSource(object):
         Keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it  # noqa: E501
 
         :param keyring: The keyring of this V1RBDVolumeSource.  # noqa: E501
-        :type keyring: str
+        :type: str
         """
 
         self._keyring = keyring
@@ -174,7 +174,7 @@ class V1RBDVolumeSource(object):
         A collection of Ceph monitors. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it  # noqa: E501
 
         :param monitors: The monitors of this V1RBDVolumeSource.  # noqa: E501
-        :type monitors: list[str]
+        :type: list[str]
         """
         if self.local_vars_configuration.client_side_validation and monitors is None:  # noqa: E501
             raise ValueError("Invalid value for `monitors`, must not be `None`")  # noqa: E501
@@ -199,7 +199,7 @@ class V1RBDVolumeSource(object):
         The rados pool name. Default is rbd. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it  # noqa: E501
 
         :param pool: The pool of this V1RBDVolumeSource.  # noqa: E501
-        :type pool: str
+        :type: str
         """
 
         self._pool = pool
@@ -222,7 +222,7 @@ class V1RBDVolumeSource(object):
         ReadOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it  # noqa: E501
 
         :param read_only: The read_only of this V1RBDVolumeSource.  # noqa: E501
-        :type read_only: bool
+        :type: bool
         """
 
         self._read_only = read_only
@@ -243,7 +243,7 @@ class V1RBDVolumeSource(object):
 
 
         :param secret_ref: The secret_ref of this V1RBDVolumeSource.  # noqa: E501
-        :type secret_ref: V1LocalObjectReference
+        :type: V1LocalObjectReference
         """
 
         self._secret_ref = secret_ref
@@ -266,7 +266,7 @@ class V1RBDVolumeSource(object):
         The rados user name. Default is admin. More info: https://releases.k8s.io/HEAD/examples/volumes/rbd/README.md#how-to-use-it  # noqa: E501
 
         :param user: The user of this V1RBDVolumeSource.  # noqa: E501
-        :type user: str
+        :type: str
         """
 
         self._user = user

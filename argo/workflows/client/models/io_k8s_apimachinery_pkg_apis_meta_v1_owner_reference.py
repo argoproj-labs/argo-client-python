@@ -91,7 +91,7 @@ class V1OwnerReference(object):
         API version of the referent.  # noqa: E501
 
         :param api_version: The api_version of this V1OwnerReference.  # noqa: E501
-        :type api_version: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and api_version is None:  # noqa: E501
             raise ValueError("Invalid value for `api_version`, must not be `None`")  # noqa: E501
@@ -116,7 +116,7 @@ class V1OwnerReference(object):
         If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed. Defaults to false. To set this field, a user needs \"delete\" permission of the owner, otherwise 422 (Unprocessable Entity) will be returned.  # noqa: E501
 
         :param block_owner_deletion: The block_owner_deletion of this V1OwnerReference.  # noqa: E501
-        :type block_owner_deletion: bool
+        :type: bool
         """
 
         self._block_owner_deletion = block_owner_deletion
@@ -139,7 +139,7 @@ class V1OwnerReference(object):
         If true, this reference points to the managing controller.  # noqa: E501
 
         :param controller: The controller of this V1OwnerReference.  # noqa: E501
-        :type controller: bool
+        :type: bool
         """
 
         self._controller = controller
@@ -162,7 +162,7 @@ class V1OwnerReference(object):
         Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds  # noqa: E501
 
         :param kind: The kind of this V1OwnerReference.  # noqa: E501
-        :type kind: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and kind is None:  # noqa: E501
             raise ValueError("Invalid value for `kind`, must not be `None`")  # noqa: E501
@@ -187,7 +187,7 @@ class V1OwnerReference(object):
         Name of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#names  # noqa: E501
 
         :param name: The name of this V1OwnerReference.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -212,7 +212,7 @@ class V1OwnerReference(object):
         UID of the referent. More info: http://kubernetes.io/docs/user-guide/identifiers#uids  # noqa: E501
 
         :param uid: The uid of this V1OwnerReference.  # noqa: E501
-        :type uid: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and uid is None:  # noqa: E501
             raise ValueError("Invalid value for `uid`, must not be `None`")  # noqa: E501

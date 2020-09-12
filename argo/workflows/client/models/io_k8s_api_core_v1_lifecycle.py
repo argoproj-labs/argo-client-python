@@ -73,7 +73,7 @@ class V1Lifecycle(object):
 
 
         :param post_start: The post_start of this V1Lifecycle.  # noqa: E501
-        :type post_start: V1Handler
+        :type: V1Handler
         """
 
         self._post_start = post_start
@@ -94,7 +94,7 @@ class V1Lifecycle(object):
 
 
         :param pre_stop: The pre_stop of this V1Lifecycle.  # noqa: E501
-        :type pre_stop: V1Handler
+        :type: V1Handler
         """
 
         self._pre_stop = pre_stop

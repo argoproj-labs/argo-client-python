@@ -75,7 +75,7 @@ class V1SecretEnvSource(object):
         Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names  # noqa: E501
 
         :param name: The name of this V1SecretEnvSource.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name
@@ -98,7 +98,7 @@ class V1SecretEnvSource(object):
         Specify whether the Secret must be defined  # noqa: E501
 
         :param optional: The optional of this V1SecretEnvSource.  # noqa: E501
-        :type optional: bool
+        :type: bool
         """
 
         self._optional = optional

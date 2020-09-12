@@ -75,7 +75,7 @@ class V1NodeSelectorTerm(object):
         A list of node selector requirements by node's labels.  # noqa: E501
 
         :param match_expressions: The match_expressions of this V1NodeSelectorTerm.  # noqa: E501
-        :type match_expressions: list[V1NodeSelectorRequirement]
+        :type: list[V1NodeSelectorRequirement]
         """
 
         self._match_expressions = match_expressions
@@ -98,7 +98,7 @@ class V1NodeSelectorTerm(object):
         A list of node selector requirements by node's fields.  # noqa: E501
 
         :param match_fields: The match_fields of this V1NodeSelectorTerm.  # noqa: E501
-        :type match_fields: list[V1NodeSelectorRequirement]
+        :type: list[V1NodeSelectorRequirement]
         """
 
         self._match_fields = match_fields

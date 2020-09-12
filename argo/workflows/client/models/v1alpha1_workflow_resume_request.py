@@ -78,7 +78,7 @@ class V1alpha1WorkflowResumeRequest(object):
 
 
         :param name: The name of this V1alpha1WorkflowResumeRequest.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name
@@ -99,7 +99,7 @@ class V1alpha1WorkflowResumeRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowResumeRequest.  # noqa: E501
-        :type namespace: str
+        :type: str
         """
 
         self._namespace = namespace
@@ -120,7 +120,7 @@ class V1alpha1WorkflowResumeRequest(object):
 
 
         :param node_field_selector: The node_field_selector of this V1alpha1WorkflowResumeRequest.  # noqa: E501
-        :type node_field_selector: str
+        :type: str
         """
 
         self._node_field_selector = node_field_selector

@@ -78,7 +78,7 @@ class V1GlusterfsVolumeSource(object):
         EndpointsName is the endpoint name that details Glusterfs topology. More info: https://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod  # noqa: E501
 
         :param endpoints: The endpoints of this V1GlusterfsVolumeSource.  # noqa: E501
-        :type endpoints: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and endpoints is None:  # noqa: E501
             raise ValueError("Invalid value for `endpoints`, must not be `None`")  # noqa: E501
@@ -103,7 +103,7 @@ class V1GlusterfsVolumeSource(object):
         Path is the Glusterfs volume path. More info: https://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod  # noqa: E501
 
         :param path: The path of this V1GlusterfsVolumeSource.  # noqa: E501
-        :type path: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and path is None:  # noqa: E501
             raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501
@@ -128,7 +128,7 @@ class V1GlusterfsVolumeSource(object):
         ReadOnly here will force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: https://releases.k8s.io/HEAD/examples/volumes/glusterfs/README.md#create-a-pod  # noqa: E501
 
         :param read_only: The read_only of this V1GlusterfsVolumeSource.  # noqa: E501
-        :type read_only: bool
+        :type: bool
         """
 
         self._read_only = read_only

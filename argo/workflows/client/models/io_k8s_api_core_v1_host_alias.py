@@ -75,7 +75,7 @@ class V1HostAlias(object):
         Hostnames for the above IP address.  # noqa: E501
 
         :param hostnames: The hostnames of this V1HostAlias.  # noqa: E501
-        :type hostnames: list[str]
+        :type: list[str]
         """
 
         self._hostnames = hostnames
@@ -98,7 +98,7 @@ class V1HostAlias(object):
         IP address of the host file entry.  # noqa: E501
 
         :param ip: The ip of this V1HostAlias.  # noqa: E501
-        :type ip: str
+        :type: str
         """
 
         self._ip = ip

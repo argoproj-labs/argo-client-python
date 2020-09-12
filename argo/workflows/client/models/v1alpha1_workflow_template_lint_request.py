@@ -78,7 +78,7 @@ class V1alpha1WorkflowTemplateLintRequest(object):
 
 
         :param create_options: The create_options of this V1alpha1WorkflowTemplateLintRequest.  # noqa: E501
-        :type create_options: V1CreateOptions
+        :type: V1CreateOptions
         """
 
         self._create_options = create_options
@@ -99,7 +99,7 @@ class V1alpha1WorkflowTemplateLintRequest(object):
 
 
         :param namespace: The namespace of this V1alpha1WorkflowTemplateLintRequest.  # noqa: E501
-        :type namespace: str
+        :type: str
         """
 
         self._namespace = namespace
@@ -120,7 +120,7 @@ class V1alpha1WorkflowTemplateLintRequest(object):
 
 
         :param template: The template of this V1alpha1WorkflowTemplateLintRequest.  # noqa: E501
-        :type template: V1alpha1WorkflowTemplate
+        :type: V1alpha1WorkflowTemplate
         """
 
         self._template = template

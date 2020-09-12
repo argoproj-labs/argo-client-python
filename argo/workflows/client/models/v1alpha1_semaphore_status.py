@@ -75,7 +75,7 @@ class V1alpha1SemaphoreStatus(object):
         Holding stores the list of resource acquired synchronization lock for workflows.  # noqa: E501
 
         :param holding: The holding of this V1alpha1SemaphoreStatus.  # noqa: E501
-        :type holding: list[V1alpha1SemaphoreHolding]
+        :type: list[V1alpha1SemaphoreHolding]
         """
 
         self._holding = holding
@@ -98,7 +98,7 @@ class V1alpha1SemaphoreStatus(object):
         Waiting indicates the list of current synchronization lock holders  # noqa: E501
 
         :param waiting: The waiting of this V1alpha1SemaphoreStatus.  # noqa: E501
-        :type waiting: list[V1alpha1SemaphoreHolding]
+        :type: list[V1alpha1SemaphoreHolding]
         """
 
         self._waiting = waiting

@@ -73,7 +73,7 @@ class V1alpha1ArtifactRepositoryRef(object):
 
 
         :param config_map: The config_map of this V1alpha1ArtifactRepositoryRef.  # noqa: E501
-        :type config_map: str
+        :type: str
         """
 
         self._config_map = config_map
@@ -94,7 +94,7 @@ class V1alpha1ArtifactRepositoryRef(object):
 
 
         :param key: The key of this V1alpha1ArtifactRepositoryRef.  # noqa: E501
-        :type key: str
+        :type: str
         """
 
         self._key = key

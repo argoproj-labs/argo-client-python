@@ -172,7 +172,7 @@ class V1alpha1NodeStatus(object):
         BoundaryID indicates the node ID of the associated template root node in which this node belongs to  # noqa: E501
 
         :param boundary_id: The boundary_id of this V1alpha1NodeStatus.  # noqa: E501
-        :type boundary_id: str
+        :type: str
         """
 
         self._boundary_id = boundary_id
@@ -195,7 +195,7 @@ class V1alpha1NodeStatus(object):
         Children is a list of child node IDs  # noqa: E501
 
         :param children: The children of this V1alpha1NodeStatus.  # noqa: E501
-        :type children: list[str]
+        :type: list[str]
         """
 
         self._children = children
@@ -218,7 +218,7 @@ class V1alpha1NodeStatus(object):
         Daemoned tracks whether or not this node was daemoned and need to be terminated  # noqa: E501
 
         :param daemoned: The daemoned of this V1alpha1NodeStatus.  # noqa: E501
-        :type daemoned: bool
+        :type: bool
         """
 
         self._daemoned = daemoned
@@ -241,7 +241,7 @@ class V1alpha1NodeStatus(object):
         DisplayName is a human readable representation of the node. Unique within a template boundary  # noqa: E501
 
         :param display_name: The display_name of this V1alpha1NodeStatus.  # noqa: E501
-        :type display_name: str
+        :type: str
         """
 
         self._display_name = display_name
@@ -264,7 +264,7 @@ class V1alpha1NodeStatus(object):
         Time at which this node completed  # noqa: E501
 
         :param finished_at: The finished_at of this V1alpha1NodeStatus.  # noqa: E501
-        :type finished_at: datetime
+        :type: datetime
         """
 
         self._finished_at = finished_at
@@ -287,7 +287,7 @@ class V1alpha1NodeStatus(object):
         HostNodeName name of the Kubernetes node on which the Pod is running, if applicable  # noqa: E501
 
         :param host_node_name: The host_node_name of this V1alpha1NodeStatus.  # noqa: E501
-        :type host_node_name: str
+        :type: str
         """
 
         self._host_node_name = host_node_name
@@ -310,7 +310,7 @@ class V1alpha1NodeStatus(object):
         ID is a unique identifier of a node within the worklow It is implemented as a hash of the node name, which makes the ID deterministic  # noqa: E501
 
         :param id: The id of this V1alpha1NodeStatus.  # noqa: E501
-        :type id: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
@@ -333,7 +333,7 @@ class V1alpha1NodeStatus(object):
 
 
         :param inputs: The inputs of this V1alpha1NodeStatus.  # noqa: E501
-        :type inputs: V1alpha1Inputs
+        :type: V1alpha1Inputs
         """
 
         self._inputs = inputs
@@ -356,7 +356,7 @@ class V1alpha1NodeStatus(object):
         A human readable message indicating details about why the node is in this condition.  # noqa: E501
 
         :param message: The message of this V1alpha1NodeStatus.  # noqa: E501
-        :type message: str
+        :type: str
         """
 
         self._message = message
@@ -379,7 +379,7 @@ class V1alpha1NodeStatus(object):
         Name is unique name in the node tree used to generate the node ID  # noqa: E501
 
         :param name: The name of this V1alpha1NodeStatus.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -404,7 +404,7 @@ class V1alpha1NodeStatus(object):
         OutboundNodes tracks the node IDs which are considered \"outbound\" nodes to a template invocation. For every invocation of a template, there are nodes which we considered as \"outbound\". Essentially, these are last nodes in the execution sequence to run, before the template is considered completed. These nodes are then connected as parents to a following step.  In the case of single pod steps (i.e. container, script, resource templates), this list will be nil since the pod itself is already considered the \"outbound\" node. In the case of DAGs, outbound nodes are the \"target\" tasks (tasks with no children). In the case of steps, outbound nodes are all the containers involved in the last step group. NOTE: since templates are composable, the list of outbound nodes are carried upwards when a DAG/steps template invokes another DAG/steps template. In other words, the outbound nodes of a template, will be a superset of the outbound nodes of its last children.  # noqa: E501
 
         :param outbound_nodes: The outbound_nodes of this V1alpha1NodeStatus.  # noqa: E501
-        :type outbound_nodes: list[str]
+        :type: list[str]
         """
 
         self._outbound_nodes = outbound_nodes
@@ -425,7 +425,7 @@ class V1alpha1NodeStatus(object):
 
 
         :param outputs: The outputs of this V1alpha1NodeStatus.  # noqa: E501
-        :type outputs: V1alpha1Outputs
+        :type: V1alpha1Outputs
         """
 
         self._outputs = outputs
@@ -448,7 +448,7 @@ class V1alpha1NodeStatus(object):
         Phase a simple, high-level summary of where the node is in its lifecycle. Can be used as a state machine.  # noqa: E501
 
         :param phase: The phase of this V1alpha1NodeStatus.  # noqa: E501
-        :type phase: str
+        :type: str
         """
 
         self._phase = phase
@@ -471,7 +471,7 @@ class V1alpha1NodeStatus(object):
         PodIP captures the IP of the pod for daemoned steps  # noqa: E501
 
         :param pod_ip: The pod_ip of this V1alpha1NodeStatus.  # noqa: E501
-        :type pod_ip: str
+        :type: str
         """
 
         self._pod_ip = pod_ip
@@ -494,7 +494,7 @@ class V1alpha1NodeStatus(object):
         ResourcesDuration is indicative, but not accurate, resource duration. This is populated when the nodes completes.  # noqa: E501
 
         :param resources_duration: The resources_duration of this V1alpha1NodeStatus.  # noqa: E501
-        :type resources_duration: dict(str, int)
+        :type: dict(str, int)
         """
 
         self._resources_duration = resources_duration
@@ -517,7 +517,7 @@ class V1alpha1NodeStatus(object):
         Time at which this node started  # noqa: E501
 
         :param started_at: The started_at of this V1alpha1NodeStatus.  # noqa: E501
-        :type started_at: datetime
+        :type: datetime
         """
 
         self._started_at = started_at
@@ -540,7 +540,7 @@ class V1alpha1NodeStatus(object):
         StoredTemplateID is the ID of stored template. DEPRECATED: This value is not used anymore.  # noqa: E501
 
         :param stored_template_id: The stored_template_id of this V1alpha1NodeStatus.  # noqa: E501
-        :type stored_template_id: str
+        :type: str
         """
 
         self._stored_template_id = stored_template_id
@@ -563,7 +563,7 @@ class V1alpha1NodeStatus(object):
         TemplateName is the template name which this node corresponds to. Not applicable to virtual nodes (e.g. Retry, StepGroup)  # noqa: E501
 
         :param template_name: The template_name of this V1alpha1NodeStatus.  # noqa: E501
-        :type template_name: str
+        :type: str
         """
 
         self._template_name = template_name
@@ -584,7 +584,7 @@ class V1alpha1NodeStatus(object):
 
 
         :param template_ref: The template_ref of this V1alpha1NodeStatus.  # noqa: E501
-        :type template_ref: V1alpha1TemplateRef
+        :type: V1alpha1TemplateRef
         """
 
         self._template_ref = template_ref
@@ -607,7 +607,7 @@ class V1alpha1NodeStatus(object):
         TemplateScope is the template scope in which the template of this node was retrieved.  # noqa: E501
 
         :param template_scope: The template_scope of this V1alpha1NodeStatus.  # noqa: E501
-        :type template_scope: str
+        :type: str
         """
 
         self._template_scope = template_scope
@@ -630,7 +630,7 @@ class V1alpha1NodeStatus(object):
         Type indicates type of node  # noqa: E501
 
         :param type: The type of this V1alpha1NodeStatus.  # noqa: E501
-        :type type: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and type is None:  # noqa: E501
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
@@ -655,7 +655,7 @@ class V1alpha1NodeStatus(object):
         WorkflowTemplateName is the WorkflowTemplate resource name on which the resolved template of this node is retrieved. DEPRECATED: This value is not used anymore.  # noqa: E501
 
         :param workflow_template_name: The workflow_template_name of this V1alpha1NodeStatus.  # noqa: E501
-        :type workflow_template_name: str
+        :type: str
         """
 
         self._workflow_template_name = workflow_template_name

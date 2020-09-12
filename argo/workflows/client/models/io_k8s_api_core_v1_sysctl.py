@@ -73,7 +73,7 @@ class V1Sysctl(object):
         Name of a property to set  # noqa: E501
 
         :param name: The name of this V1Sysctl.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -98,7 +98,7 @@ class V1Sysctl(object):
         Value of a property to set  # noqa: E501
 
         :param value: The value of this V1Sysctl.  # noqa: E501
-        :type value: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and value is None:  # noqa: E501
             raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501

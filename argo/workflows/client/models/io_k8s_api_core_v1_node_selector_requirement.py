@@ -78,7 +78,7 @@ class V1NodeSelectorRequirement(object):
         The label key that the selector applies to.  # noqa: E501
 
         :param key: The key of this V1NodeSelectorRequirement.  # noqa: E501
-        :type key: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and key is None:  # noqa: E501
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
@@ -103,7 +103,7 @@ class V1NodeSelectorRequirement(object):
         Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.  # noqa: E501
 
         :param operator: The operator of this V1NodeSelectorRequirement.  # noqa: E501
-        :type operator: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and operator is None:  # noqa: E501
             raise ValueError("Invalid value for `operator`, must not be `None`")  # noqa: E501
@@ -128,7 +128,7 @@ class V1NodeSelectorRequirement(object):
         An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.  # noqa: E501
 
         :param values: The values of this V1NodeSelectorRequirement.  # noqa: E501
-        :type values: list[str]
+        :type: list[str]
         """
 
         self._values = values

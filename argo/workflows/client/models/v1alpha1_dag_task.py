@@ -122,7 +122,7 @@ class V1alpha1DAGTask(object):
 
 
         :param arguments: The arguments of this V1alpha1DAGTask.  # noqa: E501
-        :type arguments: V1alpha1Arguments
+        :type: V1alpha1Arguments
         """
 
         self._arguments = arguments
@@ -143,7 +143,7 @@ class V1alpha1DAGTask(object):
 
 
         :param continue_on: The continue_on of this V1alpha1DAGTask.  # noqa: E501
-        :type continue_on: V1alpha1ContinueOn
+        :type: V1alpha1ContinueOn
         """
 
         self._continue_on = continue_on
@@ -166,7 +166,7 @@ class V1alpha1DAGTask(object):
         Dependencies are name of other targets which this depends on  # noqa: E501
 
         :param dependencies: The dependencies of this V1alpha1DAGTask.  # noqa: E501
-        :type dependencies: list[str]
+        :type: list[str]
         """
 
         self._dependencies = dependencies
@@ -189,7 +189,7 @@ class V1alpha1DAGTask(object):
         Depends are name of other targets which this depends on  # noqa: E501
 
         :param depends: The depends of this V1alpha1DAGTask.  # noqa: E501
-        :type depends: str
+        :type: str
         """
 
         self._depends = depends
@@ -212,7 +212,7 @@ class V1alpha1DAGTask(object):
         Name is the name of the target  # noqa: E501
 
         :param name: The name of this V1alpha1DAGTask.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -237,7 +237,7 @@ class V1alpha1DAGTask(object):
         OnExit is a template reference which is invoked at the end of the template, irrespective of the success, failure, or error of the primary template.  # noqa: E501
 
         :param on_exit: The on_exit of this V1alpha1DAGTask.  # noqa: E501
-        :type on_exit: str
+        :type: str
         """
 
         self._on_exit = on_exit
@@ -260,7 +260,7 @@ class V1alpha1DAGTask(object):
         Name of template to execute  # noqa: E501
 
         :param template: The template of this V1alpha1DAGTask.  # noqa: E501
-        :type template: str
+        :type: str
         """
 
         self._template = template
@@ -281,7 +281,7 @@ class V1alpha1DAGTask(object):
 
 
         :param template_ref: The template_ref of this V1alpha1DAGTask.  # noqa: E501
-        :type template_ref: V1alpha1TemplateRef
+        :type: V1alpha1TemplateRef
         """
 
         self._template_ref = template_ref
@@ -304,7 +304,7 @@ class V1alpha1DAGTask(object):
         When is an expression in which the task should conditionally execute  # noqa: E501
 
         :param when: The when of this V1alpha1DAGTask.  # noqa: E501
-        :type when: str
+        :type: str
         """
 
         self._when = when
@@ -327,7 +327,7 @@ class V1alpha1DAGTask(object):
         WithItems expands a task into multiple parallel tasks from the items in the list  # noqa: E501
 
         :param with_items: The with_items of this V1alpha1DAGTask.  # noqa: E501
-        :type with_items: list[object]
+        :type: list[object]
         """
 
         self._with_items = with_items
@@ -350,7 +350,7 @@ class V1alpha1DAGTask(object):
         WithParam expands a task into multiple parallel tasks from the value in the parameter, which is expected to be a JSON list.  # noqa: E501
 
         :param with_param: The with_param of this V1alpha1DAGTask.  # noqa: E501
-        :type with_param: str
+        :type: str
         """
 
         self._with_param = with_param
@@ -371,7 +371,7 @@ class V1alpha1DAGTask(object):
 
 
         :param with_sequence: The with_sequence of this V1alpha1DAGTask.  # noqa: E501
-        :type with_sequence: V1alpha1Sequence
+        :type: V1alpha1Sequence
         """
 
         self._with_sequence = with_sequence

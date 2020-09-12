@@ -94,7 +94,7 @@ class V1CephFSVolumeSource(object):
         Required: Monitors is a collection of Ceph monitors More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it  # noqa: E501
 
         :param monitors: The monitors of this V1CephFSVolumeSource.  # noqa: E501
-        :type monitors: list[str]
+        :type: list[str]
         """
         if self.local_vars_configuration.client_side_validation and monitors is None:  # noqa: E501
             raise ValueError("Invalid value for `monitors`, must not be `None`")  # noqa: E501
@@ -119,7 +119,7 @@ class V1CephFSVolumeSource(object):
         Optional: Used as the mounted root, rather than the full Ceph tree, default is /  # noqa: E501
 
         :param path: The path of this V1CephFSVolumeSource.  # noqa: E501
-        :type path: str
+        :type: str
         """
 
         self._path = path
@@ -142,7 +142,7 @@ class V1CephFSVolumeSource(object):
         Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts. More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it  # noqa: E501
 
         :param read_only: The read_only of this V1CephFSVolumeSource.  # noqa: E501
-        :type read_only: bool
+        :type: bool
         """
 
         self._read_only = read_only
@@ -165,7 +165,7 @@ class V1CephFSVolumeSource(object):
         Optional: SecretFile is the path to key ring for User, default is /etc/ceph/user.secret More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it  # noqa: E501
 
         :param secret_file: The secret_file of this V1CephFSVolumeSource.  # noqa: E501
-        :type secret_file: str
+        :type: str
         """
 
         self._secret_file = secret_file
@@ -186,7 +186,7 @@ class V1CephFSVolumeSource(object):
 
 
         :param secret_ref: The secret_ref of this V1CephFSVolumeSource.  # noqa: E501
-        :type secret_ref: V1LocalObjectReference
+        :type: V1LocalObjectReference
         """
 
         self._secret_ref = secret_ref
@@ -209,7 +209,7 @@ class V1CephFSVolumeSource(object):
         Optional: User is the rados user name, default is admin More info: https://releases.k8s.io/HEAD/examples/volumes/cephfs/README.md#how-to-use-it  # noqa: E501
 
         :param user: The user of this V1CephFSVolumeSource.  # noqa: E501
-        :type user: str
+        :type: str
         """
 
         self._user = user

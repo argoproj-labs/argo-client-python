@@ -89,7 +89,7 @@ class V1CSIVolumeSource(object):
         Driver is the name of the CSI driver that handles this volume. Consult with your admin for the correct name as registered in the cluster.  # noqa: E501
 
         :param driver: The driver of this V1CSIVolumeSource.  # noqa: E501
-        :type driver: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and driver is None:  # noqa: E501
             raise ValueError("Invalid value for `driver`, must not be `None`")  # noqa: E501
@@ -114,7 +114,7 @@ class V1CSIVolumeSource(object):
         Filesystem type to mount. Ex. \"ext4\", \"xfs\", \"ntfs\". If not provided, the empty value is passed to the associated CSI driver which will determine the default filesystem to apply.  # noqa: E501
 
         :param fs_type: The fs_type of this V1CSIVolumeSource.  # noqa: E501
-        :type fs_type: str
+        :type: str
         """
 
         self._fs_type = fs_type
@@ -135,7 +135,7 @@ class V1CSIVolumeSource(object):
 
 
         :param node_publish_secret_ref: The node_publish_secret_ref of this V1CSIVolumeSource.  # noqa: E501
-        :type node_publish_secret_ref: V1LocalObjectReference
+        :type: V1LocalObjectReference
         """
 
         self._node_publish_secret_ref = node_publish_secret_ref
@@ -158,7 +158,7 @@ class V1CSIVolumeSource(object):
         Specifies a read-only configuration for the volume. Defaults to false (read/write).  # noqa: E501
 
         :param read_only: The read_only of this V1CSIVolumeSource.  # noqa: E501
-        :type read_only: bool
+        :type: bool
         """
 
         self._read_only = read_only
@@ -181,7 +181,7 @@ class V1CSIVolumeSource(object):
         VolumeAttributes stores driver-specific properties that are passed to the CSI driver. Consult your driver's documentation for supported values.  # noqa: E501
 
         :param volume_attributes: The volume_attributes of this V1CSIVolumeSource.  # noqa: E501
-        :type volume_attributes: dict(str, str)
+        :type: dict(str, str)
         """
 
         self._volume_attributes = volume_attributes

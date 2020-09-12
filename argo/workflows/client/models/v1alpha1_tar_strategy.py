@@ -70,7 +70,7 @@ class V1alpha1TarStrategy(object):
         CompressionLevel specifies the gzip compression level to use for the artifact. Defaults to gzip.DefaultCompression.  # noqa: E501
 
         :param compression_level: The compression_level of this V1alpha1TarStrategy.  # noqa: E501
-        :type compression_level: int
+        :type: int
         """
 
         self._compression_level = compression_level

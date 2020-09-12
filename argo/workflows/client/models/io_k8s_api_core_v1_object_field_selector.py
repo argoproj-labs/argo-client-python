@@ -74,7 +74,7 @@ class V1ObjectFieldSelector(object):
         Version of the schema the FieldPath is written in terms of, defaults to \"v1\".  # noqa: E501
 
         :param api_version: The api_version of this V1ObjectFieldSelector.  # noqa: E501
-        :type api_version: str
+        :type: str
         """
 
         self._api_version = api_version
@@ -97,7 +97,7 @@ class V1ObjectFieldSelector(object):
         Path of the field to select in the specified API version.  # noqa: E501
 
         :param field_path: The field_path of this V1ObjectFieldSelector.  # noqa: E501
-        :type field_path: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and field_path is None:  # noqa: E501
             raise ValueError("Invalid value for `field_path`, must not be `None`")  # noqa: E501

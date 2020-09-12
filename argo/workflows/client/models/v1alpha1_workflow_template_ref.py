@@ -75,7 +75,7 @@ class V1alpha1WorkflowTemplateRef(object):
         ClusterScope indicates the referred template is cluster scoped (i.e. a ClusterWorkflowTemplate).  # noqa: E501
 
         :param cluster_scope: The cluster_scope of this V1alpha1WorkflowTemplateRef.  # noqa: E501
-        :type cluster_scope: bool
+        :type: bool
         """
 
         self._cluster_scope = cluster_scope
@@ -98,7 +98,7 @@ class V1alpha1WorkflowTemplateRef(object):
         Name is the resource name of the workflow template.  # noqa: E501
 
         :param name: The name of this V1alpha1WorkflowTemplateRef.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name

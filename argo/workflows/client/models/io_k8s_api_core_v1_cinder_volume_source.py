@@ -84,7 +84,7 @@ class V1CinderVolumeSource(object):
         Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md  # noqa: E501
 
         :param fs_type: The fs_type of this V1CinderVolumeSource.  # noqa: E501
-        :type fs_type: str
+        :type: str
         """
 
         self._fs_type = fs_type
@@ -107,7 +107,7 @@ class V1CinderVolumeSource(object):
         Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts. More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md  # noqa: E501
 
         :param read_only: The read_only of this V1CinderVolumeSource.  # noqa: E501
-        :type read_only: bool
+        :type: bool
         """
 
         self._read_only = read_only
@@ -128,7 +128,7 @@ class V1CinderVolumeSource(object):
 
 
         :param secret_ref: The secret_ref of this V1CinderVolumeSource.  # noqa: E501
-        :type secret_ref: V1LocalObjectReference
+        :type: V1LocalObjectReference
         """
 
         self._secret_ref = secret_ref
@@ -151,7 +151,7 @@ class V1CinderVolumeSource(object):
         volume id used to identify the volume in cinder More info: https://releases.k8s.io/HEAD/examples/mysql-cinder-pd/README.md  # noqa: E501
 
         :param volume_id: The volume_id of this V1CinderVolumeSource.  # noqa: E501
-        :type volume_id: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and volume_id is None:  # noqa: E501
             raise ValueError("Invalid value for `volume_id`, must not be `None`")  # noqa: E501

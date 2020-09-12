@@ -90,7 +90,7 @@ class V1PersistentVolumeClaim(object):
         APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources  # noqa: E501
 
         :param api_version: The api_version of this V1PersistentVolumeClaim.  # noqa: E501
-        :type api_version: str
+        :type: str
         """
 
         self._api_version = api_version
@@ -113,7 +113,7 @@ class V1PersistentVolumeClaim(object):
         Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds  # noqa: E501
 
         :param kind: The kind of this V1PersistentVolumeClaim.  # noqa: E501
-        :type kind: str
+        :type: str
         """
 
         self._kind = kind
@@ -134,7 +134,7 @@ class V1PersistentVolumeClaim(object):
 
 
         :param metadata: The metadata of this V1PersistentVolumeClaim.  # noqa: E501
-        :type metadata: V1ObjectMeta
+        :type: V1ObjectMeta
         """
 
         self._metadata = metadata
@@ -155,7 +155,7 @@ class V1PersistentVolumeClaim(object):
 
 
         :param spec: The spec of this V1PersistentVolumeClaim.  # noqa: E501
-        :type spec: V1PersistentVolumeClaimSpec
+        :type: V1PersistentVolumeClaimSpec
         """
 
         self._spec = spec
@@ -176,7 +176,7 @@ class V1PersistentVolumeClaim(object):
 
 
         :param status: The status of this V1PersistentVolumeClaim.  # noqa: E501
-        :type status: V1PersistentVolumeClaimStatus
+        :type: V1PersistentVolumeClaimStatus
         """
 
         self._status = status

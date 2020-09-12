@@ -70,7 +70,7 @@ class V1alpha1HolderNames(object):
         Name stores the name of the resource holding lock  # noqa: E501
 
         :param name: The name of this V1alpha1HolderNames.  # noqa: E501
-        :type name: list[str]
+        :type: list[str]
         """
 
         self._name = name

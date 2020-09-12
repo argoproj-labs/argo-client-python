@@ -69,7 +69,7 @@ class V1alpha1Metrics(object):
         Prometheus is a list of prometheus metrics to be emitted  # noqa: E501
 
         :param prometheus: The prometheus of this V1alpha1Metrics.  # noqa: E501
-        :type prometheus: list[V1alpha1Prometheus]
+        :type: list[V1alpha1Prometheus]
         """
         if self.local_vars_configuration.client_side_validation and prometheus is None:  # noqa: E501
             raise ValueError("Invalid value for `prometheus`, must not be `None`")  # noqa: E501

@@ -89,7 +89,7 @@ class V1ContainerPort(object):
         Number of port to expose on the pod's IP address. This must be a valid port number, 0 < x < 65536.  # noqa: E501
 
         :param container_port: The container_port of this V1ContainerPort.  # noqa: E501
-        :type container_port: int
+        :type: int
         """
         if self.local_vars_configuration.client_side_validation and container_port is None:  # noqa: E501
             raise ValueError("Invalid value for `container_port`, must not be `None`")  # noqa: E501
@@ -114,7 +114,7 @@ class V1ContainerPort(object):
         What host IP to bind the external port to.  # noqa: E501
 
         :param host_ip: The host_ip of this V1ContainerPort.  # noqa: E501
-        :type host_ip: str
+        :type: str
         """
 
         self._host_ip = host_ip
@@ -137,7 +137,7 @@ class V1ContainerPort(object):
         Number of port to expose on the host. If specified, this must be a valid port number, 0 < x < 65536. If HostNetwork is specified, this must match ContainerPort. Most containers do not need this.  # noqa: E501
 
         :param host_port: The host_port of this V1ContainerPort.  # noqa: E501
-        :type host_port: int
+        :type: int
         """
 
         self._host_port = host_port
@@ -160,7 +160,7 @@ class V1ContainerPort(object):
         If specified, this must be an IANA_SVC_NAME and unique within the pod. Each named port in a pod must have a unique name. Name for the port that can be referred to by services.  # noqa: E501
 
         :param name: The name of this V1ContainerPort.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name
@@ -183,7 +183,7 @@ class V1ContainerPort(object):
         Protocol for port. Must be UDP, TCP, or SCTP. Defaults to \"TCP\".  # noqa: E501
 
         :param protocol: The protocol of this V1ContainerPort.  # noqa: E501
-        :type protocol: str
+        :type: str
         """
 
         self._protocol = protocol

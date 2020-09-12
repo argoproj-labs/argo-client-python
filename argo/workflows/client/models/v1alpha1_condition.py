@@ -80,7 +80,7 @@ class V1alpha1Condition(object):
         Message is the condition message  # noqa: E501
 
         :param message: The message of this V1alpha1Condition.  # noqa: E501
-        :type message: str
+        :type: str
         """
 
         self._message = message
@@ -103,7 +103,7 @@ class V1alpha1Condition(object):
         Status is the status of the condition  # noqa: E501
 
         :param status: The status of this V1alpha1Condition.  # noqa: E501
-        :type status: str
+        :type: str
         """
 
         self._status = status
@@ -126,7 +126,7 @@ class V1alpha1Condition(object):
         Type is the type of condition  # noqa: E501
 
         :param type: The type of this V1alpha1Condition.  # noqa: E501
-        :type type: str
+        :type: str
         """
 
         self._type = type

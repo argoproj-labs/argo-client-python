@@ -77,7 +77,7 @@ class V1alpha1ArtifactoryArtifact(object):
 
 
         :param password_secret: The password_secret of this V1alpha1ArtifactoryArtifact.  # noqa: E501
-        :type password_secret: V1SecretKeySelector
+        :type: V1SecretKeySelector
         """
 
         self._password_secret = password_secret
@@ -100,7 +100,7 @@ class V1alpha1ArtifactoryArtifact(object):
         URL of the artifact  # noqa: E501
 
         :param url: The url of this V1alpha1ArtifactoryArtifact.  # noqa: E501
-        :type url: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and url is None:  # noqa: E501
             raise ValueError("Invalid value for `url`, must not be `None`")  # noqa: E501
@@ -123,7 +123,7 @@ class V1alpha1ArtifactoryArtifact(object):
 
 
         :param username_secret: The username_secret of this V1alpha1ArtifactoryArtifact.  # noqa: E501
-        :type username_secret: V1SecretKeySelector
+        :type: V1SecretKeySelector
         """
 
         self._username_secret = username_secret

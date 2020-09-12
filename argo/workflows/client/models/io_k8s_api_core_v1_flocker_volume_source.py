@@ -75,7 +75,7 @@ class V1FlockerVolumeSource(object):
         Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated  # noqa: E501
 
         :param dataset_name: The dataset_name of this V1FlockerVolumeSource.  # noqa: E501
-        :type dataset_name: str
+        :type: str
         """
 
         self._dataset_name = dataset_name
@@ -98,7 +98,7 @@ class V1FlockerVolumeSource(object):
         UUID of the dataset. This is unique identifier of a Flocker dataset  # noqa: E501
 
         :param dataset_uuid: The dataset_uuid of this V1FlockerVolumeSource.  # noqa: E501
-        :type dataset_uuid: str
+        :type: str
         """
 
         self._dataset_uuid = dataset_uuid

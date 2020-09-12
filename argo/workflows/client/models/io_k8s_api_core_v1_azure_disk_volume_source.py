@@ -93,7 +93,7 @@ class V1AzureDiskVolumeSource(object):
         Host Caching mode: None, Read Only, Read Write.  # noqa: E501
 
         :param caching_mode: The caching_mode of this V1AzureDiskVolumeSource.  # noqa: E501
-        :type caching_mode: str
+        :type: str
         """
 
         self._caching_mode = caching_mode
@@ -116,7 +116,7 @@ class V1AzureDiskVolumeSource(object):
         The Name of the data disk in the blob storage  # noqa: E501
 
         :param disk_name: The disk_name of this V1AzureDiskVolumeSource.  # noqa: E501
-        :type disk_name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and disk_name is None:  # noqa: E501
             raise ValueError("Invalid value for `disk_name`, must not be `None`")  # noqa: E501
@@ -141,7 +141,7 @@ class V1AzureDiskVolumeSource(object):
         The URI the data disk in the blob storage  # noqa: E501
 
         :param disk_uri: The disk_uri of this V1AzureDiskVolumeSource.  # noqa: E501
-        :type disk_uri: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and disk_uri is None:  # noqa: E501
             raise ValueError("Invalid value for `disk_uri`, must not be `None`")  # noqa: E501
@@ -166,7 +166,7 @@ class V1AzureDiskVolumeSource(object):
         Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified.  # noqa: E501
 
         :param fs_type: The fs_type of this V1AzureDiskVolumeSource.  # noqa: E501
-        :type fs_type: str
+        :type: str
         """
 
         self._fs_type = fs_type
@@ -189,7 +189,7 @@ class V1AzureDiskVolumeSource(object):
         Expected values Shared: multiple blob disks per storage account  Dedicated: single blob disk per storage account  Managed: azure managed data disk (only in managed availability set). defaults to shared  # noqa: E501
 
         :param kind: The kind of this V1AzureDiskVolumeSource.  # noqa: E501
-        :type kind: str
+        :type: str
         """
 
         self._kind = kind
@@ -212,7 +212,7 @@ class V1AzureDiskVolumeSource(object):
         Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.  # noqa: E501
 
         :param read_only: The read_only of this V1AzureDiskVolumeSource.  # noqa: E501
-        :type read_only: bool
+        :type: bool
         """
 
         self._read_only = read_only

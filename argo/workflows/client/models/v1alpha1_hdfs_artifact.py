@@ -113,7 +113,7 @@ class V1alpha1HDFSArtifact(object):
         Addresses is accessible addresses of HDFS name nodes  # noqa: E501
 
         :param addresses: The addresses of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type addresses: list[str]
+        :type: list[str]
         """
         if self.local_vars_configuration.client_side_validation and addresses is None:  # noqa: E501
             raise ValueError("Invalid value for `addresses`, must not be `None`")  # noqa: E501
@@ -138,7 +138,7 @@ class V1alpha1HDFSArtifact(object):
         Force copies a file forcibly even if it exists (default: false)  # noqa: E501
 
         :param force: The force of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type force: bool
+        :type: bool
         """
 
         self._force = force
@@ -161,7 +161,7 @@ class V1alpha1HDFSArtifact(object):
         HDFSUser is the user to access HDFS file system. It is ignored if either ccache or keytab is used.  # noqa: E501
 
         :param hdfs_user: The hdfs_user of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type hdfs_user: str
+        :type: str
         """
 
         self._hdfs_user = hdfs_user
@@ -182,7 +182,7 @@ class V1alpha1HDFSArtifact(object):
 
 
         :param krb_c_cache_secret: The krb_c_cache_secret of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type krb_c_cache_secret: V1SecretKeySelector
+        :type: V1SecretKeySelector
         """
 
         self._krb_c_cache_secret = krb_c_cache_secret
@@ -203,7 +203,7 @@ class V1alpha1HDFSArtifact(object):
 
 
         :param krb_config_config_map: The krb_config_config_map of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type krb_config_config_map: V1ConfigMapKeySelector
+        :type: V1ConfigMapKeySelector
         """
 
         self._krb_config_config_map = krb_config_config_map
@@ -224,7 +224,7 @@ class V1alpha1HDFSArtifact(object):
 
 
         :param krb_keytab_secret: The krb_keytab_secret of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type krb_keytab_secret: V1SecretKeySelector
+        :type: V1SecretKeySelector
         """
 
         self._krb_keytab_secret = krb_keytab_secret
@@ -247,7 +247,7 @@ class V1alpha1HDFSArtifact(object):
         KrbRealm is the Kerberos realm used with Kerberos keytab It must be set if keytab is used.  # noqa: E501
 
         :param krb_realm: The krb_realm of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type krb_realm: str
+        :type: str
         """
 
         self._krb_realm = krb_realm
@@ -270,7 +270,7 @@ class V1alpha1HDFSArtifact(object):
         KrbServicePrincipalName is the principal name of Kerberos service It must be set if either ccache or keytab is used.  # noqa: E501
 
         :param krb_service_principal_name: The krb_service_principal_name of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type krb_service_principal_name: str
+        :type: str
         """
 
         self._krb_service_principal_name = krb_service_principal_name
@@ -293,7 +293,7 @@ class V1alpha1HDFSArtifact(object):
         KrbUsername is the Kerberos username used with Kerberos keytab It must be set if keytab is used.  # noqa: E501
 
         :param krb_username: The krb_username of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type krb_username: str
+        :type: str
         """
 
         self._krb_username = krb_username
@@ -316,7 +316,7 @@ class V1alpha1HDFSArtifact(object):
         Path is a file path in HDFS  # noqa: E501
 
         :param path: The path of this V1alpha1HDFSArtifact.  # noqa: E501
-        :type path: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and path is None:  # noqa: E501
             raise ValueError("Invalid value for `path`, must not be `None`")  # noqa: E501

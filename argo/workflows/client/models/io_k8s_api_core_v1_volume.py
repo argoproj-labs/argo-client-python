@@ -207,7 +207,7 @@ class V1Volume(object):
 
 
         :param aws_elastic_block_store: The aws_elastic_block_store of this V1Volume.  # noqa: E501
-        :type aws_elastic_block_store: V1AWSElasticBlockStoreVolumeSource
+        :type: V1AWSElasticBlockStoreVolumeSource
         """
 
         self._aws_elastic_block_store = aws_elastic_block_store
@@ -228,7 +228,7 @@ class V1Volume(object):
 
 
         :param azure_disk: The azure_disk of this V1Volume.  # noqa: E501
-        :type azure_disk: V1AzureDiskVolumeSource
+        :type: V1AzureDiskVolumeSource
         """
 
         self._azure_disk = azure_disk
@@ -249,7 +249,7 @@ class V1Volume(object):
 
 
         :param azure_file: The azure_file of this V1Volume.  # noqa: E501
-        :type azure_file: V1AzureFileVolumeSource
+        :type: V1AzureFileVolumeSource
         """
 
         self._azure_file = azure_file
@@ -270,7 +270,7 @@ class V1Volume(object):
 
 
         :param cephfs: The cephfs of this V1Volume.  # noqa: E501
-        :type cephfs: V1CephFSVolumeSource
+        :type: V1CephFSVolumeSource
         """
 
         self._cephfs = cephfs
@@ -291,7 +291,7 @@ class V1Volume(object):
 
 
         :param cinder: The cinder of this V1Volume.  # noqa: E501
-        :type cinder: V1CinderVolumeSource
+        :type: V1CinderVolumeSource
         """
 
         self._cinder = cinder
@@ -312,7 +312,7 @@ class V1Volume(object):
 
 
         :param config_map: The config_map of this V1Volume.  # noqa: E501
-        :type config_map: V1ConfigMapVolumeSource
+        :type: V1ConfigMapVolumeSource
         """
 
         self._config_map = config_map
@@ -333,7 +333,7 @@ class V1Volume(object):
 
 
         :param csi: The csi of this V1Volume.  # noqa: E501
-        :type csi: V1CSIVolumeSource
+        :type: V1CSIVolumeSource
         """
 
         self._csi = csi
@@ -354,7 +354,7 @@ class V1Volume(object):
 
 
         :param downward_api: The downward_api of this V1Volume.  # noqa: E501
-        :type downward_api: V1DownwardAPIVolumeSource
+        :type: V1DownwardAPIVolumeSource
         """
 
         self._downward_api = downward_api
@@ -375,7 +375,7 @@ class V1Volume(object):
 
 
         :param empty_dir: The empty_dir of this V1Volume.  # noqa: E501
-        :type empty_dir: V1EmptyDirVolumeSource
+        :type: V1EmptyDirVolumeSource
         """
 
         self._empty_dir = empty_dir
@@ -396,7 +396,7 @@ class V1Volume(object):
 
 
         :param fc: The fc of this V1Volume.  # noqa: E501
-        :type fc: V1FCVolumeSource
+        :type: V1FCVolumeSource
         """
 
         self._fc = fc
@@ -417,7 +417,7 @@ class V1Volume(object):
 
 
         :param flex_volume: The flex_volume of this V1Volume.  # noqa: E501
-        :type flex_volume: V1FlexVolumeSource
+        :type: V1FlexVolumeSource
         """
 
         self._flex_volume = flex_volume
@@ -438,7 +438,7 @@ class V1Volume(object):
 
 
         :param flocker: The flocker of this V1Volume.  # noqa: E501
-        :type flocker: V1FlockerVolumeSource
+        :type: V1FlockerVolumeSource
         """
 
         self._flocker = flocker
@@ -459,7 +459,7 @@ class V1Volume(object):
 
 
         :param gce_persistent_disk: The gce_persistent_disk of this V1Volume.  # noqa: E501
-        :type gce_persistent_disk: V1GCEPersistentDiskVolumeSource
+        :type: V1GCEPersistentDiskVolumeSource
         """
 
         self._gce_persistent_disk = gce_persistent_disk
@@ -480,7 +480,7 @@ class V1Volume(object):
 
 
         :param git_repo: The git_repo of this V1Volume.  # noqa: E501
-        :type git_repo: V1GitRepoVolumeSource
+        :type: V1GitRepoVolumeSource
         """
 
         self._git_repo = git_repo
@@ -501,7 +501,7 @@ class V1Volume(object):
 
 
         :param glusterfs: The glusterfs of this V1Volume.  # noqa: E501
-        :type glusterfs: V1GlusterfsVolumeSource
+        :type: V1GlusterfsVolumeSource
         """
 
         self._glusterfs = glusterfs
@@ -522,7 +522,7 @@ class V1Volume(object):
 
 
         :param host_path: The host_path of this V1Volume.  # noqa: E501
-        :type host_path: V1HostPathVolumeSource
+        :type: V1HostPathVolumeSource
         """
 
         self._host_path = host_path
@@ -543,7 +543,7 @@ class V1Volume(object):
 
 
         :param iscsi: The iscsi of this V1Volume.  # noqa: E501
-        :type iscsi: V1ISCSIVolumeSource
+        :type: V1ISCSIVolumeSource
         """
 
         self._iscsi = iscsi
@@ -566,7 +566,7 @@ class V1Volume(object):
         Volume's name. Must be a DNS_LABEL and unique within the pod. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names  # noqa: E501
 
         :param name: The name of this V1Volume.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -589,7 +589,7 @@ class V1Volume(object):
 
 
         :param nfs: The nfs of this V1Volume.  # noqa: E501
-        :type nfs: V1NFSVolumeSource
+        :type: V1NFSVolumeSource
         """
 
         self._nfs = nfs
@@ -610,7 +610,7 @@ class V1Volume(object):
 
 
         :param persistent_volume_claim: The persistent_volume_claim of this V1Volume.  # noqa: E501
-        :type persistent_volume_claim: V1PersistentVolumeClaimVolumeSource
+        :type: V1PersistentVolumeClaimVolumeSource
         """
 
         self._persistent_volume_claim = persistent_volume_claim
@@ -631,7 +631,7 @@ class V1Volume(object):
 
 
         :param photon_persistent_disk: The photon_persistent_disk of this V1Volume.  # noqa: E501
-        :type photon_persistent_disk: V1PhotonPersistentDiskVolumeSource
+        :type: V1PhotonPersistentDiskVolumeSource
         """
 
         self._photon_persistent_disk = photon_persistent_disk
@@ -652,7 +652,7 @@ class V1Volume(object):
 
 
         :param portworx_volume: The portworx_volume of this V1Volume.  # noqa: E501
-        :type portworx_volume: V1PortworxVolumeSource
+        :type: V1PortworxVolumeSource
         """
 
         self._portworx_volume = portworx_volume
@@ -673,7 +673,7 @@ class V1Volume(object):
 
 
         :param projected: The projected of this V1Volume.  # noqa: E501
-        :type projected: V1ProjectedVolumeSource
+        :type: V1ProjectedVolumeSource
         """
 
         self._projected = projected
@@ -694,7 +694,7 @@ class V1Volume(object):
 
 
         :param quobyte: The quobyte of this V1Volume.  # noqa: E501
-        :type quobyte: V1QuobyteVolumeSource
+        :type: V1QuobyteVolumeSource
         """
 
         self._quobyte = quobyte
@@ -715,7 +715,7 @@ class V1Volume(object):
 
 
         :param rbd: The rbd of this V1Volume.  # noqa: E501
-        :type rbd: V1RBDVolumeSource
+        :type: V1RBDVolumeSource
         """
 
         self._rbd = rbd
@@ -736,7 +736,7 @@ class V1Volume(object):
 
 
         :param scale_io: The scale_io of this V1Volume.  # noqa: E501
-        :type scale_io: V1ScaleIOVolumeSource
+        :type: V1ScaleIOVolumeSource
         """
 
         self._scale_io = scale_io
@@ -757,7 +757,7 @@ class V1Volume(object):
 
 
         :param secret: The secret of this V1Volume.  # noqa: E501
-        :type secret: V1SecretVolumeSource
+        :type: V1SecretVolumeSource
         """
 
         self._secret = secret
@@ -778,7 +778,7 @@ class V1Volume(object):
 
 
         :param storageos: The storageos of this V1Volume.  # noqa: E501
-        :type storageos: V1StorageOSVolumeSource
+        :type: V1StorageOSVolumeSource
         """
 
         self._storageos = storageos
@@ -799,7 +799,7 @@ class V1Volume(object):
 
 
         :param vsphere_volume: The vsphere_volume of this V1Volume.  # noqa: E501
-        :type vsphere_volume: V1VsphereVirtualDiskVolumeSource
+        :type: V1VsphereVirtualDiskVolumeSource
         """
 
         self._vsphere_volume = vsphere_volume

@@ -79,7 +79,7 @@ class V1ConfigMapKeySelector(object):
         The key to select.  # noqa: E501
 
         :param key: The key of this V1ConfigMapKeySelector.  # noqa: E501
-        :type key: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and key is None:  # noqa: E501
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
@@ -104,7 +104,7 @@ class V1ConfigMapKeySelector(object):
         Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names  # noqa: E501
 
         :param name: The name of this V1ConfigMapKeySelector.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name
@@ -127,7 +127,7 @@ class V1ConfigMapKeySelector(object):
         Specify whether the ConfigMap or its key must be defined  # noqa: E501
 
         :param optional: The optional of this V1ConfigMapKeySelector.  # noqa: E501
-        :type optional: bool
+        :type: bool
         """
 
         self._optional = optional

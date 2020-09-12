@@ -115,7 +115,7 @@ class V1alpha1SubmitOpts(object):
         DryRun validates the workflow on the client-side without creating it. This option is not supported in API  # noqa: E501
 
         :param dry_run: The dry_run of this V1alpha1SubmitOpts.  # noqa: E501
-        :type dry_run: bool
+        :type: bool
         """
 
         self._dry_run = dry_run
@@ -138,7 +138,7 @@ class V1alpha1SubmitOpts(object):
         Entrypoint overrides spec.entrypoint  # noqa: E501
 
         :param entry_point: The entry_point of this V1alpha1SubmitOpts.  # noqa: E501
-        :type entry_point: str
+        :type: str
         """
 
         self._entry_point = entry_point
@@ -161,7 +161,7 @@ class V1alpha1SubmitOpts(object):
         GenerateName overrides metadata.generateName  # noqa: E501
 
         :param generate_name: The generate_name of this V1alpha1SubmitOpts.  # noqa: E501
-        :type generate_name: str
+        :type: str
         """
 
         self._generate_name = generate_name
@@ -184,7 +184,7 @@ class V1alpha1SubmitOpts(object):
         Labels adds to metadata.labels  # noqa: E501
 
         :param labels: The labels of this V1alpha1SubmitOpts.  # noqa: E501
-        :type labels: str
+        :type: str
         """
 
         self._labels = labels
@@ -207,7 +207,7 @@ class V1alpha1SubmitOpts(object):
         Name overrides metadata.name  # noqa: E501
 
         :param name: The name of this V1alpha1SubmitOpts.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name
@@ -228,7 +228,7 @@ class V1alpha1SubmitOpts(object):
 
 
         :param owner_reference: The owner_reference of this V1alpha1SubmitOpts.  # noqa: E501
-        :type owner_reference: V1OwnerReference
+        :type: V1OwnerReference
         """
 
         self._owner_reference = owner_reference
@@ -251,7 +251,7 @@ class V1alpha1SubmitOpts(object):
         ParameterFile holds a reference to a parameter file. This option is not supported in API  # noqa: E501
 
         :param parameter_file: The parameter_file of this V1alpha1SubmitOpts.  # noqa: E501
-        :type parameter_file: str
+        :type: str
         """
 
         self._parameter_file = parameter_file
@@ -274,7 +274,7 @@ class V1alpha1SubmitOpts(object):
         Parameters passes input parameters to workflow  # noqa: E501
 
         :param parameters: The parameters of this V1alpha1SubmitOpts.  # noqa: E501
-        :type parameters: list[str]
+        :type: list[str]
         """
 
         self._parameters = parameters
@@ -297,7 +297,7 @@ class V1alpha1SubmitOpts(object):
         ServerDryRun validates the workflow on the server-side without creating it  # noqa: E501
 
         :param server_dry_run: The server_dry_run of this V1alpha1SubmitOpts.  # noqa: E501
-        :type server_dry_run: bool
+        :type: bool
         """
 
         self._server_dry_run = server_dry_run
@@ -320,7 +320,7 @@ class V1alpha1SubmitOpts(object):
         ServiceAccount runs all pods in the workflow using specified ServiceAccount.  # noqa: E501
 
         :param service_account: The service_account of this V1alpha1SubmitOpts.  # noqa: E501
-        :type service_account: str
+        :type: str
         """
 
         self._service_account = service_account

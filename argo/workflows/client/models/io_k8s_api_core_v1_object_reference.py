@@ -100,7 +100,7 @@ class V1ObjectReference(object):
         API version of the referent.  # noqa: E501
 
         :param api_version: The api_version of this V1ObjectReference.  # noqa: E501
-        :type api_version: str
+        :type: str
         """
 
         self._api_version = api_version
@@ -123,7 +123,7 @@ class V1ObjectReference(object):
         If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: \"spec.containers{name}\" (where \"name\" refers to the name of the container that triggered the event) or if no container name is specified \"spec.containers[2]\" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.  # noqa: E501
 
         :param field_path: The field_path of this V1ObjectReference.  # noqa: E501
-        :type field_path: str
+        :type: str
         """
 
         self._field_path = field_path
@@ -146,7 +146,7 @@ class V1ObjectReference(object):
         Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds  # noqa: E501
 
         :param kind: The kind of this V1ObjectReference.  # noqa: E501
-        :type kind: str
+        :type: str
         """
 
         self._kind = kind
@@ -169,7 +169,7 @@ class V1ObjectReference(object):
         Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names  # noqa: E501
 
         :param name: The name of this V1ObjectReference.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name
@@ -192,7 +192,7 @@ class V1ObjectReference(object):
         Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/  # noqa: E501
 
         :param namespace: The namespace of this V1ObjectReference.  # noqa: E501
-        :type namespace: str
+        :type: str
         """
 
         self._namespace = namespace
@@ -215,7 +215,7 @@ class V1ObjectReference(object):
         Specific resourceVersion to which this reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency  # noqa: E501
 
         :param resource_version: The resource_version of this V1ObjectReference.  # noqa: E501
-        :type resource_version: str
+        :type: str
         """
 
         self._resource_version = resource_version
@@ -238,7 +238,7 @@ class V1ObjectReference(object):
         UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids  # noqa: E501
 
         :param uid: The uid of this V1ObjectReference.  # noqa: E501
-        :type uid: str
+        :type: str
         """
 
         self._uid = uid

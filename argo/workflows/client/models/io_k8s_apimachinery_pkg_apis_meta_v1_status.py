@@ -105,7 +105,7 @@ class V1Status(object):
         APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources  # noqa: E501
 
         :param api_version: The api_version of this V1Status.  # noqa: E501
-        :type api_version: str
+        :type: str
         """
 
         self._api_version = api_version
@@ -128,7 +128,7 @@ class V1Status(object):
         Suggested HTTP return code for this status, 0 if not set.  # noqa: E501
 
         :param code: The code of this V1Status.  # noqa: E501
-        :type code: int
+        :type: int
         """
 
         self._code = code
@@ -149,7 +149,7 @@ class V1Status(object):
 
 
         :param details: The details of this V1Status.  # noqa: E501
-        :type details: V1StatusDetails
+        :type: V1StatusDetails
         """
 
         self._details = details
@@ -172,7 +172,7 @@ class V1Status(object):
         Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds  # noqa: E501
 
         :param kind: The kind of this V1Status.  # noqa: E501
-        :type kind: str
+        :type: str
         """
 
         self._kind = kind
@@ -195,7 +195,7 @@ class V1Status(object):
         A human-readable description of the status of this operation.  # noqa: E501
 
         :param message: The message of this V1Status.  # noqa: E501
-        :type message: str
+        :type: str
         """
 
         self._message = message
@@ -216,7 +216,7 @@ class V1Status(object):
 
 
         :param metadata: The metadata of this V1Status.  # noqa: E501
-        :type metadata: V1ListMeta
+        :type: V1ListMeta
         """
 
         self._metadata = metadata
@@ -239,7 +239,7 @@ class V1Status(object):
         A machine-readable description of why this operation is in the \"Failure\" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it.  # noqa: E501
 
         :param reason: The reason of this V1Status.  # noqa: E501
-        :type reason: str
+        :type: str
         """
 
         self._reason = reason
@@ -262,7 +262,7 @@ class V1Status(object):
         Status of the operation. One of: \"Success\" or \"Failure\". More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#spec-and-status  # noqa: E501
 
         :param status: The status of this V1Status.  # noqa: E501
-        :type status: str
+        :type: str
         """
 
         self._status = status

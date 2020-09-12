@@ -74,7 +74,7 @@ class V1TCPSocketAction(object):
         Optional: Host name to connect to, defaults to the pod IP.  # noqa: E501
 
         :param host: The host of this V1TCPSocketAction.  # noqa: E501
-        :type host: str
+        :type: str
         """
 
         self._host = host
@@ -97,7 +97,7 @@ class V1TCPSocketAction(object):
         Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME.  # noqa: E501
 
         :param port: The port of this V1TCPSocketAction.  # noqa: E501
-        :type port: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and port is None:  # noqa: E501
             raise ValueError("Invalid value for `port`, must not be `None`")  # noqa: E501

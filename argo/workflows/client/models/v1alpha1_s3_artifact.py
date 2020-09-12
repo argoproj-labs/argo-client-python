@@ -103,7 +103,7 @@ class V1alpha1S3Artifact(object):
 
 
         :param access_key_secret: The access_key_secret of this V1alpha1S3Artifact.  # noqa: E501
-        :type access_key_secret: V1SecretKeySelector
+        :type: V1SecretKeySelector
         """
         if self.local_vars_configuration.client_side_validation and access_key_secret is None:  # noqa: E501
             raise ValueError("Invalid value for `access_key_secret`, must not be `None`")  # noqa: E501
@@ -128,7 +128,7 @@ class V1alpha1S3Artifact(object):
         Bucket is the name of the bucket  # noqa: E501
 
         :param bucket: The bucket of this V1alpha1S3Artifact.  # noqa: E501
-        :type bucket: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and bucket is None:  # noqa: E501
             raise ValueError("Invalid value for `bucket`, must not be `None`")  # noqa: E501
@@ -153,7 +153,7 @@ class V1alpha1S3Artifact(object):
         Endpoint is the hostname of the bucket endpoint  # noqa: E501
 
         :param endpoint: The endpoint of this V1alpha1S3Artifact.  # noqa: E501
-        :type endpoint: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and endpoint is None:  # noqa: E501
             raise ValueError("Invalid value for `endpoint`, must not be `None`")  # noqa: E501
@@ -178,7 +178,7 @@ class V1alpha1S3Artifact(object):
         Insecure will connect to the service with TLS  # noqa: E501
 
         :param insecure: The insecure of this V1alpha1S3Artifact.  # noqa: E501
-        :type insecure: bool
+        :type: bool
         """
 
         self._insecure = insecure
@@ -201,7 +201,7 @@ class V1alpha1S3Artifact(object):
         Key is the key in the bucket where the artifact resides  # noqa: E501
 
         :param key: The key of this V1alpha1S3Artifact.  # noqa: E501
-        :type key: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and key is None:  # noqa: E501
             raise ValueError("Invalid value for `key`, must not be `None`")  # noqa: E501
@@ -226,7 +226,7 @@ class V1alpha1S3Artifact(object):
         Region contains the optional bucket region  # noqa: E501
 
         :param region: The region of this V1alpha1S3Artifact.  # noqa: E501
-        :type region: str
+        :type: str
         """
 
         self._region = region
@@ -249,7 +249,7 @@ class V1alpha1S3Artifact(object):
         RoleARN is the Amazon Resource Name (ARN) of the role to assume.  # noqa: E501
 
         :param role_arn: The role_arn of this V1alpha1S3Artifact.  # noqa: E501
-        :type role_arn: str
+        :type: str
         """
 
         self._role_arn = role_arn
@@ -270,7 +270,7 @@ class V1alpha1S3Artifact(object):
 
 
         :param secret_key_secret: The secret_key_secret of this V1alpha1S3Artifact.  # noqa: E501
-        :type secret_key_secret: V1SecretKeySelector
+        :type: V1SecretKeySelector
         """
         if self.local_vars_configuration.client_side_validation and secret_key_secret is None:  # noqa: E501
             raise ValueError("Invalid value for `secret_key_secret`, must not be `None`")  # noqa: E501
@@ -295,7 +295,7 @@ class V1alpha1S3Artifact(object):
         UseSDKCreds tells the driver to figure out credentials based on sdk defaults.  # noqa: E501
 
         :param use_sdk_creds: The use_sdk_creds of this V1alpha1S3Artifact.  # noqa: E501
-        :type use_sdk_creds: bool
+        :type: bool
         """
 
         self._use_sdk_creds = use_sdk_creds

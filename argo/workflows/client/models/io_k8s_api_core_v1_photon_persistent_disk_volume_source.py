@@ -74,7 +74,7 @@ class V1PhotonPersistentDiskVolumeSource(object):
         Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. \"ext4\", \"xfs\", \"ntfs\". Implicitly inferred to be \"ext4\" if unspecified.  # noqa: E501
 
         :param fs_type: The fs_type of this V1PhotonPersistentDiskVolumeSource.  # noqa: E501
-        :type fs_type: str
+        :type: str
         """
 
         self._fs_type = fs_type
@@ -97,7 +97,7 @@ class V1PhotonPersistentDiskVolumeSource(object):
         ID that identifies Photon Controller persistent disk  # noqa: E501
 
         :param pd_id: The pd_id of this V1PhotonPersistentDiskVolumeSource.  # noqa: E501
-        :type pd_id: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and pd_id is None:  # noqa: E501
             raise ValueError("Invalid value for `pd_id`, must not be `None`")  # noqa: E501

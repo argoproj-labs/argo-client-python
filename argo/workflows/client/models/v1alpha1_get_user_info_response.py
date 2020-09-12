@@ -73,7 +73,7 @@ class V1alpha1GetUserInfoResponse(object):
 
 
         :param issuer: The issuer of this V1alpha1GetUserInfoResponse.  # noqa: E501
-        :type issuer: str
+        :type: str
         """
 
         self._issuer = issuer
@@ -94,7 +94,7 @@ class V1alpha1GetUserInfoResponse(object):
 
 
         :param subject: The subject of this V1alpha1GetUserInfoResponse.  # noqa: E501
-        :type subject: str
+        :type: str
         """
 
         self._subject = subject

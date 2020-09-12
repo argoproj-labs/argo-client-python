@@ -68,7 +68,7 @@ class V1alpha1Synchronization(object):
 
 
         :param semaphore: The semaphore of this V1alpha1Synchronization.  # noqa: E501
-        :type semaphore: V1alpha1SemaphoreRef
+        :type: V1alpha1SemaphoreRef
         """
 
         self._semaphore = semaphore

@@ -75,7 +75,7 @@ class V1alpha1SemaphoreHolding(object):
         Holders stores the list of current holder names in the io.argoproj.workflow.v1alpha1.  # noqa: E501
 
         :param holders: The holders of this V1alpha1SemaphoreHolding.  # noqa: E501
-        :type holders: list[str]
+        :type: list[str]
         """
 
         self._holders = holders
@@ -98,7 +98,7 @@ class V1alpha1SemaphoreHolding(object):
         Semaphore stores the semaphore name.  # noqa: E501
 
         :param semaphore: The semaphore of this V1alpha1SemaphoreHolding.  # noqa: E501
-        :type semaphore: str
+        :type: str
         """
 
         self._semaphore = semaphore

@@ -88,7 +88,7 @@ class V1alpha1CronWorkflow(object):
         APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.io.k8s.community/contributors/devel/sig-architecture/api-conventions.md#resources  # noqa: E501
 
         :param api_version: The api_version of this V1alpha1CronWorkflow.  # noqa: E501
-        :type api_version: str
+        :type: str
         """
 
         self._api_version = api_version
@@ -111,7 +111,7 @@ class V1alpha1CronWorkflow(object):
         Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.io.k8s.community/contributors/devel/sig-architecture/api-conventions.md#types-kinds  # noqa: E501
 
         :param kind: The kind of this V1alpha1CronWorkflow.  # noqa: E501
-        :type kind: str
+        :type: str
         """
 
         self._kind = kind
@@ -132,7 +132,7 @@ class V1alpha1CronWorkflow(object):
 
 
         :param metadata: The metadata of this V1alpha1CronWorkflow.  # noqa: E501
-        :type metadata: V1ObjectMeta
+        :type: V1ObjectMeta
         """
         if self.local_vars_configuration.client_side_validation and metadata is None:  # noqa: E501
             raise ValueError("Invalid value for `metadata`, must not be `None`")  # noqa: E501
@@ -155,7 +155,7 @@ class V1alpha1CronWorkflow(object):
 
 
         :param spec: The spec of this V1alpha1CronWorkflow.  # noqa: E501
-        :type spec: V1alpha1CronWorkflowSpec
+        :type: V1alpha1CronWorkflowSpec
         """
         if self.local_vars_configuration.client_side_validation and spec is None:  # noqa: E501
             raise ValueError("Invalid value for `spec`, must not be `None`")  # noqa: E501
@@ -178,7 +178,7 @@ class V1alpha1CronWorkflow(object):
 
 
         :param status: The status of this V1alpha1CronWorkflow.  # noqa: E501
-        :type status: V1alpha1CronWorkflowStatus
+        :type: V1alpha1CronWorkflowStatus
         """
 
         self._status = status

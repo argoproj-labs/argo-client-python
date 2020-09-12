@@ -90,7 +90,7 @@ class V1alpha1ValueFrom(object):
         Default specifies a value to be used if retrieving the value from the specified source fails  # noqa: E501
 
         :param default: The default of this V1alpha1ValueFrom.  # noqa: E501
-        :type default: str
+        :type: str
         """
 
         self._default = default
@@ -113,7 +113,7 @@ class V1alpha1ValueFrom(object):
         JQFilter expression against the resource object in resource templates  # noqa: E501
 
         :param jq_filter: The jq_filter of this V1alpha1ValueFrom.  # noqa: E501
-        :type jq_filter: str
+        :type: str
         """
 
         self._jq_filter = jq_filter
@@ -136,7 +136,7 @@ class V1alpha1ValueFrom(object):
         JSONPath of a resource to retrieve an output parameter value from in resource templates  # noqa: E501
 
         :param json_path: The json_path of this V1alpha1ValueFrom.  # noqa: E501
-        :type json_path: str
+        :type: str
         """
 
         self._json_path = json_path
@@ -159,7 +159,7 @@ class V1alpha1ValueFrom(object):
         Parameter reference to a step or dag task in which to retrieve an output parameter value from (e.g. '{{steps.mystep.outputs.myparam}}')  # noqa: E501
 
         :param parameter: The parameter of this V1alpha1ValueFrom.  # noqa: E501
-        :type parameter: str
+        :type: str
         """
 
         self._parameter = parameter
@@ -182,7 +182,7 @@ class V1alpha1ValueFrom(object):
         Path in the container to retrieve an output parameter value from in container templates  # noqa: E501
 
         :param path: The path of this V1alpha1ValueFrom.  # noqa: E501
-        :type path: str
+        :type: str
         """
 
         self._path = path

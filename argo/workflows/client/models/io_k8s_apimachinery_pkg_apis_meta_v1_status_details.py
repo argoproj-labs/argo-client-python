@@ -95,7 +95,7 @@ class V1StatusDetails(object):
         The Causes array includes more details associated with the StatusReason failure. Not all StatusReasons may provide detailed causes.  # noqa: E501
 
         :param causes: The causes of this V1StatusDetails.  # noqa: E501
-        :type causes: list[V1StatusCause]
+        :type: list[V1StatusCause]
         """
 
         self._causes = causes
@@ -118,7 +118,7 @@ class V1StatusDetails(object):
         The group attribute of the resource associated with the status StatusReason.  # noqa: E501
 
         :param group: The group of this V1StatusDetails.  # noqa: E501
-        :type group: str
+        :type: str
         """
 
         self._group = group
@@ -141,7 +141,7 @@ class V1StatusDetails(object):
         The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds  # noqa: E501
 
         :param kind: The kind of this V1StatusDetails.  # noqa: E501
-        :type kind: str
+        :type: str
         """
 
         self._kind = kind
@@ -164,7 +164,7 @@ class V1StatusDetails(object):
         The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described).  # noqa: E501
 
         :param name: The name of this V1StatusDetails.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name
@@ -187,7 +187,7 @@ class V1StatusDetails(object):
         If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action.  # noqa: E501
 
         :param retry_after_seconds: The retry_after_seconds of this V1StatusDetails.  # noqa: E501
-        :type retry_after_seconds: int
+        :type: int
         """
 
         self._retry_after_seconds = retry_after_seconds
@@ -210,7 +210,7 @@ class V1StatusDetails(object):
         UID of the resource. (when there is a single resource which can be described). More info: http://kubernetes.io/docs/user-guide/identifiers#uids  # noqa: E501
 
         :param uid: The uid of this V1StatusDetails.  # noqa: E501
-        :type uid: str
+        :type: str
         """
 
         self._uid = uid

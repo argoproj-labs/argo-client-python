@@ -74,7 +74,7 @@ class V1Initializers(object):
         Pending is a list of initializers that must execute in order before this object is visible. When the last pending initializer is removed, and no failing result is set, the initializers struct will be set to nil and the object is considered as initialized and visible to all clients.  # noqa: E501
 
         :param pending: The pending of this V1Initializers.  # noqa: E501
-        :type pending: list[V1Initializer]
+        :type: list[V1Initializer]
         """
         if self.local_vars_configuration.client_side_validation and pending is None:  # noqa: E501
             raise ValueError("Invalid value for `pending`, must not be `None`")  # noqa: E501
@@ -97,7 +97,7 @@ class V1Initializers(object):
 
 
         :param result: The result of this V1Initializers.  # noqa: E501
-        :type result: V1Status
+        :type: V1Status
         """
 
         self._result = result

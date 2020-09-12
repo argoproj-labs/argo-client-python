@@ -110,7 +110,7 @@ class V1alpha1ArtifactLocation(object):
         ArchiveLogs indicates if the container logs should be archived  # noqa: E501
 
         :param archive_logs: The archive_logs of this V1alpha1ArtifactLocation.  # noqa: E501
-        :type archive_logs: bool
+        :type: bool
         """
 
         self._archive_logs = archive_logs
@@ -131,7 +131,7 @@ class V1alpha1ArtifactLocation(object):
 
 
         :param artifactory: The artifactory of this V1alpha1ArtifactLocation.  # noqa: E501
-        :type artifactory: V1alpha1ArtifactoryArtifact
+        :type: V1alpha1ArtifactoryArtifact
         """
 
         self._artifactory = artifactory
@@ -152,7 +152,7 @@ class V1alpha1ArtifactLocation(object):
 
 
         :param gcs: The gcs of this V1alpha1ArtifactLocation.  # noqa: E501
-        :type gcs: V1alpha1GCSArtifact
+        :type: V1alpha1GCSArtifact
         """
 
         self._gcs = gcs
@@ -173,7 +173,7 @@ class V1alpha1ArtifactLocation(object):
 
 
         :param git: The git of this V1alpha1ArtifactLocation.  # noqa: E501
-        :type git: V1alpha1GitArtifact
+        :type: V1alpha1GitArtifact
         """
 
         self._git = git
@@ -194,7 +194,7 @@ class V1alpha1ArtifactLocation(object):
 
 
         :param hdfs: The hdfs of this V1alpha1ArtifactLocation.  # noqa: E501
-        :type hdfs: V1alpha1HDFSArtifact
+        :type: V1alpha1HDFSArtifact
         """
 
         self._hdfs = hdfs
@@ -215,7 +215,7 @@ class V1alpha1ArtifactLocation(object):
 
 
         :param http: The http of this V1alpha1ArtifactLocation.  # noqa: E501
-        :type http: V1alpha1HTTPArtifact
+        :type: V1alpha1HTTPArtifact
         """
 
         self._http = http
@@ -236,7 +236,7 @@ class V1alpha1ArtifactLocation(object):
 
 
         :param oss: The oss of this V1alpha1ArtifactLocation.  # noqa: E501
-        :type oss: V1alpha1OSSArtifact
+        :type: V1alpha1OSSArtifact
         """
 
         self._oss = oss
@@ -257,7 +257,7 @@ class V1alpha1ArtifactLocation(object):
 
 
         :param raw: The raw of this V1alpha1ArtifactLocation.  # noqa: E501
-        :type raw: V1alpha1RawArtifact
+        :type: V1alpha1RawArtifact
         """
 
         self._raw = raw
@@ -278,7 +278,7 @@ class V1alpha1ArtifactLocation(object):
 
 
         :param s3: The s3 of this V1alpha1ArtifactLocation.  # noqa: E501
-        :type s3: V1alpha1S3Artifact
+        :type: V1alpha1S3Artifact
         """
 
         self._s3 = s3

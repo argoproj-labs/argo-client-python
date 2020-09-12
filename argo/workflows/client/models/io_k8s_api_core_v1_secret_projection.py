@@ -80,7 +80,7 @@ class V1SecretProjection(object):
         If unspecified, each key-value pair in the Data field of the referenced Secret will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified which is not present in the Secret, the volume setup will error unless it is marked optional. Paths must be relative and may not contain the '..' path or start with '..'.  # noqa: E501
 
         :param items: The items of this V1SecretProjection.  # noqa: E501
-        :type items: list[V1KeyToPath]
+        :type: list[V1KeyToPath]
         """
 
         self._items = items
@@ -103,7 +103,7 @@ class V1SecretProjection(object):
         Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names  # noqa: E501
 
         :param name: The name of this V1SecretProjection.  # noqa: E501
-        :type name: str
+        :type: str
         """
 
         self._name = name
@@ -126,7 +126,7 @@ class V1SecretProjection(object):
         Specify whether the Secret or its key must be defined  # noqa: E501
 
         :param optional: The optional of this V1SecretProjection.  # noqa: E501
-        :type optional: bool
+        :type: bool
         """
 
         self._optional = optional

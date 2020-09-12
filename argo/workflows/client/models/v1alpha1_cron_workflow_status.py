@@ -80,7 +80,7 @@ class V1alpha1CronWorkflowStatus(object):
         Active is a list of active workflows stemming from this CronWorkflow  # noqa: E501
 
         :param active: The active of this V1alpha1CronWorkflowStatus.  # noqa: E501
-        :type active: list[V1ObjectReference]
+        :type: list[V1ObjectReference]
         """
 
         self._active = active
@@ -103,7 +103,7 @@ class V1alpha1CronWorkflowStatus(object):
         Conditions is a list of conditions the CronWorkflow may have  # noqa: E501
 
         :param conditions: The conditions of this V1alpha1CronWorkflowStatus.  # noqa: E501
-        :type conditions: list[V1alpha1Condition]
+        :type: list[V1alpha1Condition]
         """
 
         self._conditions = conditions
@@ -126,7 +126,7 @@ class V1alpha1CronWorkflowStatus(object):
         LastScheduleTime is the last time the CronWorkflow was scheduled  # noqa: E501
 
         :param last_scheduled_time: The last_scheduled_time of this V1alpha1CronWorkflowStatus.  # noqa: E501
-        :type last_scheduled_time: datetime
+        :type: datetime
         """
 
         self._last_scheduled_time = last_scheduled_time

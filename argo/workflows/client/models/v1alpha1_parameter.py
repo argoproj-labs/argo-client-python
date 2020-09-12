@@ -89,7 +89,7 @@ class V1alpha1Parameter(object):
         Default is the default value to use for an input parameter if a value was not supplied  # noqa: E501
 
         :param default: The default of this V1alpha1Parameter.  # noqa: E501
-        :type default: str
+        :type: str
         """
 
         self._default = default
@@ -112,7 +112,7 @@ class V1alpha1Parameter(object):
         GlobalName exports an output parameter to the global scope, making it available as '{{io.argoproj.workflow.v1alpha1.outputs.parameters.XXXX}} and in workflow.status.outputs.parameters  # noqa: E501
 
         :param global_name: The global_name of this V1alpha1Parameter.  # noqa: E501
-        :type global_name: str
+        :type: str
         """
 
         self._global_name = global_name
@@ -135,7 +135,7 @@ class V1alpha1Parameter(object):
         Name is the parameter name  # noqa: E501
 
         :param name: The name of this V1alpha1Parameter.  # noqa: E501
-        :type name: str
+        :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -160,7 +160,7 @@ class V1alpha1Parameter(object):
         Value is the literal value to use for the parameter. If specified in the context of an input parameter, the value takes precedence over any passed values  # noqa: E501
 
         :param value: The value of this V1alpha1Parameter.  # noqa: E501
-        :type value: str
+        :type: str
         """
 
         self._value = value
@@ -181,7 +181,7 @@ class V1alpha1Parameter(object):
 
 
         :param value_from: The value_from of this V1alpha1Parameter.  # noqa: E501
-        :type value_from: V1alpha1ValueFrom
+        :type: V1alpha1ValueFrom
         """
 
         self._value_from = value_from

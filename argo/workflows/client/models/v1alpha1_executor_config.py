@@ -70,7 +70,7 @@ class V1alpha1ExecutorConfig(object):
         ServiceAccountName specifies the service account name of the executor container.  # noqa: E501
 
         :param service_account_name: The service_account_name of this V1alpha1ExecutorConfig.  # noqa: E501
-        :type service_account_name: str
+        :type: str
         """
 
         self._service_account_name = service_account_name
