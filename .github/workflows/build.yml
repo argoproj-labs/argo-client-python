@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements-test.txt
+    - uses: opsgang/ga-setup-minikube@v0.1.1
+      with:
+          minikube-version: 1.11.0
+          k8s-version: 1.18.3
+    - name: Integration tests
+      run: |
+        minikube config set vm-driver docker
+        minikube config set kubernetes-version 1.18.3
+        minikube start
+        minikube update-context
+        kubectl cluster-info
+        kubectl get pods -n kube-system
+        kubectl create ns argo
+        kubectl apply -n argo -f manifests/quick-start-minimal-argo-v2.10.0.yaml
+        pytest
