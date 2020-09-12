@@ -5,27 +5,27 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_namespaced_archivedworkflow**](V1alpha1Api.md#create_namespaced_archivedworkflow) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/archivedarchivedworkflows | 
-[**create_namespaced_cronworkflow**](V1alpha1Api.md#create_namespaced_cronworkflow) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows | 
+[**create_namespaced_cronworkflow**](V1alpha1Api.md#create_namespaced_cronworkflow) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows | 
 [**create_namespaced_workflow**](V1alpha1Api.md#create_namespaced_workflow) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows | 
 [**create_namespaced_workflowtemplate**](V1alpha1Api.md#create_namespaced_workflowtemplate) | **POST** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates | 
 [**delete_namespaced_archivedworkflow**](V1alpha1Api.md#delete_namespaced_archivedworkflow) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/archivedarchivedworkflows/{name} | 
-[**delete_namespaced_cronworkflow**](V1alpha1Api.md#delete_namespaced_cronworkflow) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name} | 
+[**delete_namespaced_cronworkflow**](V1alpha1Api.md#delete_namespaced_cronworkflow) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name} | 
 [**delete_namespaced_workflow**](V1alpha1Api.md#delete_namespaced_workflow) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
 [**delete_namespaced_workflowtemplate**](V1alpha1Api.md#delete_namespaced_workflowtemplate) | **DELETE** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates/{name} | 
 [**get_namespaced_archivedworkflow**](V1alpha1Api.md#get_namespaced_archivedworkflow) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/archivedarchivedworkflows/{name} | 
-[**get_namespaced_cronworkflow**](V1alpha1Api.md#get_namespaced_cronworkflow) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name} | 
+[**get_namespaced_cronworkflow**](V1alpha1Api.md#get_namespaced_cronworkflow) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name} | 
 [**get_namespaced_workflow**](V1alpha1Api.md#get_namespaced_workflow) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
 [**get_namespaced_workflowtemplate**](V1alpha1Api.md#get_namespaced_workflowtemplate) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates/{name} | 
 [**list_namespaced_archivedworkflows**](V1alpha1Api.md#list_namespaced_archivedworkflows) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/archivedarchivedworkflows | 
-[**list_namespaced_cronworkflows**](V1alpha1Api.md#list_namespaced_cronworkflows) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows | 
+[**list_namespaced_cronworkflows**](V1alpha1Api.md#list_namespaced_cronworkflows) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows | 
 [**list_namespaced_workflows**](V1alpha1Api.md#list_namespaced_workflows) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows | 
 [**list_namespaced_workflowtemplates**](V1alpha1Api.md#list_namespaced_workflowtemplates) | **GET** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates | 
 [**patch_namespaced_archivedworkflow**](V1alpha1Api.md#patch_namespaced_archivedworkflow) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/archivedarchivedworkflows/{name} | 
-[**patch_namespaced_cronworkflow**](V1alpha1Api.md#patch_namespaced_cronworkflow) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name} | 
+[**patch_namespaced_cronworkflow**](V1alpha1Api.md#patch_namespaced_cronworkflow) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name} | 
 [**patch_namespaced_workflow**](V1alpha1Api.md#patch_namespaced_workflow) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
 [**patch_namespaced_workflowtemplate**](V1alpha1Api.md#patch_namespaced_workflowtemplate) | **PATCH** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates/{name} | 
 [**replace_namespaced_archivedworkflow**](V1alpha1Api.md#replace_namespaced_archivedworkflow) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/archivedarchivedworkflows/{name} | 
-[**replace_namespaced_cronworkflow**](V1alpha1Api.md#replace_namespaced_cronworkflow) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name} | 
+[**replace_namespaced_cronworkflow**](V1alpha1Api.md#replace_namespaced_cronworkflow) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name} | 
 [**replace_namespaced_workflow**](V1alpha1Api.md#replace_namespaced_workflow) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflows/{name} | 
 [**replace_namespaced_workflowtemplate**](V1alpha1Api.md#replace_namespaced_workflowtemplate) | **PUT** /apis/argoproj.io/v1alpha1/namespaces/{namespace}/workflowtemplates/{name} | 
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_namespaced_cronworkflow**
-> IoArgoprojCronworkflowV1alpha1Workflow create_namespaced_cronworkflow(namespace, body)
+> V1alpha1CronWorkflow create_namespaced_cronworkflow(namespace, body)
 
 
 
@@ -151,7 +151,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.V1alpha1Api(api_client)
     namespace = 'namespace_example' # str | The Workflow's namespace
-body = openapi_client.IoArgoprojCronworkflowV1alpha1Workflow() # IoArgoprojCronworkflowV1alpha1Workflow | The JSON schema of the Workflow to create.
+body = openapi_client.V1alpha1CronWorkflow() # V1alpha1CronWorkflow | The JSON schema of the Workflow to create.
 
     try:
         api_response = api_instance.create_namespaced_cronworkflow(namespace, body)
@@ -165,11 +165,11 @@ body = openapi_client.IoArgoprojCronworkflowV1alpha1Workflow() # IoArgoprojCronw
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**| The Workflow&#39;s namespace | 
- **body** | **IoArgoprojCronworkflowV1alpha1Workflow**| The JSON schema of the Workflow to create. | 
+ **body** | [**V1alpha1CronWorkflow**](V1alpha1CronWorkflow.md)| The JSON schema of the Workflow to create. | 
 
 ### Return type
 
-[**IoArgoprojCronworkflowV1alpha1Workflow**](IoArgoprojCronworkflowV1alpha1Workflow.md)
+[**V1alpha1CronWorkflow**](V1alpha1CronWorkflow.md)
 
 ### Authorization
 
@@ -774,7 +774,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_namespaced_cronworkflow**
-> IoArgoprojCronworkflowV1alpha1Workflow get_namespaced_cronworkflow(namespace, name)
+> V1alpha1CronWorkflow get_namespaced_cronworkflow(namespace, name)
 
 
 
@@ -833,7 +833,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IoArgoprojCronworkflowV1alpha1Workflow**](IoArgoprojCronworkflowV1alpha1Workflow.md)
+[**V1alpha1CronWorkflow**](V1alpha1CronWorkflow.md)
 
 ### Authorization
 
@@ -1098,7 +1098,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_namespaced_cronworkflows**
-> IoArgoprojCronworkflowV1alpha1WorkflowList list_namespaced_cronworkflows(namespace, field_selector=field_selector, label_selector=label_selector, resource_version=resource_version, timeout_seconds=timeout_seconds, watch=watch)
+> V1alpha1CronWorkflowList list_namespaced_cronworkflows(namespace, field_selector=field_selector, label_selector=label_selector, resource_version=resource_version, timeout_seconds=timeout_seconds, watch=watch)
 
 
 
@@ -1165,7 +1165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IoArgoprojCronworkflowV1alpha1WorkflowList**](IoArgoprojCronworkflowV1alpha1WorkflowList.md)
+[**V1alpha1CronWorkflowList**](V1alpha1CronWorkflowList.md)
 
 ### Authorization
 
@@ -1482,7 +1482,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.V1alpha1Api(api_client)
     namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
-body = openapi_client.IoArgoprojCronworkflowV1alpha1Workflow() # IoArgoprojCronworkflowV1alpha1Workflow | The JSON schema of the Workflow to patch.
+body = openapi_client.V1alpha1CronWorkflow() # V1alpha1CronWorkflow | The JSON schema of the Workflow to patch.
 
     try:
         api_response = api_instance.patch_namespaced_cronworkflow(namespace, name, body)
@@ -1497,7 +1497,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**| The custom resource&#39;s namespace | 
  **name** | **str**| Unique Workflow name | 
- **body** | **IoArgoprojCronworkflowV1alpha1Workflow**| The JSON schema of the Workflow to patch. | 
+ **body** | [**V1alpha1CronWorkflow**](V1alpha1CronWorkflow.md)| The JSON schema of the Workflow to patch. | 
 
 ### Return type
 
@@ -1764,7 +1764,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **replace_namespaced_cronworkflow**
-> IoArgoprojCronworkflowV1alpha1Workflow replace_namespaced_cronworkflow(namespace, name, body)
+> V1alpha1CronWorkflow replace_namespaced_cronworkflow(namespace, name, body)
 
 
 
@@ -1806,7 +1806,7 @@ with openapi_client.ApiClient(configuration) as api_client:
     api_instance = openapi_client.V1alpha1Api(api_client)
     namespace = 'namespace_example' # str | The custom resource's namespace
 name = 'name_example' # str | Unique Workflow name
-body = openapi_client.IoArgoprojCronworkflowV1alpha1Workflow() # IoArgoprojCronworkflowV1alpha1Workflow | The JSON schema of the Workflow to replace.
+body = openapi_client.V1alpha1CronWorkflow() # V1alpha1CronWorkflow | The JSON schema of the Workflow to replace.
 
     try:
         api_response = api_instance.replace_namespaced_cronworkflow(namespace, name, body)
@@ -1821,11 +1821,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **namespace** | **str**| The custom resource&#39;s namespace | 
  **name** | **str**| Unique Workflow name | 
- **body** | **IoArgoprojCronworkflowV1alpha1Workflow**| The JSON schema of the Workflow to replace. | 
+ **body** | [**V1alpha1CronWorkflow**](V1alpha1CronWorkflow.md)| The JSON schema of the Workflow to replace. | 
 
 ### Return type
 
-[**IoArgoprojCronworkflowV1alpha1Workflow**](IoArgoprojCronworkflowV1alpha1Workflow.md)
+[**V1alpha1CronWorkflow**](V1alpha1CronWorkflow.md)
 
 ### Authorization
 

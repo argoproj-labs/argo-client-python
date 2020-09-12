@@ -4,13 +4,17 @@ Changelog
 
 argo/
 -----
+- [argo-2.10.0] generate client for argo 2.10.0. [Yudi Xue]
+- [argo-2.10.0] add builder image. [Yudi Xue]
+- [argo-2.10.0] disable validate temporarily. [Yudi Xue]
+- Output of `make changelog` [Floris Van den Abeele]
 - Add output of `make client` [Floris Van den Abeele]
 - Bump argo version to v2.10.0. [Floris Van den Abeele]
 - :tada: Release 3.4. [Floris Van den Abeele]
 - Changes for latest argo version (2.8.1) [Floris Van den Abeele]
 
 
-v3.2.0 (2020-06-02)
+v3.2.0 (2020-03-19)
 -------------------
 
 New
@@ -35,11 +39,6 @@ Fix
 
 Other
 ~~~~~
-- :tada: Release 3.2. [Floris Van den Abeele]
-- :tada: Release 3.2. [Floris Van den Abeele]
-- :tada: Release 3.2. [Floris Van den Abeele]
-- :tada: Release 3.2. [Floris Van den Abeele]
-- :tada: Release 3.2. [Floris Van den Abeele]
 - :wrench: Patch 3.2.0. [Marek Cermak]
 
 

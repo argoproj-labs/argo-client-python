@@ -5,7 +5,7 @@ PACKAGE_NAME        = workflows.client
 PACKAGE_DESCRIPTION = Python client for Argo Workflows
 
 CURRENT_DIR ?= $(shell pwd)
-OUTPUT_DIR  ?= ./
+OUTPUT_DIR  ?= .
 
 define get_branch
 $(shell git branch | sed -n '/\* /s///p')
@@ -43,7 +43,7 @@ endif
 
 CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${v:0:5}")
 
-ARGO_VERSION      ?= 2.10.0
+ARGO_VERSION      ?= 2.10.1
 ARGO_API_GROUP    ?= argoproj.io
 ARGO_API_VERSION  ?= v1alpha1
 ARGO_OPENAPI_SPEC  = openapi/specs/argo-${ARGO_VERSION}.json
@@ -114,12 +114,13 @@ validate:
 spec:
 	# Make sure the folders exist
 	mkdir -p openapi/specs/
+	mkdir -p openapi/definitions/
 
-	@echo "Collecting API spec for Argo ${ARGO_VERSION}"
+	@echo "Collecting API spec for Kubernetes ${ARGO_VERSION}"
 	curl -sSL https://raw.githubusercontent.com/kubernetes/kubernetes/${KUBERNETES_BRANCH}/api/openapi-spec/swagger.json \
 		-o ${KUBERNETES_OPENAPI_SPEC}
 
-	@echo "Collecting API spec for Kubernetes ${KUBERNETES_BRANCH}"
+	@echo "Collecting API spec for Argo ${KUBERNETES_BRANCH}"
 	curl -sSL https://raw.githubusercontent.com/argoproj/argo/v${ARGO_VERSION}/api/openapi-spec/swagger.json \
 		-o ${ARGO_OPENAPI_SPEC}
 
@@ -167,8 +168,8 @@ preprocess:
 	jq -r '.definitions."v1alpha1.DAGTask".required = ["name"]' ${OPENAPI_SPEC} |\
 	sponge ${OPENAPI_SPEC}
 
-
-client:
+.PHONY:client
+client: clean
 	-find  ${OUTPUT_DIR}/argo/workflows/client/* -maxdepth 1 -not -name "__*__.py" -exec rm -r {} \;
 	-rm -r ${OUTPUT_DIR}/docs/
 	-rm -r ${OUTPUT_DIR}/workflows/

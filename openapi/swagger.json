@@ -3,7 +3,7 @@
   "info": {
     "title": "Argo",
     "description": "Python client for Argo Workflows",
-    "version": "2.10.0"
+    "version": "2.10.1"
   },
   "security": [
     {
@@ -308,7 +308,7 @@
         "x-codegen-request-body-name": "body"
       }
     },
-    "/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows": {
+    "/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows": {
       "parameters": [
         {
           "name": "namespace",
@@ -372,7 +372,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.WorkflowList"
+              "$ref": "#/definitions/v1alpha1.CronWorkflowList"
             }
           },
           "401": {
@@ -401,7 +401,7 @@
             "description": "The JSON schema of the Workflow to create.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+              "$ref": "#/definitions/v1alpha1.CronWorkflow"
             },
             "in": "body"
           }
@@ -410,7 +410,7 @@
           "201": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+              "$ref": "#/definitions/v1alpha1.CronWorkflow"
             }
           },
           "401": {
@@ -420,7 +420,7 @@
         "x-codegen-request-body-name": "body"
       }
     },
-    "/apis/argoproj.io/v1alpha1/namespaces/{namespace}/croncronworkflows/{name}": {
+    "/apis/argoproj.io/v1alpha1/namespaces/{namespace}/cronworkflows/{name}": {
       "parameters": [
         {
           "name": "namespace",
@@ -447,7 +447,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+              "$ref": "#/definitions/v1alpha1.CronWorkflow"
             }
           },
           "401": {
@@ -539,7 +539,7 @@
             "description": "The JSON schema of the Workflow to patch.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+              "$ref": "#/definitions/v1alpha1.CronWorkflow"
             },
             "in": "body"
           }
@@ -578,7 +578,7 @@
             "description": "The JSON schema of the Workflow to replace.",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+              "$ref": "#/definitions/v1alpha1.CronWorkflow"
             },
             "in": "body"
           }
@@ -587,7 +587,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/io.argoproj.cronworkflow.v1alpha1.Workflow"
+              "$ref": "#/definitions/v1alpha1.CronWorkflow"
             }
           },
           "401": {
