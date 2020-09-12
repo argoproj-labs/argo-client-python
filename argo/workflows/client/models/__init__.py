@@ -200,5 +200,3 @@ from argo.workflows.client.models.v1alpha1_workflow_template_spec import V1alpha
 from argo.workflows.client.models.v1alpha1_workflow_template_update_request import V1alpha1WorkflowTemplateUpdateRequest
 from argo.workflows.client.models.v1alpha1_workflow_terminate_request import V1alpha1WorkflowTerminateRequest
 from argo.workflows.client.models.v1alpha1_workflow_watch_event import V1alpha1WorkflowWatchEvent
-
-from kubernetes.client.models import *

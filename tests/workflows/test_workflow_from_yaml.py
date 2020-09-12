@@ -20,8 +20,6 @@ def test_submit_hello_world_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    # TODO: V1Container default value for name should be ''
-    manifest['spec']['templates'][0]['container']['name'] = ''
     v1alpha1 = V1alpha1Api()
     # Submit the Workflow to the `argo` namespace
     v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
