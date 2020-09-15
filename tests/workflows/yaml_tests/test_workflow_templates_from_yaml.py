@@ -10,7 +10,6 @@ ARGO_VERSION = open("ARGO_VERSION").read()
 load_kube_config()  # loads local configuration from ~/.kube/config
 
 DAG_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/dag.yaml'
-
 HELLO_WORLD_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/hello-world.yaml'
 RETRY_WITH_STEPS_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/retry-with-steps.yaml'
 STEPS_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/steps.yaml'
