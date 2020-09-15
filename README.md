@@ -45,7 +45,10 @@ manifest: dict = yaml.safe_load(resp.text)
 v1alpha1.create_namespaced_workflow(namespace, manifest)
 ```
 
-<sup>*</sup> When working on a higher level of abstraction, check out the [Argo Python DSL](https://github.com/CermakM/argo-python-dsl)
+When working on a higher level of abstraction, check out the following projects:
+
+* [Couler](https://github.com/couler-proj/couler) that provides a simplified and unified interface for constructing and managing workflows
+* [Argo Python DSL](https://github.com/CermakM/argo-python-dsl)
 
 ## Versioning
 
