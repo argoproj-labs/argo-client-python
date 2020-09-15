@@ -12,13 +12,13 @@ __all__ = [
 ]
 
 __title__ = "argo-workflows"
-__summary__ = "Client for Argo Workflows"
-__uri__ = "https://github.com/CermakM/argo-client-python"
+__summary__ = "Community Maintained Python client for Argo Workflows"
+__uri__ = "https://github.com/argoproj-labs/argo-client-python"
 
-__version__ = "3.4.0"
+__version__ = "3.5.0"
 
-__author__ = "Marek Cermak"
-__email__ = "macermak@redhat.com"
+__author__ = "Yudi Xue, Marek Cermak"
+__email__ = "binarycrayon@gmail.com, macermak@redhat.com"
 
 __license__ = "MIT"
-__copyright__ = "Copyright 2019 {0}".format(__author__)
+__copyright__ = "Copyright 2020 {0}".format(__author__)
