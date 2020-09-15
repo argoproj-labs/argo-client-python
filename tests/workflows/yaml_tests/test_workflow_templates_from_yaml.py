@@ -11,7 +11,6 @@ load_kube_config()  # loads local configuration from ~/.kube/config
 
 DAG_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/dag.yaml'
 HELLO_WORLD_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/hello-world.yaml'
-RETRY_WITH_STEPS_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/retry-with-steps.yaml'
 STEPS_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/steps.yaml'
 TEMPLATES_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/templates.yaml'
 WORKFLOW_TEMPLATE_REF_WITH_ENTRY_POINT_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/workflow-template/workflow-template-ref-with-entrypoint-arg-passing.yaml'
@@ -44,15 +43,6 @@ def test_submit_hello_world_workflow():
     manifest: dict = yaml.safe_load(resp.text)
     v1alpha1 = V1alpha1Api()
     v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
-
-
-# def test_submit_retry_with_steps_workflow():
-#     resp = requests.get(RETRY_WITH_STEPS_YML)
-#     resp.raise_for_status()
-
-#     manifest: dict = yaml.safe_load(resp.text)
-#     v1alpha1 = V1alpha1Api()
-#     v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
 
 
 def test_submit_steps_workflow():

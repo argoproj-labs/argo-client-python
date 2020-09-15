@@ -64,8 +64,15 @@ LOOPS_PARAM_ARGUMENT_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{A
 LOOPS_PARAM_RESULT_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/loops-param-result.yaml'
 LOOPS_SEQUENCE_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/loops-sequence.yaml'
 LOOPS_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/loops.yaml'
+
+# Parameter aggregation
 PARAMETER_AGGREGATION_SCRIPT_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/parameter-aggregation-script.yaml'
 PARAMETER_AGGREGATION_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/parameter-aggregation.yaml'
+
+# Scripts
+SCRIPTS_BASH_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/scripts-bash.yaml'
+SCRIPTS_PYTHON_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/scripts-python.yaml'
+SCRIPTS_JAVASCRIPT_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/scripts-javascript.yaml'
 
 
 def test_submit_hello_world_workflow():
@@ -415,6 +422,33 @@ def test_submit_parameter_aggregation_script_workflow():
 
 def test_submit_parameter_aggregation_workflow():
     resp = requests.get(PARAMETER_AGGREGATION_YML)
+    resp.raise_for_status()
+
+    manifest: dict = yaml.safe_load(resp.text)
+    v1alpha1 = V1alpha1Api()
+    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+
+def test_submit_script_bash_workflow():
+    resp = requests.get(SCRIPTS_BASH_YML)
+    resp.raise_for_status()
+
+    manifest: dict = yaml.safe_load(resp.text)
+    v1alpha1 = V1alpha1Api()
+    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+
+def test_submit_script_javascript_workflow():
+    resp = requests.get(SCRIPTS_JAVASCRIPT_YML)
+    resp.raise_for_status()
+
+    manifest: dict = yaml.safe_load(resp.text)
+    v1alpha1 = V1alpha1Api()
+    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+
+def test_submit_script_python_workflow():
+    resp = requests.get(SCRIPTS_PYTHON_YML)
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
