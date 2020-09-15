@@ -1,5 +1,6 @@
 # V1alpha1Arguments
 
+Arguments to a template
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

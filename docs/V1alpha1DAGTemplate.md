@@ -1,5 +1,6 @@
 # V1alpha1DAGTemplate
 
+DAGTemplate is a template subtype for directed acyclic graph templates
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

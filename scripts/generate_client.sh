@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set +x
+
 set -o errexit
 set -o nounset
 set -o pipefail
@@ -13,43 +15,50 @@ _patch() {
 
     echo "--- Patching generated code..."
 
-    # Fix issue with Swagger not respecting Python subpackages
-    cp -rl ${output_dir}/${PACKAGE_NAME}/* "${output_dir}/${PACKAGE_NAME//[.]/\/}/" ; rm -r ${output_dir}/${PACKAGE_NAME}
+    # Fix imports
+    find "${output_dir}/openapi_client/" -type f -name \*.py -exec sed -i 's/import openapi_client\./import argo.workflows.client./g' {} +
+    find "${output_dir}/openapi_client/" -type f -name \*.py -exec sed -i 's/from openapi_client/from argo.workflows.client/g' {} +
+    find "${output_dir}/openapi_client/" -type f -name \*.py -exec sed -i 's/getattr(openapi_client\.models/getattr(argo.workflows.client.models/g' {} +
+    find "${output_dir}/openapi_client/" -type f -name \*_v1_container.py -exec sed -i 's/name\=None/name\=\'\''/g' {} +
 
 	# Replace io.k8s models with python kubernetes.client.library
-    find "$output_dir/${PACKAGE_NAME//[.]/\/}/" -type f \
+    find "$output_dir/openapi_client/" -type f \
         -exec sed -i "/import IoK8s/d" {} \; \
         -exec sed -i "s/IoK8sApiCore\|IoK8sApimachineryPkgApisMeta//g" {} \;
 
     # Import kubernetes to the relevant files
-    find "$output_dir/${PACKAGE_NAME//[.]/\/}/" ! -path '*/__pycache__/*' -type f | while read fname; do
-    {
-        set +o pipefail
+    # find "$output_dir/openapi_client/" ! -path '*/__pycache__/*' -type f | while read fname; do
+    # {
+    #     set +o pipefail
 
-        ln=$(grep -P "V1(?!alpha)" ${fname} >/dev/null && grep -n "import" ${fname} | tail -n1 | awk '{print $1}' FS=":" || true)
-        if [ ! -z "${ln}" ]; then
-            let ln++
+    #     ln=$(grep -P "V1(?!alpha)" ${fname} >/dev/null && grep -n "class" ${fname} | head -n1 | awk '{print $1}' FS=":" || true)
+    #     if [ ! -z "${ln}" ]; then
+    #         let ln--
 
-            grep -P 'V1(?!alpha)[a-zA-Z]+' -oh ${fname} | sort -u | while read model; do
-                let ln++
-                sed -i "${ln}i from kubernetes.client.models import ${model}" ${fname}
-            done
-        fi
-    }
-    done
+    #         grep -P 'V1(?!alpha)[a-zA-Z]+' -oh ${fname} | sort -u | while read model; do
+    #             sed -i "${ln}i from kubernetes.client.models import ${model}" ${fname}
+    #             let ln++
+    #         done
 
+    #         sed -i 's/^class/\n&/1' ${fname}
+    #     fi
+    # }
+    # done
+
+    # TODO: yxue: why?
     # Import all kubernetes models
-    {
-        models="$output_dir/${PACKAGE_NAME//[.]/\/}/models/__init__.py"
-        echo -e '\nfrom kubernetes.client.models import *' >> ${models}
-    }
+    # {
+    #     models="$output_dir/openapi_client/models/__init__.py"
+    #     echo -e '\nfrom kubernetes.client.models import *' >> ${models}
+    # }
 
-    # Prepend imports from workflow.client with argo
-    find "$output_dir/${PACKAGE_NAME//[.]/\/}/" -name '*.py' -type f | while read fname; do
-    {
-        sed -i "s/workflows\.client/argo.workflows.client/g" $fname
-    }
-    done
+    # Add __version__ to the client package
+     echo -e "\nfrom .__about__ import __version__" \
+         >> "$output_dir/openapi_client/__init__.py"
+
+    # Create a Python subpackage
+    mkdir -p "${output_dir}/${PACKAGE_NAME//[.]/\/}/"
+    cp -rl ${output_dir}/openapi_client/* "${output_dir}/${PACKAGE_NAME//[.]/\/}/"
 
     echo "--- Done."
 }
@@ -99,18 +108,18 @@ argo::generate::generate_client() {
     local output_dir="$1"
     local openapi_spec="$2"
     local openapi_config="$3"
-
+    echo $(pwd)
     mkdir -m 755 -p $output_dir
-	docker run --user ${UID} --rm -v ${PWD}:/local:z swaggerapi/swagger-codegen-cli generate \
-		-l python \
+	docker run --user ${UID} --rm -v $(pwd):/local openapitools/openapi-generator-cli:v4.3.1 generate \
+		-g python \
 		-c /local/${openapi_config} \
 		-i /local/${openapi_spec} \
 		-o /local/${output_dir} \
-        -DmodelTests=false \
-		-DpackageName=${PACKAGE_NAME} \
-		-DpackageVersion=${CLIENT_VERSION}
+ 		--global-property modelTests=false \
+ 		--global-property packageName=${PACKAGE_NAME} \
+ 		--global-property packageVersion=${CLIENT_VERSION}
 
-    CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/workflows/" )
+    CLEANUP_DIRS=( "${output_dir}/test" "${output_dir}/openapi_client" )
 
     _patch   $output_dir
     _cleanup $output_dir

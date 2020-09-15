@@ -1,8 +1,11 @@
+SHELL := /bin/bash
+
+BUILDER_IMAGE				= argo-builder
 PACKAGE_NAME        = workflows.client
 PACKAGE_DESCRIPTION = Python client for Argo Workflows
 
 CURRENT_DIR ?= $(shell pwd)
-OUTPUT_DIR  ?= ./
+OUTPUT_DIR  ?= .
 
 define get_branch
 $(shell git branch | sed -n '/\* /s///p')
@@ -40,12 +43,12 @@ endif
 
 CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${v:0:5}")
 
-ARGO_VERSION      ?= 2.5.0-rc10
+ARGO_VERSION      ?= $(shell cat ARGO_VERSION)
 ARGO_API_GROUP    ?= argoproj.io
 ARGO_API_VERSION  ?= v1alpha1
 ARGO_OPENAPI_SPEC  = openapi/specs/argo-${ARGO_VERSION}.json
 
-KUBERNETES_BRANCH      ?= release-1.14
+KUBERNETES_BRANCH      ?= release-1.16
 KUBERNETES_OPENAPI_SPEC = openapi/specs/kubernetes-${KUBERNETES_BRANCH}.json
 
 OPENAPI_SPEC   = openapi/swagger.json
@@ -54,8 +57,8 @@ OPENAPI_CONFIG = openapi/custom/config.json
 PYPI_REPOSITORY ?= https://upload.pypi.org/legacy/
 
 .PHONY: all
-all: clean validate spec preprocess client
-
+all: clean spec preprocess client
+# all: clean validate spec preprocess client
 
 .PHONY: clean
 clean:
@@ -111,12 +114,13 @@ validate:
 spec:
 	# Make sure the folders exist
 	mkdir -p openapi/specs/
+	mkdir -p openapi/definitions/
 
-	@echo "Collecting API spec for Argo ${ARGO_VERSION}"
+	@echo "Collecting API spec for Kubernetes ${ARGO_VERSION}"
 	curl -sSL https://raw.githubusercontent.com/kubernetes/kubernetes/${KUBERNETES_BRANCH}/api/openapi-spec/swagger.json \
 		-o ${KUBERNETES_OPENAPI_SPEC}
 
-	@echo "Collecting API spec for Kubernetes ${KUBERNETES_BRANCH}"
+	@echo "Collecting API spec for Argo ${KUBERNETES_BRANCH}"
 	curl -sSL https://raw.githubusercontent.com/argoproj/argo/v${ARGO_VERSION}/api/openapi-spec/swagger.json \
 		-o ${ARGO_OPENAPI_SPEC}
 
@@ -152,8 +156,11 @@ spec:
 
 preprocess:
 	@echo "Preprocessing API specs"
-	python scripts/preprocess.py -i ${OPENAPI_SPEC} \
+	python3 scripts/preprocess.py -i ${OPENAPI_SPEC} \
 		-d 'io.argoproj.workflow' \
+		-d 'cronio.argoproj.workflow' \
+		-d 'io.k8s.api.core' \
+		-d 'io.k8s.apimachinery.pkg.apis.meta' \
 		-o ${OPENAPI_SPEC} >/dev/null
 
 	# Replace empty references
@@ -164,8 +171,13 @@ preprocess:
 	jq -r '.definitions."v1alpha1.DAGTask".required = ["name"]' ${OPENAPI_SPEC} |\
 	sponge ${OPENAPI_SPEC}
 
+.PHONY:client
+client: clean
+	-find  ${OUTPUT_DIR}/argo/workflows/client/* -maxdepth 1 -not -name "__*__.py" -exec rm -r {} \;
+	-rm -r ${OUTPUT_DIR}/docs/
+	-rm -r ${OUTPUT_DIR}/workflows/
+	-rm -r ${OUTPUT_DIR}/${PACKAGE_NAME}/
 
-client:
 	@echo "Generating Argo ${ARGO_VERSION} client"
 
 	CLIENT_VERSION=${CLIENT_VERSION} \
@@ -175,3 +187,10 @@ client:
 
 changelog:
 	RELEASE_VERSION=${CLIENT_VERSION} ./scripts/generate_changelog.sh
+
+.PHONY:builder_image
+builder_image:
+	docker build -f builder_image/Dockerfile -t ${BUILDER_IMAGE} .
+
+builder_make:
+	docker run -w `pwd` -it --entrypoint make --rm -v `pwd`:`pwd` -v /var/run/docker.sock:/var/run/docker.sock ${BUILDER_IMAGE}

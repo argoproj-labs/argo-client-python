@@ -1,5 +1,6 @@
 # V1alpha1Inputs
 
+Inputs are the mechanism for passing parameters, artifacts, volumes from one template to another
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

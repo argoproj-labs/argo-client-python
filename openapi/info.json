@@ -1,0 +1,7 @@
+{
+  "info": {
+    "title": "Argo",
+    "description": "Python client for Argo Workflows",
+    "version": "2.10.2"
+  }
+}

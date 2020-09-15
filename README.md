@@ -1,6 +1,8 @@
 # Argo Workflows Client
 Python client for Argo Workflows
 
+![](https://github.com/argoproj-labs/argo-client-python/workflows/CI/badge.svg)
+
 
 ## Installation
 
@@ -45,7 +47,10 @@ manifest: dict = yaml.safe_load(resp.text)
 v1alpha1.create_namespaced_workflow(namespace, manifest)
 ```
 
-<sup>*</sup> When working on a higher level of abstraction, check out the [Argo Python DSL](https://github.com/CermakM/argo-python-dsl)
+When working on a higher level of abstraction, check out the following projects:
+
+* [Couler](https://github.com/couler-proj/couler) that provides a simplified and unified interface for constructing and managing workflows
+* [Argo Python DSL](https://github.com/CermakM/argo-python-dsl)
 
 ## Versioning
 
@@ -55,10 +60,11 @@ We follow semantic versioning, the client starts at version `1.0` which matches 
 
 #### Compatibility matrix
 
-|                    | Argo 2.3       | Argo 2.4        |
-|--------------------|----------------|-----------------|
-| client-python 1.0  |✓               |-                |
-| client-python 2.0  |+               |✓                |
+|                    | Argo 2.3       | Argo 2.4        | Argo 2.5        |
+|--------------------|----------------|-----------------|-----------------|
+| client-python 1.0  |✓               |-                |-                |
+| client-python 2.0  |+               |✓                |-                |
+| client-python 3.0  |+               |+                |✓                |
 
 Key:
 
