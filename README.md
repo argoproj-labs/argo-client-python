@@ -1,6 +1,8 @@
 # Argo Workflows Client
 Python client for Argo Workflows
 
+![](https://github.com/argoproj-labs/argo-client-python/workflows/CI/badge.svg)
+
 
 ## Installation
 
