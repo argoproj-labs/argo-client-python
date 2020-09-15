@@ -1,4 +1,5 @@
-# Argo Workflows Client
+# Argo Workflows Python Client
+
 Python client for Argo Workflows
 
 ![](https://github.com/argoproj-labs/argo-client-python/workflows/CI/badge.svg)
