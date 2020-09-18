@@ -71,11 +71,9 @@ clean:
 
 .PHONY: patch
 patch: SHELL:=/bin/bash
-patch: all
-	- rm -rf build/ dist/
-	- git tag --delete "v${CLIENT_VERSION}"
+patch:
 
-	$(MAKE) changelog
+
 
 	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/client/__about__.py
 
@@ -194,3 +192,6 @@ builder_image:
 
 builder_make:
 	docker run -w `pwd` -it --entrypoint make --rm -v `pwd`:`pwd` -v /var/run/docker.sock:/var/run/docker.sock ${BUILDER_IMAGE}
+
+builder_patch:
+	docker run -w `pwd` -it --entrypoint make --rm -v `pwd`:`pwd` -v /var/run/docker.sock:/var/run/docker.sock ${BUILDER_IMAGE} patch
