@@ -2,16 +2,498 @@ Changelog
 =========
 
 
-argo/
+3.5.0
 -----
-- [argo-2.10.0] generate client for argo 2.10.0. [Yudi Xue]
-- [argo-2.10.0] add builder image. [Yudi Xue]
-- [argo-2.10.0] disable validate temporarily. [Yudi Xue]
-- Output of `make changelog` [Floris Van den Abeele]
-- Add output of `make client` [Floris Van den Abeele]
-- Bump argo version to v2.10.0. [Floris Van den Abeele]
-- :tada: Release 3.4. [Floris Van den Abeele]
-- Changes for latest argo version (2.8.1) [Floris Van den Abeele]
+- Argo/v2.10.2 (#12) [Floris Van den Abeele, Yuan Tang, binarycrayon]
+
+  * new: usr: Generated models for Argo v2.5.0 release
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * :tada: Release 3.0
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * new: doc: Updated README compatibility matrix
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   README.md
+
+  * :wrench: Patch 3.0.1
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * new: dev: Do not ignore release commits in CLOG !minor
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   .gitchangelog.rc
+
+  * :wrench: Patch 3.0.2
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * chg: dev: Add __version__ to the client package
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   .swagger-codegen/VERSION
+  modified:   argo/workflows/client/__init__.py
+  modified:   argo/workflows/client/configuration.py
+  modified:   scripts/generate_client.sh
+
+  * :wrench: Patch 3.0.3
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * chg: dev: Use Kubernetes>=10.0 for pyyaml security
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Pipfile
+
+  * :wrench: Patch 3.1.0
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * fix: dev: Fixed Kubernetes version in requirements.txt
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   requirements.txt
+
+  * :wrench: Patch 3.1.1
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * chg: dev: Use openapi generator
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Makefile
+  modified:   scripts/generate_client.sh
+  modified:   .gitignore
+  new file:   .openapi-generator-ignore
+  new file:   .openapi-generator/VERSION
+
+  * new: dev: Re-generate client with openapi
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * fix: dev: Added exceptions module
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  new file:   argo/workflows/client/exceptions.py
+
+  * :wrench: Patch 3.2.0
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * Changes for latest argo version (2.8.1)
+
+  * :tada: Release 3.4
+
+  Signed-off-by: Floris Van den Abeele <floris@vdna.be>
+
+  * Bump argo version to v2.10.0
+
+  * Add output of `make client`
+
+  * Output of `make changelog`
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] disable validate temporarily
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add builder image
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] generate client for argo 2.10.0
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-v2.10.0] fix croncronworkflow in custom/paths.json
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] fix io.argoproj.cronworkflow path
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] generate client for 2.10.1
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] fix archivedworkflow paths
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] pin openapi-generator to v4.3.1
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] generate argo client for v2.10.1
+
+  - re-generate with fixed archived workflow path
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * Bump kubernetes python client dependency to 12.0.0b1 (#5)
+
+  * [argo-2.10.0] Collapse additional paths
+
+  - collapse 'cronio.argoproj.workflow'
+  - collapse 'io.k8s.api.core'
+  - collapse 'io.k8s.apimachinery.pkg.apis.meta'
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] Re-generate client with updated paths
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] Setup pytest for integ test
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] update generate_client.sh
+
+  - disable using kubernetes models for now
+  - hack: make V1Container default name to '' instead of None
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] update kubernetes client version
+
+  - move to kubernetes release-1.16 api, which is used by kubernetes 12.0.0 python
+  client
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] regenerate client and update test
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add code formatter tool
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add more tests
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add github action workflow
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] fix github action workflow
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add special manifest and update CI workflow
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * Added note on manifest changes (#7)
+
+  * [argo-2.10.0] add isort config
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add integ tests for artifact and dag examples
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] Add more integ tests
+
+  - tests for exit handling
+  - tests for global scopes
+  - tests for inputs
+  - tests for loops
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] Add ARGO_VERSION and point to 2.10.2
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] generate client for 2.10.2 and update tests
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] update integ tests to argo 2.10.2
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add more tests; update test structure
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * Add Couler to README.md (#8)
+
+  * [argo-2.10.0] add additional integ tests
+
+  - more tests for submitting k8s workflow w/ yaml
+  - more tests for submitting parallelism workflow w/ yaml
+  - more tests for submitting workflow templates w/ yaml
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add more tests, fixes #6
+
+  - add pod spec from yaml tests
+  - add retry workflow from yaml tests
+- Add “python” to the header of README (#10) [Yuan Tang]
+- Support argo 2.10.2 API, ready for release (#9) [Floris Van den
+  Abeele, Yuan Tang, binarycrayon]
+
+  * new: usr: Generated models for Argo v2.5.0 release
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * :tada: Release 3.0
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * new: doc: Updated README compatibility matrix
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   README.md
+
+  * :wrench: Patch 3.0.1
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * new: dev: Do not ignore release commits in CLOG !minor
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   .gitchangelog.rc
+
+  * :wrench: Patch 3.0.2
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * chg: dev: Add __version__ to the client package
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   .swagger-codegen/VERSION
+  modified:   argo/workflows/client/__init__.py
+  modified:   argo/workflows/client/configuration.py
+  modified:   scripts/generate_client.sh
+
+  * :wrench: Patch 3.0.3
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * chg: dev: Use Kubernetes>=10.0 for pyyaml security
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Pipfile
+
+  * :wrench: Patch 3.1.0
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * fix: dev: Fixed Kubernetes version in requirements.txt
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   requirements.txt
+
+  * :wrench: Patch 3.1.1
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * chg: dev: Use openapi generator
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  modified:   Makefile
+  modified:   scripts/generate_client.sh
+  modified:   .gitignore
+  new file:   .openapi-generator-ignore
+  new file:   .openapi-generator/VERSION
+
+  * new: dev: Re-generate client with openapi
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * fix: dev: Added exceptions module
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  new file:   argo/workflows/client/exceptions.py
+
+  * :wrench: Patch 3.2.0
+
+  Signed-off-by: Marek Cermak <macermak@redhat.com>
+
+  * Changes for latest argo version (2.8.1)
+
+  * :tada: Release 3.4
+
+  Signed-off-by: Floris Van den Abeele <floris@vdna.be>
+
+  * Bump argo version to v2.10.0
+
+  * Add output of `make client`
+
+  * Output of `make changelog`
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] disable validate temporarily
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add builder image
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] generate client for argo 2.10.0
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-v2.10.0] fix croncronworkflow in custom/paths.json
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] fix io.argoproj.cronworkflow path
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] generate client for 2.10.1
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] fix archivedworkflow paths
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] pin openapi-generator to v4.3.1
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] generate argo client for v2.10.1
+
+  - re-generate with fixed archived workflow path
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * Bump kubernetes python client dependency to 12.0.0b1 (#5)
+
+  * [argo-2.10.0] Collapse additional paths
+
+  - collapse 'cronio.argoproj.workflow'
+  - collapse 'io.k8s.api.core'
+  - collapse 'io.k8s.apimachinery.pkg.apis.meta'
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] Re-generate client with updated paths
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] Setup pytest for integ test
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] update generate_client.sh
+
+  - disable using kubernetes models for now
+  - hack: make V1Container default name to '' instead of None
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] update kubernetes client version
+
+  - move to kubernetes release-1.16 api, which is used by kubernetes 12.0.0 python
+  client
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] regenerate client and update test
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add code formatter tool
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add more tests
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add github action workflow
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] fix github action workflow
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add special manifest and update CI workflow
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * Added note on manifest changes (#7)
+
+  * [argo-2.10.0] add isort config
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add integ tests for artifact and dag examples
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] Add more integ tests
+
+  - tests for exit handling
+  - tests for global scopes
+  - tests for inputs
+  - tests for loops
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] Add ARGO_VERSION and point to 2.10.2
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] generate client for 2.10.2 and update tests
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] update integ tests to argo 2.10.2
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add more tests; update test structure
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * Add Couler to README.md (#8)
+
+  * [argo-2.10.0] add additional integ tests
+
+  - more tests for submitting k8s workflow w/ yaml
+  - more tests for submitting parallelism workflow w/ yaml
+  - more tests for submitting workflow templates w/ yaml
+
+  Signed-off-by: Yudi Xue <10211+binarycrayon@users.noreply.github.com>
+
+  * [argo-2.10.0] add more tests, fixes #6
+
+  - add pod spec from yaml tests
+  - add retry workflow from yaml tests
 
 
 v3.2.0 (2020-03-19)
