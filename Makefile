@@ -73,10 +73,11 @@ clean:
 patch: SHELL:=/bin/bash
 patch:
 
+
+
 	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/client/__about__.py
 
 	python setup.py sdist bdist_wheel
-
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
 
 	git commit -a -m ":wrench: Patch ${CLIENT_VERSION}" --signoff
