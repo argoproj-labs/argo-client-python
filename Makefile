@@ -71,15 +71,12 @@ clean:
 
 .PHONY: patch
 patch: SHELL:=/bin/bash
-patch: all
-	- rm -rf build/ dist/
-	- git tag --delete "v${CLIENT_VERSION}"
-
-	$(MAKE) changelog
+patch:
 
 	sed -i "s/__version__ = \(.*\)/__version__ = \"${CLIENT_VERSION}\"/g" argo/workflows/client/__about__.py
 
 	python setup.py sdist bdist_wheel
+
 	twine check dist/* || (echo "Twine check did not pass. Aborting."; exit 1)
 
 	git commit -a -m ":wrench: Patch ${CLIENT_VERSION}" --signoff
@@ -194,3 +191,6 @@ builder_image:
 
 builder_make:
 	docker run -w `pwd` -it --entrypoint make --rm -v `pwd`:`pwd` -v /var/run/docker.sock:/var/run/docker.sock ${BUILDER_IMAGE}
+
+builder_patch:
+	docker run -w `pwd` -it --entrypoint make --rm -v `pwd`:`pwd` -v /var/run/docker.sock:/var/run/docker.sock ${BUILDER_IMAGE} patch

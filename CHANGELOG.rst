@@ -4,6 +4,7 @@ Changelog
 
 3.5.0
 -----
+- [release-3.5] generate changelog for argo-workflows v3.5. [Yudi Xue]
 - Argo/v2.10.2 (#12) [Floris Van den Abeele, Yuan Tang, binarycrayon]
 
   * new: usr: Generated models for Argo v2.5.0 release
