@@ -2,8 +2,17 @@ Changelog
 =========
 
 
-3.5.0
+3.5.1
 -----
+- Downgrade k8s Python SDK to >=11.0.0 (#14) [Yuan Tang]
+- Release 3.5 (#13) [binarycrayon]
+
+  * [release-3.5] generate changelog for argo-workflows v3.5
+
+
+v3.5.0 (2020-09-18)
+-------------------
+- :wrench: Patch 3.5.0. [Yudi Xue]
 - :wrench: Patch 3.5.0. [Yudi Xue]
 - [release-3.5] generate changelog for argo-workflows v3.5. [Yudi Xue]
 - Argo/v2.10.2 (#12) [Floris Van den Abeele, Yuan Tang, binarycrayon]

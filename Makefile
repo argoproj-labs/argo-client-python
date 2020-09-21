@@ -85,7 +85,7 @@ patch:
 
 .PHONY: release
 release: SHELL:=/bin/bash
-release: all
+release:
 	- rm -rf build/ dist/
 	- git tag --delete "v${CLIENT_VERSION}"
 
@@ -193,5 +193,5 @@ builder_image:
 builder_make:
 	docker run -w `pwd` -it --entrypoint make --rm -v `pwd`:`pwd` -v /var/run/docker.sock:/var/run/docker.sock ${BUILDER_IMAGE}
 
-builder_patch:
-	docker run -w `pwd` -it --entrypoint make --rm -v `pwd`:`pwd` -v /var/run/docker.sock:/var/run/docker.sock ${BUILDER_IMAGE} patch
+builder_release:
+	docker run -w `pwd` -it --entrypoint make --rm -v `pwd`:`pwd` -v /var/run/docker.sock:/var/run/docker.sock ${BUILDER_IMAGE} release
