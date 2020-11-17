@@ -3,7 +3,7 @@
   "info": {
     "title": "Argo",
     "description": "Python client for Argo Workflows",
-    "version": "2.10.2"
+    "version": "2.11.7"
   },
   "security": [
     {
@@ -1338,6 +1338,10 @@
         "s3": {
           "$ref": "#/definitions/v1alpha1.S3Artifact",
           "description": "S3 contains S3 artifact location details"
+        },
+        "subPath": {
+          "description": "SubPath allows an artifact to be sourced from a subpath within the specified source",
+          "type": "string"
         }
       },
       "required": [
@@ -1428,14 +1432,25 @@
         },
         "factor": {
           "description": "Factor is a factor to multiply the base duration after each failed retry",
-          "format": "int32",
-          "type": "integer"
+          "format": "int-or-string",
+          "type": "string"
         },
         "maxDuration": {
           "description": "MaxDuration is the maximum amount of time allowed for the backoff strategy",
           "type": "string"
         }
       },
+      "type": "object"
+    },
+    "v1alpha1.Cache": {
+      "properties": {
+        "configMap": {
+          "$ref": "#/definitions/v1.ConfigMapKeySelector"
+        }
+      },
+      "required": [
+        "configMap"
+      ],
       "type": "object"
     },
     "v1alpha1.ClusterWorkflowTemplate": {
@@ -1797,6 +1812,18 @@
       ],
       "type": "object"
     },
+    "v1alpha1.Event": {
+      "properties": {
+        "selector": {
+          "description": "Selector (https://github.com/antonmedv/expr) that we must must match the io.argoproj.workflow.v1alpha1. E.g. `payload.message == \"test\"`",
+          "type": "string"
+        }
+      },
+      "required": [
+        "selector"
+      ],
+      "type": "object"
+    },
     "v1alpha1.ExecutorConfig": {
       "description": "ExecutorConfig holds configurations of an executor container.",
       "properties": {
@@ -1991,19 +2018,6 @@
       ],
       "type": "object"
     },
-    "v1alpha1.HolderNames": {
-      "properties": {
-        "name": {
-          "description": "Name stores the name of the resource holding lock",
-          "items": {
-            "type": "string"
-          },
-          "type": "array",
-          "x-kubernetes-list-type": "atomic"
-        }
-      },
-      "type": "object"
-    },
     "v1alpha1.InfoResponse": {
       "properties": {
         "links": {
@@ -2089,6 +2103,41 @@
       },
       "type": "object"
     },
+    "v1alpha1.MemoizationStatus": {
+      "properties": {
+        "cacheName": {
+          "type": "string"
+        },
+        "hit": {
+          "type": "boolean"
+        },
+        "key": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "hit",
+        "key",
+        "cacheName"
+      ],
+      "type": "object"
+    },
+    "v1alpha1.Memoize": {
+      "description": "Memoization",
+      "properties": {
+        "cache": {
+          "$ref": "#/definitions/v1alpha1.Cache"
+        },
+        "key": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "cache"
+      ],
+      "type": "object"
+    },
     "v1alpha1.Metadata": {
       "description": "Pod metdata",
       "properties": {
@@ -2139,6 +2188,52 @@
       ],
       "type": "object"
     },
+    "v1alpha1.Mutex": {
+      "description": "Mutex holds Mutex configuration",
+      "properties": {
+        "name": {
+          "description": "name of the mutex",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "v1alpha1.MutexHolding": {
+      "description": "MutexHolding describes the mutex and the object which is holding it.",
+      "properties": {
+        "holder": {
+          "description": "Holder is a reference to the object which holds the Mutex. Holding Scenario:\n  1. Current workflow's NodeID which is holding the lock.\n     e.g: ${NodeID}\nWaiting Scenario:\n  1. Current workflow or other workflow NodeID which is holding the lock.\n     e.g: ${WorkflowName}/${NodeID}",
+          "type": "string"
+        },
+        "mutex": {
+          "description": "Reference for the mutex e.g: ${namespace}/mutex/${mutexName}",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "v1alpha1.MutexStatus": {
+      "description": "MutexStatus contains which objects hold  mutex locks, and which objects this workflow is waiting on to release locks.",
+      "properties": {
+        "holding": {
+          "description": "Holding is a list of mutexes and their respective objects that are held by mutex lock for this io.argoproj.workflow.v1alpha1.",
+          "items": {
+            "$ref": "#/definitions/v1alpha1.MutexHolding"
+          },
+          "type": "array",
+          "x-kubernetes-list-type": "atomic"
+        },
+        "waiting": {
+          "description": "Waiting is a list of mutexes and their respective objects this workflow is waiting for.",
+          "items": {
+            "$ref": "#/definitions/v1alpha1.MutexHolding"
+          },
+          "type": "array",
+          "x-kubernetes-list-type": "atomic"
+        }
+      },
+      "type": "object"
+    },
     "v1alpha1.NodeStatus": {
       "description": "NodeStatus contains status information about an individual node in the workflow",
       "properties": {
@@ -2177,6 +2272,10 @@
         "inputs": {
           "$ref": "#/definitions/v1alpha1.Inputs",
           "description": "Inputs captures input parameter values and artifact locations supplied to this template invocation"
+        },
+        "memoizationStatus": {
+          "$ref": "#/definitions/v1alpha1.MemoizationStatus",
+          "description": "MemoizationStatus holds information about cached nodes"
         },
         "message": {
           "description": "A human readable message indicating details about why the node is in this condition.",
@@ -2222,6 +2321,10 @@
           "description": "StoredTemplateID is the ID of stored template. DEPRECATED: This value is not used anymore.",
           "type": "string"
         },
+        "synchronizationStatus": {
+          "$ref": "#/definitions/v1alpha1.NodeSynchronizationStatus",
+          "description": "SynchronizationStatus is the synchronization status of the node"
+        },
         "templateName": {
           "description": "TemplateName is the template name which this node corresponds to. Not applicable to virtual nodes (e.g. Retry, StepGroup)",
           "type": "string"
@@ -2248,6 +2351,16 @@
         "name",
         "type"
       ],
+      "type": "object"
+    },
+    "v1alpha1.NodeSynchronizationStatus": {
+      "description": "NodeSynchronizationStatus stores the status of a node",
+      "properties": {
+        "waiting": {
+          "description": "Waiting is the name of the lock that this node is waiting for",
+          "type": "string"
+        }
+      },
       "type": "object"
     },
     "v1alpha1.OSSArtifact": {
@@ -2320,7 +2433,6 @@
       "properties": {
         "default": {
           "description": "Default is the default value to use for an input parameter if a value was not supplied",
-          "format": "int-or-string",
           "type": "string"
         },
         "globalName": {
@@ -2333,7 +2445,6 @@
         },
         "value": {
           "description": "Value is the literal value to use for the parameter. If specified in the context of an input parameter, the value takes precedence over any passed values",
-          "format": "int-or-string",
           "type": "string"
         },
         "valueFrom": {
@@ -2459,8 +2570,8 @@
         },
         "limit": {
           "description": "Limit is the maximum number of attempts when retrying a container",
-          "format": "int32",
-          "type": "integer"
+          "format": "int-or-string",
+          "type": "string"
         },
         "retryPolicy": {
           "description": "RetryPolicy is a policy of NodePhase statuses that will be retried",
@@ -2691,7 +2802,7 @@
           "type": "array"
         },
         "waiting": {
-          "description": "Waiting indicates the list of current synchronization lock holders",
+          "description": "Waiting indicates the list of current synchronization lock holders.",
           "items": {
             "$ref": "#/definitions/v1alpha1.SemaphoreHolding"
           },
@@ -2723,6 +2834,22 @@
           "type": "string"
         }
       },
+      "type": "object"
+    },
+    "v1alpha1.Submit": {
+      "properties": {
+        "arguments": {
+          "$ref": "#/definitions/v1alpha1.Arguments",
+          "description": "Arguments extracted from the event and then set as arguments to the workflow created."
+        },
+        "workflowTemplateRef": {
+          "$ref": "#/definitions/v1alpha1.WorkflowTemplateRef",
+          "description": "WorkflowTemplateRef the workflow template to submit"
+        }
+      },
+      "required": [
+        "workflowTemplateRef"
+      ],
       "type": "object"
     },
     "v1alpha1.SubmitOpts": {
@@ -2787,6 +2914,10 @@
     "v1alpha1.Synchronization": {
       "description": "Synchronization holds synchronization lock configuration",
       "properties": {
+        "mutex": {
+          "$ref": "#/definitions/v1alpha1.Mutex",
+          "description": "Mutex holds the Mutex lock details"
+        },
         "semaphore": {
           "$ref": "#/definitions/v1alpha1.SemaphoreRef",
           "description": "Semaphore holds the Semaphore configuration"
@@ -2795,10 +2926,15 @@
       "type": "object"
     },
     "v1alpha1.SynchronizationStatus": {
+      "description": "SynchronizationStatus stores the status of semaphore and mutex.",
       "properties": {
+        "mutex": {
+          "$ref": "#/definitions/v1alpha1.MutexStatus",
+          "description": "Mutex stores this workflow's mutex holder details"
+        },
         "semaphore": {
           "$ref": "#/definitions/v1alpha1.SemaphoreStatus",
-          "description": "SemaphoreHolders stores this workflow's Semaphore holder details"
+          "description": "Semaphore stores this workflow's Semaphore holder details"
         }
       },
       "type": "object"
@@ -2840,8 +2976,8 @@
       "properties": {
         "activeDeadlineSeconds": {
           "description": "Optional duration in seconds relative to the StartTime that the pod may be active on a node before the system actively tries to terminate the pod; value must be positive integer This field is only applicable to container and script templates.",
-          "format": "int64",
-          "type": "integer"
+          "format": "int-or-string",
+          "type": "string"
         },
         "affinity": {
           "$ref": "#/definitions/v1.Affinity",
@@ -2896,6 +3032,10 @@
         "inputs": {
           "$ref": "#/definitions/v1alpha1.Inputs",
           "description": "Inputs describe what inputs parameters and artifacts are supplied to this template"
+        },
+        "memoize": {
+          "$ref": "#/definitions/v1alpha1.Memoize",
+          "description": "Memoize allows templates to use outputs generated from already executed templates"
         },
         "metadata": {
           "$ref": "#/definitions/v1alpha1.Metadata",
@@ -3000,6 +3140,10 @@
         "templateRef": {
           "$ref": "#/definitions/v1alpha1.TemplateRef",
           "description": "TemplateRef is the reference to the template resource which is used as the base of this template. DEPRECATED: This field is not used."
+        },
+        "timeout": {
+          "description": "Timout allows to set the total node execution timeout duration counting from the node's start time. This duration also includes time in which the node spends in Pending state. This duration may not be applied to Step or DAG templates.",
+          "type": "string"
         },
         "tolerations": {
           "description": "Tolerations to apply to workflow pods.",
@@ -3202,7 +3346,10 @@
       "properties": {
         "default": {
           "description": "Default specifies a value to be used if retrieving the value from the specified source fails",
-          "format": "int-or-string",
+          "type": "string"
+        },
+        "event": {
+          "description": "Selector (https://github.com/antonmedv/expr) that is evaluated against the event to get the value of the parameter. E.g. `payload.message`",
           "type": "string"
         },
         "jqFilter": {
@@ -3220,6 +3367,10 @@
         "path": {
           "description": "Path in the container to retrieve an output parameter value from in container templates",
           "type": "string"
+        },
+        "supplied": {
+          "description": "Supplied value to be filled in directly, either through the CLI, API, etc.",
+          "type": "object"
         }
       },
       "type": "object"
@@ -3312,6 +3463,46 @@
       },
       "type": "object"
     },
+    "v1alpha1.WorkflowEventBinding": {
+      "description": "WorkflowEventBinding is the definition of an event resource",
+      "properties": {
+        "apiVersion": {
+          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.io.k8s.community/contributors/devel/sig-architecture/api-conventions.md#resources",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.io.k8s.community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/v1.ObjectMeta"
+        },
+        "spec": {
+          "$ref": "#/definitions/v1alpha1.WorkflowEventBindingSpec"
+        }
+      },
+      "required": [
+        "metadata",
+        "spec"
+      ],
+      "type": "object"
+    },
+    "v1alpha1.WorkflowEventBindingSpec": {
+      "properties": {
+        "event": {
+          "$ref": "#/definitions/v1alpha1.Event",
+          "description": "Event is the event to bind to"
+        },
+        "submit": {
+          "$ref": "#/definitions/v1alpha1.Submit",
+          "description": "Submit is the workflow template to submit"
+        }
+      },
+      "required": [
+        "event"
+      ],
+      "type": "object"
+    },
     "v1alpha1.WorkflowLintRequest": {
       "properties": {
         "namespace": {
@@ -3393,6 +3584,29 @@
         "restartSuccessful": {
           "format": "boolean",
           "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "v1alpha1.WorkflowSetRequest": {
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "nodeFieldSelector": {
+          "type": "string"
+        },
+        "outputParameters": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string"
         }
       },
       "type": "object"
@@ -4655,6 +4869,129 @@
         "secretKeyRef": {
           "$ref": "#/definitions/v1.SecretKeySelector",
           "description": "Selects a key of a secret in the pod's namespace"
+        }
+      },
+      "type": "object"
+    },
+    "v1.Event": {
+      "description": "Event is a report of an event somewhere in the cluster.",
+      "properties": {
+        "action": {
+          "description": "What action was taken/failed regarding to the Regarding object.",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources",
+          "type": "string"
+        },
+        "count": {
+          "description": "The number of times this event has occurred.",
+          "format": "int32",
+          "type": "integer"
+        },
+        "eventTime": {
+          "description": "Time when this Event was first observed.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "firstTimestamp": {
+          "description": "The time at which the event was first recorded. (Time of server receipt is in TypeMeta.)",
+          "format": "date-time",
+          "type": "string"
+        },
+        "involvedObject": {
+          "$ref": "#/definitions/v1.ObjectReference",
+          "description": "The object that this event is about."
+        },
+        "kind": {
+          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds",
+          "type": "string"
+        },
+        "lastTimestamp": {
+          "description": "The time at which the most recent occurrence of this event was recorded.",
+          "format": "date-time",
+          "type": "string"
+        },
+        "message": {
+          "description": "A human-readable description of the status of this operation.",
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/v1.ObjectMeta",
+          "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata"
+        },
+        "reason": {
+          "description": "This should be a short, machine understandable string that gives the reason for the transition into the object's current status.",
+          "type": "string"
+        },
+        "related": {
+          "$ref": "#/definitions/v1.ObjectReference",
+          "description": "Optional secondary object for more complex actions."
+        },
+        "reportingComponent": {
+          "description": "Name of the controller that emitted this Event, e.g. `kubernetes.io/kubelet`.",
+          "type": "string"
+        },
+        "reportingInstance": {
+          "description": "ID of the controller instance, e.g. `kubelet-xyzf`.",
+          "type": "string"
+        },
+        "series": {
+          "$ref": "#/definitions/v1.EventSeries",
+          "description": "Data about the Event series this event represents or nil if it's a singleton Event."
+        },
+        "source": {
+          "$ref": "#/definitions/v1.EventSource",
+          "description": "The component reporting this event. Should be a short machine understandable string."
+        },
+        "type": {
+          "description": "Type of this event (Normal, Warning), new types could be added in the future",
+          "type": "string"
+        }
+      },
+      "required": [
+        "metadata",
+        "involvedObject"
+      ],
+      "type": "object",
+      "x-kubernetes-group-version-kind": [
+        {
+          "group": "",
+          "kind": "Event",
+          "version": "v1"
+        }
+      ]
+    },
+    "v1.EventSeries": {
+      "description": "EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time.",
+      "properties": {
+        "count": {
+          "description": "Number of occurrences in this series up to the last heartbeat time",
+          "format": "int32",
+          "type": "integer"
+        },
+        "lastObservedTime": {
+          "description": "Time of the last occurrence observed",
+          "format": "date-time",
+          "type": "string"
+        },
+        "state": {
+          "description": "State of this Series: Ongoing or Finished Deprecated. Planned removal for 1.18",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "v1.EventSource": {
+      "description": "EventSource contains information for an event.",
+      "properties": {
+        "component": {
+          "description": "Component from which the event is generated.",
+          "type": "string"
+        },
+        "host": {
+          "description": "Node name on which the event is generated.",
+          "type": "string"
         }
       },
       "type": "object"

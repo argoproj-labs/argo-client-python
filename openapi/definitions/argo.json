@@ -151,6 +151,10 @@
         "s3": {
           "description": "S3 contains S3 artifact location details",
           "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.S3Artifact"
+        },
+        "subPath": {
+          "description": "SubPath allows an artifact to be sourced from a subpath within the specified source",
+          "type": "string"
         }
       }
     },
@@ -238,12 +242,22 @@
         },
         "factor": {
           "description": "Factor is a factor to multiply the base duration after each failed retry",
-          "type": "integer",
-          "format": "int32"
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
         },
         "maxDuration": {
           "description": "MaxDuration is the maximum amount of time allowed for the backoff strategy",
           "type": "string"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.Cache": {
+      "type": "object",
+      "required": [
+        "configMap"
+      ],
+      "properties": {
+        "configMap": {
+          "$ref": "#/definitions/io.k8s.api.core.v1.ConfigMapKeySelector"
         }
       }
     },
@@ -611,6 +625,21 @@
         }
       }
     },
+    "io.argoproj.workflow.v1alpha1.Event": {
+      "type": "object",
+      "required": [
+        "selector"
+      ],
+      "properties": {
+        "selector": {
+          "description": "Selector (https://github.com/antonmedv/expr) that we must must match the io.argoproj.workflow.v1alpha1. E.g. `payload.message == \"test\"`",
+          "type": "string"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.EventResponse": {
+      "type": "object"
+    },
     "io.argoproj.workflow.v1alpha1.ExecutorConfig": {
       "description": "ExecutorConfig holds configurations of an executor container.",
       "type": "object",
@@ -804,19 +833,6 @@
         }
       }
     },
-    "io.argoproj.workflow.v1alpha1.HolderNames": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "description": "Name stores the name of the resource holding lock",
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "x-kubernetes-list-type": "atomic"
-        }
-      }
-    },
     "io.argoproj.workflow.v1alpha1.InfoResponse": {
       "type": "object",
       "properties": {
@@ -905,6 +921,41 @@
         }
       }
     },
+    "io.argoproj.workflow.v1alpha1.MemoizationStatus": {
+      "type": "object",
+      "required": [
+        "hit",
+        "key",
+        "cacheName"
+      ],
+      "properties": {
+        "cacheName": {
+          "type": "string"
+        },
+        "hit": {
+          "type": "boolean"
+        },
+        "key": {
+          "type": "string"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.Memoize": {
+      "description": "Memoization",
+      "type": "object",
+      "required": [
+        "key",
+        "cache"
+      ],
+      "properties": {
+        "cache": {
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Cache"
+        },
+        "key": {
+          "type": "string"
+        }
+      }
+    },
     "io.argoproj.workflow.v1alpha1.Metadata": {
       "description": "Pod metdata",
       "type": "object",
@@ -955,6 +1006,52 @@
         }
       }
     },
+    "io.argoproj.workflow.v1alpha1.Mutex": {
+      "description": "Mutex holds Mutex configuration",
+      "type": "object",
+      "properties": {
+        "name": {
+          "description": "name of the mutex",
+          "type": "string"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.MutexHolding": {
+      "description": "MutexHolding describes the mutex and the object which is holding it.",
+      "type": "object",
+      "properties": {
+        "holder": {
+          "description": "Holder is a reference to the object which holds the Mutex. Holding Scenario:\n  1. Current workflow's NodeID which is holding the lock.\n     e.g: ${NodeID}\nWaiting Scenario:\n  1. Current workflow or other workflow NodeID which is holding the lock.\n     e.g: ${WorkflowName}/${NodeID}",
+          "type": "string"
+        },
+        "mutex": {
+          "description": "Reference for the mutex e.g: ${namespace}/mutex/${mutexName}",
+          "type": "string"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.MutexStatus": {
+      "description": "MutexStatus contains which objects hold  mutex locks, and which objects this workflow is waiting on to release locks.",
+      "type": "object",
+      "properties": {
+        "holding": {
+          "description": "Holding is a list of mutexes and their respective objects that are held by mutex lock for this io.argoproj.workflow.v1alpha1.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.MutexHolding"
+          },
+          "x-kubernetes-list-type": "atomic"
+        },
+        "waiting": {
+          "description": "Waiting is a list of mutexes and their respective objects this workflow is waiting for.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.MutexHolding"
+          },
+          "x-kubernetes-list-type": "atomic"
+        }
+      }
+    },
     "io.argoproj.workflow.v1alpha1.NodeStatus": {
       "description": "NodeStatus contains status information about an individual node in the workflow",
       "type": "object",
@@ -999,6 +1096,10 @@
           "description": "Inputs captures input parameter values and artifact locations supplied to this template invocation",
           "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Inputs"
         },
+        "memoizationStatus": {
+          "description": "MemoizationStatus holds information about cached nodes",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.MemoizationStatus"
+        },
         "message": {
           "description": "A human readable message indicating details about why the node is in this condition.",
           "type": "string"
@@ -1042,6 +1143,10 @@
           "description": "StoredTemplateID is the ID of stored template. DEPRECATED: This value is not used anymore.",
           "type": "string"
         },
+        "synchronizationStatus": {
+          "description": "SynchronizationStatus is the synchronization status of the node",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.NodeSynchronizationStatus"
+        },
         "templateName": {
           "description": "TemplateName is the template name which this node corresponds to. Not applicable to virtual nodes (e.g. Retry, StepGroup)",
           "type": "string"
@@ -1060,6 +1165,16 @@
         },
         "workflowTemplateName": {
           "description": "WorkflowTemplateName is the WorkflowTemplate resource name on which the resolved template of this node is retrieved. DEPRECATED: This value is not used anymore.",
+          "type": "string"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.NodeSynchronizationStatus": {
+      "description": "NodeSynchronizationStatus stores the status of a node",
+      "type": "object",
+      "properties": {
+        "waiting": {
+          "description": "Waiting is the name of the lock that this node is waiting for",
           "type": "string"
         }
       }
@@ -1148,7 +1263,7 @@
       "properties": {
         "default": {
           "description": "Default is the default value to use for an input parameter if a value was not supplied",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "type": "string"
         },
         "globalName": {
           "description": "GlobalName exports an output parameter to the global scope, making it available as '{{io.argoproj.workflow.v1alpha1.outputs.parameters.XXXX}} and in workflow.status.outputs.parameters",
@@ -1160,7 +1275,7 @@
         },
         "value": {
           "description": "Value is the literal value to use for the parameter. If specified in the context of an input parameter, the value takes precedence over any passed values",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "type": "string"
         },
         "valueFrom": {
           "description": "ValueFrom is the source for the output parameter's value",
@@ -1282,8 +1397,7 @@
         },
         "limit": {
           "description": "Limit is the maximum number of attempts when retrying a container",
-          "type": "integer",
-          "format": "int32"
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
         },
         "retryPolicy": {
           "description": "RetryPolicy is a policy of NodePhase statuses that will be retried",
@@ -1514,7 +1628,7 @@
           }
         },
         "waiting": {
-          "description": "Waiting indicates the list of current synchronization lock holders",
+          "description": "Waiting indicates the list of current synchronization lock holders.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.SemaphoreHolding"
@@ -1541,6 +1655,22 @@
         "start": {
           "description": "Number at which to start the sequence (default: 0)",
           "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.Submit": {
+      "type": "object",
+      "required": [
+        "workflowTemplateRef"
+      ],
+      "properties": {
+        "arguments": {
+          "description": "Arguments extracted from the event and then set as arguments to the workflow created.",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Arguments"
+        },
+        "workflowTemplateRef": {
+          "description": "WorkflowTemplateRef the workflow template to submit",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowTemplateRef"
         }
       }
     },
@@ -1593,6 +1723,10 @@
         }
       }
     },
+    "io.argoproj.workflow.v1alpha1.SuppliedValueFrom": {
+      "description": "SuppliedValueFrom is a placeholder for a value to be filled in directly, either through the CLI, API, etc.",
+      "type": "object"
+    },
     "io.argoproj.workflow.v1alpha1.SuspendTemplate": {
       "description": "SuspendTemplate is a template subtype to suspend a workflow at a predetermined point in time",
       "type": "object",
@@ -1607,6 +1741,10 @@
       "description": "Synchronization holds synchronization lock configuration",
       "type": "object",
       "properties": {
+        "mutex": {
+          "description": "Mutex holds the Mutex lock details",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Mutex"
+        },
         "semaphore": {
           "description": "Semaphore holds the Semaphore configuration",
           "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.SemaphoreRef"
@@ -1614,10 +1752,15 @@
       }
     },
     "io.argoproj.workflow.v1alpha1.SynchronizationStatus": {
+      "description": "SynchronizationStatus stores the status of semaphore and mutex.",
       "type": "object",
       "properties": {
+        "mutex": {
+          "description": "Mutex stores this workflow's mutex holder details",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.MutexStatus"
+        },
         "semaphore": {
-          "description": "SemaphoreHolders stores this workflow's Semaphore holder details",
+          "description": "Semaphore stores this workflow's Semaphore holder details",
           "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.SemaphoreStatus"
         }
       }
@@ -1663,8 +1806,7 @@
       "properties": {
         "activeDeadlineSeconds": {
           "description": "Optional duration in seconds relative to the StartTime that the pod may be active on a node before the system actively tries to terminate the pod; value must be positive integer This field is only applicable to container and script templates.",
-          "type": "integer",
-          "format": "int64"
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
         },
         "affinity": {
           "description": "Affinity sets the pod's scheduling constraints Overrides the affinity set at the workflow level (if any)",
@@ -1719,6 +1861,10 @@
         "inputs": {
           "description": "Inputs describe what inputs parameters and artifacts are supplied to this template",
           "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Inputs"
+        },
+        "memoize": {
+          "description": "Memoize allows templates to use outputs generated from already executed templates",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Memoize"
         },
         "metadata": {
           "description": "Metdata sets the pods's metadata, i.e. annotations and labels",
@@ -1820,6 +1966,10 @@
         "templateRef": {
           "description": "TemplateRef is the reference to the template resource which is used as the base of this template. DEPRECATED: This field is not used.",
           "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.TemplateRef"
+        },
+        "timeout": {
+          "description": "Timout allows to set the total node execution timeout duration counting from the node's start time. This duration also includes time in which the node spends in Pending state. This duration may not be applied to Step or DAG templates.",
+          "type": "string"
         },
         "tolerations": {
           "description": "Tolerations to apply to workflow pods.",
@@ -2019,7 +2169,11 @@
       "properties": {
         "default": {
           "description": "Default specifies a value to be used if retrieving the value from the specified source fails",
-          "$ref": "#/definitions/io.k8s.apimachinery.pkg.util.intstr.IntOrString"
+          "type": "string"
+        },
+        "event": {
+          "description": "Selector (https://github.com/antonmedv/expr) that is evaluated against the event to get the value of the parameter. E.g. `payload.message`",
+          "type": "string"
         },
         "jqFilter": {
           "description": "JQFilter expression against the resource object in resource templates",
@@ -2036,6 +2190,10 @@
         "path": {
           "description": "Path in the container to retrieve an output parameter value from in container templates",
           "type": "string"
+        },
+        "supplied": {
+          "description": "Supplied value to be filled in directly, either through the CLI, API, etc.",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.SuppliedValueFrom"
         }
       }
     },
@@ -2130,6 +2288,46 @@
     "io.argoproj.workflow.v1alpha1.WorkflowDeleteResponse": {
       "type": "object"
     },
+    "io.argoproj.workflow.v1alpha1.WorkflowEventBinding": {
+      "description": "WorkflowEventBinding is the definition of an event resource",
+      "type": "object",
+      "required": [
+        "metadata",
+        "spec"
+      ],
+      "properties": {
+        "apiVersion": {
+          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.io.k8s.community/contributors/devel/sig-architecture/api-conventions.md#resources",
+          "type": "string"
+        },
+        "kind": {
+          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.io.k8s.community/contributors/devel/sig-architecture/api-conventions.md#types-kinds",
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+        },
+        "spec": {
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.WorkflowEventBindingSpec"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.WorkflowEventBindingSpec": {
+      "type": "object",
+      "required": [
+        "event"
+      ],
+      "properties": {
+        "event": {
+          "description": "Event is the event to bind to",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Event"
+        },
+        "submit": {
+          "description": "Submit is the workflow template to submit",
+          "$ref": "#/definitions/io.argoproj.workflow.v1alpha1.Submit"
+        }
+      }
+    },
     "io.argoproj.workflow.v1alpha1.WorkflowLintRequest": {
       "type": "object",
       "properties": {
@@ -2212,6 +2410,29 @@
         "restartSuccessful": {
           "type": "boolean",
           "format": "boolean"
+        }
+      }
+    },
+    "io.argoproj.workflow.v1alpha1.WorkflowSetRequest": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string"
+        },
+        "nodeFieldSelector": {
+          "type": "string"
+        },
+        "outputParameters": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string"
         }
       }
     },
@@ -3474,6 +3695,125 @@
         "secretKeyRef": {
           "description": "Selects a key of a secret in the pod's namespace",
           "$ref": "#/definitions/io.k8s.api.core.v1.SecretKeySelector"
+        }
+      }
+    },
+    "io.k8s.api.core.v1.Event": {
+      "description": "Event is a report of an event somewhere in the cluster.",
+      "type": "object",
+      "required": [
+        "metadata",
+        "involvedObject"
+      ],
+      "properties": {
+        "action": {
+          "description": "What action was taken/failed regarding to the Regarding object.",
+          "type": "string"
+        },
+        "apiVersion": {
+          "description": "APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources",
+          "type": "string"
+        },
+        "count": {
+          "description": "The number of times this event has occurred.",
+          "type": "integer",
+          "format": "int32"
+        },
+        "eventTime": {
+          "description": "Time when this Event was first observed.",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime"
+        },
+        "firstTimestamp": {
+          "description": "The time at which the event was first recorded. (Time of server receipt is in TypeMeta.)",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+        },
+        "involvedObject": {
+          "description": "The object that this event is about.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.ObjectReference"
+        },
+        "kind": {
+          "description": "Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds",
+          "type": "string"
+        },
+        "lastTimestamp": {
+          "description": "The time at which the most recent occurrence of this event was recorded.",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
+        },
+        "message": {
+          "description": "A human-readable description of the status of this operation.",
+          "type": "string"
+        },
+        "metadata": {
+          "description": "Standard object's metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta"
+        },
+        "reason": {
+          "description": "This should be a short, machine understandable string that gives the reason for the transition into the object's current status.",
+          "type": "string"
+        },
+        "related": {
+          "description": "Optional secondary object for more complex actions.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.ObjectReference"
+        },
+        "reportingComponent": {
+          "description": "Name of the controller that emitted this Event, e.g. `kubernetes.io/kubelet`.",
+          "type": "string"
+        },
+        "reportingInstance": {
+          "description": "ID of the controller instance, e.g. `kubelet-xyzf`.",
+          "type": "string"
+        },
+        "series": {
+          "description": "Data about the Event series this event represents or nil if it's a singleton Event.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.EventSeries"
+        },
+        "source": {
+          "description": "The component reporting this event. Should be a short machine understandable string.",
+          "$ref": "#/definitions/io.k8s.api.core.v1.EventSource"
+        },
+        "type": {
+          "description": "Type of this event (Normal, Warning), new types could be added in the future",
+          "type": "string"
+        }
+      },
+      "x-kubernetes-group-version-kind": [
+        {
+          "group": "",
+          "kind": "Event",
+          "version": "v1"
+        }
+      ]
+    },
+    "io.k8s.api.core.v1.EventSeries": {
+      "description": "EventSeries contain information on series of events, i.e. thing that was/is happening continuously for some time.",
+      "type": "object",
+      "properties": {
+        "count": {
+          "description": "Number of occurrences in this series up to the last heartbeat time",
+          "type": "integer",
+          "format": "int32"
+        },
+        "lastObservedTime": {
+          "description": "Time of the last occurrence observed",
+          "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime"
+        },
+        "state": {
+          "description": "State of this Series: Ongoing or Finished Deprecated. Planned removal for 1.18",
+          "type": "string"
+        }
+      }
+    },
+    "io.k8s.api.core.v1.EventSource": {
+      "description": "EventSource contains information for an event.",
+      "type": "object",
+      "properties": {
+        "component": {
+          "description": "Component from which the event is generated.",
+          "type": "string"
+        },
+        "host": {
+          "description": "Node name on which the event is generated.",
+          "type": "string"
         }
       }
     },
@@ -5307,6 +5647,11 @@
           "$ref": "#/definitions/io.k8s.apimachinery.pkg.apis.meta.v1.Time"
         }
       }
+    },
+    "io.k8s.apimachinery.pkg.apis.meta.v1.MicroTime": {
+      "description": "MicroTime is version of Time with microsecond level precision.",
+      "type": "string",
+      "format": "date-time"
     },
     "io.k8s.apimachinery.pkg.apis.meta.v1.ObjectMeta": {
       "description": "ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.",
