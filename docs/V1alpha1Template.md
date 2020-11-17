@@ -4,7 +4,7 @@ Template is a reusable and composable unit of execution in a workflow
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active_deadline_seconds** | **int** | Optional duration in seconds relative to the StartTime that the pod may be active on a node before the system actively tries to terminate the pod; value must be positive integer This field is only applicable to container and script templates. | [optional] 
+**active_deadline_seconds** | **str** | Optional duration in seconds relative to the StartTime that the pod may be active on a node before the system actively tries to terminate the pod; value must be positive integer This field is only applicable to container and script templates. | [optional] 
 **affinity** | [**V1Affinity**](V1Affinity.md) |  | [optional] 
 **archive_location** | [**V1alpha1ArtifactLocation**](V1alpha1ArtifactLocation.md) |  | [optional] 
 **arguments** | [**V1alpha1Arguments**](V1alpha1Arguments.md) |  | [optional] 
@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **host_aliases** | [**list[V1HostAlias]**](V1HostAlias.md) | HostAliases is an optional list of hosts and IPs that will be injected into the pod spec | [optional] 
 **init_containers** | [**list[V1alpha1UserContainer]**](V1alpha1UserContainer.md) | InitContainers is a list of containers which run before the main container. | [optional] 
 **inputs** | [**V1alpha1Inputs**](V1alpha1Inputs.md) |  | [optional] 
+**memoize** | [**V1alpha1Memoize**](V1alpha1Memoize.md) |  | [optional] 
 **metadata** | [**V1alpha1Metadata**](V1alpha1Metadata.md) |  | [optional] 
 **metrics** | [**V1alpha1Metrics**](V1alpha1Metrics.md) |  | [optional] 
 **name** | **str** | Name is the name of the template | 
@@ -38,6 +39,7 @@ Name | Type | Description | Notes
 **synchronization** | [**V1alpha1Synchronization**](V1alpha1Synchronization.md) |  | [optional] 
 **template** | **str** | Template is the name of the template which is used as the base of this template. DEPRECATED: This field is not used. | [optional] 
 **template_ref** | [**V1alpha1TemplateRef**](V1alpha1TemplateRef.md) |  | [optional] 
+**timeout** | **str** | Timout allows to set the total node execution timeout duration counting from the node&#39;s start time. This duration also includes time in which the node spends in Pending state. This duration may not be applied to Step or DAG templates. | [optional] 
 **tolerations** | [**list[V1Toleration]**](V1Toleration.md) | Tolerations to apply to workflow pods. | [optional] 
 **volumes** | [**list[V1Volume]**](V1Volume.md) | Volumes is a list of volumes that can be mounted by containers in a template. | [optional] 
 

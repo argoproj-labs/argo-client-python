@@ -24,6 +24,7 @@ ARGUMENTS_PARAMETERS_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{A
 # Artifacts
 ARTIFACT_DISABLE_ARCHIVE_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/artifact-disable-archive.yaml'
 ARTIFACT_PASSING_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/artifact-passing.yaml'
+ARTIFACT_PASSING_SUBPATH_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/artifact-passing-subpath.yaml'
 ARTIFACT_PATH_PLACEHOLDERS_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/artifact-path-placeholders.yaml'
 ARTIFACT_REPO_REF_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/artifact-repository-ref.yaml'
 
@@ -134,6 +135,14 @@ def test_submit_artifact_disable_archive_workflow():
 
 def test_submit_artifact_passing_workflow():
     resp = requests.get(ARTIFACT_PASSING_YML)
+    resp.raise_for_status()
+
+    manifest: dict = yaml.safe_load(resp.text)
+    v1alpha1 = V1alpha1Api()
+    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+def test_submit_artifact_passing_subpath_workflow():
+    resp = requests.get(ARTIFACT_PASSING_SUBPATH_YML)
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)

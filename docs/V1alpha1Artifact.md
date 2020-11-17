@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **path** | **str** | Path is the container path to the artifact | [optional] 
 **raw** | [**V1alpha1RawArtifact**](V1alpha1RawArtifact.md) |  | [optional] 
 **s3** | [**V1alpha1S3Artifact**](V1alpha1S3Artifact.md) |  | [optional] 
+**sub_path** | **str** | SubPath allows an artifact to be sourced from a subpath within the specified source | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

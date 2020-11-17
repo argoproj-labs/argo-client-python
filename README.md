@@ -50,8 +50,8 @@ v1alpha1.create_namespaced_workflow(namespace, manifest)
 
 When working on a higher level of abstraction, check out the following projects:
 
-* [Couler](https://github.com/couler-proj/couler) that provides a simplified and unified interface for constructing and managing workflows
-* [Argo Python DSL](https://github.com/CermakM/argo-python-dsl)
+* [Argo Python DSL](https://github.com/argoproj-labs/argo-python-dsl) provides a pythonic workflow interface that can be extended to your specific needs (such as Data Science, ETL, etc)
+* [Couler](https://github.com/couler-proj/couler) provides a simplified and unified interface for constructing and managing workflows
 
 ## Versioning
 
@@ -61,8 +61,8 @@ We follow semantic versioning, the client starts at version `1.0` which matches 
 
 #### Current Version Mapping
 
-Argo Python SDK: 3.5
-Argo: 2.10.2
+Argo Python SDK: 3.6
+Argo: 2.11.7
 Kubernetes:
 
 Key:
