@@ -2,8 +2,20 @@ Changelog
 =========
 
 
-3.5.1
+3.6.0
 -----
+- [argo-2.11.7] update README with new info. [Yudi Xue]
+- [argo-2.11.7] add new tests for argo 2.11.7. [Yudi Xue]
+- [argo-2.11.7] fix ARGO Version. [Yudi Xue]
+- [argo-2.11.7] add environ to github action. [Yudi Xue]
+- [argo-2.11.7] add json api. [Yudi Xue]
+- [argo-2.11.7] generate sdk. [Yudi Xue]
+- :tada: Release 3.5 (#15) [binarycrayon]
+
+
+v3.5.1 (2020-09-20)
+-------------------
+- :tada: Release 3.5. [Yudi Xue]
 - Downgrade k8s Python SDK to >=11.0.0 (#14) [Yuan Tang]
 - Release 3.5 (#13) [binarycrayon]
 
