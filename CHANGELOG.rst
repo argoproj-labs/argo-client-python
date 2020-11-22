@@ -2,8 +2,42 @@ Changelog
 =========
 
 
-3.6.0
+3.6.1
 -----
+- [argo-2.11.8] Generate sdk for argo 2.11.8. [Yudi Xue]
+- Argo/v2.11.7 (#18) [Yudi Xue]
+
+  * [argo-2.11.7] generate sdk
+
+  * [argo-2.11.7] add json api
+
+  * [argo-2.11.7] add environ to github action
+
+  * [argo-2.11.7] fix ARGO Version
+
+  * [argo-2.11.7] add new tests for argo 2.11.7
+
+  * [argo-2.11.7] update README with new info
+- Release 3.6 (#17) [Yudi Xue - yxue]
+
+  * [argo-2.11.7] generate sdk
+
+  * [argo-2.11.7] add json api
+
+  * [argo-2.11.7] add environ to github action
+
+  * [argo-2.11.7] fix ARGO Version
+
+  * [argo-2.11.7] add new tests for argo 2.11.7
+
+  * [argo-2.11.7] update README with new info
+
+  * :tada: Release 3.6
+
+
+v3.6.0 (2020-11-17)
+-------------------
+- :tada: Release 3.6. [Yudi Xue]
 - [argo-2.11.7] update README with new info. [Yudi Xue]
 - [argo-2.11.7] add new tests for argo 2.11.7. [Yudi Xue]
 - [argo-2.11.7] fix ARGO Version. [Yudi Xue]
