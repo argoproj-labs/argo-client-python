@@ -41,7 +41,8 @@ ifeq (${GIT_TAG},)
 GIT_TAG = $(shell git rev-parse --abbrev-ref HEAD)
 endif
 
-CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${v:0:5}")
+CLIENT_VERSION    = 2.11.8
+#CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${v:0:5}")
 
 ARGO_VERSION      ?= $(shell cat ARGO_VERSION)
 ARGO_API_GROUP    ?= argoproj.io
@@ -118,43 +119,47 @@ spec:
 	curl -sSL https://raw.githubusercontent.com/kubernetes/kubernetes/${KUBERNETES_BRANCH}/api/openapi-spec/swagger.json \
 		-o ${KUBERNETES_OPENAPI_SPEC}
 
-	@echo "Collecting API spec for Argo ${KUBERNETES_BRANCH}"
+	@echo "Collecting API spec for Argo ${ARGO_VERSION}"
 	curl -sSL https://raw.githubusercontent.com/argoproj/argo/v${ARGO_VERSION}/api/openapi-spec/swagger.json \
 		-o ${ARGO_OPENAPI_SPEC}
 
-	@echo "Extracting definitions"
-	jq -r '{ definitions: .definitions }' ${ARGO_OPENAPI_SPEC} \
-		> openapi/definitions/argo.json
+	# @echo "Extracting definitions"
+	# jq -r '{ definitions: .definitions }' ${ARGO_OPENAPI_SPEC} \
+	# 	> openapi/definitions/argo.json
 
-	@echo "Merging API definitions"
-	jq -sS '.[0] * .[1]' \
-		openapi/definitions/argo.json \
-		openapi/definitions/V1Time.json \
-		> openapi/definitions.json
+	# @echo "Merging API definitions"
+	# jq -sS '.[0] * .[1]' \
+	# 	openapi/definitions/argo.json \
+	# 	openapi/definitions/V1Time.json \
+	# 	> openapi/definitions.json
 
 	@echo "Creating OpenAPI info"
-	echo '{"info": {"title": "Argo", "description": "${PACKAGE_DESCRIPTION}", "version": "${ARGO_VERSION}"}}' | jq -r '.' \
+	echo '{"info": {"title": "Argo Python SDK", "description": "${PACKAGE_DESCRIPTION}", "version": "${ARGO_VERSION}"}}' | jq -r '.' \
 		> openapi/info.json
 
-	@echo "Process OpenAPI paths"
-	jinja2 openapi/custom/paths.json --format=json --strict \
-		-Dargo_api_group=${ARGO_API_GROUP} \
-		-Dargo_api_version=${ARGO_API_VERSION} \
-		> openapi/paths.json
+	# @echo "Process OpenAPI paths"
+	# jinja2 openapi/custom/paths.json --format=json --strict \
+	# 	-Dargo_api_group=${ARGO_API_GROUP} \
+	# 	-Dargo_api_version=${ARGO_API_VERSION} \
+	# 	> openapi/paths.json
 
 	@echo "Creating OpenAPI spec"
-	jq -s '.[0] + .[1] + .[2] + .[3] + .[4]' \
-		openapi/custom/version.json \
-		openapi/info.json \
-		openapi/custom/security.json \
-		openapi/paths.json \
-		openapi/definitions.json \
-		> ${OPENAPI_SPEC}
+	jq -s '.[0]' \
+	 	openapi/info.json \
+	 	> ${OPENAPI_SPEC}
+	# @echo "Creating OpenAPI spec"
+	# jq -s '.[0] + .[1] + .[2] + .[3] + .[4]' \
+	# 	openapi/custom/version.json \
+	#  	openapi/info.json \
+	#  	openapi/custom/security.json \
+	#  	openapi/paths.json \
+	#  	openapi/definitions.json \
+	#  	> ${OPENAPI_SPEC}
 
 
 preprocess:
 	@echo "Preprocessing API specs"
-	python3 scripts/preprocess.py -i ${OPENAPI_SPEC} \
+	python3 scripts/preprocess.py -i ${ARGO_OPENAPI_SPEC} \
 		-d 'io.argoproj.workflow' \
 		-d 'cronio.argoproj.workflow' \
 		-d 'io.k8s.api.core' \
@@ -164,10 +169,12 @@ preprocess:
 	# Replace empty references
 	sed -i -e '/"$$ref"/ s/io.argoproj.workflow.//' ${OPENAPI_SPEC}
 
+
 	# Patch DAGTask template requirement
+  # No longer needed
 	# This is an unpleasant workaround, since OpenAPI 2.0 does not allow `oneOf`
-	jq -r '.definitions."v1alpha1.DAGTask".required = ["name"]' ${OPENAPI_SPEC} |\
-	sponge ${OPENAPI_SPEC}
+	# jq -r '.definitions."v1alpha1.DAGTask".required = ["name"]' ${OPENAPI_SPEC} |\
+	# sponge ${OPENAPI_SPEC}
 
 .PHONY:client
 client: clean

@@ -170,7 +170,7 @@ def remove_model_prefixes(spec, prefixes):
         if "new_name" not in v:
             raise PreprocessingException("Cannot rename model %s" % k)
         rename_model(spec, k, v["new_name"])
-    
+
     return spec
 
 
