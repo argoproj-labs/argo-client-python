@@ -76,16 +76,13 @@ SCRIPTS_JAVASCRIPT_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARG
 def test_submit_hello_world_workflow():
     resp = requests.get(HELLO_WORLD_YML)
     resp.raise_for_status()
-
     manifest: dict = yaml.safe_load(resp.text)
-
     create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_cron_workflow():
     resp = requests.get(CRON_WORKFLOW_YML)
     resp.raise_for_status()
-
     manifest: dict = yaml.safe_load(resp.text)
     # NOTE: avoid name collision while running the tests multiple times without clearing the database
     del manifest['metadata']['name']
