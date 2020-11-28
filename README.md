@@ -12,7 +12,7 @@ pip install argo-workflows
 
 ## Examples
 
-A quick start example with one of the hello-world workflow
+A quick start example with one of the example workflow
 ```python
 import yaml
 import requests
