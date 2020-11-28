@@ -1,13 +1,11 @@
 import requests
 import pytest
 import yaml
-from argo.workflows.client import V1alpha1Api
-from argo.workflows.config import load_kube_config
+from . import create_workflow
 
 NAMESPACE = "argo"
 ARGO_VERSION = open("ARGO_VERSION").read()
 
-load_kube_config()  # loads local configuration from ~/.kube/config
 
 RESUBMIT_WORKFLOW_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/resubmit.yaml'
 RETRY_BACKOFF_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/retry-backoff.yaml'
@@ -23,8 +21,8 @@ def test_resubmit_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_retry_backoff_workflow():
@@ -32,8 +30,8 @@ def test_retry_backoff_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_retry_container_to_completion_workflow():
@@ -41,8 +39,8 @@ def test_retry_container_to_completion_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_retry_with_steps_workflow():
@@ -50,8 +48,8 @@ def test_submit_retry_with_steps_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_retry_script_workflow():
@@ -59,8 +57,8 @@ def test_retry_script_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_retry_on_error_workflow():
@@ -68,5 +66,5 @@ def test_retry_on_error_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)

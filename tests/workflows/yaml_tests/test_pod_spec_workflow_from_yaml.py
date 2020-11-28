@@ -1,13 +1,11 @@
 import requests
 import pytest
 import yaml
-from argo.workflows.client import V1alpha1Api
-from argo.workflows.config import load_kube_config
+from . import create_workflow
 
 NAMESPACE = "argo"
 ARGO_VERSION = open("ARGO_VERSION").read()
 
-load_kube_config()  # loads local configuration from ~/.kube/config
 
 POD_SPEC_YAML_PATCH_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/pod-spec-yaml-patch.yaml'
 POD_SPEC_PATCH_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/pod-spec-patch.yaml'
@@ -24,8 +22,8 @@ def test_pod_spec_yaml_patch_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_pod_spec_patch_workflow():
@@ -33,8 +31,8 @@ def test_pod_spec_patch_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_pod_spec_patch_wf_tmpl_workflow():
@@ -42,8 +40,8 @@ def test_pod_spec_patch_wf_tmpl_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_pod_spec_from_prev_step_workflow():
@@ -51,8 +49,8 @@ def test_pod_spec_from_prev_step_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_pod_gc_strategy_workflow():
@@ -60,8 +58,8 @@ def test_pod_gc_strategy_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_init_container_workflow():
@@ -69,8 +67,8 @@ def test_init_container_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_image_pull_secrets_workflow():
@@ -78,5 +76,5 @@ def test_image_pull_secrets_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)

@@ -1,12 +1,9 @@
 import requests
 import yaml
-from argo.workflows.client import V1alpha1Api
-from argo.workflows.config import load_kube_config
+from . import create_workflow
 
 NAMESPACE = "argo"
 ARGO_VERSION = open("ARGO_VERSION").read()
-
-load_kube_config()  # loads local configuration from ~/.kube/config
 
 # Basic
 HELLO_WORLD_YML = f'https://raw.githubusercontent.com/argoproj/argo/v{ARGO_VERSION}/examples/hello-world.yaml'
@@ -81,8 +78,8 @@ def test_submit_hello_world_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_cron_workflow():
@@ -93,7 +90,7 @@ def test_submit_cron_workflow():
     # NOTE: avoid name collision while running the tests multiple times without clearing the database
     del manifest['metadata']['name']
     manifest['metadata']['generateName'] = f'cron-workflow-'
-    v1alpha1 = V1alpha1Api()
+
     v1alpha1.create_namespaced_cronworkflow(NAMESPACE, manifest)
 
 
@@ -102,8 +99,8 @@ def test_submit_corn_flip_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_argument_artifact_workflow():
@@ -111,8 +108,8 @@ def test_submit_argument_artifact_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_argument_parameters_workflow():
@@ -120,8 +117,8 @@ def test_submit_argument_parameters_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_artifact_disable_archive_workflow():
@@ -129,8 +126,8 @@ def test_submit_artifact_disable_archive_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_artifact_passing_workflow():
@@ -138,16 +135,16 @@ def test_submit_artifact_passing_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 def test_submit_artifact_passing_subpath_workflow():
     resp = requests.get(ARTIFACT_PASSING_SUBPATH_YML)
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_artifact_path_placeholders_workflow():
@@ -155,8 +152,8 @@ def test_submit_artifact_path_placeholders_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_artifact_repo_ref_workflow():
@@ -164,8 +161,8 @@ def test_submit_artifact_repo_ref_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_corn_flip_workflow():
@@ -173,8 +170,8 @@ def test_submit_dag_corn_flip_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_continue_on_fail_workflow():
@@ -182,8 +179,8 @@ def test_submit_dag_continue_on_fail_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_daemon_task_workflow():
@@ -191,8 +188,8 @@ def test_submit_dag_daemon_task_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_diamond_steps_workflow():
@@ -200,8 +197,8 @@ def test_submit_dag_diamond_steps_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_diamond_workflow():
@@ -209,8 +206,8 @@ def test_submit_dag_diamond_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_disable_failfast_workflow():
@@ -218,8 +215,8 @@ def test_submit_dag_disable_failfast_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_enhanced_depends_workflow():
@@ -227,8 +224,8 @@ def test_submit_dag_enhanced_depends_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_multi_root_workflow():
@@ -236,8 +233,8 @@ def test_submit_dag_multi_root_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_nested_workflow():
@@ -245,8 +242,8 @@ def test_submit_dag_nested_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_dag_targets_workflow():
@@ -254,8 +251,8 @@ def test_submit_dag_targets_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_exit_code_output_variable_workflow():
@@ -263,8 +260,8 @@ def test_submit_exit_code_output_variable_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_exit_handler_dag_level_workflow():
@@ -272,8 +269,8 @@ def test_submit_exit_handler_dag_level_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_exit_handler_step_level_workflow():
@@ -281,8 +278,8 @@ def test_submit_exit_handler_step_level_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_exit_handler_step_level_workflow():
@@ -290,8 +287,8 @@ def test_submit_exit_handler_step_level_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_global_outputs_workflow():
@@ -299,8 +296,8 @@ def test_submit_global_outputs_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_global_parameters_workflow():
@@ -308,8 +305,8 @@ def test_submit_global_parameters_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_input_artifact_gcs_workflow():
@@ -317,8 +314,8 @@ def test_submit_input_artifact_gcs_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_input_artifact_git_workflow():
@@ -326,8 +323,8 @@ def test_submit_input_artifact_git_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_input_artifact_http_workflow():
@@ -335,8 +332,8 @@ def test_submit_input_artifact_http_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_input_artifact_oss_workflow():
@@ -344,8 +341,8 @@ def test_submit_input_artifact_oss_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_input_artifact_raw_workflow():
@@ -353,8 +350,8 @@ def test_submit_input_artifact_raw_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_input_artifact_s3_workflow():
@@ -362,8 +359,8 @@ def test_submit_input_artifact_s3_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_loops_dag_workflow():
@@ -371,8 +368,8 @@ def test_submit_loops_dag_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_loops_map_workflow():
@@ -380,8 +377,8 @@ def test_submit_loops_map_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_loops_param_argument_workflow():
@@ -389,8 +386,8 @@ def test_submit_loops_param_argument_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_loops_param_result_workflow():
@@ -398,8 +395,8 @@ def test_submit_loops_param_result_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_loops_sequence_workflow():
@@ -407,8 +404,8 @@ def test_submit_loops_sequence_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_loops_workflow():
@@ -416,8 +413,8 @@ def test_submit_loops_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_parameter_aggregation_script_workflow():
@@ -425,8 +422,8 @@ def test_submit_parameter_aggregation_script_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_parameter_aggregation_workflow():
@@ -434,8 +431,8 @@ def test_submit_parameter_aggregation_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_script_bash_workflow():
@@ -443,8 +440,8 @@ def test_submit_script_bash_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_script_javascript_workflow():
@@ -452,8 +449,8 @@ def test_submit_script_javascript_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
 
 
 def test_submit_script_python_workflow():
@@ -461,5 +458,5 @@ def test_submit_script_python_workflow():
     resp.raise_for_status()
 
     manifest: dict = yaml.safe_load(resp.text)
-    v1alpha1 = V1alpha1Api()
-    v1alpha1.create_namespaced_workflow(NAMESPACE, manifest)
+
+    create_workflow(NAMESPACE, manifest)
