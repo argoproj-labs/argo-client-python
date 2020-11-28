@@ -4,7 +4,7 @@ from argo.workflows.client import (WorkflowServiceApi,
                                    V1alpha1WorkflowCreateRequest)
 
 
-config = Configuration(host="http://localhost:2746")
+config = Configuration(host="http://127.0.0.1:2746")
 client = ApiClient(configuration=config)
 service = WorkflowServiceApi(api_client=client)
 
