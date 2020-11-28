@@ -36,6 +36,8 @@ jobs:
         kubectl cluster-info
         kubectl get pods -n kube-system
         kubectl create ns argo
-        kubectl apply -n argo -f manifests/quick-start-argo-v2.10.2.yaml
+        kubectl apply -n argo -f manifests/quick-start-argo-v2.11.8.yaml
         sleep 10 # wait for argo to be ready
+        kubectl -n argo port-forward deployment/argo-server 2746:2746 &
+        sleep 2
         pytest
