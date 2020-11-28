@@ -41,8 +41,7 @@ ifeq (${GIT_TAG},)
 GIT_TAG = $(shell git rev-parse --abbrev-ref HEAD)
 endif
 
-CLIENT_VERSION    = 2.11.8
-#CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${v:0:5}")
+CLIENT_VERSION    ?= $(shell b="${GIT_BRANCH}"; v="$${b/release-/}.0"; echo "$${v:0:5}")
 
 ARGO_VERSION      ?= $(shell cat ARGO_VERSION)
 ARGO_API_GROUP    ?= argoproj.io

@@ -2,8 +2,9 @@ Changelog
 =========
 
 
-2.11.8
-------
+v2.11.8 (2020-11-28)
+--------------------
+- :tada: Release 2.1. [Yudi Xue]
 - [feature-argo-server-sdk] fix readme. [Yudi Xue]
 - [feature-argo-server-sdk] update readme. [Yudi Xue]
 - [feature-argo-server-sdk] update readme. [Yudi Xue]
