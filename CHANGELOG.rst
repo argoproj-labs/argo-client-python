@@ -2,8 +2,32 @@ Changelog
 =========
 
 
-3.6.1
------
+v2.11.8 (2020-11-28)
+--------------------
+- :tada: Release 2.1. [Yudi Xue]
+- [feature-argo-server-sdk] fix readme. [Yudi Xue]
+- [feature-argo-server-sdk] update readme. [Yudi Xue]
+- [feature-argo-server-sdk] update readme. [Yudi Xue]
+- [feature-argo-server-sdk] update README. [Yudi Xue]
+- [feature-argo-server-sdk] remove tests. [Yudi Xue]
+- [feature-argo-server-sdk] update. [Yudi Xue]
+- [feature-argo-server-sdk] fix tests. [Yudi Xue]
+- [feature-argo-server-sdk] adjust host. [Yudi Xue]
+- [feature-argo-server-sdk] adjust argo manifest. [Yudi Xue]
+- [feature-argo-server-sdk] add missing manifest file. [Yudi Xue]
+- [feature-argo-server-sdk] update github workflow. [Yudi Xue]
+- [feature-argo-server-sdk] update integration tests. [Yudi Xue]
+- [feature-argo-server-sdk] rebuild sdk for argo v2.11.8. [Yudi Xue]
+- Release 3.6.1 (#19) [Yudi Xue]
+
+  * [argo-2.11.8] Generate sdk for argo 2.11.8
+
+  * :tada: Release 3.6
+
+
+3.6.1 (2020-11-22)
+------------------
+- :tada: Release 3.6. [Yudi Xue]
 - [argo-2.11.8] Generate sdk for argo 2.11.8. [Yudi Xue]
 - Argo/v2.11.7 (#18) [Yudi Xue]
 
