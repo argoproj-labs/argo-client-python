@@ -2,6 +2,21 @@ Changelog
 =========
 
 
+4.0.1
+-----
+- [release-4.0.1] add missing init and remove kubernetes dep. [Yudi Xue]
+- Release 4.0 (#20) [Yudi Xue]
+
+  * [feature-argo-server-sdk] rebuild sdk for argo v2.11.8
+
+  * :tada: Release 4.0
+
+
+v4.0.0 (2020-11-28)
+-------------------
+- :tada: Release 4.0. [Yudi Xue]
+
+
 v2.11.8 (2020-11-28)
 --------------------
 - :tada: Release 2.1. [Yudi Xue]
