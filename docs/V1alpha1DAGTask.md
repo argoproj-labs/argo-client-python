@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **depends** | **str** | Depends are name of other targets which this depends on | [optional] 
 **name** | **str** | Name is the name of the target | 
 **on_exit** | **str** | OnExit is a template reference which is invoked at the end of the template, irrespective of the success, failure, or error of the primary template. | [optional] 
-**template** | **str** | Name of template to execute | 
+**template** | **str** | Name of template to execute | [optional] 
 **template_ref** | [**V1alpha1TemplateRef**](V1alpha1TemplateRef.md) |  | [optional] 
 **when** | **str** | When is an expression in which the task should conditionally execute | [optional] 
 **with_items** | **list[object]** | WithItems expands a task into multiple parallel tasks from the items in the list | [optional] 

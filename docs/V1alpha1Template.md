@@ -4,7 +4,6 @@ Template is a reusable and composable unit of execution in a workflow
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active_deadline_seconds** | **str** | Optional duration in seconds relative to the StartTime that the pod may be active on a node before the system actively tries to terminate the pod; value must be positive integer This field is only applicable to container and script templates. | [optional] 
 **affinity** | [**V1Affinity**](V1Affinity.md) |  | [optional] 
 **archive_location** | [**V1alpha1ArtifactLocation**](V1alpha1ArtifactLocation.md) |  | [optional] 
 **arguments** | [**V1alpha1Arguments**](V1alpha1Arguments.md) |  | [optional] 
@@ -27,7 +26,6 @@ Name | Type | Description | Notes
 **priority** | **int** | Priority to apply to workflow pods. | [optional] 
 **priority_class_name** | **str** | PriorityClassName to apply to workflow pods. | [optional] 
 **resource** | [**V1alpha1ResourceTemplate**](V1alpha1ResourceTemplate.md) |  | [optional] 
-**resubmit_pending_pods** | **bool** | ResubmitPendingPods is a flag to enable resubmitting pods that remain Pending after initial submission | [optional] 
 **retry_strategy** | [**V1alpha1RetryStrategy**](V1alpha1RetryStrategy.md) |  | [optional] 
 **scheduler_name** | **str** | If specified, the pod will be dispatched by specified scheduler. Or it will be dispatched by workflow scope scheduler if specified. If neither specified, the pod will be dispatched by default scheduler. | [optional] 
 **script** | [**V1alpha1ScriptTemplate**](V1alpha1ScriptTemplate.md) |  | [optional] 

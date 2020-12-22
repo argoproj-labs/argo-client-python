@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**groups** | **list[str]** |  | [optional] 
 **issuer** | **str** |  | [optional] 
 **subject** | **str** |  | [optional] 
 

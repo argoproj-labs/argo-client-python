@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **children** | **list[str]** | Children is a list of child node IDs | [optional] 
 **daemoned** | **bool** | Daemoned tracks whether or not this node was daemoned and need to be terminated | [optional] 
 **display_name** | **str** | DisplayName is a human readable representation of the node. Unique within a template boundary | [optional] 
+**estimated_duration** | **int** | EstimatedDuration in seconds. | [optional] 
 **finished_at** | **datetime** | Time at which this node completed | [optional] 
 **host_node_name** | **str** | HostNodeName name of the Kubernetes node on which the Pod is running, if applicable | [optional] 
 **id** | **str** | ID is a unique identifier of a node within the worklow It is implemented as a hash of the node name, which makes the ID deterministic | 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **outputs** | [**V1alpha1Outputs**](V1alpha1Outputs.md) |  | [optional] 
 **phase** | **str** | Phase a simple, high-level summary of where the node is in its lifecycle. Can be used as a state machine. | [optional] 
 **pod_ip** | **str** | PodIP captures the IP of the pod for daemoned steps | [optional] 
+**progress** | **str** | Progress to completion | [optional] 
 **resources_duration** | **dict(str, int)** | ResourcesDuration is indicative, but not accurate, resource duration. This is populated when the nodes completes. | [optional] 
 **started_at** | **datetime** | Time at which this node started | [optional] 
 **stored_template_id** | **str** | StoredTemplateID is the ID of stored template. DEPRECATED: This value is not used anymore. | [optional] 
