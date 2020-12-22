@@ -2,7 +2,7 @@
 
 Python client for Argo Workflows
 
-Argo Version: 2.11.8
+Argo Version: 2.12.2
 
 ## Installation
 
@@ -26,7 +26,7 @@ from argo.workflows.client import (ApiClient,
 config = Configuration(host="http://localhost:2746")
 client = ApiClient(configuration=config)
 service = WorkflowServiceApi(api_client=client)
-WORKFLOW = 'https://raw.githubusercontent.com/argoproj/argo/v2.11.8/examples/dag-diamond-steps.yaml'
+WORKFLOW = 'https://raw.githubusercontent.com/argoproj/argo/v2.12.2/examples/dag-diamond-steps.yaml'
 
 resp = requests.get(WORKFLOW)
 manifest: dict = yaml.safe_load(resp.text)

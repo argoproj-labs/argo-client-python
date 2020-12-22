@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **oss** | [**V1alpha1OSSArtifact**](V1alpha1OSSArtifact.md) |  | [optional] 
 **path** | **str** | Path is the container path to the artifact | [optional] 
 **raw** | [**V1alpha1RawArtifact**](V1alpha1RawArtifact.md) |  | [optional] 
+**recurse_mode** | **bool** | If mode is set, apply the permission recursively into the artifact if it is a folder | [optional] 
 **s3** | [**V1alpha1S3Artifact**](V1alpha1S3Artifact.md) |  | [optional] 
 **sub_path** | **str** | SubPath allows an artifact to be sourced from a subpath within the specified source | [optional] 
 

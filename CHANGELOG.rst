@@ -2,8 +2,18 @@ Changelog
 =========
 
 
-4.0.1
+5.0.0
 -----
+- Release 4.0.1 (#22) [Yudi Xue]
+
+  * [release-4.0.1] add missing init and remove kubernetes dep
+
+  * :tada: Release 4.0
+
+
+v4.0.1 (2020-12-01)
+-------------------
+- :tada: Release 4.0. [Yudi Xue]
 - [release-4.0.1] add missing init and remove kubernetes dep. [Yudi Xue]
 - Release 4.0 (#20) [Yudi Xue]
 

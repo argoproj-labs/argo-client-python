@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**get_cron_workflow**](CronWorkflowServiceApi.md#get_cron_workflow) | **GET** /api/v1/cron-workflows/{namespace}/{name} | 
 [**lint_cron_workflow**](CronWorkflowServiceApi.md#lint_cron_workflow) | **POST** /api/v1/cron-workflows/{namespace}/lint | 
 [**list_cron_workflows**](CronWorkflowServiceApi.md#list_cron_workflows) | **GET** /api/v1/cron-workflows/{namespace} | 
+[**resume_cron_workflow**](CronWorkflowServiceApi.md#resume_cron_workflow) | **PUT** /api/v1/cron-workflows/{namespace}/{name}/resume | 
+[**suspend_cron_workflow**](CronWorkflowServiceApi.md#suspend_cron_workflow) | **PUT** /api/v1/cron-workflows/{namespace}/{name}/suspend | 
 [**update_cron_workflow**](CronWorkflowServiceApi.md#update_cron_workflow) | **PUT** /api/v1/cron-workflows/{namespace}/{name} | 
 
 
@@ -336,6 +338,132 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **resume_cron_workflow**
+> V1alpha1CronWorkflow resume_cron_workflow(namespace, name, body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CronWorkflowServiceApi(api_client)
+    namespace = 'namespace_example' # str | 
+name = 'name_example' # str | 
+body = openapi_client.V1alpha1CronWorkflowResumeRequest() # V1alpha1CronWorkflowResumeRequest | 
+
+    try:
+        api_response = api_instance.resume_cron_workflow(namespace, name, body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CronWorkflowServiceApi->resume_cron_workflow: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**|  | 
+ **name** | **str**|  | 
+ **body** | [**V1alpha1CronWorkflowResumeRequest**](V1alpha1CronWorkflowResumeRequest.md)|  | 
+
+### Return type
+
+[**V1alpha1CronWorkflow**](V1alpha1CronWorkflow.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **suspend_cron_workflow**
+> V1alpha1CronWorkflow suspend_cron_workflow(namespace, name, body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://localhost"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.CronWorkflowServiceApi(api_client)
+    namespace = 'namespace_example' # str | 
+name = 'name_example' # str | 
+body = openapi_client.V1alpha1CronWorkflowSuspendRequest() # V1alpha1CronWorkflowSuspendRequest | 
+
+    try:
+        api_response = api_instance.suspend_cron_workflow(namespace, name, body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling CronWorkflowServiceApi->suspend_cron_workflow: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **namespace** | **str**|  | 
+ **name** | **str**|  | 
+ **body** | [**V1alpha1CronWorkflowSuspendRequest**](V1alpha1CronWorkflowSuspendRequest.md)|  | 
+
+### Return type
+
+[**V1alpha1CronWorkflow**](V1alpha1CronWorkflow.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
