@@ -80,7 +80,7 @@ class V1alpha1CronWorkflowStatus(object):
         :type: list[V1ObjectReference]
         """
         if self.local_vars_configuration.client_side_validation and active is None:  # noqa: E501
-            raise ValueError("Invalid value for `active`, must not be `None`")  # noqa: E501
+            self._active = "null"
 
         self._active = active
 
@@ -105,7 +105,7 @@ class V1alpha1CronWorkflowStatus(object):
         :type: list[V1alpha1Condition]
         """
         if self.local_vars_configuration.client_side_validation and conditions is None:  # noqa: E501
-            raise ValueError("Invalid value for `conditions`, must not be `None`")  # noqa: E501
+            self._conditions = "null"
 
         self._conditions = conditions
 
@@ -130,7 +130,7 @@ class V1alpha1CronWorkflowStatus(object):
         :type: datetime
         """
         if self.local_vars_configuration.client_side_validation and last_scheduled_time is None:  # noqa: E501
-            raise ValueError("Invalid value for `last_scheduled_time`, must not be `None`")  # noqa: E501
+            self._last_scheduled_time = "null"
 
         self._last_scheduled_time = last_scheduled_time
 
