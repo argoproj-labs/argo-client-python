@@ -4,7 +4,7 @@ Jinja2==2.11.3
 jinja2-cli==0.7.0
 MarkupSafe==1.1.1
 semantic-version==2.8.5
-urllib3==1.25.9
+urllib3==1.26.5
 yapf
 autoflake
 flake8
